@@ -8,6 +8,8 @@ import { useAppData } from '../context/AppDataContext'
 import { categories } from '../data/categories'
 import { faqs } from '../data/faqs'
 import TrainingMarquee from '../components/TrainingMarquee'
+import homeTeamImage from '../assets/images/home-team-learning.jpg'
+import teamProjectImage from '../assets/images/team-project.jpg'
 
 const categoryIcons = [Bot, Sparkles, ChartNoAxesCombined, Code2, Code2, Workflow, Lightbulb, BriefcaseBusiness, BookOpenText, Keyboard]
 const reasons = [
@@ -39,7 +41,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-visual">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1500&q=90" alt="Learners collaborating around a table" fetchpriority="high" />
+            <img src={homeTeamImage} alt="Learners collaborating around a table" fetchpriority="high" />
             <div className="hero-tech-icons" aria-hidden="true">
               <span><Bot size={22} /></span>
               <span><Code2 size={20} /></span>
@@ -91,7 +93,7 @@ export default function HomePage() {
       <section className="project-band">
         <div className="page-wrap project-layout">
           <div className="project-visual">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85" alt="A team sharing ideas during a project workshop" loading="lazy" />
+            <img src={teamProjectImage} alt="A team sharing ideas during a project workshop" loading="lazy" />
             <div className="project-note"><span><Code2 size={18} /></span><div><strong>Make ideas tangible.</strong><small>Practice with purposeful projects.</small></div></div>
           </div>
           <div className="project-copy"><span className="eyebrow">Make it real</span><h2>Turn new knowledge into something you can show.</h2><p>Projects give you space to experiment, solve problems and connect concepts to practical use—one meaningful step at a time.</p><ul className="check-list"><li>Build confidence through guided practice</li><li>Explore realistic examples and scenarios</li><li>Finish with work that reflects your learning</li></ul><Button to="/courses" variant="outline" icon>Find a hands-on course</Button></div>

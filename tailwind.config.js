@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        forest: '#0A2048',
-        brand: '#00B5C8',
-        bright: '#24D2DF',
-        orange: '#3D68F5',
+        forest: '#253B32',
+        brand: '#3E8248',
+        bright: '#F0B83F',
+        orange: '#C95D2A',
         ink: '#0D1B2A',
-        canvas: '#F2F8FA',
+        canvas: '#FFFAF1',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],

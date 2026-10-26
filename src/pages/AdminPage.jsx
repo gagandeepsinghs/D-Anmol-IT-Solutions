@@ -3,6 +3,7 @@ import { Archive, Eye, EyeOff, Pencil, Plus, Save, Trash2 } from 'lucide-react'
 import { categories } from '../data/categories'
 import { courses as defaultCourses } from '../data/courses'
 import { useAppData } from '../context/AppDataContext'
+import courseImageFallback from '../assets/images/course-image-fallback.jpg'
 
 const freshCourse = () => ({ id: '', slug: '', title: '', category: categories[0], description: '', duration: '', mode: 'Online or classroom', image: '', overview: '', modules: 'Course foundations\nGuided practice\nPractical project', skills: 'Practical skills', projects: 'A guided practical project', prerequisites: 'No prior experience required.', published: true })
 const formatModules = (modules = [], fallbackModules = []) => modules.map((module, index) => {
@@ -55,7 +56,7 @@ export default function AdminPage() {
       title,
       slug,
       id: editingId || slug,
-      image: form.image.trim() || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85',
+      image: form.image.trim() || courseImageFallback,
       modules: parseModules(form.modules),
       skills: form.skills.split('\n').map((item) => item.trim()).filter(Boolean),
       projects: form.projects.split('\n').map((item) => item.trim()).filter(Boolean),

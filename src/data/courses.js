@@ -1,3 +1,12 @@
+import computerBasicsImage from '../assets/images/computer-basics.jpg'
+import typingPracticeImage from '../assets/images/typing-practice.jpg'
+import aiImage from '../assets/images/artificial-intelligence.jpg'
+import dataAnalyticsImage from '../assets/images/data-analytics.jpg'
+import pythonImage from '../assets/images/python-programming.jpg'
+import technologyHardwareImage from '../assets/images/technology-hardware.jpg'
+import digitalMarketingWorkImage from '../assets/images/digital-marketing-work.jpg'
+import digitalMarketingImage from '../assets/images/digital-marketing.jpg'
+
 export const courses = [
   {
     id: 'computer-basics-office-productivity',
@@ -7,7 +16,7 @@ export const courses = [
     description: 'Build everyday computer confidence with Windows and internet basics, Word documents, Excel spreadsheets and PowerPoint presentations.',
     duration: 'Contact us for details',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85',
+    image: computerBasicsImage,
     overview: 'A beginner-friendly course for learning the practical computer skills used in study, office and everyday digital tasks. Start with files, folders and online safety, then practice creating documents, spreadsheets and presentations using Microsoft Office applications.',
     suitableFor: 'Beginners who want to build confidence using a computer for study, office tasks or everyday digital work.',
     level: 'Beginner',
@@ -42,7 +51,7 @@ export const courses = [
     description: 'Build typing accuracy and confidence through timed passages, exam-style practice and progress review.',
     duration: 'Contact us for details',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=85',
+    image: typingPracticeImage,
     overview: 'A focused typing practice course for learners preparing for computer-based typing tests as part of government recruitment exams. Practice is organized around accuracy, steady pace and timed exercises. The language, keyboard layout and test format can be discussed according to the learner’s target exam notification.',
     suitableFor: 'Candidates preparing for a government recruitment exam that includes a computer-based typing test.',
     level: 'Beginner-friendly practice',
@@ -76,7 +85,7 @@ export const courses = [
     description: 'Build a practical foundation in machine learning, data preparation and responsible AI workflows.',
     duration: '12 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85',
+    image: aiImage,
     overview: 'Learn how to prepare data, explore machine learning methods and evaluate models through guided, hands-on exercises.',
     suitableFor: 'Learners interested in AI concepts and how machine-learning models are trained and evaluated.',
     level: 'Beginner to intermediate',
@@ -107,7 +116,7 @@ export const courses = [
     description: 'Use generative AI tools thoughtfully to research, draft, analyze and improve everyday work.',
     duration: '4 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85',
+    image: aiImage,
     overview: 'Build confidence with generative AI concepts and practical workflows, with an emphasis on review, privacy and responsible use.',
     suitableFor: 'Learners who want a practical introduction to using generative AI for writing, research and everyday workflows.',
     level: 'Beginner',
@@ -138,7 +147,7 @@ export const courses = [
     description: 'Turn raw data into useful insights with spreadsheets, data visualization and analytical thinking.',
     duration: '10 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85',
+    image: dataAnalyticsImage,
     overview: 'Practice the end-to-end analytics process: asking clear questions, cleaning data, finding patterns and sharing findings.',
     suitableFor: 'Beginners who want to analyze data, create clear summaries and communicate findings.',
     level: 'Beginner',
@@ -168,7 +177,7 @@ export const courses = [
     description: 'Learn to write readable Python programs and solve practical problems with code.',
     duration: '8 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=85',
+    image: pythonImage,
     overview: 'Start with programming fundamentals and build up to small, useful projects using Python’s core tools.',
     suitableFor: 'Learners beginning their programming journey or looking to develop a foundation in Python.',
     level: 'Beginner',
@@ -199,7 +208,7 @@ export const courses = [
     description: 'Understand the building blocks of modern websites and create responsive web experiences.',
     duration: '16 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85',
+    image: computerBasicsImage,
     overview: 'Develop a practical understanding of web interfaces, JavaScript and application patterns through project work.',
     suitableFor: 'Learners who want to understand how web interfaces are structured and build responsive web projects.',
     level: 'Beginner to intermediate',
@@ -230,7 +239,7 @@ export const courses = [
     description: 'Map repetitive tasks and prototype useful low-code automations with AI-assisted steps.',
     duration: '5 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85',
+    image: technologyHardwareImage,
     overview: 'Explore workflow automation concepts and build small, reviewable automations using visual workflow patterns.',
     suitableFor: 'Learners and teams interested in mapping repetitive tasks and exploring low-code automation workflows.',
     level: 'Beginner',
@@ -261,7 +270,7 @@ export const courses = [
     description: 'Build a clear digital marketing foundation across content, search, campaigns and measurement.',
     duration: '8 weeks',
     mode: 'Online or classroom',
-    image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=900&q=85',
+    image: digitalMarketingWorkImage,
     overview: 'Explore practical marketing planning and measurement with hands-on activities based on sample scenarios.',
     suitableFor: 'Beginners, small business owners or team members who want a structured introduction to digital marketing.',
     level: 'Beginner',
@@ -292,7 +301,7 @@ export const courses = [
     description: 'A tailored learning programme designed around your team, tools and practical goals.',
     duration: 'Flexible',
     mode: 'Online or onsite',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85',
+    image: digitalMarketingImage,
     overview: 'Start with your team’s learning needs, then shape a practical programme that fits your context and delivery preferences.',
     suitableFor: 'Organizations looking to discuss a practical learning programme shaped around their team and goals.',
     level: 'Tailored to the team',

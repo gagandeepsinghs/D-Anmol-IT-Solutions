@@ -4,6 +4,8 @@ import { Button } from '../components/Button'
 import AiPythonEnquiryForm from '../components/AiPythonEnquiryForm'
 import TechBadge from '../components/TechBadge'
 import { aiPythonCourses } from '../data/aiPythonCourses'
+import aiImage from '../assets/images/artificial-intelligence.jpg'
+import technologyWorkshopImage from '../assets/images/technology-workshop.jpg'
 
 const icons = [Braces, Database, BrainCircuit, Sparkles, Bot]
 
@@ -22,7 +24,7 @@ export default function AiPythonPage() {
           <div className="ai-python-hero-note"><span><Sparkles size={17} /></span><p><strong>Learn by building</strong><br />A practical path from foundations to applied projects</p></div>
         </div>
         <div className="ai-python-hero-visual">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85" alt="Abstract artificial intelligence visualization" fetchpriority="high" />
+          <img src={aiImage} alt="Abstract artificial intelligence visualization" fetchpriority="high" />
           <div className="ai-python-visual-shade" />
           <div className="ai-python-visual-tag"><span /> Python · Data · AI</div>
           <div className="ai-python-visual-card"><BrainCircuit size={20} /><span><strong>Explore. Practice.</strong><small>Turn concepts into prototypes</small></span></div>
@@ -65,7 +67,7 @@ export default function AiPythonPage() {
 
     <section className="ai-python-approach">
       <div className="page-wrap ai-python-approach-layout">
-        <div className="ai-python-approach-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=85" alt="A team collaborating on a practical technology project" loading="lazy" /></div>
+        <div className="ai-python-approach-image"><img src={technologyWorkshopImage} alt="A team collaborating on a practical technology project" loading="lazy" /></div>
         <div className="ai-python-approach-copy">
           <span className="eyebrow">Learn through practice</span>
           <h2>Build understanding by making things.</h2>
