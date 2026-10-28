@@ -60,9 +60,8 @@ export default function HomePage() {
 
       <section className="section section-white" id="popular-courses">
         <div className="page-wrap">
-          <div className="section-heading">
-            <div><span className="eyebrow">Explore our courses</span><h2>Find the skills<br className="desktop-break" /> you want to build.</h2></div>
-            <div className="heading-aside"><p>Browse all currently published programmes, from foundational digital skills to AI, programming and team training.</p><Link className="text-link" to="/courses">Search and filter courses <ArrowRight size={16} /></Link></div>
+          <div className="section-heading section-heading-center">
+            <span className="eyebrow">Explore our courses</span><h2>Find the skills you want to build.</h2>
           </div>
           <div className="course-grid">
             {popular.map((course) => <CourseCard key={course.id} course={course} />)}

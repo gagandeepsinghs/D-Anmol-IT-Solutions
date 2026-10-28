@@ -1,6 +1,5 @@
 import { ArrowUpRight, Clock3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from './Button'
 
 export default function CourseCard({ course, showTopics = false }) {
   const topics = (course.modules || []).slice(0, 3).map((module) => typeof module === 'string' ? module : module.title)
@@ -20,7 +19,6 @@ export default function CourseCard({ course, showTopics = false }) {
         <p>{course.description}</p>
         {showTopics && topics.length > 0 && <div className="course-topic-preview"><strong>Key modules</strong><span>{topics.join(' · ')}</span></div>}
         <div className="course-card-actions">
-          <Button to={`/courses/${course.slug}`} className="card-details-button">Course details <ArrowUpRight size={15} /></Button>
           <Link to={`/contact?course=${encodeURIComponent(course.title)}`} className="text-link course-enquire-link">Enquire <ArrowUpRight size={15} /></Link>
         </div>
       </div>
