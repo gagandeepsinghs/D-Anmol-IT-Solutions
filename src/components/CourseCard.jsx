@@ -20,6 +20,7 @@ export default function CourseCard({ course, showTopics = false }) {
         {showTopics && topics.length > 0 && <div className="course-topic-preview"><strong>Key modules</strong><span>{topics.join(' · ')}</span></div>}
         <div className="course-card-actions">
           <Link to={`/contact?course=${encodeURIComponent(course.title)}`} className="text-link course-enquire-link">Enquire <ArrowUpRight size={15} /></Link>
+          <Link to={`/courses/${course.slug}`} className="btn-view-course">View Course</Link>
         </div>
       </div>
     </article>
