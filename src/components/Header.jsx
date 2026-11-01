@@ -10,6 +10,7 @@ const linksAfterCourses = [
   { to: '/corporate-training', label: 'Corporate training' },
   { to: '/about', label: 'About us' },
   { to: '/contact', label: 'Contact' },
+  { to: '/faq', label: 'FAQs' },
 ]
 
 const courseIcons = [BookOpenText, Keyboard, Bot, Sparkles, ChartNoAxesCombined, Code2, Code2, Workflow, Lightbulb, BriefcaseBusiness]

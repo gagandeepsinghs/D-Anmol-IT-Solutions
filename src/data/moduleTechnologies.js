@@ -55,11 +55,11 @@ const courseModuleTechnologies = {
   ],
   'ai-automation-n8n': [
     ['Workflow automation'],
-    ['n8n'],
-    ['n8n', 'Workflow automation'],
-    ['n8n'],
+    ['AI automation'],
+    ['AI automation', 'Workflow automation'],
+    ['Workflow automation'],
     ['AI-assisted steps'],
-    ['n8n', 'Workflow automation'],
+    ['AI automation', 'Workflow automation'],
   ],
   'digital-marketing': [
     ['Content planning'],
@@ -74,6 +74,13 @@ const courseModuleTechnologies = {
     ['Programme topics agreed during discovery'],
     ['Programme topics agreed during discovery'],
     ['Programme topics agreed during discovery'],
+  ],
+  'desk-to-dashboard': [
+    ['Excel'],
+    ['Excel'],
+    ['Power BI'],
+    ['SQL'],
+    ['Digital Marketing', 'Analytics'],
   ],
   'python-django': [
     ['Python'],
@@ -100,12 +107,12 @@ const courseModuleTechnologies = {
     ['Python', 'LangChain', 'LLM APIs'],
   ],
   'ai-agents-automation': [
-    ['Python', 'LangChain'],
-    ['Python', 'LangChain', 'APIs and tool calling'],
-    ['Python', 'APIs and tool calling'],
-    ['n8n'],
-    ['LangChain', 'APIs and tool calling'],
-    ['Python', 'LangChain', 'n8n'],
+    ['Python', 'AI automation'],
+    ['Python', 'APIs'],
+    ['Python', 'APIs'],
+    ['Workflow automation'],
+    ['AI automation', 'Human review'],
+    ['Python', 'Workflow automation'],
   ],
 }
 

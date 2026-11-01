@@ -11,6 +11,7 @@ import CourseDetailPage from './pages/CourseDetailPage'
 import CorporatePage from './pages/CorporatePage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import FaqPage from './pages/FaqPage'
 import AdminPage from './pages/AdminPage'
 import AiPythonPage from './pages/AiPythonPage'
 import AiPythonCoursePage from './pages/AiPythonCoursePage'
@@ -25,6 +26,7 @@ const titles = {
   '/corporate-training': 'Corporate Training | D-Anmol Enterprises',
   '/about': 'About Us | D-Anmol Enterprises',
   '/contact': 'Contact Us | D-Anmol Enterprises',
+  '/faq': 'FAQs | D-Anmol Enterprises',
   '/admin': 'Demo Admin | D-Anmol Enterprises',
 }
 
@@ -35,6 +37,7 @@ const descriptions = {
   '/corporate-training': 'Discuss practical, tailored AI, data analytics, programming and technology training for your team.',
   '/about': 'Learn about D-Anmol Enterprises and its practical approach to technology training.',
   '/contact': 'Contact D-Anmol Enterprises to ask about courses, team training and learning goals.',
+  '/faq': 'Frequently asked questions about D-Anmol Enterprises courses and training.',
   '/admin': 'Browser-only demo course and enquiry management for D-Anmol Enterprises.',
 }
 
@@ -57,12 +60,12 @@ export default function App() {
       if (savedCourses !== null) {
         const parsed = JSON.parse(savedCourses)
         if (!Array.isArray(parsed)) throw new Error('Saved course data is not a list.')
-        const catalogVersion = 'catalog-course-details-v5'
+        const catalogVersion = 'catalog-course-details-v8'
         const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== catalogVersion
         const newlyAddedCourses = !needsCatalogMigration
           ? []
           : defaultCourses.filter((course) => (
-            ['computer-basics-office-productivity', 'computer-typing-government-exams'].includes(course.id)
+            ['computer-basics-office-productivity', 'computer-typing-government-exams', 'desk-to-dashboard'].includes(course.id)
             && !parsed.some((savedCourse) => savedCourse.id === course.id)
           ))
         const migratedSavedCourses = parsed.map((savedCourse) => {
@@ -81,6 +84,9 @@ export default function App() {
             }
           }
           const defaultCourse = defaultCourses.find((course) => course.id === savedCourse.id)
+          if (needsCatalogMigration && savedCourse.id === 'desk-to-dashboard' && defaultCourse) {
+            return { ...defaultCourse, published: savedCourse.published }
+          }
           if (needsCatalogMigration && savedCourse.id === 'computer-basics-office-productivity' && defaultCourse) {
             migratedCourse = {
               ...migratedCourse,
@@ -131,7 +137,7 @@ export default function App() {
         }
       } else {
         try {
-          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v5')
+          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v8')
         } catch {
           notices.push('The demo course catalogue version could not be saved for future visits.')
         }
@@ -215,6 +221,7 @@ export default function App() {
           <Route path="/corporate-training" element={<CorporatePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FaqPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

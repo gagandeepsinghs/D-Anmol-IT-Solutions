@@ -22,7 +22,6 @@ export default function HomePage() {
   const { courses } = useAppData()
   const [openFaq, setOpenFaq] = useState(0)
   const publishedCourses = courses.filter((course) => course.published !== false)
-  const popular = publishedCourses
   return (
     <>
       <section className="hero">
@@ -60,13 +59,10 @@ export default function HomePage() {
 
       <section className="section section-white" id="popular-courses">
         <div className="page-wrap">
-          <div className="section-heading section-heading-center">
-            <span className="eyebrow">Explore our courses</span><h2>Find the skills you want to build.</h2>
-          </div>
-          <div className="course-grid">
-            {popular.map((course) => <CourseCard key={course.id} course={course} />)}
-          </div>
-          {popular.length === 0 && <p className="empty-state">Courses are being updated. Please check back soon.</p>}
+          <div className="section-heading courses-section-heading"><div><span className="eyebrow">Popular courses</span><h2>Explore courses</h2><p className="section-heading-description">Practical learning paths designed to help you build useful skills with confidence.</p></div><Link to="/courses" className="text-link view-all-courses">View all courses <ArrowRight size={16} /></Link></div>
+          {publishedCourses.length > 0
+            ? <div className="course-grid">{publishedCourses.map((course) => <CourseCard key={course.id} course={course} />)}</div>
+            : <p className="empty-state">Courses are being updated. Please check back soon.</p>}
         </div>
       </section>
 
@@ -120,9 +116,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section faq-section">
+      <section className="section faq-section" id="faq">
         <div className="page-wrap faq-layout">
-          <div className="faq-intro"><span className="eyebrow">Good to know</span><h2>Questions before you begin?</h2><p>Here are a few useful details to help you choose your next step.</p><Link to="/contact" className="text-link">Ask us a question <ArrowRight size={16} /></Link></div>
+          <div className="faq-intro"><span className="eyebrow">Good to know</span><h2>Questions before you begin?</h2><p>Here are a few useful details to help you choose your next step.</p><Link to="/contact" className="text-link">Ask us a question <ArrowRight size={16} /></Link><Link to="/faq" className="button button-outline faq-button">View all FAQs</Link></div>
           <div className="faq-list">{faqs.map((faq, i) => <article className={`faq-item ${openFaq === i ? 'faq-open' : ''}`} key={faq.question}><button type="button" aria-expanded={openFaq === i} onClick={() => setOpenFaq(openFaq === i ? -1 : i)}><span>{faq.question}</span><span className="faq-plus">{openFaq === i ? '−' : '+'}</span></button>{openFaq === i && <p>{faq.answer}</p>}</article>)}</div>
         </div>
       </section>

@@ -4,7 +4,7 @@ export const categories = [
   'Data Analytics',
   'Python Programming',
   'Full Stack Web Development',
-  'AI Automation and n8n',
+  'AI Automation',
   'Digital Marketing',
   'Corporate Training',
   'Computer Basics & Office Productivity',

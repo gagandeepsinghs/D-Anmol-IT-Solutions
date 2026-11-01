@@ -1,4 +1,4 @@
-import brandLogo from '../assets/images/D-ANMOL Logo.png'
+import brandLogo from '../assets/images/D-Anmol Enterprises Logo.jpg'
 
 export const siteConfig = {
   name: 'D-Anmol Enterprises',
