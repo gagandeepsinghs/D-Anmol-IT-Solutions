@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowDown, ArrowRight, ArrowUpRight, Bot, BookOpenText, BriefcaseBusiness, ChartNoAxesCombined, Code2, Keyboard, Lightbulb, Sparkles, Workflow } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, BarChart3, Bot, BookOpenText, BriefcaseBusiness, ChartNoAxesCombined, Code2, Globe2, Keyboard, Lightbulb, Sparkles, Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button'
 import CourseCard from '../components/CourseCard'
@@ -8,6 +8,7 @@ import { useAppData } from '../context/AppDataContext'
 import { categories } from '../data/categories'
 import { faqs } from '../data/faqs'
 import TrainingMarquee from '../components/TrainingMarquee'
+import TechBadge from '../components/TechBadge'
 import homeTeamImage from '../assets/images/home-team-learning.jpg'
 import teamProjectImage from '../assets/images/team-project.jpg'
 
@@ -16,6 +17,12 @@ const reasons = [
   { icon: Lightbulb, title: 'Learn by doing', body: 'Work through guided exercises and practical projects, not just slides and theory.' },
   { icon: Workflow, title: 'Skills for real work', body: 'Build confidence with tools and workflows that connect to everyday tasks.' },
   { icon: BriefcaseBusiness, title: 'Made for your goals', body: 'Choose a learning path for your next step, or shape training around your team.' },
+]
+const technologyGroups = [
+  { title: 'AI & machine learning', icon: Bot, technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'OpenAI API'] },
+  { title: 'Python & data', icon: BarChart3, technologies: ['Python', 'Pandas', 'NumPy', 'Power BI'] },
+  { title: 'Web development', icon: Globe2, technologies: ['JavaScript', 'React', 'Django', 'Flask'] },
+  { title: 'Workflow', icon: Workflow, technologies: ['Jupyter Notebook', 'Git', 'GitHub', 'APIs'] },
 ]
 
 export default function HomePage() {
@@ -82,6 +89,13 @@ export default function HomePage() {
         <div className="page-wrap">
           <div className="section-heading section-heading-center"><span className="eyebrow">Why learn with us</span><h2>Good learning should<br />feel useful from day one.</h2><p>We focus on the practice, context and support that help new skills stick.</p></div>
           <div className="reason-grid">{reasons.map(({ icon: Icon, title, body }, i) => <article className="reason-card" key={title}><span className="reason-number">0{i + 1}</span><span className="reason-icon"><Icon size={23} /></span><h3>{title}</h3><p>{body}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section className="section technology-section">
+        <div className="page-wrap">
+          <div className="section-heading section-heading-center technology-heading"><span className="eyebrow">Tools and technologies</span><h2>Everything you’ll learn<br />to build with confidence.</h2><p>Explore the tools used across our practical training programmes, grouped by how you use them.</p></div>
+          <div className="technology-group-grid">{technologyGroups.map(({ title, icon: Icon, technologies }) => <article className="technology-group-card" key={title}><div className="technology-group-title"><span><Icon size={19} strokeWidth={2.3} /></span><h3>{title}</h3></div><div className="technology-group-list">{technologies.map((technology, index) => <TechBadge key={technology} name={technology} index={index} />)}</div></article>)}</div>
         </div>
       </section>
 

@@ -11,7 +11,7 @@ export const courses = [
   {
     id: 'computer-basics-office-productivity',
     slug: 'computer-basics-ms-office',
-    title: 'Computer Basics & MS Office',
+    title: 'Computer Basics',
     category: 'Computer Basics & Office Productivity',
     description: 'Build everyday computer confidence with Windows and internet basics, Word documents, Excel spreadsheets and PowerPoint presentations.',
     duration: '45 days to 6 months',
@@ -46,7 +46,7 @@ export const courses = [
   {
     id: 'computer-typing-government-exams',
     slug: 'computer-typing-government-exams',
-    title: 'Computer Typing for Government Exams',
+    title: 'Computer Typing',
     category: 'Computer Typing for Government Exams',
     description: 'Build typing accuracy and confidence through timed passages, exam-style practice and progress review.',
     duration: '45 days to 6 months',
@@ -145,7 +145,7 @@ export const courses = [
   {
     id: 'data-science-with-python',
     slug: 'data-science-with-python-course-in-chandigarh',
-    title: 'Data Science with Python',
+    title: 'Data Analytics Foundations',
     category: 'Python Programming',
     description: 'Analyze data, build predictive models, and create visualizations with Python and machine learning.',
     duration: '3–12 Months',
@@ -272,7 +272,7 @@ export const courses = [
   {
     id: 'full-stack-development',
     slug: 'full-stack-development-course-in-chandigarh',
-    title: 'Full Stack Development',
+    title: 'Full Stack Web Development',
     category: 'Full Stack Web Development',
     description: 'Learn to build complete web applications from database to deployment with modern JavaScript frameworks.',
     duration: '3–12 Months',
@@ -336,7 +336,7 @@ export const courses = [
   {
     id: 'desk-to-dashboard',
     slug: 'desk-to-dashboard',
-    title: 'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali',
+    title: 'Desktop to Dashboard : Excel, Power BI & SQL',
     category: 'Corporate Training',
     description: 'Build practical Excel, Power BI, SQL, and digital marketing skills through guided projects.',
     duration: '3 months (12 weeks)',

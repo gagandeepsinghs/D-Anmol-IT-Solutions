@@ -8,6 +8,16 @@ const courseIcons = [Bot, ChartNoAxesCombined, Code2, Sparkles, Workflow, Layers
 const referralOptions = ['Google search', 'Social media', 'Friend or colleague', 'School or college', 'Other']
 const timeOptions = ['Morning (9 AM–12 PM)', 'Afternoon (12 PM–4 PM)', 'Evening (4 PM–7 PM)']
 
+const courseTitleAliases = {
+  'Computer Basics & MS Office': 'Computer Basics',
+  'Computer Typing for Government Exams': 'Computer Typing',
+  'Generative AI for Work': 'Generative AI',
+  'AI Automation with n8n': 'AI Automation',
+  'Digital Marketing Essentials': 'Digital Marketing',
+  'Custom Corporate Training': 'Corporate Training',
+  'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali': 'Desktop to Dashboard : Excel, Power BI & SQL',
+}
+
 function getToday() {
   const date = new Date()
   const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
@@ -33,8 +43,11 @@ export default function AdvisorBookingModal({ onClose }) {
   const [step, setStep] = useState(1)
   const availableCourses = useMemo(() => {
     const seen = new Set()
-    return [...courses, ...aiPythonCourses].filter((course) => {
-      const title = course.title.trim()
+    return [...courses, ...aiPythonCourses].map((course) => ({
+      ...course,
+      title: courseTitleAliases[course.title.trim()] || course.title.trim(),
+    })).filter((course) => {
+      const title = course.title
       if (seen.has(title)) return false
       seen.add(title)
       return true

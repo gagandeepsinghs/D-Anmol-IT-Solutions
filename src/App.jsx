@@ -60,7 +60,7 @@ export default function App() {
       if (savedCourses !== null) {
         const parsed = JSON.parse(savedCourses)
         if (!Array.isArray(parsed)) throw new Error('Saved course data is not a list.')
-        const catalogVersion = 'catalog-course-details-v8'
+        const catalogVersion = 'catalog-course-details-v10'
         const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== catalogVersion
         const newlyAddedCourses = !needsCatalogMigration
           ? []
@@ -71,6 +71,20 @@ export default function App() {
         const migratedSavedCourses = parsed.map((savedCourse) => {
           if (['power-bi', 'sql-database'].includes(savedCourse.id)) return null
           let migratedCourse = savedCourse
+          const renamedTitles = {
+            'Computer Basics & MS Office': 'Computer Basics',
+            'Computer Typing for Government Exams': 'Computer Typing',
+            'Generative AI for Work': 'Generative AI',
+            'AI Automation with n8n': 'AI Automation',
+            'Digital Marketing Essentials': 'Digital Marketing',
+            'Custom Corporate Training': 'Corporate Training',
+            'Data Science with Python': 'Data Analytics Foundations',
+            'Full Stack Development': 'Full Stack Web Development',
+            'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali': 'Desktop to Dashboard : Excel, Power BI & SQL',
+          }
+          if (needsCatalogMigration && renamedTitles[savedCourse.title]) {
+            migratedCourse = { ...migratedCourse, title: renamedTitles[savedCourse.title] }
+          }
           if (savedCourse.id === 'data-analytics' && needsCatalogMigration) {
             migratedCourse = {
               ...savedCourse,
@@ -84,6 +98,9 @@ export default function App() {
             }
           }
           const defaultCourse = defaultCourses.find((course) => course.id === savedCourse.id)
+          if (needsCatalogMigration && defaultCourse && ['computer-basics-office-productivity', 'computer-typing-government-exams', 'data-science-with-python', 'full-stack-development', 'desk-to-dashboard'].includes(savedCourse.id)) {
+            migratedCourse = { ...migratedCourse, title: defaultCourse.title }
+          }
           if (needsCatalogMigration && savedCourse.id === 'desk-to-dashboard' && defaultCourse) {
             return { ...defaultCourse, published: savedCourse.published }
           }
@@ -137,7 +154,7 @@ export default function App() {
         }
       } else {
         try {
-          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v8')
+          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v10')
         } catch {
           notices.push('The demo course catalogue version could not be saved for future visits.')
         }
