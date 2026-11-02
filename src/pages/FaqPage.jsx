@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function FaqPage() {
   const [activeTopic, setActiveTopic] = useState(0)
-  const [openFaq, setOpenFaq] = useState(0)
+  const [openFaq, setOpenFaq] = useState(-1)
   const topics = [
     { title: 'Courses', description: 'What we teach, who it suits, and how to choose a path.', questions: [
       ['Which courses do you offer?', 'We offer practical training in AI, data analytics, Python, full stack development, digital marketing, computer skills, typing, and AI Automation.'],
@@ -48,7 +48,7 @@ export default function FaqPage() {
   const topic = topics[activeTopic]
   const selectTopic = (index) => {
     setActiveTopic(index)
-    setOpenFaq(0)
+    setOpenFaq(-1)
   }
 
   return (
@@ -71,7 +71,7 @@ export default function FaqPage() {
                 <span>{faq.question}</span>
                 <span className="faq-plus">{openFaq === index ? '−' : '+'}</span>
               </button>
-              {openFaq === index && <p>{faq.answer}</p>}
+              <div className="faq-answer" aria-hidden={openFaq !== index}><p>{faq.answer}</p></div>
             </article>
           ))}
         </div>
