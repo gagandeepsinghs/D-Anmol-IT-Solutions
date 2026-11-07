@@ -2033,3 +2033,235 @@ body { font-size: 16px; line-height: 1.65; }
   .home-tech-track-reverse { animation: none; }
   .home-tech-marquee { overflow-x: auto; }
 }
+
+
+/* Home Technologies - spacing correction */
+.home-technologies .section-heading-center {
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.home-technologies .section-heading-center .eyebrow {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.home-technologies .section-heading-center h2 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+.home-technologies .section-heading-center > p {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 760px;
+}
+
+
+/* Student Testimonials - compact spacing */
+section:has(.testimonial-grid) {
+  padding-block: 64px;
+}
+
+section:has(.testimonial-grid) .section-heading-center {
+  gap: 10px;
+  margin: 0 0 30px;
+}
+
+section:has(.testimonial-grid) .section-heading-center .eyebrow {
+  margin-bottom: 0;
+}
+
+section:has(.testimonial-grid) .section-heading-center h2 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Shared spacing and type rhythm across page sections. */
+:root {
+  --section-space: clamp(56px, 6.3vw, 78px);
+  --content-gap: clamp(16px, 2vw, 22px);
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.courses-hero,
+.corporate-hero,
+.about-hero {
+  padding-block: clamp(44px, 5.5vw, 66px);
+}
+
+.detail-hero,
+.ai-python-detail-hero {
+  padding-block: clamp(36px, 4vw, 48px);
+}
+
+.ai-python-approach,
+.ai-python-request,
+.corporate-enquiry-section {
+  padding-block: var(--section-space);
+}
+
+.ai-python-courses {
+  padding-top: var(--section-space);
+}
+
+.faq-page {
+  padding-block: var(--section-space);
+}
+
+main h1,
+main h2,
+main h3 {
+  text-wrap: balance;
+}
+
+main h1 {
+  line-height: 1.08;
+}
+
+main h2 {
+  line-height: 1.16;
+}
+
+main h3 {
+  line-height: 1.3;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.section-heading {
+  gap: var(--content-gap);
+  margin-bottom: 30px;
+}
+
+.section-heading-center {
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.section-heading h2,
+.section-heading-center h2 {
+  font-size: clamp(30px, 3.2vw, 40px);
+  line-height: 1.15;
+}
+
+.section-heading-center .eyebrow,
+.section-heading-center h2,
+.section-heading-center > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-heading-center > p,
+.section-heading-description,
+.heading-aside p {
+  line-height: 1.65;
+}
+
+.course-grid,
+.ai-python-course-grid {
+  gap: var(--content-gap);
+}
+
+.course-card h3,
+.ai-python-card-body h3 {
+  min-height: 0;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.course-card-content > p,
+.ai-python-card-body > p {
+  min-height: 0;
+  line-height: 1.65;
+}
+
+.course-topic-groups {
+  gap: clamp(40px, 5vw, 56px);
+}
+
+.course-topic-heading {
+  gap: 8px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+}
+
+.detail-block {
+  padding-bottom: 24px;
+  margin-bottom: 22px;
+}
+
+.detail-block-title {
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.faq-page-heading {
+  margin-bottom: 32px;
+}
+
+.faq-breadcrumb {
+  margin-bottom: 24px;
+}
+
+.faq-page-footer {
+  margin-top: 48px;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --section-space: 64px;
+    --content-gap: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --section-space: 52px;
+    --content-gap: 16px;
+  }
+
+  .section-heading,
+  .section-heading-center {
+    margin-bottom: 26px;
+  }
+
+  .section-heading {
+    gap: 14px;
+  }
+
+  .section-heading h2,
+  .section-heading-center h2 {
+    font-size: clamp(28px, 6.5vw, 36px);
+  }
+
+  .course-grid,
+  .ai-python-course-grid {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-space: 46px;
+  }
+
+  .section-heading h2,
+  .section-heading-center h2 {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  .section-heading-center {
+    gap: 8px;
+  }
+
+  section:has(.testimonial-grid) {
+    padding-block: 48px;
+  }
+}
