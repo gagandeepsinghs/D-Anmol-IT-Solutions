@@ -1,0 +1,4061 @@
+{
+  "AI_Automation": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Automation Fundamentals",
+          "topics": [
+            "Process mapping",
+            "triggers",
+            "actions",
+            "conditions",
+            "workflow diagrams and use-case selection"
+          ],
+          "activity": "Document a repetitive task and define success criteria."
+        },
+        {
+          "number": 2,
+          "title": "n8n Setup & Interface",
+          "topics": [
+            "Local/cloud concepts",
+            "credentials",
+            "workflows",
+            "executions and node navigation"
+          ],
+          "activity": "Create a basic trigger-to-action workflow."
+        },
+        {
+          "number": 3,
+          "title": "Core Nodes & Data Flow",
+          "topics": [
+            "Manual trigger",
+            "schedule",
+            "webhook",
+            "set/edit fields",
+            "IF",
+            "merge and loops"
+          ],
+          "activity": "Build a conditional workflow with multiple branches."
+        },
+        {
+          "number": 4,
+          "title": "JSON & Data Transformation",
+          "topics": [
+            "JSON structure",
+            "expressions",
+            "mapping",
+            "date/text handling and validation"
+          ],
+          "activity": "Transform incoming form data into a clean record."
+        },
+        {
+          "number": 5,
+          "title": "Webhooks & Forms",
+          "topics": [
+            "Webhook URLs",
+            "request methods",
+            "payloads",
+            "testing and secure form handling"
+          ],
+          "activity": "Receive a form submission and process its fields."
+        },
+        {
+          "number": 6,
+          "title": "APIs & HTTP Requests",
+          "topics": [
+            "REST concepts",
+            "endpoints",
+            "headers",
+            "query parameters",
+            "authentication and pagination basics"
+          ],
+          "activity": "Connect a workflow to a sample API."
+        }
+      ],
+      "buildItems": [
+        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
+        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Automation Fundamentals",
+          "topics": [
+            "Process mapping",
+            "triggers",
+            "actions",
+            "conditions",
+            "workflow diagrams and use-case selection"
+          ],
+          "activity": "Document a repetitive task and define success criteria."
+        },
+        {
+          "number": 2,
+          "title": "n8n Setup & Interface",
+          "topics": [
+            "Local/cloud concepts",
+            "credentials",
+            "workflows",
+            "executions and node navigation"
+          ],
+          "activity": "Create a basic trigger-to-action workflow."
+        },
+        {
+          "number": 3,
+          "title": "Core Nodes & Data Flow",
+          "topics": [
+            "Manual trigger",
+            "schedule",
+            "webhook",
+            "set/edit fields",
+            "IF",
+            "merge and loops"
+          ],
+          "activity": "Build a conditional workflow with multiple branches."
+        },
+        {
+          "number": 4,
+          "title": "JSON & Data Transformation",
+          "topics": [
+            "JSON structure",
+            "expressions",
+            "mapping",
+            "date/text handling and validation"
+          ],
+          "activity": "Transform incoming form data into a clean record."
+        },
+        {
+          "number": 5,
+          "title": "Webhooks & Forms",
+          "topics": [
+            "Webhook URLs",
+            "request methods",
+            "payloads",
+            "testing and secure form handling"
+          ],
+          "activity": "Receive a form submission and process its fields."
+        },
+        {
+          "number": 6,
+          "title": "APIs & HTTP Requests",
+          "topics": [
+            "REST concepts",
+            "endpoints",
+            "headers",
+            "query parameters",
+            "authentication and pagination basics"
+          ],
+          "activity": "Connect a workflow to a sample API."
+        },
+        {
+          "number": 7,
+          "title": "Spreadsheets, Email & Notifications",
+          "topics": [
+            "Google Sheets concepts",
+            "email nodes",
+            "templates",
+            "attachments and status tracking"
+          ],
+          "activity": "Send notifications and log every submission."
+        },
+        {
+          "number": 8,
+          "title": "AI Model Integration",
+          "topics": [
+            "Prompt design",
+            "structured output",
+            "model calls",
+            "token/cost awareness and output validation"
+          ],
+          "activity": "Classify or summarise incoming text with AI."
+        },
+        {
+          "number": 9,
+          "title": "Document & Data Workflows",
+          "topics": [
+            "File intake",
+            "PDF/text extraction concepts",
+            "parsing",
+            "deduplication and routing"
+          ],
+          "activity": "Prototype a document intake workflow."
+        },
+        {
+          "number": 10,
+          "title": "Reliability & Error Handling",
+          "topics": [
+            "Retries",
+            "error branches",
+            "logging",
+            "idempotency",
+            "rate limits and manual review"
+          ],
+          "activity": "Add failure notifications and recovery steps."
+        }
+      ],
+      "buildItems": [
+        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
+        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Automation Fundamentals",
+          "topics": [
+            "Process mapping",
+            "triggers",
+            "actions",
+            "conditions",
+            "workflow diagrams and use-case selection"
+          ],
+          "activity": "Document a repetitive task and define success criteria."
+        },
+        {
+          "number": 2,
+          "title": "n8n Setup & Interface",
+          "topics": [
+            "Local/cloud concepts",
+            "credentials",
+            "workflows",
+            "executions and node navigation"
+          ],
+          "activity": "Create a basic trigger-to-action workflow."
+        },
+        {
+          "number": 3,
+          "title": "Core Nodes & Data Flow",
+          "topics": [
+            "Manual trigger",
+            "schedule",
+            "webhook",
+            "set/edit fields",
+            "IF",
+            "merge and loops"
+          ],
+          "activity": "Build a conditional workflow with multiple branches."
+        },
+        {
+          "number": 4,
+          "title": "JSON & Data Transformation",
+          "topics": [
+            "JSON structure",
+            "expressions",
+            "mapping",
+            "date/text handling and validation"
+          ],
+          "activity": "Transform incoming form data into a clean record."
+        },
+        {
+          "number": 5,
+          "title": "Webhooks & Forms",
+          "topics": [
+            "Webhook URLs",
+            "request methods",
+            "payloads",
+            "testing and secure form handling"
+          ],
+          "activity": "Receive a form submission and process its fields."
+        },
+        {
+          "number": 6,
+          "title": "APIs & HTTP Requests",
+          "topics": [
+            "REST concepts",
+            "endpoints",
+            "headers",
+            "query parameters",
+            "authentication and pagination basics"
+          ],
+          "activity": "Connect a workflow to a sample API."
+        },
+        {
+          "number": 7,
+          "title": "Spreadsheets, Email & Notifications",
+          "topics": [
+            "Google Sheets concepts",
+            "email nodes",
+            "templates",
+            "attachments and status tracking"
+          ],
+          "activity": "Send notifications and log every submission."
+        },
+        {
+          "number": 8,
+          "title": "AI Model Integration",
+          "topics": [
+            "Prompt design",
+            "structured output",
+            "model calls",
+            "token/cost awareness and output validation"
+          ],
+          "activity": "Classify or summarise incoming text with AI."
+        },
+        {
+          "number": 9,
+          "title": "Document & Data Workflows",
+          "topics": [
+            "File intake",
+            "PDF/text extraction concepts",
+            "parsing",
+            "deduplication and routing"
+          ],
+          "activity": "Prototype a document intake workflow."
+        },
+        {
+          "number": 10,
+          "title": "Reliability & Error Handling",
+          "topics": [
+            "Retries",
+            "error branches",
+            "logging",
+            "idempotency",
+            "rate limits and manual review"
+          ],
+          "activity": "Add failure notifications and recovery steps."
+        },
+        {
+          "number": 11,
+          "title": "Security & Deployment Practices",
+          "topics": [
+            "Credential storage",
+            "least privilege",
+            "secrets",
+            "backups and workflow documentation"
+          ],
+          "activity": "Prepare a secure workflow handover checklist."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Automation Portfolio",
+          "topics": [
+            "Combine triggers",
+            "APIs",
+            "data storage",
+            "AI and human approval in one solution"
+          ],
+          "activity": "Demo an end-to-end business automation."
+        }
+      ],
+      "buildItems": [
+        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
+        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Artificial_Intelligence_Machine_Learning": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "AI, ML & Deep Learning Overview",
+          "topics": [
+            "AI history",
+            "narrow AI",
+            "ML types",
+            "deep learning",
+            "use cases",
+            "workflow and responsible AI"
+          ],
+          "activity": "Map a real-world problem to a suitable AI approach."
+        },
+        {
+          "number": 2,
+          "title": "Python for AI",
+          "topics": [
+            "Variables",
+            "data types",
+            "conditions",
+            "loops",
+            "functions",
+            "collections",
+            "modules and file handling"
+          ],
+          "activity": "Write reusable Python programs for data tasks."
+        },
+        {
+          "number": 3,
+          "title": "NumPy & Pandas",
+          "topics": [
+            "Arrays",
+            "indexing",
+            "DataFrames",
+            "importing data",
+            "filtering",
+            "missing values and transformations"
+          ],
+          "activity": "Clean a raw dataset and produce an analysis-ready table."
+        },
+        {
+          "number": 4,
+          "title": "Maths & Statistics for ML",
+          "topics": [
+            "Descriptive statistics",
+            "probability",
+            "distributions",
+            "vectors",
+            "matrices and correlation"
+          ],
+          "activity": "Summarise a dataset and interpret statistical relationships."
+        },
+        {
+          "number": 5,
+          "title": "Data Visualisation & EDA",
+          "topics": [
+            "Matplotlib",
+            "Seaborn",
+            "distributions",
+            "outliers",
+            "relationships and exploratory analysis"
+          ],
+          "activity": "Create an EDA notebook with visual findings."
+        },
+        {
+          "number": 6,
+          "title": "ML Workflow & Feature Engineering",
+          "topics": [
+            "Problem framing",
+            "labels",
+            "features",
+            "train/test split",
+            "encoding",
+            "scaling and leakage prevention"
+          ],
+          "activity": "Prepare a reusable model-ready dataset."
+        }
+      ],
+      "buildItems": [
+        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
+        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "AI, ML & Deep Learning Overview",
+          "topics": [
+            "AI history",
+            "narrow AI",
+            "ML types",
+            "deep learning",
+            "use cases",
+            "workflow and responsible AI"
+          ],
+          "activity": "Map a real-world problem to a suitable AI approach."
+        },
+        {
+          "number": 2,
+          "title": "Python for AI",
+          "topics": [
+            "Variables",
+            "data types",
+            "conditions",
+            "loops",
+            "functions",
+            "collections",
+            "modules and file handling"
+          ],
+          "activity": "Write reusable Python programs for data tasks."
+        },
+        {
+          "number": 3,
+          "title": "NumPy & Pandas",
+          "topics": [
+            "Arrays",
+            "indexing",
+            "DataFrames",
+            "importing data",
+            "filtering",
+            "missing values and transformations"
+          ],
+          "activity": "Clean a raw dataset and produce an analysis-ready table."
+        },
+        {
+          "number": 4,
+          "title": "Maths & Statistics for ML",
+          "topics": [
+            "Descriptive statistics",
+            "probability",
+            "distributions",
+            "vectors",
+            "matrices and correlation"
+          ],
+          "activity": "Summarise a dataset and interpret statistical relationships."
+        },
+        {
+          "number": 5,
+          "title": "Data Visualisation & EDA",
+          "topics": [
+            "Matplotlib",
+            "Seaborn",
+            "distributions",
+            "outliers",
+            "relationships and exploratory analysis"
+          ],
+          "activity": "Create an EDA notebook with visual findings."
+        },
+        {
+          "number": 6,
+          "title": "ML Workflow & Feature Engineering",
+          "topics": [
+            "Problem framing",
+            "labels",
+            "features",
+            "train/test split",
+            "encoding",
+            "scaling and leakage prevention"
+          ],
+          "activity": "Prepare a reusable model-ready dataset."
+        },
+        {
+          "number": 7,
+          "title": "Supervised Learning: Regression",
+          "topics": [
+            "Linear regression",
+            "multiple regression",
+            "assumptions",
+            "residuals and regression metrics"
+          ],
+          "activity": "Build a house-price or sales prediction model."
+        },
+        {
+          "number": 8,
+          "title": "Supervised Learning: Classification",
+          "topics": [
+            "Logistic regression",
+            "KNN",
+            "decision trees",
+            "confusion matrix",
+            "precision",
+            "recall and F1"
+          ],
+          "activity": "Build a spam or customer-churn classifier."
+        },
+        {
+          "number": 9,
+          "title": "Ensemble Models & Model Selection",
+          "topics": [
+            "Random forest",
+            "boosting concepts",
+            "cross-validation and model comparison"
+          ],
+          "activity": "Compare multiple models and justify the selected model."
+        },
+        {
+          "number": 10,
+          "title": "Unsupervised Learning",
+          "topics": [
+            "K-Means",
+            "hierarchical clustering",
+            "PCA concepts and segmentation use cases"
+          ],
+          "activity": "Segment customers or products using clustering."
+        }
+      ],
+      "buildItems": [
+        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
+        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 7,
+      "modules": [
+        {
+          "number": 1,
+          "title": "AI, ML & Deep Learning Overview",
+          "topics": [
+            "AI history",
+            "narrow AI",
+            "ML types",
+            "deep learning",
+            "use cases",
+            "workflow and responsible AI"
+          ],
+          "activity": "Map a real-world problem to a suitable AI approach."
+        },
+        {
+          "number": 2,
+          "title": "Python for AI",
+          "topics": [
+            "Variables",
+            "data types",
+            "conditions",
+            "loops",
+            "functions",
+            "collections",
+            "modules and file handling"
+          ],
+          "activity": "Write reusable Python programs for data tasks."
+        },
+        {
+          "number": 3,
+          "title": "NumPy & Pandas",
+          "topics": [
+            "Arrays",
+            "indexing",
+            "DataFrames",
+            "importing data",
+            "filtering",
+            "missing values and transformations"
+          ],
+          "activity": "Clean a raw dataset and produce an analysis-ready table."
+        },
+        {
+          "number": 4,
+          "title": "Maths & Statistics for ML",
+          "topics": [
+            "Descriptive statistics",
+            "probability",
+            "distributions",
+            "vectors",
+            "matrices and correlation"
+          ],
+          "activity": "Summarise a dataset and interpret statistical relationships."
+        },
+        {
+          "number": 5,
+          "title": "Data Visualisation & EDA",
+          "topics": [
+            "Matplotlib",
+            "Seaborn",
+            "distributions",
+            "outliers",
+            "relationships and exploratory analysis"
+          ],
+          "activity": "Create an EDA notebook with visual findings."
+        },
+        {
+          "number": 6,
+          "title": "ML Workflow & Feature Engineering",
+          "topics": [
+            "Problem framing",
+            "labels",
+            "features",
+            "train/test split",
+            "encoding",
+            "scaling and leakage prevention"
+          ],
+          "activity": "Prepare a reusable model-ready dataset."
+        },
+        {
+          "number": 7,
+          "title": "Supervised Learning: Regression",
+          "topics": [
+            "Linear regression",
+            "multiple regression",
+            "assumptions",
+            "residuals and regression metrics"
+          ],
+          "activity": "Build a house-price or sales prediction model."
+        },
+        {
+          "number": 8,
+          "title": "Supervised Learning: Classification",
+          "topics": [
+            "Logistic regression",
+            "KNN",
+            "decision trees",
+            "confusion matrix",
+            "precision",
+            "recall and F1"
+          ],
+          "activity": "Build a spam or customer-churn classifier."
+        },
+        {
+          "number": 9,
+          "title": "Ensemble Models & Model Selection",
+          "topics": [
+            "Random forest",
+            "boosting concepts",
+            "cross-validation and model comparison"
+          ],
+          "activity": "Compare multiple models and justify the selected model."
+        },
+        {
+          "number": 10,
+          "title": "Unsupervised Learning",
+          "topics": [
+            "K-Means",
+            "hierarchical clustering",
+            "PCA concepts and segmentation use cases"
+          ],
+          "activity": "Segment customers or products using clustering."
+        },
+        {
+          "number": 11,
+          "title": "Model Tuning & Interpretation",
+          "topics": [
+            "Hyperparameters",
+            "grid/random search",
+            "feature importance",
+            "explainability basics and limitations"
+          ],
+          "activity": "Tune a model and document its strengths and weaknesses."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Responsible AI",
+          "topics": [
+            "End-to-end workflow",
+            "bias",
+            "privacy",
+            "reproducibility",
+            "documentation and presentation"
+          ],
+          "activity": "Present a complete ML project with a report and demo."
+        }
+      ],
+      "buildItems": [
+        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
+        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Computer_Basics_MS_Office": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 5,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Computer & Digital Fundamentals",
+          "topics": [
+            "Computer parts",
+            "input/output devices",
+            "hardware",
+            "software",
+            "operating systems",
+            "desktop",
+            "taskbar and settings"
+          ],
+          "activity": "Identify system components and complete basic computer operations."
+        },
+        {
+          "number": 2,
+          "title": "Windows & File Management",
+          "topics": [
+            "Files",
+            "folders",
+            "extensions",
+            "copy/move",
+            "search",
+            "recycle bin",
+            "shortcuts",
+            "zip files and storage basics"
+          ],
+          "activity": "Organise a structured folder system and archive files."
+        },
+        {
+          "number": 3,
+          "title": "Internet, Email & Online Safety",
+          "topics": [
+            "Browsers",
+            "search techniques",
+            "downloads",
+            "attachments",
+            "email etiquette",
+            "cloud storage",
+            "passwords",
+            "phishing and privacy"
+          ],
+          "activity": "Compose a professional email with attachments and organise cloud files."
+        },
+        {
+          "number": 4,
+          "title": "MS Word Essentials",
+          "topics": [
+            "Document creation",
+            "formatting",
+            "page layout",
+            "tables",
+            "images",
+            "headers",
+            "footers",
+            "page numbers and printing"
+          ],
+          "activity": "Create a polished resume, letter and multi-page report."
+        },
+        {
+          "number": 5,
+          "title": "MS Excel Essentials",
+          "topics": [
+            "Workbook structure",
+            "data entry",
+            "formatting",
+            "formulas",
+            "relative/absolute references",
+            "sorting",
+            "filtering and charts"
+          ],
+          "activity": "Create an expense sheet, marksheet and monthly summary."
+        },
+        {
+          "number": 6,
+          "title": "Excel Functions & Data Tools",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup concepts",
+            "conditional formatting",
+            "data validation",
+            "tables and PivotTables"
+          ],
+          "activity": "Build a simple performance tracker with summary insights."
+        }
+      ],
+      "buildItems": [
+        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
+        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Computer & Digital Fundamentals",
+          "topics": [
+            "Computer parts",
+            "input/output devices",
+            "hardware",
+            "software",
+            "operating systems",
+            "desktop",
+            "taskbar and settings"
+          ],
+          "activity": "Identify system components and complete basic computer operations."
+        },
+        {
+          "number": 2,
+          "title": "Windows & File Management",
+          "topics": [
+            "Files",
+            "folders",
+            "extensions",
+            "copy/move",
+            "search",
+            "recycle bin",
+            "shortcuts",
+            "zip files and storage basics"
+          ],
+          "activity": "Organise a structured folder system and archive files."
+        },
+        {
+          "number": 3,
+          "title": "Internet, Email & Online Safety",
+          "topics": [
+            "Browsers",
+            "search techniques",
+            "downloads",
+            "attachments",
+            "email etiquette",
+            "cloud storage",
+            "passwords",
+            "phishing and privacy"
+          ],
+          "activity": "Compose a professional email with attachments and organise cloud files."
+        },
+        {
+          "number": 4,
+          "title": "MS Word Essentials",
+          "topics": [
+            "Document creation",
+            "formatting",
+            "page layout",
+            "tables",
+            "images",
+            "headers",
+            "footers",
+            "page numbers and printing"
+          ],
+          "activity": "Create a polished resume, letter and multi-page report."
+        },
+        {
+          "number": 5,
+          "title": "MS Excel Essentials",
+          "topics": [
+            "Workbook structure",
+            "data entry",
+            "formatting",
+            "formulas",
+            "relative/absolute references",
+            "sorting",
+            "filtering and charts"
+          ],
+          "activity": "Create an expense sheet, marksheet and monthly summary."
+        },
+        {
+          "number": 6,
+          "title": "Excel Functions & Data Tools",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup concepts",
+            "conditional formatting",
+            "data validation",
+            "tables and PivotTables"
+          ],
+          "activity": "Build a simple performance tracker with summary insights."
+        },
+        {
+          "number": 7,
+          "title": "MS PowerPoint",
+          "topics": [
+            "Themes",
+            "layouts",
+            "typography",
+            "images",
+            "shapes",
+            "charts",
+            "transitions",
+            "animations and presenter view"
+          ],
+          "activity": "Design and deliver a structured presentation."
+        },
+        {
+          "number": 8,
+          "title": "Office Productivity & Capstone",
+          "topics": [
+            "Document workflows",
+            "spreadsheet accuracy",
+            "presentation review",
+            "shortcuts",
+            "printing and practical assessment"
+          ],
+          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint."
+        }
+      ],
+      "buildItems": [
+        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
+        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Computer & Digital Fundamentals",
+          "topics": [
+            "Computer parts",
+            "input/output devices",
+            "hardware",
+            "software",
+            "operating systems",
+            "desktop",
+            "taskbar and settings"
+          ],
+          "activity": "Identify system components and complete basic computer operations."
+        },
+        {
+          "number": 2,
+          "title": "Windows & File Management",
+          "topics": [
+            "Files",
+            "folders",
+            "extensions",
+            "copy/move",
+            "search",
+            "recycle bin",
+            "shortcuts",
+            "zip files and storage basics"
+          ],
+          "activity": "Organise a structured folder system and archive files."
+        },
+        {
+          "number": 3,
+          "title": "Internet, Email & Online Safety",
+          "topics": [
+            "Browsers",
+            "search techniques",
+            "downloads",
+            "attachments",
+            "email etiquette",
+            "cloud storage",
+            "passwords",
+            "phishing and privacy"
+          ],
+          "activity": "Compose a professional email with attachments and organise cloud files."
+        },
+        {
+          "number": 4,
+          "title": "MS Word Essentials",
+          "topics": [
+            "Document creation",
+            "formatting",
+            "page layout",
+            "tables",
+            "images",
+            "headers",
+            "footers",
+            "page numbers and printing"
+          ],
+          "activity": "Create a polished resume, letter and multi-page report."
+        },
+        {
+          "number": 5,
+          "title": "MS Excel Essentials",
+          "topics": [
+            "Workbook structure",
+            "data entry",
+            "formatting",
+            "formulas",
+            "relative/absolute references",
+            "sorting",
+            "filtering and charts"
+          ],
+          "activity": "Create an expense sheet, marksheet and monthly summary."
+        },
+        {
+          "number": 6,
+          "title": "Excel Functions & Data Tools",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup concepts",
+            "conditional formatting",
+            "data validation",
+            "tables and PivotTables"
+          ],
+          "activity": "Build a simple performance tracker with summary insights."
+        },
+        {
+          "number": 7,
+          "title": "MS PowerPoint",
+          "topics": [
+            "Themes",
+            "layouts",
+            "typography",
+            "images",
+            "shapes",
+            "charts",
+            "transitions",
+            "animations and presenter view"
+          ],
+          "activity": "Design and deliver a structured presentation."
+        },
+        {
+          "number": 8,
+          "title": "Office Productivity & Capstone",
+          "topics": [
+            "Document workflows",
+            "spreadsheet accuracy",
+            "presentation review",
+            "shortcuts",
+            "printing and practical assessment"
+          ],
+          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint."
+        }
+      ],
+      "buildItems": [
+        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
+        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Computer_Typing": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Keyboard Familiarisation",
+          "topics": [
+            "Keyboard layout",
+            "home row",
+            "function keys",
+            "number row",
+            "punctuation and ergonomic posture"
+          ],
+          "activity": "Label key groups and practise correct sitting posture."
+        },
+        {
+          "number": 2,
+          "title": "Finger Placement & Home Row",
+          "topics": [
+            "Correct finger assignment",
+            "home-row drills",
+            "hand positioning and controlled keystrokes"
+          ],
+          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+        },
+        {
+          "number": 3,
+          "title": "Top Row, Bottom Row & Reach",
+          "topics": [
+            "Learn top and bottom row patterns",
+            "shift key",
+            "capitals and reach techniques"
+          ],
+          "activity": "Practise progressive letter combinations and short words."
+        },
+        {
+          "number": 4,
+          "title": "Word Building & Common Patterns",
+          "topics": [
+            "High-frequency words",
+            "syllables",
+            "letter combinations",
+            "spacing and rhythm"
+          ],
+          "activity": "Type word lists while tracking accuracy."
+        },
+        {
+          "number": 5,
+          "title": "Sentences, Punctuation & Numbers",
+          "topics": [
+            "Capitalisation",
+            "punctuation",
+            "symbols",
+            "numeric keypad and mixed text"
+          ],
+          "activity": "Type formatted sentences, dates and numeric passages."
+        },
+        {
+          "number": 6,
+          "title": "Paragraphs & Timed Practice",
+          "topics": [
+            "Paragraph flow",
+            "speed bursts",
+            "sustained typing",
+            "timed passages and error correction"
+          ],
+          "activity": "Complete timed paragraph tests and review errors."
+        }
+      ],
+      "buildItems": [
+        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
+        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 5,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Keyboard Familiarisation",
+          "topics": [
+            "Keyboard layout",
+            "home row",
+            "function keys",
+            "number row",
+            "punctuation and ergonomic posture"
+          ],
+          "activity": "Label key groups and practise correct sitting posture."
+        },
+        {
+          "number": 2,
+          "title": "Finger Placement & Home Row",
+          "topics": [
+            "Correct finger assignment",
+            "home-row drills",
+            "hand positioning and controlled keystrokes"
+          ],
+          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+        },
+        {
+          "number": 3,
+          "title": "Top Row, Bottom Row & Reach",
+          "topics": [
+            "Learn top and bottom row patterns",
+            "shift key",
+            "capitals and reach techniques"
+          ],
+          "activity": "Practise progressive letter combinations and short words."
+        },
+        {
+          "number": 4,
+          "title": "Word Building & Common Patterns",
+          "topics": [
+            "High-frequency words",
+            "syllables",
+            "letter combinations",
+            "spacing and rhythm"
+          ],
+          "activity": "Type word lists while tracking accuracy."
+        },
+        {
+          "number": 5,
+          "title": "Sentences, Punctuation & Numbers",
+          "topics": [
+            "Capitalisation",
+            "punctuation",
+            "symbols",
+            "numeric keypad and mixed text"
+          ],
+          "activity": "Type formatted sentences, dates and numeric passages."
+        },
+        {
+          "number": 6,
+          "title": "Paragraphs & Timed Practice",
+          "topics": [
+            "Paragraph flow",
+            "speed bursts",
+            "sustained typing",
+            "timed passages and error correction"
+          ],
+          "activity": "Complete timed paragraph tests and review errors."
+        },
+        {
+          "number": 7,
+          "title": "Accuracy, Speed & Exam Practice",
+          "topics": [
+            "WPM",
+            "accuracy percentage",
+            "backspace discipline",
+            "test formats and personal targets"
+          ],
+          "activity": "Complete exam-style tests under time limits."
+        },
+        {
+          "number": 8,
+          "title": "Final Assessment & Improvement Plan",
+          "topics": [
+            "Baseline versus final performance",
+            "common error patterns and daily practice plan"
+          ],
+          "activity": "Submit a final timed test and individual improvement report."
+        }
+      ],
+      "buildItems": [
+        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
+        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 5,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Keyboard Familiarisation",
+          "topics": [
+            "Keyboard layout",
+            "home row",
+            "function keys",
+            "number row",
+            "punctuation and ergonomic posture"
+          ],
+          "activity": "Label key groups and practise correct sitting posture."
+        },
+        {
+          "number": 2,
+          "title": "Finger Placement & Home Row",
+          "topics": [
+            "Correct finger assignment",
+            "home-row drills",
+            "hand positioning and controlled keystrokes"
+          ],
+          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+        },
+        {
+          "number": 3,
+          "title": "Top Row, Bottom Row & Reach",
+          "topics": [
+            "Learn top and bottom row patterns",
+            "shift key",
+            "capitals and reach techniques"
+          ],
+          "activity": "Practise progressive letter combinations and short words."
+        },
+        {
+          "number": 4,
+          "title": "Word Building & Common Patterns",
+          "topics": [
+            "High-frequency words",
+            "syllables",
+            "letter combinations",
+            "spacing and rhythm"
+          ],
+          "activity": "Type word lists while tracking accuracy."
+        },
+        {
+          "number": 5,
+          "title": "Sentences, Punctuation & Numbers",
+          "topics": [
+            "Capitalisation",
+            "punctuation",
+            "symbols",
+            "numeric keypad and mixed text"
+          ],
+          "activity": "Type formatted sentences, dates and numeric passages."
+        },
+        {
+          "number": 6,
+          "title": "Paragraphs & Timed Practice",
+          "topics": [
+            "Paragraph flow",
+            "speed bursts",
+            "sustained typing",
+            "timed passages and error correction"
+          ],
+          "activity": "Complete timed paragraph tests and review errors."
+        },
+        {
+          "number": 7,
+          "title": "Accuracy, Speed & Exam Practice",
+          "topics": [
+            "WPM",
+            "accuracy percentage",
+            "backspace discipline",
+            "test formats and personal targets"
+          ],
+          "activity": "Complete exam-style tests under time limits."
+        },
+        {
+          "number": 8,
+          "title": "Final Assessment & Improvement Plan",
+          "topics": [
+            "Baseline versus final performance",
+            "common error patterns and daily practice plan"
+          ],
+          "activity": "Submit a final timed test and individual improvement report."
+        }
+      ],
+      "buildItems": [
+        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
+        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Corporate_Training": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Training Needs & Goal Mapping",
+          "topics": [
+            "Stakeholder discussion",
+            "role analysis",
+            "skill-gap review",
+            "baseline assessment and success measures"
+          ],
+          "activity": "Create a role-wise training needs summary."
+        },
+        {
+          "number": 2,
+          "title": "Digital Workplace Foundations",
+          "topics": [
+            "File collaboration",
+            "communication",
+            "cloud workspaces",
+            "security awareness and digital etiquette"
+          ],
+          "activity": "Complete a workplace productivity checklist."
+        },
+        {
+          "number": 3,
+          "title": "Productivity Tools & Documents",
+          "topics": [
+            "Word processing",
+            "spreadsheets",
+            "presentations",
+            "templates and collaborative review"
+          ],
+          "activity": "Produce a standard team document pack."
+        },
+        {
+          "number": 4,
+          "title": "Data Handling & Reporting",
+          "topics": [
+            "Data quality",
+            "spreadsheet workflows",
+            "summaries",
+            "charts and reporting standards"
+          ],
+          "activity": "Create a department-level report."
+        },
+        {
+          "number": 5,
+          "title": "Analytics & Visualisation",
+          "topics": [
+            "KPIs",
+            "dashboard principles",
+            "Power BI or equivalent reporting tools as selected"
+          ],
+          "activity": "Build a team dashboard prototype."
+        },
+        {
+          "number": 6,
+          "title": "AI Literacy & Responsible Use",
+          "topics": [
+            "Generative AI basics",
+            "prompting",
+            "verification",
+            "privacy",
+            "copyright and approved-use guidelines"
+          ],
+          "activity": "Draft team-specific AI usage guidelines."
+        }
+      ],
+      "buildItems": [
+        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
+        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 5,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Training Needs & Goal Mapping",
+          "topics": [
+            "Stakeholder discussion",
+            "role analysis",
+            "skill-gap review",
+            "baseline assessment and success measures"
+          ],
+          "activity": "Create a role-wise training needs summary."
+        },
+        {
+          "number": 2,
+          "title": "Digital Workplace Foundations",
+          "topics": [
+            "File collaboration",
+            "communication",
+            "cloud workspaces",
+            "security awareness and digital etiquette"
+          ],
+          "activity": "Complete a workplace productivity checklist."
+        },
+        {
+          "number": 3,
+          "title": "Productivity Tools & Documents",
+          "topics": [
+            "Word processing",
+            "spreadsheets",
+            "presentations",
+            "templates and collaborative review"
+          ],
+          "activity": "Produce a standard team document pack."
+        },
+        {
+          "number": 4,
+          "title": "Data Handling & Reporting",
+          "topics": [
+            "Data quality",
+            "spreadsheet workflows",
+            "summaries",
+            "charts and reporting standards"
+          ],
+          "activity": "Create a department-level report."
+        },
+        {
+          "number": 5,
+          "title": "Analytics & Visualisation",
+          "topics": [
+            "KPIs",
+            "dashboard principles",
+            "Power BI or equivalent reporting tools as selected"
+          ],
+          "activity": "Build a team dashboard prototype."
+        },
+        {
+          "number": 6,
+          "title": "AI Literacy & Responsible Use",
+          "topics": [
+            "Generative AI basics",
+            "prompting",
+            "verification",
+            "privacy",
+            "copyright and approved-use guidelines"
+          ],
+          "activity": "Draft team-specific AI usage guidelines."
+        },
+        {
+          "number": 7,
+          "title": "Automation & Process Improvement",
+          "topics": [
+            "Process mapping",
+            "repetitive-task discovery",
+            "low-code automation and human approval"
+          ],
+          "activity": "Map and prototype one process improvement."
+        },
+        {
+          "number": 8,
+          "title": "Role-Specific Technical Track",
+          "topics": [
+            "A customised module selected from Python",
+            "web development",
+            "marketing",
+            "analytics or office tools"
+          ],
+          "activity": "Complete a practical role-based exercise."
+        },
+        {
+          "number": 9,
+          "title": "Collaboration & Quality Practices",
+          "topics": [
+            "Review workflows",
+            "documentation",
+            "versioning",
+            "peer feedback and quality checks"
+          ],
+          "activity": "Review and improve a shared team deliverable."
+        },
+        {
+          "number": 10,
+          "title": "Applied Department Workshop",
+          "topics": [
+            "Use anonymised or approved business scenarios to solve a real work problem"
+          ],
+          "activity": "Create a proof of concept for a department use case."
+        }
+      ],
+      "buildItems": [
+        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
+        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Training Needs & Goal Mapping",
+          "topics": [
+            "Stakeholder discussion",
+            "role analysis",
+            "skill-gap review",
+            "baseline assessment and success measures"
+          ],
+          "activity": "Create a role-wise training needs summary."
+        },
+        {
+          "number": 2,
+          "title": "Digital Workplace Foundations",
+          "topics": [
+            "File collaboration",
+            "communication",
+            "cloud workspaces",
+            "security awareness and digital etiquette"
+          ],
+          "activity": "Complete a workplace productivity checklist."
+        },
+        {
+          "number": 3,
+          "title": "Productivity Tools & Documents",
+          "topics": [
+            "Word processing",
+            "spreadsheets",
+            "presentations",
+            "templates and collaborative review"
+          ],
+          "activity": "Produce a standard team document pack."
+        },
+        {
+          "number": 4,
+          "title": "Data Handling & Reporting",
+          "topics": [
+            "Data quality",
+            "spreadsheet workflows",
+            "summaries",
+            "charts and reporting standards"
+          ],
+          "activity": "Create a department-level report."
+        },
+        {
+          "number": 5,
+          "title": "Analytics & Visualisation",
+          "topics": [
+            "KPIs",
+            "dashboard principles",
+            "Power BI or equivalent reporting tools as selected"
+          ],
+          "activity": "Build a team dashboard prototype."
+        },
+        {
+          "number": 6,
+          "title": "AI Literacy & Responsible Use",
+          "topics": [
+            "Generative AI basics",
+            "prompting",
+            "verification",
+            "privacy",
+            "copyright and approved-use guidelines"
+          ],
+          "activity": "Draft team-specific AI usage guidelines."
+        },
+        {
+          "number": 7,
+          "title": "Automation & Process Improvement",
+          "topics": [
+            "Process mapping",
+            "repetitive-task discovery",
+            "low-code automation and human approval"
+          ],
+          "activity": "Map and prototype one process improvement."
+        },
+        {
+          "number": 8,
+          "title": "Role-Specific Technical Track",
+          "topics": [
+            "A customised module selected from Python",
+            "web development",
+            "marketing",
+            "analytics or office tools"
+          ],
+          "activity": "Complete a practical role-based exercise."
+        },
+        {
+          "number": 9,
+          "title": "Collaboration & Quality Practices",
+          "topics": [
+            "Review workflows",
+            "documentation",
+            "versioning",
+            "peer feedback and quality checks"
+          ],
+          "activity": "Review and improve a shared team deliverable."
+        },
+        {
+          "number": 10,
+          "title": "Applied Department Workshop",
+          "topics": [
+            "Use anonymised or approved business scenarios to solve a real work problem"
+          ],
+          "activity": "Create a proof of concept for a department use case."
+        },
+        {
+          "number": 11,
+          "title": "Assessment & Knowledge Transfer",
+          "topics": [
+            "Skills check",
+            "practical evaluation",
+            "trainer feedback and internal knowledge sharing"
+          ],
+          "activity": "Complete a final practical assessment."
+        },
+        {
+          "number": 12,
+          "title": "Action Plan & Training Report",
+          "topics": [
+            "Learning outcomes",
+            "attendance",
+            "assessment summary",
+            "recommendations and next steps"
+          ],
+          "activity": "Deliver a training summary and 30-day action plan."
+        }
+      ],
+      "buildItems": [
+        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
+        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Data_Analytics_Foundations": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Analytics & Business Questions",
+          "topics": [
+            "Data types",
+            "metrics",
+            "dimensions",
+            "KPIs",
+            "analytical thinking and data lifecycle"
+          ],
+          "activity": "Convert a business brief into measurable questions."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations",
+          "topics": [
+            "Data entry",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filtering and tables"
+          ],
+          "activity": "Create a structured sales tracker."
+        },
+        {
+          "number": 3,
+          "title": "Excel Functions & Analysis",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup functions",
+            "text/date functions and PivotTables"
+          ],
+          "activity": "Analyse sales by region, category and month."
+        },
+        {
+          "number": 4,
+          "title": "Data Cleaning & Power Query",
+          "topics": [
+            "Missing values",
+            "duplicates",
+            "inconsistent formats",
+            "split/merge and transformation steps"
+          ],
+          "activity": "Clean a messy business dataset."
+        },
+        {
+          "number": 5,
+          "title": "Statistics for Analysts",
+          "topics": [
+            "Mean",
+            "median",
+            "mode",
+            "spread",
+            "percent change",
+            "distributions and correlation"
+          ],
+          "activity": "Create a descriptive statistics summary."
+        },
+        {
+          "number": 6,
+          "title": "Data Visualisation Principles",
+          "topics": [
+            "Chart selection",
+            "labels",
+            "colour use",
+            "comparisons and avoiding misleading charts"
+          ],
+          "activity": "Build a concise chart-based insight report."
+        }
+      ],
+      "buildItems": [
+        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
+        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Analytics & Business Questions",
+          "topics": [
+            "Data types",
+            "metrics",
+            "dimensions",
+            "KPIs",
+            "analytical thinking and data lifecycle"
+          ],
+          "activity": "Convert a business brief into measurable questions."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations",
+          "topics": [
+            "Data entry",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filtering and tables"
+          ],
+          "activity": "Create a structured sales tracker."
+        },
+        {
+          "number": 3,
+          "title": "Excel Functions & Analysis",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup functions",
+            "text/date functions and PivotTables"
+          ],
+          "activity": "Analyse sales by region, category and month."
+        },
+        {
+          "number": 4,
+          "title": "Data Cleaning & Power Query",
+          "topics": [
+            "Missing values",
+            "duplicates",
+            "inconsistent formats",
+            "split/merge and transformation steps"
+          ],
+          "activity": "Clean a messy business dataset."
+        },
+        {
+          "number": 5,
+          "title": "Statistics for Analysts",
+          "topics": [
+            "Mean",
+            "median",
+            "mode",
+            "spread",
+            "percent change",
+            "distributions and correlation"
+          ],
+          "activity": "Create a descriptive statistics summary."
+        },
+        {
+          "number": 6,
+          "title": "Data Visualisation Principles",
+          "topics": [
+            "Chart selection",
+            "labels",
+            "colour use",
+            "comparisons and avoiding misleading charts"
+          ],
+          "activity": "Build a concise chart-based insight report."
+        },
+        {
+          "number": 7,
+          "title": "SQL Fundamentals",
+          "topics": [
+            "SELECT",
+            "WHERE",
+            "ORDER BY",
+            "GROUP BY",
+            "aggregate functions and joins"
+          ],
+          "activity": "Answer business questions from relational tables."
+        },
+        {
+          "number": 8,
+          "title": "SQL Intermediate",
+          "topics": [
+            "Subqueries",
+            "CTEs",
+            "CASE",
+            "date functions and window-function introduction"
+          ],
+          "activity": "Create ranked and period-over-period query outputs."
+        },
+        {
+          "number": 9,
+          "title": "Power BI & Data Modelling",
+          "topics": [
+            "Power BI Desktop",
+            "Power Query",
+            "relationships",
+            "star schema and refresh concepts"
+          ],
+          "activity": "Connect multiple tables and build a model."
+        },
+        {
+          "number": 10,
+          "title": "DAX & Dashboard Design",
+          "topics": [
+            "Measures",
+            "calculated columns",
+            "CALCULATE basics",
+            "filter context and KPI cards"
+          ],
+          "activity": "Build an interactive dashboard."
+        }
+      ],
+      "buildItems": [
+        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
+        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Analytics & Business Questions",
+          "topics": [
+            "Data types",
+            "metrics",
+            "dimensions",
+            "KPIs",
+            "analytical thinking and data lifecycle"
+          ],
+          "activity": "Convert a business brief into measurable questions."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations",
+          "topics": [
+            "Data entry",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filtering and tables"
+          ],
+          "activity": "Create a structured sales tracker."
+        },
+        {
+          "number": 3,
+          "title": "Excel Functions & Analysis",
+          "topics": [
+            "IF",
+            "SUMIF",
+            "COUNTIF",
+            "lookup functions",
+            "text/date functions and PivotTables"
+          ],
+          "activity": "Analyse sales by region, category and month."
+        },
+        {
+          "number": 4,
+          "title": "Data Cleaning & Power Query",
+          "topics": [
+            "Missing values",
+            "duplicates",
+            "inconsistent formats",
+            "split/merge and transformation steps"
+          ],
+          "activity": "Clean a messy business dataset."
+        },
+        {
+          "number": 5,
+          "title": "Statistics for Analysts",
+          "topics": [
+            "Mean",
+            "median",
+            "mode",
+            "spread",
+            "percent change",
+            "distributions and correlation"
+          ],
+          "activity": "Create a descriptive statistics summary."
+        },
+        {
+          "number": 6,
+          "title": "Data Visualisation Principles",
+          "topics": [
+            "Chart selection",
+            "labels",
+            "colour use",
+            "comparisons and avoiding misleading charts"
+          ],
+          "activity": "Build a concise chart-based insight report."
+        },
+        {
+          "number": 7,
+          "title": "SQL Fundamentals",
+          "topics": [
+            "SELECT",
+            "WHERE",
+            "ORDER BY",
+            "GROUP BY",
+            "aggregate functions and joins"
+          ],
+          "activity": "Answer business questions from relational tables."
+        },
+        {
+          "number": 8,
+          "title": "SQL Intermediate",
+          "topics": [
+            "Subqueries",
+            "CTEs",
+            "CASE",
+            "date functions and window-function introduction"
+          ],
+          "activity": "Create ranked and period-over-period query outputs."
+        },
+        {
+          "number": 9,
+          "title": "Power BI & Data Modelling",
+          "topics": [
+            "Power BI Desktop",
+            "Power Query",
+            "relationships",
+            "star schema and refresh concepts"
+          ],
+          "activity": "Connect multiple tables and build a model."
+        },
+        {
+          "number": 10,
+          "title": "DAX & Dashboard Design",
+          "topics": [
+            "Measures",
+            "calculated columns",
+            "CALCULATE basics",
+            "filter context and KPI cards"
+          ],
+          "activity": "Build an interactive dashboard."
+        },
+        {
+          "number": 11,
+          "title": "Analytical Storytelling",
+          "topics": [
+            "Insight statements",
+            "recommendations",
+            "stakeholder communication and report design"
+          ],
+          "activity": "Present a data-backed recommendation."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Portfolio",
+          "topics": [
+            "End-to-end data preparation",
+            "analysis",
+            "dashboard",
+            "QA and documentation"
+          ],
+          "activity": "Deliver a portfolio-ready business analytics project."
+        }
+      ],
+      "buildItems": [
+        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
+        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Desktop_to_Dashboard_Excel_Power_BI_SQL": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Data & Reporting Workflow",
+          "topics": [
+            "Reporting lifecycle",
+            "source files",
+            "tables",
+            "data types",
+            "KPI definitions and data quality"
+          ],
+          "activity": "Map a manual reporting process."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations for MIS",
+          "topics": [
+            "Tables",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filters and data validation"
+          ],
+          "activity": "Create a standardised MIS workbook."
+        },
+        {
+          "number": 3,
+          "title": "Advanced Excel Functions",
+          "topics": [
+            "IF",
+            "SUMIFS",
+            "COUNTIFS",
+            "lookup functions",
+            "text/date functions and error handling"
+          ],
+          "activity": "Automate a monthly summary sheet."
+        },
+        {
+          "number": 4,
+          "title": "PivotTables & Excel Dashboards",
+          "topics": [
+            "PivotTables",
+            "PivotCharts",
+            "slicers",
+            "conditional formatting and dashboard layout"
+          ],
+          "activity": "Build an interactive Excel report."
+        },
+        {
+          "number": 5,
+          "title": "Power Query & Data Preparation",
+          "topics": [
+            "Import",
+            "append",
+            "merge",
+            "transform",
+            "unpivot and refresh data"
+          ],
+          "activity": "Combine monthly files into one clean table."
+        },
+        {
+          "number": 6,
+          "title": "SQL & Relational Concepts",
+          "topics": [
+            "Tables",
+            "keys",
+            "SELECT",
+            "filtering",
+            "grouping",
+            "sorting and aggregate functions"
+          ],
+          "activity": "Query a sales database."
+        }
+      ],
+      "buildItems": [
+        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
+        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Data & Reporting Workflow",
+          "topics": [
+            "Reporting lifecycle",
+            "source files",
+            "tables",
+            "data types",
+            "KPI definitions and data quality"
+          ],
+          "activity": "Map a manual reporting process."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations for MIS",
+          "topics": [
+            "Tables",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filters and data validation"
+          ],
+          "activity": "Create a standardised MIS workbook."
+        },
+        {
+          "number": 3,
+          "title": "Advanced Excel Functions",
+          "topics": [
+            "IF",
+            "SUMIFS",
+            "COUNTIFS",
+            "lookup functions",
+            "text/date functions and error handling"
+          ],
+          "activity": "Automate a monthly summary sheet."
+        },
+        {
+          "number": 4,
+          "title": "PivotTables & Excel Dashboards",
+          "topics": [
+            "PivotTables",
+            "PivotCharts",
+            "slicers",
+            "conditional formatting and dashboard layout"
+          ],
+          "activity": "Build an interactive Excel report."
+        },
+        {
+          "number": 5,
+          "title": "Power Query & Data Preparation",
+          "topics": [
+            "Import",
+            "append",
+            "merge",
+            "transform",
+            "unpivot and refresh data"
+          ],
+          "activity": "Combine monthly files into one clean table."
+        },
+        {
+          "number": 6,
+          "title": "SQL & Relational Concepts",
+          "topics": [
+            "Tables",
+            "keys",
+            "SELECT",
+            "filtering",
+            "grouping",
+            "sorting and aggregate functions"
+          ],
+          "activity": "Query a sales database."
+        },
+        {
+          "number": 7,
+          "title": "SQL Joins & Advanced Queries",
+          "topics": [
+            "INNER/LEFT joins",
+            "subqueries",
+            "CTEs",
+            "CASE and window functions introduction"
+          ],
+          "activity": "Create multi-table management reports."
+        },
+        {
+          "number": 8,
+          "title": "Power BI Desktop & Data Model",
+          "topics": [
+            "Get Data",
+            "Power Query",
+            "relationships",
+            "cardinality and star schema"
+          ],
+          "activity": "Build a model from sales, product and calendar tables."
+        },
+        {
+          "number": 9,
+          "title": "DAX Measures & Calculations",
+          "topics": [
+            "Measures",
+            "calculated columns",
+            "CALCULATE",
+            "filter context and time-intelligence introduction"
+          ],
+          "activity": "Create revenue, margin and growth measures."
+        },
+        {
+          "number": 10,
+          "title": "Dashboard Design & Interactivity",
+          "topics": [
+            "Cards",
+            "charts",
+            "slicers",
+            "drill-through",
+            "tooltips",
+            "bookmarks and navigation"
+          ],
+          "activity": "Build a polished management dashboard."
+        }
+      ],
+      "buildItems": [
+        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
+        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Data & Reporting Workflow",
+          "topics": [
+            "Reporting lifecycle",
+            "source files",
+            "tables",
+            "data types",
+            "KPI definitions and data quality"
+          ],
+          "activity": "Map a manual reporting process."
+        },
+        {
+          "number": 2,
+          "title": "Excel Foundations for MIS",
+          "topics": [
+            "Tables",
+            "formatting",
+            "formulas",
+            "references",
+            "sorting",
+            "filters and data validation"
+          ],
+          "activity": "Create a standardised MIS workbook."
+        },
+        {
+          "number": 3,
+          "title": "Advanced Excel Functions",
+          "topics": [
+            "IF",
+            "SUMIFS",
+            "COUNTIFS",
+            "lookup functions",
+            "text/date functions and error handling"
+          ],
+          "activity": "Automate a monthly summary sheet."
+        },
+        {
+          "number": 4,
+          "title": "PivotTables & Excel Dashboards",
+          "topics": [
+            "PivotTables",
+            "PivotCharts",
+            "slicers",
+            "conditional formatting and dashboard layout"
+          ],
+          "activity": "Build an interactive Excel report."
+        },
+        {
+          "number": 5,
+          "title": "Power Query & Data Preparation",
+          "topics": [
+            "Import",
+            "append",
+            "merge",
+            "transform",
+            "unpivot and refresh data"
+          ],
+          "activity": "Combine monthly files into one clean table."
+        },
+        {
+          "number": 6,
+          "title": "SQL & Relational Concepts",
+          "topics": [
+            "Tables",
+            "keys",
+            "SELECT",
+            "filtering",
+            "grouping",
+            "sorting and aggregate functions"
+          ],
+          "activity": "Query a sales database."
+        },
+        {
+          "number": 7,
+          "title": "SQL Joins & Advanced Queries",
+          "topics": [
+            "INNER/LEFT joins",
+            "subqueries",
+            "CTEs",
+            "CASE and window functions introduction"
+          ],
+          "activity": "Create multi-table management reports."
+        },
+        {
+          "number": 8,
+          "title": "Power BI Desktop & Data Model",
+          "topics": [
+            "Get Data",
+            "Power Query",
+            "relationships",
+            "cardinality and star schema"
+          ],
+          "activity": "Build a model from sales, product and calendar tables."
+        },
+        {
+          "number": 9,
+          "title": "DAX Measures & Calculations",
+          "topics": [
+            "Measures",
+            "calculated columns",
+            "CALCULATE",
+            "filter context and time-intelligence introduction"
+          ],
+          "activity": "Create revenue, margin and growth measures."
+        },
+        {
+          "number": 10,
+          "title": "Dashboard Design & Interactivity",
+          "topics": [
+            "Cards",
+            "charts",
+            "slicers",
+            "drill-through",
+            "tooltips",
+            "bookmarks and navigation"
+          ],
+          "activity": "Build a polished management dashboard."
+        },
+        {
+          "number": 11,
+          "title": "Publishing, Refresh & Governance",
+          "topics": [
+            "Workspace concepts",
+            "refresh options",
+            "access",
+            "data privacy and documentation"
+          ],
+          "activity": "Prepare a dashboard handover checklist."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Business Presentation",
+          "topics": [
+            "End-to-end data pipeline",
+            "QA",
+            "insight summary and stakeholder presentation"
+          ],
+          "activity": "Deliver a multi-source business intelligence solution."
+        }
+      ],
+      "buildItems": [
+        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
+        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Digital_Marketing": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Digital Marketing Foundations",
+          "topics": [
+            "Channels",
+            "customer journey",
+            "funnels",
+            "objectives",
+            "personas and marketing terminology"
+          ],
+          "activity": "Create a basic digital marketing strategy brief."
+        },
+        {
+          "number": 2,
+          "title": "Website & Landing Page Basics",
+          "topics": [
+            "Website structure",
+            "user experience",
+            "landing pages",
+            "conversion paths and tracking readiness"
+          ],
+          "activity": "Review a landing page and suggest improvements."
+        },
+        {
+          "number": 3,
+          "title": "Content Strategy & Copywriting",
+          "topics": [
+            "Content pillars",
+            "calendars",
+            "hooks",
+            "captions",
+            "CTAs",
+            "brand voice and creative briefs"
+          ],
+          "activity": "Prepare a month-long content calendar."
+        },
+        {
+          "number": 4,
+          "title": "Social Media Marketing",
+          "topics": [
+            "Platform selection",
+            "Instagram",
+            "Facebook",
+            "LinkedIn",
+            "YouTube",
+            "scheduling and community management"
+          ],
+          "activity": "Plan and draft a multi-platform content campaign."
+        },
+        {
+          "number": 5,
+          "title": "Canva & Creative Production",
+          "topics": [
+            "Design principles",
+            "layouts",
+            "typography",
+            "brand consistency and social formats"
+          ],
+          "activity": "Create a cohesive set of campaign creatives."
+        },
+        {
+          "number": 6,
+          "title": "SEO Fundamentals & Keyword Research",
+          "topics": [
+            "Search intent",
+            "on-page SEO",
+            "titles",
+            "headings",
+            "internal links and keyword mapping"
+          ],
+          "activity": "Prepare keyword clusters and on-page recommendations."
+        }
+      ],
+      "buildItems": [
+        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
+        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Digital Marketing Foundations",
+          "topics": [
+            "Channels",
+            "customer journey",
+            "funnels",
+            "objectives",
+            "personas and marketing terminology"
+          ],
+          "activity": "Create a basic digital marketing strategy brief."
+        },
+        {
+          "number": 2,
+          "title": "Website & Landing Page Basics",
+          "topics": [
+            "Website structure",
+            "user experience",
+            "landing pages",
+            "conversion paths and tracking readiness"
+          ],
+          "activity": "Review a landing page and suggest improvements."
+        },
+        {
+          "number": 3,
+          "title": "Content Strategy & Copywriting",
+          "topics": [
+            "Content pillars",
+            "calendars",
+            "hooks",
+            "captions",
+            "CTAs",
+            "brand voice and creative briefs"
+          ],
+          "activity": "Prepare a month-long content calendar."
+        },
+        {
+          "number": 4,
+          "title": "Social Media Marketing",
+          "topics": [
+            "Platform selection",
+            "Instagram",
+            "Facebook",
+            "LinkedIn",
+            "YouTube",
+            "scheduling and community management"
+          ],
+          "activity": "Plan and draft a multi-platform content campaign."
+        },
+        {
+          "number": 5,
+          "title": "Canva & Creative Production",
+          "topics": [
+            "Design principles",
+            "layouts",
+            "typography",
+            "brand consistency and social formats"
+          ],
+          "activity": "Create a cohesive set of campaign creatives."
+        },
+        {
+          "number": 6,
+          "title": "SEO Fundamentals & Keyword Research",
+          "topics": [
+            "Search intent",
+            "on-page SEO",
+            "titles",
+            "headings",
+            "internal links and keyword mapping"
+          ],
+          "activity": "Prepare keyword clusters and on-page recommendations."
+        },
+        {
+          "number": 7,
+          "title": "Technical & Local SEO",
+          "topics": [
+            "Indexing",
+            "sitemap",
+            "robots basics",
+            "page speed concepts",
+            "local listings and citations"
+          ],
+          "activity": "Complete a basic SEO health checklist."
+        },
+        {
+          "number": 8,
+          "title": "Google Ads Fundamentals",
+          "topics": [
+            "Account structure",
+            "campaign types",
+            "keywords",
+            "ad groups",
+            "copy and bidding concepts"
+          ],
+          "activity": "Build a search campaign plan without launching spend."
+        },
+        {
+          "number": 9,
+          "title": "Meta Ads & Campaign Planning",
+          "topics": [
+            "Campaign objectives",
+            "audiences",
+            "placements",
+            "creatives",
+            "budget and testing concepts"
+          ],
+          "activity": "Prepare a Meta campaign structure and creative variations."
+        },
+        {
+          "number": 10,
+          "title": "Analytics & Conversion Measurement",
+          "topics": [
+            "GA4 concepts",
+            "events",
+            "conversions",
+            "UTM tags",
+            "Search Console and reporting"
+          ],
+          "activity": "Create a campaign measurement plan."
+        }
+      ],
+      "buildItems": [
+        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
+        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 7,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Digital Marketing Foundations",
+          "topics": [
+            "Channels",
+            "customer journey",
+            "funnels",
+            "objectives",
+            "personas and marketing terminology"
+          ],
+          "activity": "Create a basic digital marketing strategy brief."
+        },
+        {
+          "number": 2,
+          "title": "Website & Landing Page Basics",
+          "topics": [
+            "Website structure",
+            "user experience",
+            "landing pages",
+            "conversion paths and tracking readiness"
+          ],
+          "activity": "Review a landing page and suggest improvements."
+        },
+        {
+          "number": 3,
+          "title": "Content Strategy & Copywriting",
+          "topics": [
+            "Content pillars",
+            "calendars",
+            "hooks",
+            "captions",
+            "CTAs",
+            "brand voice and creative briefs"
+          ],
+          "activity": "Prepare a month-long content calendar."
+        },
+        {
+          "number": 4,
+          "title": "Social Media Marketing",
+          "topics": [
+            "Platform selection",
+            "Instagram",
+            "Facebook",
+            "LinkedIn",
+            "YouTube",
+            "scheduling and community management"
+          ],
+          "activity": "Plan and draft a multi-platform content campaign."
+        },
+        {
+          "number": 5,
+          "title": "Canva & Creative Production",
+          "topics": [
+            "Design principles",
+            "layouts",
+            "typography",
+            "brand consistency and social formats"
+          ],
+          "activity": "Create a cohesive set of campaign creatives."
+        },
+        {
+          "number": 6,
+          "title": "SEO Fundamentals & Keyword Research",
+          "topics": [
+            "Search intent",
+            "on-page SEO",
+            "titles",
+            "headings",
+            "internal links and keyword mapping"
+          ],
+          "activity": "Prepare keyword clusters and on-page recommendations."
+        },
+        {
+          "number": 7,
+          "title": "Technical & Local SEO",
+          "topics": [
+            "Indexing",
+            "sitemap",
+            "robots basics",
+            "page speed concepts",
+            "local listings and citations"
+          ],
+          "activity": "Complete a basic SEO health checklist."
+        },
+        {
+          "number": 8,
+          "title": "Google Ads Fundamentals",
+          "topics": [
+            "Account structure",
+            "campaign types",
+            "keywords",
+            "ad groups",
+            "copy and bidding concepts"
+          ],
+          "activity": "Build a search campaign plan without launching spend."
+        },
+        {
+          "number": 9,
+          "title": "Meta Ads & Campaign Planning",
+          "topics": [
+            "Campaign objectives",
+            "audiences",
+            "placements",
+            "creatives",
+            "budget and testing concepts"
+          ],
+          "activity": "Prepare a Meta campaign structure and creative variations."
+        },
+        {
+          "number": 10,
+          "title": "Analytics & Conversion Measurement",
+          "topics": [
+            "GA4 concepts",
+            "events",
+            "conversions",
+            "UTM tags",
+            "Search Console and reporting"
+          ],
+          "activity": "Create a campaign measurement plan."
+        },
+        {
+          "number": 11,
+          "title": "Optimisation & Reporting",
+          "topics": [
+            "CTR",
+            "CPC",
+            "CPA",
+            "ROAS",
+            "A/B testing",
+            "budget pacing and insight reporting"
+          ],
+          "activity": "Analyse a sample campaign dataset and recommend actions."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Portfolio",
+          "topics": [
+            "Integrated campaign strategy",
+            "creative assets",
+            "SEO plan",
+            "paid media plan and presentation"
+          ],
+          "activity": "Present a complete digital marketing campaign proposal."
+        }
+      ],
+      "buildItems": [
+        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
+        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Full_Stack_Web_Development": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Web & Internet Foundations",
+          "topics": [
+            "How websites work",
+            "browsers",
+            "servers",
+            "domains",
+            "HTTP",
+            "editor setup and developer tools"
+          ],
+          "activity": "Inspect and create a simple web page."
+        },
+        {
+          "number": 2,
+          "title": "HTML5 & Semantic Structure",
+          "topics": [
+            "Elements",
+            "forms",
+            "tables",
+            "media",
+            "semantic tags",
+            "accessibility and SEO basics"
+          ],
+          "activity": "Build a multi-section website structure."
+        },
+        {
+          "number": 3,
+          "title": "CSS3 & Responsive Design",
+          "topics": [
+            "Selectors",
+            "box model",
+            "flexbox",
+            "grid",
+            "positioning",
+            "responsive units and media queries"
+          ],
+          "activity": "Create a responsive landing page."
+        },
+        {
+          "number": 4,
+          "title": "JavaScript Fundamentals",
+          "topics": [
+            "Variables",
+            "data types",
+            "operators",
+            "conditions",
+            "loops",
+            "functions and arrays/objects"
+          ],
+          "activity": "Build interactive page behaviour."
+        },
+        {
+          "number": 5,
+          "title": "DOM, Events & Browser APIs",
+          "topics": [
+            "DOM selection",
+            "events",
+            "validation",
+            "local storage and asynchronous basics"
+          ],
+          "activity": "Create a form-driven browser application."
+        },
+        {
+          "number": 6,
+          "title": "Git, GitHub & Project Workflow",
+          "topics": [
+            "Repositories",
+            "commits",
+            "branches",
+            "pull requests and collaboration basics"
+          ],
+          "activity": "Publish and maintain a project repository."
+        }
+      ],
+      "buildItems": [
+        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
+        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Web & Internet Foundations",
+          "topics": [
+            "How websites work",
+            "browsers",
+            "servers",
+            "domains",
+            "HTTP",
+            "editor setup and developer tools"
+          ],
+          "activity": "Inspect and create a simple web page."
+        },
+        {
+          "number": 2,
+          "title": "HTML5 & Semantic Structure",
+          "topics": [
+            "Elements",
+            "forms",
+            "tables",
+            "media",
+            "semantic tags",
+            "accessibility and SEO basics"
+          ],
+          "activity": "Build a multi-section website structure."
+        },
+        {
+          "number": 3,
+          "title": "CSS3 & Responsive Design",
+          "topics": [
+            "Selectors",
+            "box model",
+            "flexbox",
+            "grid",
+            "positioning",
+            "responsive units and media queries"
+          ],
+          "activity": "Create a responsive landing page."
+        },
+        {
+          "number": 4,
+          "title": "JavaScript Fundamentals",
+          "topics": [
+            "Variables",
+            "data types",
+            "operators",
+            "conditions",
+            "loops",
+            "functions and arrays/objects"
+          ],
+          "activity": "Build interactive page behaviour."
+        },
+        {
+          "number": 5,
+          "title": "DOM, Events & Browser APIs",
+          "topics": [
+            "DOM selection",
+            "events",
+            "validation",
+            "local storage and asynchronous basics"
+          ],
+          "activity": "Create a form-driven browser application."
+        },
+        {
+          "number": 6,
+          "title": "Git, GitHub & Project Workflow",
+          "topics": [
+            "Repositories",
+            "commits",
+            "branches",
+            "pull requests and collaboration basics"
+          ],
+          "activity": "Publish and maintain a project repository."
+        },
+        {
+          "number": 7,
+          "title": "React Fundamentals",
+          "topics": [
+            "Components",
+            "JSX",
+            "props",
+            "state",
+            "events",
+            "lists and conditional rendering"
+          ],
+          "activity": "Build a reusable component-based interface."
+        },
+        {
+          "number": 8,
+          "title": "React Routing & API Integration",
+          "topics": [
+            "Routing",
+            "hooks",
+            "forms",
+            "fetch",
+            "loading/error states and reusable services"
+          ],
+          "activity": "Create a multi-page frontend consuming an API."
+        },
+        {
+          "number": 9,
+          "title": "Backend with Node.js & Express",
+          "topics": [
+            "Server basics",
+            "routes",
+            "middleware",
+            "controllers",
+            "validation and REST APIs"
+          ],
+          "activity": "Develop a REST API for a sample application."
+        },
+        {
+          "number": 10,
+          "title": "Database & Authentication",
+          "topics": [
+            "SQL or MongoDB fundamentals",
+            "CRUD",
+            "relationships",
+            "password hashing and auth concepts"
+          ],
+          "activity": "Connect backend APIs to persistent data."
+        }
+      ],
+      "buildItems": [
+        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
+        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 7,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Web & Internet Foundations",
+          "topics": [
+            "How websites work",
+            "browsers",
+            "servers",
+            "domains",
+            "HTTP",
+            "editor setup and developer tools"
+          ],
+          "activity": "Inspect and create a simple web page."
+        },
+        {
+          "number": 2,
+          "title": "HTML5 & Semantic Structure",
+          "topics": [
+            "Elements",
+            "forms",
+            "tables",
+            "media",
+            "semantic tags",
+            "accessibility and SEO basics"
+          ],
+          "activity": "Build a multi-section website structure."
+        },
+        {
+          "number": 3,
+          "title": "CSS3 & Responsive Design",
+          "topics": [
+            "Selectors",
+            "box model",
+            "flexbox",
+            "grid",
+            "positioning",
+            "responsive units and media queries"
+          ],
+          "activity": "Create a responsive landing page."
+        },
+        {
+          "number": 4,
+          "title": "JavaScript Fundamentals",
+          "topics": [
+            "Variables",
+            "data types",
+            "operators",
+            "conditions",
+            "loops",
+            "functions and arrays/objects"
+          ],
+          "activity": "Build interactive page behaviour."
+        },
+        {
+          "number": 5,
+          "title": "DOM, Events & Browser APIs",
+          "topics": [
+            "DOM selection",
+            "events",
+            "validation",
+            "local storage and asynchronous basics"
+          ],
+          "activity": "Create a form-driven browser application."
+        },
+        {
+          "number": 6,
+          "title": "Git, GitHub & Project Workflow",
+          "topics": [
+            "Repositories",
+            "commits",
+            "branches",
+            "pull requests and collaboration basics"
+          ],
+          "activity": "Publish and maintain a project repository."
+        },
+        {
+          "number": 7,
+          "title": "React Fundamentals",
+          "topics": [
+            "Components",
+            "JSX",
+            "props",
+            "state",
+            "events",
+            "lists and conditional rendering"
+          ],
+          "activity": "Build a reusable component-based interface."
+        },
+        {
+          "number": 8,
+          "title": "React Routing & API Integration",
+          "topics": [
+            "Routing",
+            "hooks",
+            "forms",
+            "fetch",
+            "loading/error states and reusable services"
+          ],
+          "activity": "Create a multi-page frontend consuming an API."
+        },
+        {
+          "number": 9,
+          "title": "Backend with Node.js & Express",
+          "topics": [
+            "Server basics",
+            "routes",
+            "middleware",
+            "controllers",
+            "validation and REST APIs"
+          ],
+          "activity": "Develop a REST API for a sample application."
+        },
+        {
+          "number": 10,
+          "title": "Database & Authentication",
+          "topics": [
+            "SQL or MongoDB fundamentals",
+            "CRUD",
+            "relationships",
+            "password hashing and auth concepts"
+          ],
+          "activity": "Connect backend APIs to persistent data."
+        },
+        {
+          "number": 11,
+          "title": "Full-Stack Integration & Testing",
+          "topics": [
+            "Frontend/backend integration",
+            "environment variables",
+            "testing basics and error handling"
+          ],
+          "activity": "Complete a full-stack application workflow."
+        },
+        {
+          "number": 12,
+          "title": "Deployment, Security & Capstone",
+          "topics": [
+            "Deployment",
+            "domains",
+            "HTTPS",
+            "CORS",
+            "input validation",
+            "documentation and demo"
+          ],
+          "activity": "Deploy a portfolio-ready full-stack project."
+        }
+      ],
+      "buildItems": [
+        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
+        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Generative_AI": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Generative AI Foundations",
+          "topics": [
+            "AI vs ML vs GenAI",
+            "generative models",
+            "LLM concepts",
+            "tokens",
+            "context windows and use cases"
+          ],
+          "activity": "Identify suitable and unsuitable tasks for generative AI."
+        },
+        {
+          "number": 2,
+          "title": "Prompt Engineering Basics",
+          "topics": [
+            "Role",
+            "task",
+            "context",
+            "constraints",
+            "examples",
+            "output formats and iterative prompting"
+          ],
+          "activity": "Create reusable prompts for common work tasks."
+        },
+        {
+          "number": 3,
+          "title": "Research & Information Workflows",
+          "topics": [
+            "Research planning",
+            "source checking",
+            "summarisation",
+            "comparison and hallucination awareness"
+          ],
+          "activity": "Prepare a source-checked research brief with AI assistance."
+        },
+        {
+          "number": 4,
+          "title": "Writing & Communication",
+          "topics": [
+            "Emails",
+            "reports",
+            "proposals",
+            "social captions",
+            "tone control and editing workflows"
+          ],
+          "activity": "Create a consistent multi-format content set."
+        },
+        {
+          "number": 5,
+          "title": "Image, Design & Presentation AI",
+          "topics": [
+            "Image prompting",
+            "visual direction",
+            "design iteration",
+            "slide outlines and asset review"
+          ],
+          "activity": "Create a campaign visual concept and presentation."
+        },
+        {
+          "number": 6,
+          "title": "Productivity & Data Assistance",
+          "topics": [
+            "Spreadsheet formulas",
+            "data explanation",
+            "document extraction and meeting summaries"
+          ],
+          "activity": "Build a repeatable productivity workflow."
+        }
+      ],
+      "buildItems": [
+        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
+        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Generative AI Foundations",
+          "topics": [
+            "AI vs ML vs GenAI",
+            "generative models",
+            "LLM concepts",
+            "tokens",
+            "context windows and use cases"
+          ],
+          "activity": "Identify suitable and unsuitable tasks for generative AI."
+        },
+        {
+          "number": 2,
+          "title": "Prompt Engineering Basics",
+          "topics": [
+            "Role",
+            "task",
+            "context",
+            "constraints",
+            "examples",
+            "output formats and iterative prompting"
+          ],
+          "activity": "Create reusable prompts for common work tasks."
+        },
+        {
+          "number": 3,
+          "title": "Research & Information Workflows",
+          "topics": [
+            "Research planning",
+            "source checking",
+            "summarisation",
+            "comparison and hallucination awareness"
+          ],
+          "activity": "Prepare a source-checked research brief with AI assistance."
+        },
+        {
+          "number": 4,
+          "title": "Writing & Communication",
+          "topics": [
+            "Emails",
+            "reports",
+            "proposals",
+            "social captions",
+            "tone control and editing workflows"
+          ],
+          "activity": "Create a consistent multi-format content set."
+        },
+        {
+          "number": 5,
+          "title": "Image, Design & Presentation AI",
+          "topics": [
+            "Image prompting",
+            "visual direction",
+            "design iteration",
+            "slide outlines and asset review"
+          ],
+          "activity": "Create a campaign visual concept and presentation."
+        },
+        {
+          "number": 6,
+          "title": "Productivity & Data Assistance",
+          "topics": [
+            "Spreadsheet formulas",
+            "data explanation",
+            "document extraction and meeting summaries"
+          ],
+          "activity": "Build a repeatable productivity workflow."
+        },
+        {
+          "number": 7,
+          "title": "LLM Concepts & API Introduction",
+          "topics": [
+            "How LLM APIs work",
+            "API keys",
+            "requests",
+            "responses",
+            "tokens",
+            "latency and cost awareness"
+          ],
+          "activity": "Call an available LLM API from a simple test application."
+        },
+        {
+          "number": 8,
+          "title": "Python for AI Applications",
+          "topics": [
+            "Python essentials",
+            "JSON",
+            "HTTP requests",
+            "environment variables and error handling"
+          ],
+          "activity": "Create a small command-line AI assistant."
+        },
+        {
+          "number": 9,
+          "title": "Embeddings & Semantic Search",
+          "topics": [
+            "Embeddings",
+            "similarity",
+            "chunking",
+            "vector search and retrieval concepts"
+          ],
+          "activity": "Build a small semantic search prototype."
+        },
+        {
+          "number": 10,
+          "title": "RAG & Knowledge Assistants",
+          "topics": [
+            "Document ingestion",
+            "retrieval",
+            "grounding",
+            "citations",
+            "evaluation and failure cases"
+          ],
+          "activity": "Create a document Q&A proof of concept."
+        }
+      ],
+      "buildItems": [
+        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
+        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Generative AI Foundations",
+          "topics": [
+            "AI vs ML vs GenAI",
+            "generative models",
+            "LLM concepts",
+            "tokens",
+            "context windows and use cases"
+          ],
+          "activity": "Identify suitable and unsuitable tasks for generative AI."
+        },
+        {
+          "number": 2,
+          "title": "Prompt Engineering Basics",
+          "topics": [
+            "Role",
+            "task",
+            "context",
+            "constraints",
+            "examples",
+            "output formats and iterative prompting"
+          ],
+          "activity": "Create reusable prompts for common work tasks."
+        },
+        {
+          "number": 3,
+          "title": "Research & Information Workflows",
+          "topics": [
+            "Research planning",
+            "source checking",
+            "summarisation",
+            "comparison and hallucination awareness"
+          ],
+          "activity": "Prepare a source-checked research brief with AI assistance."
+        },
+        {
+          "number": 4,
+          "title": "Writing & Communication",
+          "topics": [
+            "Emails",
+            "reports",
+            "proposals",
+            "social captions",
+            "tone control and editing workflows"
+          ],
+          "activity": "Create a consistent multi-format content set."
+        },
+        {
+          "number": 5,
+          "title": "Image, Design & Presentation AI",
+          "topics": [
+            "Image prompting",
+            "visual direction",
+            "design iteration",
+            "slide outlines and asset review"
+          ],
+          "activity": "Create a campaign visual concept and presentation."
+        },
+        {
+          "number": 6,
+          "title": "Productivity & Data Assistance",
+          "topics": [
+            "Spreadsheet formulas",
+            "data explanation",
+            "document extraction and meeting summaries"
+          ],
+          "activity": "Build a repeatable productivity workflow."
+        },
+        {
+          "number": 7,
+          "title": "LLM Concepts & API Introduction",
+          "topics": [
+            "How LLM APIs work",
+            "API keys",
+            "requests",
+            "responses",
+            "tokens",
+            "latency and cost awareness"
+          ],
+          "activity": "Call an available LLM API from a simple test application."
+        },
+        {
+          "number": 8,
+          "title": "Python for AI Applications",
+          "topics": [
+            "Python essentials",
+            "JSON",
+            "HTTP requests",
+            "environment variables and error handling"
+          ],
+          "activity": "Create a small command-line AI assistant."
+        },
+        {
+          "number": 9,
+          "title": "Embeddings & Semantic Search",
+          "topics": [
+            "Embeddings",
+            "similarity",
+            "chunking",
+            "vector search and retrieval concepts"
+          ],
+          "activity": "Build a small semantic search prototype."
+        },
+        {
+          "number": 10,
+          "title": "RAG & Knowledge Assistants",
+          "topics": [
+            "Document ingestion",
+            "retrieval",
+            "grounding",
+            "citations",
+            "evaluation and failure cases"
+          ],
+          "activity": "Create a document Q&A proof of concept."
+        },
+        {
+          "number": 11,
+          "title": "AI Agents & Multimodal Workflows",
+          "topics": [
+            "Tools",
+            "agent loops",
+            "structured outputs",
+            "image/audio use cases and human review"
+          ],
+          "activity": "Prototype a controlled multi-step assistant."
+        },
+        {
+          "number": 12,
+          "title": "Capstone, Safety & Deployment Basics",
+          "topics": [
+            "Privacy",
+            "copyright",
+            "evaluation",
+            "prompt injection awareness",
+            "documentation and demo"
+          ],
+          "activity": "Present a useful GenAI solution with limitations documented."
+        }
+      ],
+      "buildItems": [
+        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
+        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  },
+  "Python_Programming": {
+    "45_Days": {
+      "label": "45 Days",
+      "pageCount": 4,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Python Setup & First Programs",
+          "topics": [
+            "Python installation",
+            "IDE",
+            "interpreter",
+            "syntax",
+            "comments",
+            "print and input"
+          ],
+          "activity": "Create and run basic Python scripts."
+        },
+        {
+          "number": 2,
+          "title": "Variables, Data Types & Operators",
+          "topics": [
+            "Numbers",
+            "strings",
+            "booleans",
+            "casting",
+            "arithmetic",
+            "comparison and logical operators"
+          ],
+          "activity": "Build a simple calculator."
+        },
+        {
+          "number": 3,
+          "title": "Conditions & Loops",
+          "topics": [
+            "if/elif/else",
+            "for",
+            "while",
+            "range",
+            "break",
+            "continue and nested logic"
+          ],
+          "activity": "Create menu-driven programs and pattern exercises."
+        },
+        {
+          "number": 4,
+          "title": "Strings & Collections",
+          "topics": [
+            "String methods",
+            "lists",
+            "tuples",
+            "sets",
+            "dictionaries",
+            "indexing and iteration"
+          ],
+          "activity": "Build a contact or inventory manager."
+        },
+        {
+          "number": 5,
+          "title": "Functions & Modules",
+          "topics": [
+            "Parameters",
+            "return values",
+            "scope",
+            "lambda basics",
+            "imports and reusable code"
+          ],
+          "activity": "Refactor a script into reusable functions."
+        },
+        {
+          "number": 6,
+          "title": "Files, Exceptions & JSON",
+          "topics": [
+            "Read/write files",
+            "CSV",
+            "JSON",
+            "try/except and context managers"
+          ],
+          "activity": "Create a file-based record management utility."
+        }
+      ],
+      "buildItems": [
+        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
+        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "3_Months": {
+      "label": "3 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Python Setup & First Programs",
+          "topics": [
+            "Python installation",
+            "IDE",
+            "interpreter",
+            "syntax",
+            "comments",
+            "print and input"
+          ],
+          "activity": "Create and run basic Python scripts."
+        },
+        {
+          "number": 2,
+          "title": "Variables, Data Types & Operators",
+          "topics": [
+            "Numbers",
+            "strings",
+            "booleans",
+            "casting",
+            "arithmetic",
+            "comparison and logical operators"
+          ],
+          "activity": "Build a simple calculator."
+        },
+        {
+          "number": 3,
+          "title": "Conditions & Loops",
+          "topics": [
+            "if/elif/else",
+            "for",
+            "while",
+            "range",
+            "break",
+            "continue and nested logic"
+          ],
+          "activity": "Create menu-driven programs and pattern exercises."
+        },
+        {
+          "number": 4,
+          "title": "Strings & Collections",
+          "topics": [
+            "String methods",
+            "lists",
+            "tuples",
+            "sets",
+            "dictionaries",
+            "indexing and iteration"
+          ],
+          "activity": "Build a contact or inventory manager."
+        },
+        {
+          "number": 5,
+          "title": "Functions & Modules",
+          "topics": [
+            "Parameters",
+            "return values",
+            "scope",
+            "lambda basics",
+            "imports and reusable code"
+          ],
+          "activity": "Refactor a script into reusable functions."
+        },
+        {
+          "number": 6,
+          "title": "Files, Exceptions & JSON",
+          "topics": [
+            "Read/write files",
+            "CSV",
+            "JSON",
+            "try/except and context managers"
+          ],
+          "activity": "Create a file-based record management utility."
+        },
+        {
+          "number": 7,
+          "title": "Object-Oriented Programming",
+          "topics": [
+            "Classes",
+            "objects",
+            "constructors",
+            "inheritance",
+            "encapsulation and polymorphism"
+          ],
+          "activity": "Model a simple library or student system."
+        },
+        {
+          "number": 8,
+          "title": "Working with Packages & APIs",
+          "topics": [
+            "pip",
+            "virtual environments",
+            "requests",
+            "HTTP basics and API response handling"
+          ],
+          "activity": "Consume a public API and process JSON data."
+        },
+        {
+          "number": 9,
+          "title": "Databases with Python",
+          "topics": [
+            "SQL basics",
+            "SQLite/MySQL concepts",
+            "CRUD operations and parameterised queries"
+          ],
+          "activity": "Build a database-backed mini application."
+        },
+        {
+          "number": 10,
+          "title": "Testing, Debugging & Git",
+          "topics": [
+            "Debugging",
+            "assertions",
+            "unit testing basics",
+            "Git commits and project structure"
+          ],
+          "activity": "Test and version-control a Python project."
+        }
+      ],
+      "buildItems": [
+        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
+        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    },
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Python Setup & First Programs",
+          "topics": [
+            "Python installation",
+            "IDE",
+            "interpreter",
+            "syntax",
+            "comments",
+            "print and input"
+          ],
+          "activity": "Create and run basic Python scripts."
+        },
+        {
+          "number": 2,
+          "title": "Variables, Data Types & Operators",
+          "topics": [
+            "Numbers",
+            "strings",
+            "booleans",
+            "casting",
+            "arithmetic",
+            "comparison and logical operators"
+          ],
+          "activity": "Build a simple calculator."
+        },
+        {
+          "number": 3,
+          "title": "Conditions & Loops",
+          "topics": [
+            "if/elif/else",
+            "for",
+            "while",
+            "range",
+            "break",
+            "continue and nested logic"
+          ],
+          "activity": "Create menu-driven programs and pattern exercises."
+        },
+        {
+          "number": 4,
+          "title": "Strings & Collections",
+          "topics": [
+            "String methods",
+            "lists",
+            "tuples",
+            "sets",
+            "dictionaries",
+            "indexing and iteration"
+          ],
+          "activity": "Build a contact or inventory manager."
+        },
+        {
+          "number": 5,
+          "title": "Functions & Modules",
+          "topics": [
+            "Parameters",
+            "return values",
+            "scope",
+            "lambda basics",
+            "imports and reusable code"
+          ],
+          "activity": "Refactor a script into reusable functions."
+        },
+        {
+          "number": 6,
+          "title": "Files, Exceptions & JSON",
+          "topics": [
+            "Read/write files",
+            "CSV",
+            "JSON",
+            "try/except and context managers"
+          ],
+          "activity": "Create a file-based record management utility."
+        },
+        {
+          "number": 7,
+          "title": "Object-Oriented Programming",
+          "topics": [
+            "Classes",
+            "objects",
+            "constructors",
+            "inheritance",
+            "encapsulation and polymorphism"
+          ],
+          "activity": "Model a simple library or student system."
+        },
+        {
+          "number": 8,
+          "title": "Working with Packages & APIs",
+          "topics": [
+            "pip",
+            "virtual environments",
+            "requests",
+            "HTTP basics and API response handling"
+          ],
+          "activity": "Consume a public API and process JSON data."
+        },
+        {
+          "number": 9,
+          "title": "Databases with Python",
+          "topics": [
+            "SQL basics",
+            "SQLite/MySQL concepts",
+            "CRUD operations and parameterised queries"
+          ],
+          "activity": "Build a database-backed mini application."
+        },
+        {
+          "number": 10,
+          "title": "Testing, Debugging & Git",
+          "topics": [
+            "Debugging",
+            "assertions",
+            "unit testing basics",
+            "Git commits and project structure"
+          ],
+          "activity": "Test and version-control a Python project."
+        },
+        {
+          "number": 11,
+          "title": "Intermediate Python Practices",
+          "topics": [
+            "Comprehensions",
+            "iterators",
+            "generators",
+            "decorators overview and typing concepts"
+          ],
+          "activity": "Improve code quality and performance."
+        },
+        {
+          "number": 12,
+          "title": "Capstone & Documentation",
+          "topics": [
+            "Requirements",
+            "design",
+            "implementation",
+            "testing",
+            "README and demo presentation"
+          ],
+          "activity": "Deliver a complete Python application."
+        }
+      ],
+      "buildItems": [
+        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
+        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+      ],
+      "workflow": [
+        "Learn concepts",
+        "Practise skills",
+        "Build projects",
+        "Show portfolio"
+      ]
+    }
+  }
+}

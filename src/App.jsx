@@ -60,12 +60,12 @@ export default function App() {
       if (savedCourses !== null) {
         const parsed = JSON.parse(savedCourses)
         if (!Array.isArray(parsed)) throw new Error('Saved course data is not a list.')
-        const catalogVersion = 'catalog-course-details-v10'
+        const catalogVersion = 'catalog-course-details-v11'
         const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== catalogVersion
         const newlyAddedCourses = !needsCatalogMigration
           ? []
           : defaultCourses.filter((course) => (
-            ['computer-basics-office-productivity', 'computer-typing-government-exams', 'desk-to-dashboard'].includes(course.id)
+            ['computer-basics-office-productivity', 'computer-typing-government-exams', 'desk-to-dashboard', 'ai-automation'].includes(course.id)
             && !parsed.some((savedCourse) => savedCourse.id === course.id)
           ))
         const migratedSavedCourses = parsed.map((savedCourse) => {
@@ -124,6 +124,7 @@ export default function App() {
           if (!needsCatalogMigration || !defaultCourse) return migratedCourse
           return {
             ...migratedCourse,
+            duration: defaultCourse.duration,
             overview: migratedCourse.overview || defaultCourse.overview,
             suitableFor: migratedCourse.suitableFor || defaultCourse.suitableFor,
             level: migratedCourse.level || defaultCourse.level,
@@ -154,7 +155,7 @@ export default function App() {
         }
       } else {
         try {
-          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v10')
+          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v11')
         } catch {
           notices.push('The demo course catalogue version could not be saved for future visits.')
         }
