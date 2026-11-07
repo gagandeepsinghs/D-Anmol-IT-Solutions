@@ -84,7 +84,11 @@ The Courses dropdown is populated from the locally loaded course list and omits 
 ```text
 src/
   assets/
-    images/                    Brand logos and locally stored website photos
+    images/
+      logos/                   Header and footer logo files
+      courses/                 Course card and fallback images
+      modules/                 Module, classroom, and learning photos
+      references/              Design references not used by the website
   components/                  Shared header, footer, buttons, forms, cards, and floating contact panel
   config/
     siteConfig.js              Brand and contact placeholders, logo imports, storage keys
@@ -102,7 +106,7 @@ src/
 index.html                     HTML shell and basic metadata
 ```
 
-Website image assets are kept together in `src/assets/images/`. Course and page photos are bundled locally with the site; images added later through the demo admin form may still use an externally supplied image URL.
+Replace website images in the matching folder under `src/assets/images/`. Keep the same filename and file type so existing imports continue to work. See [`src/assets/images/README.md`](./src/assets/images/README.md) for the image guide.
 
 ## Editing website content
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ArrowDownToLine, ArrowRight, BookOpenCheck, Check, Clock3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import syllabusData from '../data/courseSyllabi'
+import { getCourseModuleImage } from '../data/courseModuleImages'
 import './CourseSyllabus.css'
 
 const syllabusPdfUrls = import.meta.glob('../Courses/**/*.pdf', {
@@ -99,8 +100,16 @@ export default function CourseSyllabus({
           <ol className="course-roadmap-grid">
             {syllabus.modules.map((module, index) => (
               <li className="course-roadmap-card" key={`${module.number}-${module.title}`}>
-                <span className="course-roadmap-number">{String(module.number).padStart(2, '0')}</span>
-                <div>
+                <div className="course-roadmap-image">
+                  <img
+                    src={getCourseModuleImage(folder, index)}
+                    alt={`${module.title} learning module`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className="course-roadmap-number">{String(module.number).padStart(2, '0')}</span>
+                </div>
+                <div className="course-roadmap-heading">
                   <span className="course-roadmap-step">Step {String(index + 1).padStart(2, '0')}</span>
                   <h4>{module.title}</h4>
                 </div>

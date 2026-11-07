@@ -1,11 +1,11 @@
-import footerLogo from '../assets/images/D-Anmol Enterprises Logo.png'
-import headerLogo from '../assets/images/D Anmol Enterprises Logo.png'
+import footerLogo from '../assets/images/logos/D-Anmol Enterprises Logo.png'
+import headerLogo from '../assets/images/logos/D Anmol Enterprises Logo.png'
 
 export const siteConfig = {
   name: 'D-Anmol Enterprises',
   tagline: 'Learn today. Lead tomorrow.',
-  phone: '+91 00000 00000',
-  email: 'hello@example.com',
+  phone: '+91 92893 37268',
+  email: 'danmolenterprises6@gmail.com',
   address: 'Your business address will appear here',
   whatsappNumber: '+91 9289337268',
   logo: footerLogo,

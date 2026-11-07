@@ -5,8 +5,8 @@ import CourseCard from '../components/CourseCard'
 import { useAppData } from '../context/AppDataContext'
 import TrainingMarquee from '../components/TrainingMarquee'
 import TechBadge from '../components/TechBadge'
-import homeTeamImage from '../assets/images/home-team-learning.jpg'
-import classroomImage from '../assets/images/classroom-learning.jpg'
+import homeTeamImage from '../assets/images/modules/home-team-learning.jpg'
+import classroomImage from '../assets/images/modules/classroom-learning.jpg'
 
 const technologyRows = [
   ['LangChain', 'LangGraph', 'GitHub Copilot', 'Notion AI', 'Canva AI', 'TensorFlow', 'PyTorch', 'OpenCV', 'n8n'],

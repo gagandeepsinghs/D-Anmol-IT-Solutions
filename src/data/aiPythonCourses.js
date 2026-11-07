@@ -1,7 +1,8 @@
-import pythonImage from '../assets/images/python-programming.jpg'
-import dataAnalyticsImage from '../assets/images/data-analytics.jpg'
-import aiImage from '../assets/images/artificial-intelligence.jpg'
-import technologyHardwareImage from '../assets/images/technology-hardware.jpg'
+import pythonImage from '../assets/images/courses/python-programming.jpg'
+import dataAnalyticsImage from '../assets/images/courses/data-analytics.jpg'
+import aiImage from '../assets/images/courses/artificial-intelligence.jpg'
+import technologyHardwareImage from '../assets/images/courses/technology-hardware.jpg'
+import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
 
 export const aiPythonCourses = [
   {
@@ -111,7 +112,7 @@ export const aiPythonCourses = [
     prerequisites: 'No prior LLM development experience is required. Basic Python is recommended for the API and application-building portions.',
     duration: 'Contact us for details',
     level: 'Beginner to intermediate',
-    image: aiImage,
+    image: technologyWorkshopImage,
     technologies: ['Python', 'LangChain', 'LLM APIs', 'Prompt engineering'],
     curriculum: [
       { title: 'Generative AI and LLM essentials', description: 'Learn how language models generate responses and where their capabilities and limitations matter.' },

@@ -1,11 +1,19 @@
-import computerBasicsImage from '../assets/images/computer-basics.jpg'
-import typingPracticeImage from '../assets/images/typing-practice.jpg'
-import aiImage from '../assets/images/artificial-intelligence.jpg'
-import dataAnalyticsImage from '../assets/images/data-analytics.jpg'
-import pythonImage from '../assets/images/python-programming.jpg'
-import technologyHardwareImage from '../assets/images/technology-hardware.jpg'
-import digitalMarketingWorkImage from '../assets/images/digital-marketing-work.jpg'
-import digitalMarketingImage from '../assets/images/digital-marketing.jpg'
+import computerBasicsImage from '../assets/images/courses/computer-basics.jpg'
+import typingPracticeImage from '../assets/images/courses/typing-practice.jpg'
+import aiImage from '../assets/images/courses/artificial-intelligence.jpg'
+import dataAnalyticsImage from '../assets/images/courses/data-analytics.jpg'
+import pythonImage from '../assets/images/courses/python-programming.jpg'
+import digitalMarketingWorkImage from '../assets/images/courses/digital-marketing-work.jpg'
+import technologyHardwareImage from '../assets/images/courses/technology-hardware.jpg'
+import classroomLearningImage from '../assets/images/modules/classroom-learning.jpg'
+import homeTeamLearningImage from '../assets/images/modules/home-team-learning.jpg'
+import teamPlanningImage from '../assets/images/modules/team-planning.jpg'
+import teamProjectImage from '../assets/images/modules/team-project.jpg'
+import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
+import artificialIntelligenceCourseImage from '../assets/images/courses/artificial-intelligence.png'
+import aiAutomationCourseImage from '../assets/images/courses/AI Automation.png'
+import fullStackCourseImage from '../assets/images/courses/Full Stack.png'
+import generativeAiCourseImage from '../assets/images/courses/Generative AI.png'
 
 export const courses = [
   {
@@ -118,7 +126,7 @@ export const courses = [
     description: 'Build applications with LLMs, prompt engineering, image generation, and AI content workflows.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: aiImage,
+    image: generativeAiCourseImage,
     overview: 'Master Generative AI from fundamentals to building real-world applications. Learn LLMs, prompt engineering, RAG, fine-tuning and creating AI-powered solutions.',
     suitableFor: 'Developers, marketers, content creators and anyone wanting to build with GenAI.',
     level: 'Beginner to Intermediate',
@@ -150,7 +158,7 @@ export const courses = [
     description: 'Map repetitive tasks and build practical low-code automations with workflow tools, APIs and AI-assisted steps.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: aiImage,
+    image: aiAutomationCourseImage,
     overview: 'Learn to map useful automation opportunities, connect workflow steps and build reliable prototypes that move data between forms, spreadsheets, services and AI tools.',
     suitableFor: 'Beginners, operations teams and professionals interested in automating repeatable digital workflows.',
     level: 'Beginner to intermediate',
@@ -212,7 +220,7 @@ export const courses = [
     description: 'Understand AI foundations, neural networks, and practical applications across industries.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: aiImage,
+    image: artificialIntelligenceCourseImage,
     overview: 'Comprehensive AI training covering machine learning, deep learning, neural networks, computer vision and natural language processing with hands-on projects.',
     suitableFor: 'Aspiring AI Engineers, developers and professionals wanting to enter the AI field.',
     level: 'Intermediate',
@@ -244,7 +252,7 @@ export const courses = [
     description: 'Build predictive models, recommendation systems, and ML pipelines with Python.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: aiImage,
+    image: teamProjectImage,
     overview: 'In-depth Machine Learning course covering algorithms, model building, evaluation, feature engineering and building scalable ML solutions.',
     suitableFor: 'Developers and analysts looking to specialize in Machine Learning.',
     level: 'Intermediate to Advanced',
@@ -307,7 +315,7 @@ export const courses = [
     description: 'Learn to build complete web applications from database to deployment with modern JavaScript frameworks.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: computerBasicsImage,
+    image: fullStackCourseImage,
     overview: 'Comprehensive Full Stack Development course covering frontend, backend, database and deployment. Master MERN stack and build real-world projects.',
     suitableFor: 'Beginners and aspiring web developers looking for a complete development career.',
     level: 'Beginner to Advanced',
@@ -366,12 +374,12 @@ export const courses = [
   {
     id: 'desk-to-dashboard',
     slug: 'desk-to-dashboard',
-    title: 'Desktop to Dashboard : Excel, Power BI & SQL',
+    title: 'Desktop to Dashboard',
     category: 'Corporate Training',
     description: 'Build practical Excel, Power BI, SQL, and digital marketing skills through guided projects.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
-    image: dataAnalyticsImage,
+    image: teamPlanningImage,
     overview: 'Five courses in twelve weeks. Weeks 1 to 6 build the foundations; weeks 7 to 12 turn them into dashboards, reports and a real campaign. Every course includes two lessons and one practical project.',
     suitableFor: 'Beginners, office and admin professionals, small business owners, students and graduates who want practical Excel, Power BI and SQL skills.',
     level: 'Beginner',

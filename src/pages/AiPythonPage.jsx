@@ -4,8 +4,8 @@ import { Button } from '../components/Button'
 import AiPythonEnquiryForm from '../components/AiPythonEnquiryForm'
 import TechBadge from '../components/TechBadge'
 import { aiPythonCourses } from '../data/aiPythonCourses'
-import aiImage from '../assets/images/artificial-intelligence.jpg'
-import technologyWorkshopImage from '../assets/images/technology-workshop.jpg'
+import aiImage from '../assets/images/courses/artificial-intelligence.jpg'
+import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
 
 const icons = [Braces, Database, BrainCircuit, Sparkles, Bot]
 

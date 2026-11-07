@@ -45,6 +45,8 @@ const legacyComputerBasicsTitle = 'Computer Basics, MS Office & Typing'
 const legacyComputerBasicsSlug = 'computer-basics-ms-office-typing'
 const legacyComputerBasicsDescription = 'Build everyday computer confidence with Windows and internet basics, Word documents, Excel spreadsheets, PowerPoint presentations and guided typing practice.'
 const legacyComputerBasicsOverview = 'A beginner-friendly course for learning the practical computer skills used in study, office and everyday digital tasks. Start with files, folders, typing and online safety, then practice creating documents, spreadsheets and presentations using Microsoft Office applications.'
+const courseCatalogVersion = 'catalog-course-details-v14'
+const isBundledImagePath = (image) => typeof image === 'string' && /(?:^|\/)(?:src\/assets\/images|assets)\//.test(image)
 
 export default function App() {
   const [courseData, setCourseData] = useState(defaultCourses)
@@ -60,8 +62,7 @@ export default function App() {
       if (savedCourses !== null) {
         const parsed = JSON.parse(savedCourses)
         if (!Array.isArray(parsed)) throw new Error('Saved course data is not a list.')
-        const catalogVersion = 'catalog-course-details-v11'
-        const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== catalogVersion
+        const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== courseCatalogVersion
         const newlyAddedCourses = !needsCatalogMigration
           ? []
           : defaultCourses.filter((course) => (
@@ -80,7 +81,7 @@ export default function App() {
             'Custom Corporate Training': 'Corporate Training',
             'Data Science with Python': 'Data Analytics Foundations',
             'Full Stack Development': 'Full Stack Web Development',
-            'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali': 'Desktop to Dashboard : Excel, Power BI & SQL',
+            'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali': 'Desktop to Dashboard',
           }
           if (needsCatalogMigration && renamedTitles[savedCourse.title]) {
             migratedCourse = { ...migratedCourse, title: renamedTitles[savedCourse.title] }
@@ -98,6 +99,9 @@ export default function App() {
             }
           }
           const defaultCourse = defaultCourses.find((course) => course.id === savedCourse.id)
+          if (defaultCourse && savedCourse.id === 'desk-to-dashboard') {
+            migratedCourse = { ...migratedCourse, title: defaultCourse.title }
+          }
           if (needsCatalogMigration && defaultCourse && ['computer-basics-office-productivity', 'computer-typing-government-exams', 'data-science-with-python', 'full-stack-development', 'desk-to-dashboard'].includes(savedCourse.id)) {
             migratedCourse = { ...migratedCourse, title: defaultCourse.title }
           }
@@ -124,6 +128,7 @@ export default function App() {
           if (!needsCatalogMigration || !defaultCourse) return migratedCourse
           return {
             ...migratedCourse,
+            image: isBundledImagePath(migratedCourse.image) ? defaultCourse.image : migratedCourse.image,
             duration: defaultCourse.duration,
             overview: migratedCourse.overview || defaultCourse.overview,
             suitableFor: migratedCourse.suitableFor || defaultCourse.suitableFor,
@@ -146,16 +151,16 @@ export default function App() {
           }
         }
         setCourseData(migratedCourses)
-        if (window.localStorage.getItem(storageKeys.courseCatalogVersion) !== catalogVersion) {
+        if (window.localStorage.getItem(storageKeys.courseCatalogVersion) !== courseCatalogVersion) {
           try {
-            window.localStorage.setItem(storageKeys.courseCatalogVersion, catalogVersion)
+            window.localStorage.setItem(storageKeys.courseCatalogVersion, courseCatalogVersion)
           } catch {
             notices.push('The demo course catalogue update could not be saved for future visits.')
           }
         }
       } else {
         try {
-          window.localStorage.setItem(storageKeys.courseCatalogVersion, 'catalog-course-details-v11')
+          window.localStorage.setItem(storageKeys.courseCatalogVersion, courseCatalogVersion)
         } catch {
           notices.push('The demo course catalogue version could not be saved for future visits.')
         }

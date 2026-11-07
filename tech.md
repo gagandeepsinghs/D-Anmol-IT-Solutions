@@ -40,7 +40,11 @@ src/
 ├── App.jsx                 Application routes and page shell
 ├── main.jsx                React entry point
 ├── styles.css              Global styles and responsive design
-├── assets/images/          Course, classroom, brochure, and logo images
+├── assets/images/
+│   ├── logos/              Header and footer logos
+│   ├── courses/            Course card and fallback images
+│   ├── modules/            Module, classroom, and learning photos
+│   └── references/         Design references not used by the website
 ├── components/             Reusable UI components
 ├── config/                 Site configuration and storage keys
 ├── context/                Shared application data context
@@ -91,15 +95,14 @@ Storage keys are defined in [`src/config/siteConfig.js`](./src/config/siteConfig
 
 ## Assets
 
-The site uses local assets from [`src/assets/images/`](./src/assets/images/), including:
+The site uses local assets from [`src/assets/images/`](./src/assets/images/), organized by purpose:
 
-- D-Anmol Academy logo
-- D-Anmol Academy IT Training Brochure
-- Course subject images
-- Classroom and project-learning images
-- Technology and training workshop images
+- [`logos/`](./src/assets/images/logos/) - header and footer logo files
+- [`courses/`](./src/assets/images/courses/) - course card images and the admin fallback image
+- [`modules/`](./src/assets/images/modules/) - module, classroom, and learning photos
+- [`references/`](./src/assets/images/references/) - design references that are not loaded by the website
 
-The active brand logo is configured in [`src/config/siteConfig.js`](./src/config/siteConfig.js).
+To replace a website image, keep its existing filename and extension. The active brand logos are configured in [`src/config/siteConfig.js`](./src/config/siteConfig.js), and module image assignments are in [`src/data/courseModuleImages.js`](./src/data/courseModuleImages.js).
 
 ## Development commands
 

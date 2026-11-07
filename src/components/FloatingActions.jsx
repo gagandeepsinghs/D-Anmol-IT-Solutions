@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ArrowUpRight, MessageCircle, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'

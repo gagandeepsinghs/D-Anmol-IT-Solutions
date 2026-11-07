@@ -4,8 +4,8 @@ import { Button } from '../components/Button'
 import CourseSyllabus from '../components/CourseSyllabus'
 import EnquiryForm from '../components/EnquiryForm'
 import { corporateSyllabusFolder } from '../data/courseSyllabi'
-import technologyWorkshopImage from '../assets/images/technology-workshop.jpg'
-import teamPlanningImage from '../assets/images/team-planning.jpg'
+import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
+import teamPlanningImage from '../assets/images/modules/team-planning.jpg'
 
 const topics = [
   { icon: Bot, title: 'AI and Machine Learning', text: 'Build shared foundations and explore practical ways AI can support your team’s work.' },

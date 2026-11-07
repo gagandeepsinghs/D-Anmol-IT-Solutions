@@ -1,12 +1,23 @@
 import { ArrowUpRight, Clock3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import courseImageFallback from '../assets/images/courses/course-image-fallback.jpg'
 
 export default function CourseCard({ course, showTopics = false }) {
   const topics = (course.modules || []).slice(0, 3).map((module) => typeof module === 'string' ? module : module.title)
   return (
     <article className="course-card">
       <Link to={`/courses/${course.slug}`} className="course-image-link" aria-label={`View ${course.title}`}>
-        <img className="course-image" src={course.image} alt="" loading="lazy" />
+        <img
+          className="course-image"
+          src={course.image}
+          alt=""
+          loading="lazy"
+          onError={(event) => {
+            if (event.currentTarget.dataset.fallbackApplied) return
+            event.currentTarget.dataset.fallbackApplied = 'true'
+            event.currentTarget.src = courseImageFallback
+          }}
+        />
         <span className="course-category">{course.category}</span>
       </Link>
       <div className="course-card-content">

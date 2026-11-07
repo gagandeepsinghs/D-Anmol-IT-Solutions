@@ -1,0 +1,195 @@
+.advisor-modal {
+  display: block;
+  width: min(1120px, 100%);
+  max-height: calc(100dvh - 48px);
+  min-width: 0;
+  min-height: 0;
+  border-color: #e5e8ed;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.advisor-modal-content {
+  min-width: 0;
+  min-height: 0;
+  height: min(790px, calc(100dvh - 48px));
+  padding: 0;
+  overflow: hidden;
+}
+
+.advisor-booking-form {
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.advisor-booking-details {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.advisor-booking-intro { margin-bottom: 27px; }
+.advisor-booking-intro .advisor-modal-kicker { color: #233e72; font-size: 11px; }
+.advisor-booking-intro h2 { margin: 0 0 8px; color: #151c2d; font-size: clamp(27px, 3vw, 34px); font-weight: 800; letter-spacing: -.045em; line-height: 1.15; }
+.advisor-booking-intro h2 > span { color: #d84b38; }
+.advisor-booking-intro > p { margin: 0; color: #677183; font-size: 14px; line-height: 1.55; }
+
+.advisor-booking-details .advisor-details-grid { gap: 19px 16px; }
+.advisor-booking-details .advisor-details-grid label { gap: 8px; color: #454d5c; font-size: 14px; font-weight: 600; }
+.advisor-booking-details .advisor-details-grid label > span:not(.advisor-phone-field) { line-height: 1.4; }
+.advisor-booking-details .advisor-details-grid label b { color: #e64f3c; }
+.advisor-booking-details .advisor-details-grid label small { color: #667082; font-size: 12px; }
+.advisor-booking-details .advisor-details-grid input,
+.advisor-booking-details .advisor-details-grid select {
+  height: 50px;
+  padding: 0 14px;
+  border-color: #dce1e8;
+  border-radius: 12px;
+  color: #1d2738;
+  background-color: #fff;
+  font-size: 14px;
+}
+.advisor-booking-details .advisor-details-grid input::placeholder { color: #929bab; }
+.advisor-booking-details .advisor-details-grid input:focus,
+.advisor-booking-details .advisor-details-grid select:focus { border-color: #7084ad; box-shadow: 0 0 0 3px #253e7014; }
+
+.advisor-course-select { position: relative; min-width: 0; }
+.advisor-booking-details .advisor-details-grid .advisor-course-select-trigger {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #dce1e8;
+  border-radius: 12px;
+  color: #1d2738;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+.advisor-booking-details .advisor-course-select-trigger:focus-visible { border-color: #7084ad; outline: 0; box-shadow: 0 0 0 3px #253e7014; }
+.advisor-course-select-trigger > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.advisor-course-select-trigger .is-placeholder { color: #929bab; }
+.advisor-course-select-options {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  max-height: min(240px, 32dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 5px;
+  border: 1px solid #dce1e8;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 28px #17221b24;
+}
+.advisor-course-select-option {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  color: #273449;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.advisor-course-select-option:hover,
+.advisor-course-select-option[aria-selected="true"],
+.advisor-course-select-option:focus-visible { outline: 0; background: #f0f5e9; }
+
+.advisor-phone-field { display: flex; min-width: 0; align-items: center; gap: 0; overflow: hidden; border: 1px solid #dce1e8; border-radius: 12px; background: #fff; }
+.advisor-phone-field:focus-within { border-color: #7084ad; box-shadow: 0 0 0 3px #253e7014; }
+.advisor-booking-details .advisor-details-grid .advisor-phone-field input { flex: 1 1 auto; width: 0; min-width: 0; border: 0; box-shadow: none; }
+.advisor-booking-details .advisor-details-grid .advisor-phone-field input:focus { border: 0; box-shadow: none; }
+.advisor-phone-prefix { flex: 0 0 auto; padding-left: 14px; color: #1d2738; font-size: 14px; font-weight: 500; }
+.advisor-timezone-field { display: grid; grid-column: 1 / -1; gap: 7px; color: #454d5c; font-size: 14px; font-weight: 600; }
+.advisor-timezone-field > div { display: flex; min-height: 50px; align-items: center; padding: 0 14px; border: 1px solid #dce1e8; border-radius: 12px; color: #1d2738; background: #fff; font-size: 14px; font-weight: 400; }
+.advisor-booking-details .advisor-timezone-note { margin: 7px 0 0; color: #626e80; font-size: 12px; }
+.advisor-booking-details .form-error { margin: 16px 0 0; }
+.advisor-booking-details .advisor-modal-actions { margin-top: 20px; }
+.advisor-booking-details .advisor-submit { width: 100%; min-height: 52px; border-radius: 28px; color: #17213a; background: #f5a831; font-size: 15px; }
+.advisor-booking-details .advisor-submit:hover { background: #f7b84d; }
+.advisor-booking-details .advisor-demo-note { margin: 13px 0 0; color: #677183; font-size: 12px; line-height: 1.55; }
+.advisor-form-logo { display: block; width: min(205px, 70%); height: 64px; object-fit: contain; object-position: center; margin: 26px auto 0; }
+
+.advisor-course-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 32px;
+  border-left: 1px solid #e8ebf0;
+  background: #f7f8fa;
+}
+.advisor-course-panel-header { position: sticky; z-index: 2; top: -28px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 28px 0 16px; margin: -28px 0 0; background: #f7f8fa; }
+.advisor-course-panel-header h3 { margin: 0; color: #171f30; font-size: 22px; font-weight: 800; }
+.advisor-course-panel-header p { margin: 5px 0 0; color: #697386; font-size: 14px; }
+.advisor-course-panel .advisor-modal-close { width: 42px; height: 42px; border-color: #e6e9ef; color: #737d8c; box-shadow: 0 2px 6px #10182808; }
+.advisor-course-panel .advisor-course-picker { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 2px 0 10px; }
+.advisor-course-panel .advisor-course-option { min-height: 66px; grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 13px; padding: 10px 13px; border-color: #e5e8ed; border-radius: 15px; background: #fff; }
+.advisor-course-panel .advisor-course-option > * { min-width: 0; }
+.advisor-course-panel .advisor-course-title { overflow-wrap: anywhere; }
+.advisor-course-panel .advisor-course-option:hover { border-color: #b7c8b6; background: #fbfcf9; }
+.advisor-course-panel .advisor-course-option.is-selected { border-color: #9db59b; background: #f4f8f1; box-shadow: inset 0 0 0 1px #9db59b; }
+.advisor-course-panel .advisor-course-icon { width: 44px; height: 44px; border-radius: 13px; }
+.advisor-course-panel .advisor-course-icon svg { width: 20px; height: 20px; }
+.advisor-course-panel .advisor-course-title { color: #37443b; font-size: 14px; line-height: 1.45; }
+.advisor-course-panel .advisor-course-check { width: 24px; height: 24px; color: #788273; font-size: 16px; }
+
+.advisor-success-view { min-height: 100%; }
+.advisor-success-view .advisor-modal-header { border-bottom-color: #e9e9df; }
+.advisor-success-view .advisor-success { padding: 38px; }
+
+@media (max-width: 900px) {
+  .advisor-modal { width: min(820px, 100%); max-height: calc(100dvh - 24px); }
+  .advisor-modal-content { height: auto; max-height: calc(100dvh - 24px); overflow-y: auto; }
+  .advisor-booking-form { height: auto; grid-template-columns: minmax(0, 1fr); overflow: visible; }
+  .advisor-booking-details { overflow: visible; padding: 25px 24px 28px; }
+  .advisor-booking-intro { margin-bottom: 21px; }
+  .advisor-booking-intro h2 { font-size: clamp(26px, 6vw, 32px); }
+  .advisor-course-panel { max-height: 350px; padding: 0 24px 18px; border-top: 1px solid #e8ebf0; border-left: 0; }
+  .advisor-course-panel-header { top: 0; padding: 16px 0 13px; margin: 0; }
+  .advisor-course-panel-header h3 { font-size: 20px; }
+  .advisor-course-panel .advisor-course-picker { gap: 8px; }
+  .advisor-course-panel .advisor-course-option { min-height: 60px; }
+}
+
+@media (max-width: 480px) {
+  .advisor-modal-backdrop { padding: 8px; }
+  .advisor-modal { max-height: calc(100dvh - 16px); border-radius: 16px; }
+  .advisor-modal-content { max-height: calc(100dvh - 16px); }
+  .advisor-booking-details { padding: 22px 18px 24px; }
+  .advisor-booking-intro h2 { font-size: 27px; }
+  .advisor-booking-details .advisor-details-grid { gap: 14px 10px; }
+  .advisor-booking-details .advisor-details-grid label { font-size: 13px; }
+  .advisor-booking-details .advisor-details-grid input,
+  .advisor-booking-details .advisor-details-grid select { height: 46px; padding: 0 10px; font-size: 13px; }
+  .advisor-booking-details .advisor-details-grid .advisor-course-select-trigger { height: 46px; padding: 0 10px; font-size: 13px; }
+  .advisor-phone-prefix { padding-left: 10px; font-size: 13px; }
+  .advisor-timezone-field { font-size: 13px; }
+  .advisor-timezone-field > div { min-height: 46px; font-size: 13px; }
+  .advisor-course-panel { max-height: 320px; padding-right: 18px; padding-left: 18px; }
+  .advisor-course-panel .advisor-course-title { font-size: 13px; }
+  .advisor-success-view .advisor-modal-header { padding: 15px 13px; }
+  .advisor-success-view .advisor-success { padding: 25px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advisor-modal { animation: none; }
+}
