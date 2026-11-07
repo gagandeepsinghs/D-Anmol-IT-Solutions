@@ -1,4 +1,5 @@
-import brandLogo from '../assets/images/D-Anmol Enterprises Logo.jpg'
+import footerLogo from '../assets/images/D-Anmol Enterprises Logo.png'
+import headerLogo from '../assets/images/D Anmol Enterprises Logo.png'
 
 export const siteConfig = {
   name: 'D-Anmol Enterprises',
@@ -7,8 +8,8 @@ export const siteConfig = {
   email: 'hello@example.com',
   address: 'Your business address will appear here',
   whatsappNumber: '+91 9289337268',
-  logo: brandLogo,
-  compactLogo: brandLogo,
+  logo: footerLogo,
+  compactLogo: headerLogo,
 }
 
 export const storageKeys = {
