@@ -45,8 +45,13 @@ const legacyComputerBasicsTitle = 'Computer Basics, MS Office & Typing'
 const legacyComputerBasicsSlug = 'computer-basics-ms-office-typing'
 const legacyComputerBasicsDescription = 'Build everyday computer confidence with Windows and internet basics, Word documents, Excel spreadsheets, PowerPoint presentations and guided typing practice.'
 const legacyComputerBasicsOverview = 'A beginner-friendly course for learning the practical computer skills used in study, office and everyday digital tasks. Start with files, folders, typing and online safety, then practice creating documents, spreadsheets and presentations using Microsoft Office applications.'
-const courseCatalogVersion = 'catalog-course-details-v14'
+const courseCatalogVersion = 'catalog-course-details-v16'
 const isBundledImagePath = (image) => typeof image === 'string' && /(?:^|\/)(?:src\/assets\/images|assets)\//.test(image)
+const isLegacyAiAutomationDuplicate = (course) => (
+  course.id === 'ai-automation-n8n'
+  || String(course.title || '').trim().toLowerCase() === 'ai automation with n8n'
+  || String(course.category || '').trim().toLowerCase() === 'ai automation and n8n'
+)
 
 export default function App() {
   const [courseData, setCourseData] = useState(defaultCourses)
@@ -63,20 +68,20 @@ export default function App() {
         const parsed = JSON.parse(savedCourses)
         if (!Array.isArray(parsed)) throw new Error('Saved course data is not a list.')
         const needsCatalogMigration = window.localStorage.getItem(storageKeys.courseCatalogVersion) !== courseCatalogVersion
+        const sourceCourses = parsed.filter((savedCourse) => !isLegacyAiAutomationDuplicate(savedCourse))
         const newlyAddedCourses = !needsCatalogMigration
           ? []
           : defaultCourses.filter((course) => (
             ['computer-basics-office-productivity', 'computer-typing-government-exams', 'desk-to-dashboard', 'ai-automation'].includes(course.id)
-            && !parsed.some((savedCourse) => savedCourse.id === course.id)
+            && !sourceCourses.some((savedCourse) => savedCourse.id === course.id)
           ))
-        const migratedSavedCourses = parsed.map((savedCourse) => {
+        const migratedSavedCourses = sourceCourses.map((savedCourse) => {
           if (['power-bi', 'sql-database'].includes(savedCourse.id)) return null
           let migratedCourse = savedCourse
           const renamedTitles = {
             'Computer Basics & MS Office': 'Computer Basics',
             'Computer Typing for Government Exams': 'Computer Typing',
             'Generative AI for Work': 'Generative AI',
-            'AI Automation with n8n': 'AI Automation',
             'Digital Marketing Essentials': 'Digital Marketing',
             'Custom Corporate Training': 'Corporate Training',
             'Data Science with Python': 'Data Analytics Foundations',
