@@ -1,0 +1,131 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/courses/computer-basics-ms-office-typing",
+      "destination": "/courses/computer-basics-ms-office",
+      "permanent": true
+    },
+    {
+      "source": "/courses/data-science-with-python-course-in-chandigarh",
+      "destination": "/courses/data-analytics",
+      "permanent": true
+    },
+    {
+      "source": "/courses/artificial-intelligence-course-in-chandigarh",
+      "destination": "/courses/artificial-intelligence-machine-learning",
+      "permanent": true
+    },
+    {
+      "source": "/courses/machine-learning-course-in-chandigarh",
+      "destination": "/courses/artificial-intelligence-machine-learning",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/pages/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    },
+    {
+      "source": "/courses",
+      "destination": "/courses/index.html"
+    },
+    {
+      "source": "/ai-python",
+      "destination": "/ai-python/index.html"
+    },
+    {
+      "source": "/corporate-training",
+      "destination": "/corporate-training/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/index.html"
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms-and-conditions/index.html"
+    },
+    {
+      "source": "/refund-cancellation-policy",
+      "destination": "/refund-cancellation-policy/index.html"
+    },
+    {
+      "source": "/courses/computer-basics-ms-office",
+      "destination": "/courses/computer-basics-ms-office/index.html"
+    },
+    {
+      "source": "/courses/computer-typing-government-exams",
+      "destination": "/courses/computer-typing-government-exams/index.html"
+    },
+    {
+      "source": "/courses/artificial-intelligence-machine-learning",
+      "destination": "/courses/artificial-intelligence-machine-learning/index.html"
+    },
+    {
+      "source": "/courses/generative-ai-course-in-chandigarh",
+      "destination": "/courses/generative-ai-course-in-chandigarh/index.html"
+    },
+    {
+      "source": "/courses/ai-automation",
+      "destination": "/courses/ai-automation/index.html"
+    },
+    {
+      "source": "/courses/data-analytics",
+      "destination": "/courses/data-analytics/index.html"
+    },
+    {
+      "source": "/courses/data-science",
+      "destination": "/courses/data-science/index.html"
+    },
+    {
+      "source": "/courses/full-stack-development-course-in-chandigarh",
+      "destination": "/courses/full-stack-development-course-in-chandigarh/index.html"
+    },
+    {
+      "source": "/courses/digital-marketing-course-in-chandigarh",
+      "destination": "/courses/digital-marketing-course-in-chandigarh/index.html"
+    },
+    {
+      "source": "/ai-python/data-science-python",
+      "destination": "/ai-python/data-science-python/index.html"
+    },
+    {
+      "source": "/ai-python/ai-machine-learning",
+      "destination": "/ai-python/ai-machine-learning/index.html"
+    },
+    {
+      "source": "/ai-python/generative-ai-llm-development",
+      "destination": "/ai-python/generative-ai-llm-development/index.html"
+    },
+    {
+      "source": "/ai-python/ai-agents-automation",
+      "destination": "/ai-python/ai-agents-automation/index.html"
+    }
+  ]
+}

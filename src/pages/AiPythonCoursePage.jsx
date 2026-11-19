@@ -1,29 +1,36 @@
 import { ArrowLeft, ArrowRight, BookOpenCheck, Check, Clock3, GraduationCap, Layers3, Lightbulb } from 'lucide-react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import NotFoundPage from './NotFoundPage'
 import AiPythonEnquiryForm from '../components/AiPythonEnquiryForm'
 import TechBadge from '../components/TechBadge'
-import { aiPythonCourses } from '../data/aiPythonCourses'
+import { useAppData } from '../context/AppDataContext'
+import { publicAiPythonCourseIds } from '../data/aiPythonCourses'
 import { getModuleTechnologies } from '../data/moduleTechnologies'
+import CoursePdfBanner from '../components/CoursePdfBanner'
 
 const moduleStages = ['Foundations', 'Core concepts', 'Guided practice', 'Applied skills', 'Project work', 'Review & next steps']
 
 export default function AiPythonCoursePage() {
   const { slug } = useParams()
-  const course = aiPythonCourses.find((item) => item.slug === slug)
-  if (!course) return <Navigate to="/ai-python" replace />
+  const { aiPythonCourses, courses: catalogCourses, siteSettings } = useAppData()
+  const sourceCourse = aiPythonCourses.find((item) => item.slug === slug)
+  const catalogCourseId = sourceCourse && publicAiPythonCourseIds[sourceCourse.id]
+  const catalogCourse = catalogCourseId && catalogCourses.find((item) => item.id === catalogCourseId)
+  const course = sourceCourse ? { ...sourceCourse, title: catalogCourse?.title || sourceCourse.title } : null
+  if (!course) return <NotFoundPage />
 
   return <>
     <section className="ai-python-detail-hero">
       <div className="page-wrap ai-python-detail-grid">
         <div>
-          <Link to="/ai-python" className="back-link"><ArrowLeft size={15} /> AI &amp; Python programmes</Link>
+          <Link to="/ai-python" className="back-link"><ArrowLeft size={15} /> AI and data programmes</Link>
           <span className="detail-category">{course.category} training</span>
           <h1>{course.title}</h1>
           <p>{course.description}</p>
-          <div className="ai-python-detail-facts"><span><Clock3 size={16} />{course.duration}</span><span><GraduationCap size={17} />{course.level}</span></div>
+          <div className="ai-python-detail-facts"><span><Clock3 size={16} />Contact us to confirm duration</span><span><GraduationCap size={17} />Starting level confirmed on enquiry</span></div>
           <a className="button button-light" href="#course-information">Request course information <ArrowRight size={16} /></a>
         </div>
-        <div className="ai-python-detail-image"><img src={course.image} alt="" /></div>
+        <div className="ai-python-detail-image"><img src={course.image} alt={`${course.title} course illustration`} fetchPriority="high" /></div>
       </div>
     </section>
 
@@ -39,7 +46,7 @@ export default function AiPythonCoursePage() {
           <section className="detail-block">
             <div className="detail-block-title"><span className="detail-section-icon"><GraduationCap size={19} /></span><div><span className="eyebrow">Who it’s for</span><h2>Is this a good fit for you?</h2></div></div>
             <p>{course.suitableFor}</p>
-            <div className="learner-prerequisite"><strong>Before you start</strong><p>{course.prerequisites}</p></div>
+            <div className="learner-prerequisite"><strong>Before you start</strong>            <p>Contact us to confirm any recommended background or preparation for this course.</p></div>
           </section>
           <section className="detail-block">
             <div className="detail-block-title"><span className="detail-section-icon"><Layers3 size={19} /></span><div><span className="eyebrow">Curriculum outline</span><h2>Topics you’ll explore</h2></div></div>
@@ -63,12 +70,19 @@ export default function AiPythonCoursePage() {
           <div className="ai-python-summary">
             <span className="eyebrow">At a glance</span>
             <h2>{course.title}</h2>
-            <div><Clock3 size={16} /><p><small>Duration</small><strong>{course.duration}</strong></p></div>
-            <div><GraduationCap size={17} /><p><small>Suggested learner level</small><strong>{course.level}</strong></p></div>
+            <div><Clock3 size={16} /><p><small>Duration</small><strong>Contact us to confirm</strong></p></div>
+            <div><GraduationCap size={17} /><p><small>Starting level</small><strong>Contact us to confirm</strong></p></div>
             <div><Layers3 size={16} /><p><small>Fees, schedule and format</small><strong>Contact us for details</strong></p></div>
             <a className="button button-primary" href="#course-information">Request information <ArrowRight size={16} /></a>
           </div>
         </aside>
+      </div>
+      <div className="page-wrap ai-python-pdf-wrap">
+        <CoursePdfBanner
+          courseTitle={course.title}
+          courseImage={course.image}
+          email={siteSettings.email}
+        />
       </div>
     </section>
 

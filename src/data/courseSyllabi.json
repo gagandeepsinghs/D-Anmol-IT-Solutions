@@ -76,8 +76,7 @@
         }
       ],
       "buildItems": [
-        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
-        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+        "Normal project 1: Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team."
       ],
       "workflow": [
         "Learn concepts",
@@ -207,8 +206,8 @@
         }
       ],
       "buildItems": [
-        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
-        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+        "Normal project 1: Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
+        "Live project 1: Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
       ],
       "workflow": [
         "Learn concepts",
@@ -360,8 +359,9 @@
         }
       ],
       "buildItems": [
-        "Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
-        "Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review."
+        "Normal project 1: Lead Capture Automation: Capture a website enquiry, validate fields, save it and notify a team.",
+        "Live project 1: Resume Intake & Screening Prototype: Extract candidate fields from submitted resumes and route for human review.",
+        "Live project 2: Content Approval Workflow: Prepare AI-assisted draft captions, request approval and log publication status."
       ],
       "workflow": [
         "Learn concepts",
@@ -455,8 +455,7 @@
         }
       ],
       "buildItems": [
-        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
-        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+        "Normal project 1: Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns."
       ],
       "workflow": [
         "Learn concepts",
@@ -592,8 +591,8 @@
         }
       ],
       "buildItems": [
-        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
-        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+        "Normal project 1: Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
+        "Live project 1: Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
       ],
       "workflow": [
         "Learn concepts",
@@ -752,8 +751,9 @@
         }
       ],
       "buildItems": [
-        "Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
-        "Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline."
+        "Normal project 1: Student Performance Predictor: Train a model to estimate student scores from attendance and study patterns.",
+        "Live project 1: Spam Email Classification: Classify text messages as spam or legitimate with a tested pipeline.",
+        "Live project 2: Customer Segmentation Model: Group shoppers based on purchase behaviour to suggest marketing segments."
       ],
       "workflow": [
         "Learn concepts",
@@ -857,8 +857,7 @@
         }
       ],
       "buildItems": [
-        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
-        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+        "Normal project 1: Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation."
       ],
       "workflow": [
         "Learn concepts",
@@ -987,8 +986,8 @@
         }
       ],
       "buildItems": [
-        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
-        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+        "Normal project 1: Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
+        "Live project 1: Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
       ],
       "workflow": [
         "Learn concepts",
@@ -1117,8 +1116,9 @@
         }
       ],
       "buildItems": [
-        "Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
-        "Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking."
+        "Normal project 1: Office Productivity Portfolio: Create a resume, formatted business letter, budget spreadsheet and presentation.",
+        "Live project 1: Small Business Office Management Kit: Build templates for invoices, customer records and monthly expense tracking.",
+        "Live project 2: School Administration Document Pack: Create attendance sheets, parent notices and term performance slides."
       ],
       "workflow": [
         "Learn concepts",
@@ -1200,8 +1200,7 @@
         }
       ],
       "buildItems": [
-        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
-        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+        "Normal project 1: Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement."
       ],
       "workflow": [
         "Learn concepts",
@@ -1301,8 +1300,8 @@
         }
       ],
       "buildItems": [
-        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
-        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+        "Normal project 1: Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
+        "Live project 1: Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
       ],
       "workflow": [
         "Learn concepts",
@@ -1402,8 +1401,9 @@
         }
       ],
       "buildItems": [
-        "Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
-        "Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions."
+        "Normal project 1: Typing Performance Tracker: Record daily speed, accuracy and common mistakes, then review improvement.",
+        "Live project 1: Exam-Style Typing Practice Kit: Build timed passages and evaluate accuracy under fixed conditions.",
+        "Live project 2: Workplace Data Entry Simulation: Type and verify structured records with accuracy checks."
       ],
       "workflow": [
         "Learn concepts",
@@ -1486,8 +1486,7 @@
         }
       ],
       "buildItems": [
-        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
-        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+        "Normal project 1: Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement."
       ],
       "workflow": [
         "Learn concepts",
@@ -1608,8 +1607,8 @@
         }
       ],
       "buildItems": [
-        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
-        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+        "Normal project 1: Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
+        "Live project 1: Department KPI Dashboard: Build a role-specific report using anonymized sample data."
       ],
       "workflow": [
         "Learn concepts",
@@ -1751,8 +1750,9 @@
         }
       ],
       "buildItems": [
-        "Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
-        "Department KPI Dashboard: Build a role-specific report using anonymized sample data."
+        "Normal project 1: Team Productivity Improvement Sprint: Identify one recurring workplace problem and design a documented improvement.",
+        "Live project 1: Department KPI Dashboard: Build a role-specific report using anonymized sample data.",
+        "Live project 2: AI-Assisted Operations Pilot: Prototype a low-risk workflow with approvals and privacy controls."
       ],
       "workflow": [
         "Learn concepts",
@@ -1841,8 +1841,7 @@
         }
       ],
       "buildItems": [
-        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
-        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
+        "Normal project 1: Retail Sales Insights Report"
       ],
       "workflow": [
         "Learn concepts",
@@ -1974,8 +1973,8 @@
         }
       ],
       "buildItems": [
-        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
-        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
+        "Normal project 1: Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
+        "Live project 1: HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
       ],
       "workflow": [
         "Learn concepts",
@@ -2128,390 +2127,9 @@
         }
       ],
       "buildItems": [
-        "Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
-        "HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data."
-      ],
-      "workflow": [
-        "Learn concepts",
-        "Practise skills",
-        "Build projects",
-        "Show portfolio"
-      ]
-    }
-  },
-  "Desktop_to_Dashboard_Excel_Power_BI_SQL": {
-    "45_Days": {
-      "label": "45 Days",
-      "pageCount": 4,
-      "modules": [
-        {
-          "number": 1,
-          "title": "Data & Reporting Workflow",
-          "topics": [
-            "Reporting lifecycle",
-            "source files",
-            "tables",
-            "data types",
-            "KPI definitions and data quality"
-          ],
-          "activity": "Map a manual reporting process."
-        },
-        {
-          "number": 2,
-          "title": "Excel Foundations for MIS",
-          "topics": [
-            "Tables",
-            "formatting",
-            "formulas",
-            "references",
-            "sorting",
-            "filters and data validation"
-          ],
-          "activity": "Create a standardised MIS workbook."
-        },
-        {
-          "number": 3,
-          "title": "Advanced Excel Functions",
-          "topics": [
-            "IF",
-            "SUMIFS",
-            "COUNTIFS",
-            "lookup functions",
-            "text/date functions and error handling"
-          ],
-          "activity": "Automate a monthly summary sheet."
-        },
-        {
-          "number": 4,
-          "title": "PivotTables & Excel Dashboards",
-          "topics": [
-            "PivotTables",
-            "PivotCharts",
-            "slicers",
-            "conditional formatting and dashboard layout"
-          ],
-          "activity": "Build an interactive Excel report."
-        },
-        {
-          "number": 5,
-          "title": "Power Query & Data Preparation",
-          "topics": [
-            "Import",
-            "append",
-            "merge",
-            "transform",
-            "unpivot and refresh data"
-          ],
-          "activity": "Combine monthly files into one clean table."
-        },
-        {
-          "number": 6,
-          "title": "SQL & Relational Concepts",
-          "topics": [
-            "Tables",
-            "keys",
-            "SELECT",
-            "filtering",
-            "grouping",
-            "sorting and aggregate functions"
-          ],
-          "activity": "Query a sales database."
-        }
-      ],
-      "buildItems": [
-        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
-        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
-      ],
-      "workflow": [
-        "Learn concepts",
-        "Practise skills",
-        "Build projects",
-        "Show portfolio"
-      ]
-    },
-    "3_Months": {
-      "label": "3 Months",
-      "pageCount": 6,
-      "modules": [
-        {
-          "number": 1,
-          "title": "Data & Reporting Workflow",
-          "topics": [
-            "Reporting lifecycle",
-            "source files",
-            "tables",
-            "data types",
-            "KPI definitions and data quality"
-          ],
-          "activity": "Map a manual reporting process."
-        },
-        {
-          "number": 2,
-          "title": "Excel Foundations for MIS",
-          "topics": [
-            "Tables",
-            "formatting",
-            "formulas",
-            "references",
-            "sorting",
-            "filters and data validation"
-          ],
-          "activity": "Create a standardised MIS workbook."
-        },
-        {
-          "number": 3,
-          "title": "Advanced Excel Functions",
-          "topics": [
-            "IF",
-            "SUMIFS",
-            "COUNTIFS",
-            "lookup functions",
-            "text/date functions and error handling"
-          ],
-          "activity": "Automate a monthly summary sheet."
-        },
-        {
-          "number": 4,
-          "title": "PivotTables & Excel Dashboards",
-          "topics": [
-            "PivotTables",
-            "PivotCharts",
-            "slicers",
-            "conditional formatting and dashboard layout"
-          ],
-          "activity": "Build an interactive Excel report."
-        },
-        {
-          "number": 5,
-          "title": "Power Query & Data Preparation",
-          "topics": [
-            "Import",
-            "append",
-            "merge",
-            "transform",
-            "unpivot and refresh data"
-          ],
-          "activity": "Combine monthly files into one clean table."
-        },
-        {
-          "number": 6,
-          "title": "SQL & Relational Concepts",
-          "topics": [
-            "Tables",
-            "keys",
-            "SELECT",
-            "filtering",
-            "grouping",
-            "sorting and aggregate functions"
-          ],
-          "activity": "Query a sales database."
-        },
-        {
-          "number": 7,
-          "title": "SQL Joins & Advanced Queries",
-          "topics": [
-            "INNER/LEFT joins",
-            "subqueries",
-            "CTEs",
-            "CASE and window functions introduction"
-          ],
-          "activity": "Create multi-table management reports."
-        },
-        {
-          "number": 8,
-          "title": "Power BI Desktop & Data Model",
-          "topics": [
-            "Get Data",
-            "Power Query",
-            "relationships",
-            "cardinality and star schema"
-          ],
-          "activity": "Build a model from sales, product and calendar tables."
-        },
-        {
-          "number": 9,
-          "title": "DAX Measures & Calculations",
-          "topics": [
-            "Measures",
-            "calculated columns",
-            "CALCULATE",
-            "filter context and time-intelligence introduction"
-          ],
-          "activity": "Create revenue, margin and growth measures."
-        },
-        {
-          "number": 10,
-          "title": "Dashboard Design & Interactivity",
-          "topics": [
-            "Cards",
-            "charts",
-            "slicers",
-            "drill-through",
-            "tooltips",
-            "bookmarks and navigation"
-          ],
-          "activity": "Build a polished management dashboard."
-        }
-      ],
-      "buildItems": [
-        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
-        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
-      ],
-      "workflow": [
-        "Learn concepts",
-        "Practise skills",
-        "Build projects",
-        "Show portfolio"
-      ]
-    },
-    "6_Months": {
-      "label": "6 Months",
-      "pageCount": 6,
-      "modules": [
-        {
-          "number": 1,
-          "title": "Data & Reporting Workflow",
-          "topics": [
-            "Reporting lifecycle",
-            "source files",
-            "tables",
-            "data types",
-            "KPI definitions and data quality"
-          ],
-          "activity": "Map a manual reporting process."
-        },
-        {
-          "number": 2,
-          "title": "Excel Foundations for MIS",
-          "topics": [
-            "Tables",
-            "formatting",
-            "formulas",
-            "references",
-            "sorting",
-            "filters and data validation"
-          ],
-          "activity": "Create a standardised MIS workbook."
-        },
-        {
-          "number": 3,
-          "title": "Advanced Excel Functions",
-          "topics": [
-            "IF",
-            "SUMIFS",
-            "COUNTIFS",
-            "lookup functions",
-            "text/date functions and error handling"
-          ],
-          "activity": "Automate a monthly summary sheet."
-        },
-        {
-          "number": 4,
-          "title": "PivotTables & Excel Dashboards",
-          "topics": [
-            "PivotTables",
-            "PivotCharts",
-            "slicers",
-            "conditional formatting and dashboard layout"
-          ],
-          "activity": "Build an interactive Excel report."
-        },
-        {
-          "number": 5,
-          "title": "Power Query & Data Preparation",
-          "topics": [
-            "Import",
-            "append",
-            "merge",
-            "transform",
-            "unpivot and refresh data"
-          ],
-          "activity": "Combine monthly files into one clean table."
-        },
-        {
-          "number": 6,
-          "title": "SQL & Relational Concepts",
-          "topics": [
-            "Tables",
-            "keys",
-            "SELECT",
-            "filtering",
-            "grouping",
-            "sorting and aggregate functions"
-          ],
-          "activity": "Query a sales database."
-        },
-        {
-          "number": 7,
-          "title": "SQL Joins & Advanced Queries",
-          "topics": [
-            "INNER/LEFT joins",
-            "subqueries",
-            "CTEs",
-            "CASE and window functions introduction"
-          ],
-          "activity": "Create multi-table management reports."
-        },
-        {
-          "number": 8,
-          "title": "Power BI Desktop & Data Model",
-          "topics": [
-            "Get Data",
-            "Power Query",
-            "relationships",
-            "cardinality and star schema"
-          ],
-          "activity": "Build a model from sales, product and calendar tables."
-        },
-        {
-          "number": 9,
-          "title": "DAX Measures & Calculations",
-          "topics": [
-            "Measures",
-            "calculated columns",
-            "CALCULATE",
-            "filter context and time-intelligence introduction"
-          ],
-          "activity": "Create revenue, margin and growth measures."
-        },
-        {
-          "number": 10,
-          "title": "Dashboard Design & Interactivity",
-          "topics": [
-            "Cards",
-            "charts",
-            "slicers",
-            "drill-through",
-            "tooltips",
-            "bookmarks and navigation"
-          ],
-          "activity": "Build a polished management dashboard."
-        },
-        {
-          "number": 11,
-          "title": "Publishing, Refresh & Governance",
-          "topics": [
-            "Workspace concepts",
-            "refresh options",
-            "access",
-            "data privacy and documentation"
-          ],
-          "activity": "Prepare a dashboard handover checklist."
-        },
-        {
-          "number": 12,
-          "title": "Capstone & Business Presentation",
-          "topics": [
-            "End-to-end data pipeline",
-            "QA",
-            "insight summary and stakeholder presentation"
-          ],
-          "activity": "Deliver a multi-source business intelligence solution."
-        }
-      ],
-      "buildItems": [
-        "Sales MIS Dashboard: Transform spreadsheet sales files into monthly KPI reporting.",
-        "Retail BI Dashboard: Combine sales, product and customer tables into interactive reports."
+        "Normal project 1: Retail Sales Insights Report: Clean sales data and explain top products, regions and monthly patterns.",
+        "Live project 1: HR Analytics Dashboard: Track attendance, headcount and attrition using sample employee data.",
+        "Live project 2: E-commerce Performance Study: Compare revenue, repeat customers and product categories."
       ],
       "workflow": [
         "Learn concepts",
@@ -2600,8 +2218,7 @@
         }
       ],
       "buildItems": [
-        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
-        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+        "Normal project 1: Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business."
       ],
       "workflow": [
         "Learn concepts",
@@ -2736,8 +2353,8 @@
         }
       ],
       "buildItems": [
-        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
-        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+        "Normal project 1: Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
+        "Live project 1: SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
       ],
       "workflow": [
         "Learn concepts",
@@ -2896,8 +2513,9 @@
         }
       ],
       "buildItems": [
-        "Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
-        "SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics."
+        "Normal project 1: Local Brand Digital Campaign: Plan content and SEO improvements for a sample local business.",
+        "Live project 1: SEO Growth Audit: Review pages, search intent, titles, internal links and indexing basics.",
+        "Live project 2: Paid Campaign Simulation: Plan ad structure, creatives and conversion tracking without required ad spend."
       ],
       "workflow": [
         "Learn concepts",
@@ -2988,8 +2606,7 @@
         }
       ],
       "buildItems": [
-        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
-        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+        "Normal project 1: Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form."
       ],
       "workflow": [
         "Learn concepts",
@@ -3126,8 +2743,8 @@
         }
       ],
       "buildItems": [
-        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
-        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+        "Normal project 1: Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
+        "Live project 1: Task Management Web App: Build a user interface and API to create, update and track tasks."
       ],
       "workflow": [
         "Learn concepts",
@@ -3287,8 +2904,9 @@
         }
       ],
       "buildItems": [
-        "Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
-        "Task Management Web App: Build a user interface and API to create, update and track tasks."
+        "Normal project 1: Responsive Business Website: Build a multi-page, mobile-friendly company website with contact form.",
+        "Live project 1: Task Management Web App: Build a user interface and API to create, update and track tasks.",
+        "Live project 2: Student Enquiry Portal: Create a form, admin list and status management workflow."
       ],
       "workflow": [
         "Learn concepts",
@@ -3374,8 +2992,7 @@
         }
       ],
       "buildItems": [
-        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
-        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+        "Normal project 1: AI Content Workflow: Create a repeatable content research, drafting and review workflow."
       ],
       "workflow": [
         "Learn concepts",
@@ -3506,8 +3123,8 @@
         }
       ],
       "buildItems": [
-        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
-        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+        "Normal project 1: AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
+        "Live project 1: Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
       ],
       "workflow": [
         "Learn concepts",
@@ -3661,8 +3278,9 @@
         }
       ],
       "buildItems": [
-        "AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
-        "Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references."
+        "Normal project 1: AI Content Workflow: Create a repeatable content research, drafting and review workflow.",
+        "Live project 1: Knowledge Base Q&A Prototype: Answer questions from an approved set of documents with source references.",
+        "Live project 2: AI Marketing Assistant"
       ],
       "workflow": [
         "Learn concepts",
@@ -3754,8 +3372,7 @@
         }
       ],
       "buildItems": [
-        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
-        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+        "Normal project 1: Student Record Manager: Create a menu-driven application to add, search, edit and save student records."
       ],
       "workflow": [
         "Learn concepts",
@@ -3889,8 +3506,8 @@
         }
       ],
       "buildItems": [
-        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
-        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+        "Normal project 1: Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
+        "Live project 1: Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
       ],
       "workflow": [
         "Learn concepts",
@@ -4047,14 +3664,112 @@
         }
       ],
       "buildItems": [
-        "Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
-        "Expense Tracker Application: Store expenses, filter by category and produce monthly summaries."
+        "Normal project 1: Student Record Manager: Create a menu-driven application to add, search, edit and save student records.",
+        "Live project 1: Expense Tracker Application: Store expenses, filter by category and produce monthly summaries.",
+        "Live project 2: API-Powered Information Dashboard"
       ],
       "workflow": [
         "Learn concepts",
         "Practise skills",
         "Build projects",
         "Show portfolio"
+      ]
+    }
+  },
+  "Stenography_Shorthand": {
+    "6_Months": {
+      "label": "6 Months",
+      "pageCount": 6,
+      "modules": [
+        {
+          "number": 1,
+          "title": "Foundation and Basic Signs",
+          "topics": [
+            "Consonant forms and joining strokes",
+            "Long and short vowels",
+            "Intervening vowels and outline position",
+            "Grammalogues and punctuation",
+            "Alternative signs for R and H",
+            "Diphthongs and triphones"
+          ],
+          "activity": "Write and read basic outlines, then practise keyboard layout, posture and finger placement."
+        },
+        {
+          "number": 2,
+          "title": "Phraseography, Circles and Loops",
+          "topics": [
+            "Phrase formation and phraseograms",
+            "Circle S and Z",
+            "Stroke S and Z",
+            "Large circles SW and SS or SZ",
+            "Loops ST and STR",
+            "Initial R and L hooks"
+          ],
+          "activity": "Build and read phrase outlines, and practise all keyboard rows with common words and short sentences."
+        },
+        {
+          "number": 3,
+          "title": "Intermediate Shorthand",
+          "topics": [
+            "Alternative forms",
+            "Intervening vowels for FR, VR and related outlines",
+            "Circles and loops with initial hooks",
+            "N and SH hooks",
+            "Aspirate",
+            "Upward and downward R, F and V"
+          ],
+          "activity": "Practise outline combinations and reading exercises alongside number, punctuation and paragraph typing."
+        },
+        {
+          "number": 4,
+          "title": "Advanced Shorthand Principles",
+          "topics": [
+            "Compound consonants",
+            "Vowel indication",
+            "The halving principle",
+            "The doubling principle",
+            "Medial semicircle",
+            "Prefixes"
+          ],
+          "activity": "Apply the advanced principles in outline exercises and use timed typing practice to review accuracy."
+        },
+        {
+          "number": 5,
+          "title": "Advanced Writing and Phrases",
+          "topics": [
+            "Suffixes and terminations",
+            "Contractions and special contractions",
+            "Figures and proper names",
+            "Note-taking and transcription",
+            "Advanced phraseography and intersections",
+            "Business, political, banking and stockbroking phrases"
+          ],
+          "activity": "Practise note-taking and transcription, and type passages and simple formatted documents."
+        },
+        {
+          "number": 6,
+          "title": "Practical Shorthand and Final Preparation",
+          "topics": [
+            "Insurance, shipping, technical, railway and legal phrases",
+            "Geographical names and special word lists",
+            "Revision of shorthand principles",
+            "Progressive dictation and timed note-taking",
+            "Reading back and transcription",
+            "Error correction and final assessment"
+          ],
+          "activity": "Complete progressive dictation, transcription and typing assessments, then review individual progress."
+        }
+      ],
+      "buildItems": [
+        "Normal project 1: Shorthand Practice Portfolio: Keep a reviewed collection of outlines, phrases, reading exercises and dictation practice.",
+        "Live project 1: Typing Progress Record: Track accuracy, recurring errors and improvement through timed typing exercises.",
+        "Live project 2: Dictation and Transcription Assessment: Complete timed dictation, transcribe the notes and review accuracy and recurring errors."
+      ],
+      "workflow": [
+        "Learn shorthand principles",
+        "Practise writing and reading",
+        "Build dictation and typing skills",
+        "Review progress"
       ]
     }
   }

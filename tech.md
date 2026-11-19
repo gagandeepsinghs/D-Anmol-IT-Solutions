@@ -1,142 +1,172 @@
-# D-Anmol Academy Website — Technology Documentation
+# D-Anmol Academy Website — Technology and Architecture
 
-## Overview
+## Project overview
 
-This website is a single-page React application for D-Anmol Academy’s IT training programs. It includes course browsing, course detail pages, enquiry forms, advisor booking, corporate training information, FAQs, and an admin/demo data view.
+D-Anmol Academy’s website is a responsive course discovery and enquiry site. Visitors can browse the academy’s courses, read course outlines, learn about corporate training, and contact the academy. The site does not provide online checkout, student accounts, or a database-backed course editor.
 
-## Core technologies
+The application is a browser-rendered React single-page application (SPA), built with Vite. Its public pages and route-specific HTML metadata are prepared during the production build. The page content itself is rendered by React in the browser; this is not server-side rendering (SSR).
 
-- **React 18** — Component-based user interface development.
-- **React DOM** — Renders the React application in the browser.
-- **React Router DOM 6** — Client-side routing for pages and course detail URLs.
-- **Vite 6** — Development server, module bundling, and production builds.
-- **JavaScript / JSX** — Application logic and UI components.
-- **Tailwind CSS 3** — Utility CSS configuration and theme support.
-- **PostCSS** — CSS processing through the project’s PostCSS configuration.
-- **Autoprefixer** — Adds browser-specific CSS prefixes during processing.
-- **Lucide React** — Icon library used throughout navigation, cards, forms, and actions.
+## Technology stack
 
-## Styling and design system
+| Area | Technology | Use |
+| --- | --- | --- |
+| UI | React 18, React DOM | Components and browser rendering |
+| Language | JavaScript and JSX | Application logic and UI |
+| Routing | React Router DOM 6 | Client-side page navigation and course routes |
+| Build tooling | Vite 6, `@vitejs/plugin-react` | Local development and production bundling |
+| Styling | Authored CSS, Tailwind CSS 3, PostCSS, Autoprefixer | Responsive design, stylesheets, and CSS processing |
+| Icons | Lucide React | Interface and content icons |
+| Typography | Inter from Google Fonts, with system font fallbacks | Site-wide typography |
+| Enquiry delivery | Google Apps Script web app | Receives form submissions and can write them to Google Sheets |
+| Hosting configuration | Vercel configuration and serverless functions | Route rewrites, redirects, sitemap, and robots endpoints |
 
-The main visual styling is defined in [`src/styles.css`](./src/styles.css). It includes:
+Most of the visible design is implemented in `src/styles.css` and component CSS files. Tailwind is configured in `tailwind.config.js`, but the main page styling is authored CSS rather than a Tailwind-only UI.
 
-- Global layout and typography rules
-- Responsive breakpoints and mobile navigation styling
-- Site header, footer, hero sections, cards, forms, modals, and banners
-- Academy color tokens based on the brochure and reference design:
-  - Navy for primary structure and headings
-  - Golden yellow for actions and highlights
-  - White and off-white for surfaces
-  - Small red accents for emphasis
-- CSS custom properties for shared colors, spacing, borders, and typography
-- Google Fonts import for Inter
+## Main site features
 
-Tailwind theme extensions are configured in [`tailwind.config.js`](./tailwind.config.js).
+- Homepage, course catalogue, individual course pages, and AI/Python programme pages
+- About, Contact, Corporate Training, FAQ, and policy pages
+- Course search and category filtering
+- Course outlines, learning modules, topics, projects, and technology badges
+- Contact/enquiry forms with client-side validation and loading, success, and error states
+- Advisor booking modal and floating contact actions
+- Responsive navigation, mobile layouts, reduced-motion support, and accessible form labels
+- Route-specific titles, descriptions, canonical and social metadata
+- EducationalOrganization JSON-LD, sitemap, robots rules, legacy redirects, and not-found handling
+
+The form experience depends on an externally deployed endpoint. The repository does not include Google Apps Script source code or a database.
+
+## Routes
+
+Routes are declared in `src/App.jsx`; public routes are also listed in `src/data/publicSitePaths.js`.
+
+| Route pattern | Page |
+| --- | --- |
+| `/` | Homepage |
+| `/courses` | Course catalogue |
+| `/courses/:slug` | Course detail and syllabus |
+| `/ai-python` | AI/Python programme catalogue |
+| `/ai-python/:slug` | AI/Python programme detail |
+| `/corporate-training` | Corporate training |
+| `/about` | About the academy |
+| `/contact` | Contact and enquiry form |
+| `/faq` | Frequently asked questions |
+| `/privacy-policy` | Privacy information |
+| `/terms-and-conditions` | Terms |
+| `/refund-cancellation-policy` | Refund and cancellation information |
+| Any unmatched path | Not-found page |
+
+Legacy course URLs redirect to their current routes. Course and programme routes are generated from the public slug lists and mapped to local course data.
 
 ## Application structure
 
 ```text
+api/
+  lib/seoResponses.js       Shared sitemap.xml and robots.txt response builders
+  robots.js                Vercel robots.txt function
+  sitemap.js               Vercel sitemap.xml function
+public/
+  404.html                 Static not-found response used by local preview
 src/
-├── App.jsx                 Application routes and page shell
-├── main.jsx                React entry point
-├── styles.css              Global styles and responsive design
-├── assets/images/
-│   ├── logos/              Header and footer logos
-│   ├── courses/            Course card and fallback images
-│   ├── modules/            Module, classroom, and learning photos
-│   └── references/         Design references not used by the website
-├── components/             Reusable UI components
-├── config/                 Site configuration and storage keys
-├── context/                Shared application data context
-├── data/                   Course, category, FAQ, and technology data
-└── pages/                  Route-level page components
+  App.jsx                  App shell, routes, and client-side metadata updates
+  main.jsx                 React and BrowserRouter entry point
+  styles.css               Global styles, tokens, responsive rules
+  assets/images/           Brand, course, module, and section imagery
+  components/              Shared navigation, cards, forms, modal, and UI
+  config/siteConfig.js     Brand/contact values and logo assets
+  context/                 Shared application data context
+  data/                    Course, syllabus, FAQ, route, and SEO data
+  lib/                     Enquiry validation and submission helpers
+  pages/                   Route-level page components
+index.html                 Vite HTML entry point and base SEO/schema markup
+vite.config.js             Vite setup and build/preview SEO route plugin
+vercel.json                Vercel rewrites and legacy redirects
 ```
 
-## Reusable components
+### Key data files
 
-The main reusable components are located in [`src/components/`](./src/components):
+- `src/data/courses.js` — Main course catalogue and course detail content
+- `src/data/aiPythonCourses.js` — AI/Python curricula and programme details
+- `src/data/courseSyllabi.json` — Course module outlines and syllabus durations
+- `src/data/courseSyllabi.js` — Syllabus-folder mappings
+- `src/data/categories.js` — Course categories
+- `src/data/faqs.js` — FAQ entries
+- `src/data/moduleTechnologies.js` — Technology labels associated with modules
+- `src/data/seoMetadata.js` — Public route titles and descriptions
+- `src/data/publicSitePaths.js` — Public route allowlist and legacy redirects
+- `src/config/siteConfig.js` — Academy name, phone, email, WhatsApp, service areas, and logos
 
-- `Header.jsx` — Main navigation, course menu, training menu, and mobile menu
-- `Footer.jsx` — Site footer and contact links
-- `Button.jsx` — Shared button and link styles
-- `CourseCard.jsx` — Course listing cards
-- `EnquiryForm.jsx` — General enquiry form
-- `AiPythonEnquiryForm.jsx` — AI/Python enquiry form
-- `AdvisorBookingModal.jsx` — Advisor consultation modal
-- `FloatingActions.jsx` — Floating contact/action controls
-- `TrainingMarquee.jsx` — Training category marquee
-- `ScrollToTop.jsx` — Scroll-to-top interaction
+Course information is bundled with the frontend; it is not loaded from a CMS or database. `AppDataContext` exposes the catalogue to components.
 
-## Pages and routing
+## Forms and enquiry flow
 
-Page components are located in [`src/pages/`](./src/pages):
+`EnquiryForm`, `AiPythonEnquiryForm`, and `AdvisorBookingModal` use shared validation/submission helpers under `src/lib/`.
 
-- Home page
-- Courses listing page
-- Course detail page
-- About page
-- Contact page
-- Corporate training page
-- AI/Python training page
-- AI/Python course detail page
-- Admin/demo page
+1. The browser validates the form fields.
+2. `src/lib/submitEnquiry.js` sends a JSON payload to the same-origin `/api/enquiry` endpoint.
+3. The endpoint saves the enquiry in MongoDB, where it appears in the admin inbox, then attempts to forward it to the configured Google Apps Script web app.
+4. The frontend treats the submission as successful after it is saved to MongoDB. Google Sheets forwarding status is shown separately in the admin inbox.
 
-Routes are defined in [`src/App.jsx`](./src/App.jsx) using React Router.
+The hidden `website` field is a spam honeypot that must also be checked by the receiving script. The application does not send email directly. The endpoint must be configured and tested in the deployment environment before launch.
 
-## Data and state
+Environment variable names are listed in `.env.example`:
 
-- Course content is stored in JavaScript data modules under [`src/data/`](./src/data/).
-- Categories, FAQs, module technologies, and AI/Python course data are also stored locally in this directory.
-- [`AppDataContext.jsx`](./src/context/AppDataContext.jsx) provides shared course data to components.
-- Browser `localStorage` is used for demo course catalog and enquiry storage.
-- The current enquiry forms are demo-only and do not send email or save to a remote database.
+- `ENQUIRY_FORWARD_URL` — optional server-side Google Apps Script web app endpoint for forwarding enquiries to Sheets
+- `VITE_SITE_URL` — chosen canonical site origin, used by build/deployment SEO endpoints
+- `VITE_GOOGLE_SITE_VERIFICATION` — optional Google Search Console HTML verification token
 
-Storage keys are defined in [`src/config/siteConfig.js`](./src/config/siteConfig.js).
+Values with the `VITE_` prefix are included in browser-side build configuration; do not put private credentials in them.
 
-## Assets
+## SEO, routing, and rendering
 
-The site uses local assets from [`src/assets/images/`](./src/assets/images/), organized by purpose:
+- `src/data/seoMetadata.js` contains static route metadata. Course routes also derive titles and descriptions from course data.
+- `App.jsx` updates the document title, description, canonical, robots, Open Graph, and Twitter metadata after client-side navigation.
+- The Vite build plugin in `vite.config.js` creates route-specific HTML files and metadata for each allowlisted route. These files contain the app shell; React renders page content after JavaScript loads.
+- `api/sitemap.js` and `api/robots.js` expose sitemap and robots responses on Vercel, using shared helpers from `api/lib/seoResponses.js`.
+- The Vite development/preview middleware provides matching sitemap/robots behavior and local redirects/404 handling.
+- `vercel.json` maps known routes to their generated HTML files and defines permanent legacy redirects. It also routes `/sitemap.xml` and `/robots.txt` to the Vercel functions.
+- Vercel hosting and build settings have not been verified against a live deployment. A real HTTP 404 and search indexing should be confirmed after launch.
 
-- [`logos/`](./src/assets/images/logos/) - header and footer logo files
-- [`courses/`](./src/assets/images/courses/) - course card images and the admin fallback image
-- [`modules/`](./src/assets/images/modules/) - module, classroom, and learning photos
-- [`references/`](./src/assets/images/references/) - design references that are not loaded by the website
+## Styling, fonts, and images
 
-To replace a website image, keep its existing filename and extension. The active brand logos are configured in [`src/config/siteConfig.js`](./src/config/siteConfig.js), and module image assignments are in [`src/data/courseModuleImages.js`](./src/data/courseModuleImages.js).
+- `src/styles.css` defines global styles, design tokens, shared components, and many responsive adjustments.
+- Component stylesheets live beside their components, including `CourseSyllabus.css` and `AdvisorBookingModal.css`.
+- The site uses a navy/blue foundation, orange accents, light neutral surfaces, and Inter typography.
+- `index.html` loads Inter from Google Fonts with system fallbacks.
+- Local image assets are grouped under `src/assets/images/brand/`, `courses/`, and `sections/`. Optimized WebP variants are used where available.
+- `src/assets/images/README.md` documents the image folders and replacement process.
 
-## Development commands
+## Hosting and external services
 
-Install dependencies:
+The repository is currently configured for **Vercel**: `vercel.json` and the `api/` functions use Vercel deployment conventions. The built frontend is static, but the sitemap and robots endpoints are serverless functions. The enquiry receiver is a separate Google Apps Script deployment.
 
-```bash
+Deploying to another provider (including Hostinger) requires checking or adapting:
+
+- SPA route rewrites, generated route HTML, and legacy redirects
+- Sitemap and robots endpoints, currently implemented as Vercel functions
+- Build-time environment variables and the canonical site origin
+- The Google Apps Script endpoint configuration and cross-origin behavior
+- Actual status codes for unknown routes
+
+No hosting provider account, production domain, production endpoint, or live enquiry flow is configured by this repository documentation.
+
+## Local development and build
+
+Requirements: Node.js 18 or newer and npm.
+
+```powershell
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
-```
-
-Create a production build:
-
-```bash
 npm run build
-```
-
-Preview the production build locally:
-
-```bash
 npm run preview
 ```
 
-## Build output
+The production build is written to `dist/`. `npm run preview` serves that output locally and exercises the Vite preview middleware. It does not deploy the site.
 
-Vite generates the optimized production files in the `dist/` directory. The output contains the compiled JavaScript, CSS, HTML, and processed image assets.
+## Current boundaries and launch checks
 
-## Current limitations
-
-- Forms are browser-local demo forms and are not connected to an email or backend service.
-- Course and enquiry data is not stored in a secure production database.
-- No authentication or authorization should be assumed for the demo admin page.
-- The site depends on the browser for client-side routing and local storage.
+- A MongoDB-backed admin CMS and login are included for site content and image management. Public registration and checkout are not included.
+- Enquiry delivery requires a deployed and verified Google Apps Script endpoint.
+- Domain purchase, hosting account setup, DNS, production environment variables, and Search Console verification are external launch tasks.
+- Owner approval is still needed for final course details, syllabus mappings, and legal policy text.
+- Validate live routes, 404 status, sitemap, robots, forms, mobile layouts, accessibility, and performance after deployment.

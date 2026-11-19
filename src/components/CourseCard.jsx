@@ -1,6 +1,6 @@
-import { ArrowUpRight, Clock3 } from 'lucide-react'
+import { ArrowUpRight, Clock3, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import courseImageFallback from '../assets/images/courses/course-image-fallback.jpg'
+import courseImageFallback from '../assets/images/courses/covers/optimized/course-image-fallback.webp'
 
 export default function CourseCard({ course, showTopics = false }) {
   const topics = (course.modules || []).slice(0, 3).map((module) => typeof module === 'string' ? module : module.title)
@@ -22,9 +22,8 @@ export default function CourseCard({ course, showTopics = false }) {
       </Link>
       <div className="course-card-content">
         <div className="course-card-meta">
-          {course.duration && <span><Clock3 size={14} />{course.duration}</span>}
-          <span className="meta-dot" aria-hidden="true">•</span>
-          <span>{course.mode || 'Flexible learning'}</span>
+          <span><Clock3 size={14} />3 or 6 months</span>
+          <span><MapPin size={14} />Classroom, Mohali</span>
         </div>
         <h3><Link to={`/courses/${course.slug}`}>{course.title}</Link></h3>
         <p>{course.description}</p>

@@ -1,35 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, BookOpenText, Bot, BriefcaseBusiness, ChartNoAxesCombined, CheckCircle2, ChevronDown, Code2, Layers, LayoutDashboard, LoaderCircle, Sparkles, Workflow, X } from 'lucide-react'
 import { useAppData } from '../context/AppDataContext'
-import { aiPythonCourses } from '../data/aiPythonCourses'
-import { siteConfig } from '../config/siteConfig'
+import EnquirySubmissionError from './EnquirySubmissionError'
+import { useSiteSettings } from '../context/AppDataContext'
+import { validateEnquiryFields } from '../lib/enquiryValidation'
+import { submitEnquiry } from '../lib/submitEnquiry'
 
 const courseIcons = [Bot, ChartNoAxesCombined, Code2, Sparkles, Workflow, Layers, LayoutDashboard, BriefcaseBusiness, BookOpenText]
-const referralOptions = ['Google search', 'Social media', 'Friend or colleague', 'School or college', 'Other']
 const timeOptions = ['Morning (9 AM–12 PM)', 'Afternoon (12 PM–4 PM)', 'Evening (4 PM–7 PM)']
-
-const courseOfferings = [
-  { id: 'computer-basics-office-productivity', source: 'catalog' },
-  { id: 'computer-typing-government-exams', source: 'catalog' },
-  { id: 'ai-machine-learning', source: 'catalog' },
-  { id: 'generative-ai', source: 'catalog' },
-  { id: 'data-science-with-python', source: 'catalog' },
-  { id: 'python-programming', source: 'catalog' },
-  { id: 'full-stack-development', source: 'catalog' },
-  { id: 'ai-automation', source: 'catalog' },
-  { id: 'digital-marketing', source: 'catalog' },
-  { id: 'corporate-training', source: 'service', title: 'Corporate Training' },
-  { id: 'desk-to-dashboard', source: 'catalog' },
-  { id: 'python-django', source: 'ai-python' },
-  { id: 'data-science-python', source: 'ai-python' },
-  { id: 'generative-ai-llm', source: 'ai-python' },
+const countryCodes = [
+  { country: 'India', flag: '🇮🇳', code: '+91' },
+  { country: 'United States', flag: '🇺🇸', code: '+1' },
+  { country: 'United Kingdom', flag: '🇬🇧', code: '+44' },
+  { country: 'Canada', flag: '🇨🇦', code: '+1' },
+  { country: 'Australia', flag: '🇦🇺', code: '+61' },
 ]
-
-const courseTitleAliases = {
-  'Computer Basics & MS Office': 'Computer Basics',
-  'Computer Typing for Government Exams': 'Computer Typing',
-  'Desk to Dashboard: Excel, Power BI & SQL Course in Mohali': 'Desktop to Dashboard',
-}
 
 function getToday() {
   const date = new Date()
@@ -38,7 +23,8 @@ function getToday() {
 }
 
 export default function AdvisorBookingModal({ onClose }) {
-  const { courses, addEnquiry } = useAppData()
+  const { courses } = useAppData()
+  const siteSettings = useSiteSettings()
   const dialogRef = useRef(null)
   const openerRef = useRef(null)
   const courseTriggerRef = useRef(null)
@@ -46,28 +32,23 @@ export default function AdvisorBookingModal({ onClose }) {
   const [form, setForm] = useState({
     name: '',
     phone: '',
+    email: '',
+    countryCode: '+91',
     course: '',
-    referral: '',
+    preferredDemoMode: '',
+    preferredContactMethod: '',
     date: '',
     time: '',
+    website: '',
   })
   const [status, setStatus] = useState('idle')
-  const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState({})
+  const [submissionFailed, setSubmissionFailed] = useState(false)
+  const [submissionError, setSubmissionError] = useState('')
   const [submittedName, setSubmittedName] = useState('')
   const [courseMenuOpen, setCourseMenuOpen] = useState(false)
   const [activeCourseIndex, setActiveCourseIndex] = useState(0)
-  const availableCourses = useMemo(() => {
-    const catalogById = new Map(courses.map((course) => [course.id, course]))
-    const aiPythonById = new Map(aiPythonCourses.map((course) => [course.id, course]))
-
-    return courseOfferings.flatMap((offering) => {
-      if (offering.source === 'service') return [offering]
-      const source = offering.source === 'catalog' ? catalogById : aiPythonById
-      const course = source.get(offering.id)
-      if (!course || course.published === false) return []
-      return [{ ...course, title: courseTitleAliases[course.title.trim()] || course.title.trim() }]
-    })
-  }, [courses])
+  const availableCourses = useMemo(() => courses.filter((course) => course.published !== false), [courses])
   const selectedCourseIndex = availableCourses.findIndex((course) => course.title === form.course)
 
   useEffect(() => {
@@ -78,7 +59,9 @@ export default function AdvisorBookingModal({ onClose }) {
     const previousOverflow = document.body.style.overflow
     openerRef.current = document.activeElement
     document.body.style.overflow = 'hidden'
-    dialogRef.current?.querySelector('input[name="name"]')?.focus()
+    if (!window.matchMedia('(max-width: 600px)').matches) {
+      dialogRef.current?.querySelector('input[name="name"]')?.focus()
+    }
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') onClose()
@@ -104,8 +87,12 @@ export default function AdvisorBookingModal({ onClose }) {
   }, [onClose])
 
   const update = (event) => {
-    setForm((current) => ({ ...current, [event.target.name]: event.target.value }))
-    setError('')
+    const { name, value } = event.target
+    setForm((current) => ({ ...current, [name]: value }))
+    setFieldErrors((current) => ({ ...current, [name]: '' }))
+    setSubmissionFailed(false)
+    setSubmissionError('')
+    if (status === 'failure') setStatus('idle')
   }
 
   const openCourseMenu = () => {
@@ -134,39 +121,47 @@ export default function AdvisorBookingModal({ onClose }) {
 
   const selectCourse = (course) => {
     setForm((current) => ({ ...current, course: course.title }))
-    setError('')
+    setFieldErrors((current) => ({ ...current, course: '' }))
     setCourseMenuOpen(false)
     courseTriggerRef.current?.focus()
   }
 
   const submit = async (event) => {
     event.preventDefault()
-    setError('')
-    if (!form.name.trim() || !form.phone.trim() || !form.course || !form.date || !form.time) {
-      setError('Please complete your name, phone number, course, preferred date and time.')
-      return
-    }
-    const phoneDigits = form.phone.replace(/\D/g, '')
-    if (phoneDigits.length < 7 || phoneDigits.length > 15) {
-      setError('Please enter a valid phone number.')
+    setSubmissionFailed(false)
+    setSubmissionError('')
+    const errors = validateEnquiryFields(form)
+    if (!form.course) errors.course = 'Please select a course.'
+    if (!form.preferredDemoMode) errors.preferredDemoMode = 'Please select online or offline.'
+    if (!form.preferredContactMethod) errors.preferredContactMethod = 'Please select a contact method.'
+    if (form.preferredContactMethod === 'Email' && !form.email.trim()) errors.email = 'Please enter an email address for email contact.'
+    if (!form.date) errors.date = 'Please select a preferred date.'
+    if (!form.time) errors.time = 'Please select a preferred time.'
+    setFieldErrors(errors)
+    if (Object.values(errors).some(Boolean)) {
       return
     }
     setStatus('loading')
     try {
-      addEnquiry({
+      await submitEnquiry({
+        formType: 'demo',
         name: form.name.trim(),
         phone: `${form.countryCode} ${form.phone.trim()}`,
-        email: '',
-        interest: form.course,
-        message: `Free demo request for ${form.course}. Preferred date: ${form.date}. Preferred time: ${form.time}. Time zone: Asia/Kolkata. Referral source: ${form.referral || 'Not provided'}.`,
-        kind: 'advisor-demo',
-        createdAt: new Date().toISOString(),
+        email: form.email.trim(),
+        course: form.course,
+        message: 'Free demo request',
+        preferredDemoMode: form.preferredDemoMode,
+        preferredContactMethod: form.preferredContactMethod,
+        preferredDate: form.date,
+        preferredTime: form.time,
+        website: form.website,
       })
       setSubmittedName(form.name.trim())
       setStatus('success')
-    } catch {
-      setStatus('error')
-      setError('We could not save this demo request in this browser. Please try again.')
+    } catch (error) {
+      setStatus('failure')
+      setSubmissionFailed(true)
+      setSubmissionError(error instanceof Error ? error.message : 'The enquiry could not be sent.')
     }
   }
 
@@ -183,39 +178,60 @@ export default function AdvisorBookingModal({ onClose }) {
               <header className="advisor-modal-header">
                 <div className="advisor-modal-mark" aria-hidden="true"><Bot size={23} /></div>
                 <div>
-                  <span className="advisor-modal-kicker">D-Anmol learning consultation</span>
-                  <h2 id="advisor-modal-title">Request received</h2>
+                  <span className="advisor-modal-kicker">D-Anmol Academy</span>
+                  <h2 id="advisor-modal-title">Demo request received</h2>
                 </div>
-                <button className="advisor-modal-close" type="button" onClick={onClose} aria-label="Close demo booking">
+                <button className="advisor-modal-close" type="button" onClick={onClose} aria-label="Close advisor booking">
                   <X size={21} />
                 </button>
               </header>
               <div className="advisor-success" role="status">
                 <CheckCircle2 size={42} aria-hidden="true" />
                 <h3>Thanks, {submittedName}!</h3>
-                <p>Your demo request has been saved in this browser. It has not been sent to {siteConfig.name}.</p>
+                <p>Your free demo request has been received. The academy will contact you to confirm.</p>
                 <button className="button button-primary" type="button" onClick={onClose}>Done</button>
               </div>
             </div>
           ) : (
             <form className="advisor-booking-form" onSubmit={submit} noValidate>
+              <input className="honeypot-field" name="website" value={form.website} onChange={update} tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="advisor-booking-details">
                 <div className="advisor-booking-intro">
-                  <span className="advisor-modal-kicker">D-Anmol learning consultation</span>
-                  <h2 id="advisor-modal-title">Book Your Free <span>Demo Now</span></h2>
-                  <p>Choose a course and share a few details to help us prepare.</p>
+                  <button className="advisor-mobile-close" type="button" onClick={onClose} aria-label="Close advisor booking">
+                    <X size={19} />
+                  </button>
+                  <span className="advisor-modal-kicker">D-Anmol Academy</span>
+                  <h2 id="advisor-modal-title">Book a <span>Free Demo</span></h2>
+                  <p>Choose a course and share your preferred demo details. The academy will confirm your request.</p>
                 </div>
                 <div className="advisor-details-grid">
                   <label>
                     <span>Full name <b>*</b></span>
-                    <input name="name" autoComplete="name" value={form.name} onChange={update} placeholder="Your full name" required />
+                    <input name="name" autoComplete="name" value={form.name} onChange={update} placeholder="Your full name" required aria-invalid={Boolean(fieldErrors.name)} aria-describedby={fieldErrors.name ? 'advisor-name-error' : undefined} />
+                    {fieldErrors.name && <small className="form-field-error" id="advisor-name-error">{fieldErrors.name}</small>}
                   </label>
                   <label>
                     <span>Phone number <b>*</b></span>
                     <span className="advisor-phone-field">
-                      <span className="advisor-phone-prefix" aria-hidden="true">+91</span>
-                      <input name="phone" type="tel" inputMode="numeric" autoComplete="tel-national" value={form.phone} onChange={update} placeholder="Your phone number" aria-label="Phone number" required />
+                      <select
+                        className="advisor-country-code"
+                        name="countryCode"
+                        value={form.countryCode}
+                        onChange={update}
+                        aria-label="Country calling code"
+                      >
+                        {countryCodes.map(({ country, flag, code }) => (
+                          <option key={`${country}-${code}`} value={code}>{flag} {code}</option>
+                        ))}
+                      </select>
+                      <input name="phone" type="tel" inputMode="tel" autoComplete="tel-national" value={form.phone} onChange={update} placeholder="Your phone number" aria-label="Phone number" required aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'advisor-phone-error' : undefined} />
                     </span>
+                    {fieldErrors.phone && <small className="form-field-error" id="advisor-phone-error">{fieldErrors.phone}</small>}
+                  </label>
+                  <label>
+                    <span>Email address {form.preferredContactMethod === 'Email' && <small>Required for email contact</small>}</span>
+                    <input name="email" type="email" autoComplete="email" value={form.email} onChange={update} placeholder="you@example.com" aria-invalid={Boolean(fieldErrors.email)} aria-describedby={fieldErrors.email ? 'advisor-email-error' : undefined} />
+                    {fieldErrors.email && <small className="form-field-error" id="advisor-email-error">{fieldErrors.email}</small>}
                   </label>
                   <label>
                     <span>Course interest <b>*</b></span>
@@ -234,6 +250,8 @@ export default function AdvisorBookingModal({ onClose }) {
                         aria-expanded={courseMenuOpen}
                         aria-controls="advisor-course-options"
                         aria-required="true"
+                        aria-invalid={Boolean(fieldErrors.course)}
+                        aria-describedby={fieldErrors.course ? 'advisor-course-error' : undefined}
                         onClick={() => courseMenuOpen ? setCourseMenuOpen(false) : openCourseMenu()}
                       >
                         <span className={form.course ? '' : 'is-placeholder'}>{form.course || 'Select a course'}</span>
@@ -264,41 +282,56 @@ export default function AdvisorBookingModal({ onClose }) {
                         ))}
                       </div>
                     </div>
+                    {fieldErrors.course && <small className="form-field-error" id="advisor-course-error">{fieldErrors.course}</small>}
                   </label>
                   <label>
-                    <span>How did you hear about us? <small>Optional</small></span>
-                    <select name="referral" value={form.referral} onChange={update}>
-                      <option value="">Select (optional)</option>
-                      {referralOptions.map((option) => <option key={option} value={option}>{option}</option>)}
+                    <span>Preferred demo mode <b>*</b></span>
+                    <select name="preferredDemoMode" value={form.preferredDemoMode} onChange={update} required aria-invalid={Boolean(fieldErrors.preferredDemoMode)} aria-describedby={fieldErrors.preferredDemoMode ? 'advisor-demo-mode-error' : undefined}>
+                      <option value="">Select mode</option>
+                      <option value="Online">Online</option>
+                      <option value="Offline">Offline</option>
                     </select>
+                    {fieldErrors.preferredDemoMode && <small className="form-field-error" id="advisor-demo-mode-error">{fieldErrors.preferredDemoMode}</small>}
+                  </label>
+                  <label>
+                    <span>Preferred contact method <b>*</b></span>
+                    <select name="preferredContactMethod" value={form.preferredContactMethod} onChange={update} required aria-invalid={Boolean(fieldErrors.preferredContactMethod)} aria-describedby={fieldErrors.preferredContactMethod ? 'advisor-contact-method-error' : undefined}>
+                      <option value="">Select method</option>
+                      <option value="WhatsApp">WhatsApp</option>
+                      <option value="Phone call">Phone call</option>
+                      <option value="Email">Email</option>
+                    </select>
+                    {fieldErrors.preferredContactMethod && <small className="form-field-error" id="advisor-contact-method-error">{fieldErrors.preferredContactMethod}</small>}
                   </label>
                   <label>
                     <span>Preferred date <b>*</b></span>
-                    <input name="date" type="date" min={getToday()} value={form.date} onChange={update} required />
+                    <input name="date" type="date" min={getToday()} value={form.date} onChange={update} required aria-invalid={Boolean(fieldErrors.date)} aria-describedby={fieldErrors.date ? 'advisor-date-error' : undefined} />
+                    {fieldErrors.date && <small className="form-field-error" id="advisor-date-error">{fieldErrors.date}</small>}
                   </label>
                   <label>
                     <span>Preferred time <b>*</b></span>
-                    <select name="time" value={form.time} onChange={update} required>
+                    <select name="time" value={form.time} onChange={update} required aria-invalid={Boolean(fieldErrors.time)} aria-describedby={fieldErrors.time ? 'advisor-time-error' : undefined}>
                       <option value="">Select time</option>
                       {timeOptions.map((option) => <option key={option} value={option}>{option}</option>)}
                     </select>
+                    {fieldErrors.time && <small className="form-field-error" id="advisor-time-error">{fieldErrors.time}</small>}
                   </label>
                   <div className="advisor-timezone-field">
                     <span>Times shown in</span>
                     <div>Asia/Kolkata · GMT+5:30</div>
                   </div>
                 </div>
-                <p className="advisor-timezone-note">The demo runs on India Standard Time (IST).</p>
-                {error && <p className="form-error" role="alert">{error}</p>}
+                <p className="advisor-timezone-note">Times shown in India Standard Time (IST).</p>
+                {submissionFailed && <EnquirySubmissionError message={submissionError} />}
                 <div className="advisor-modal-actions">
                   <button className="advisor-submit" type="submit" disabled={status === 'loading'}>
                     {status === 'loading'
-                      ? <><LoaderCircle className="spin" size={18} /> Saving request...</>
-                      : <>Book Free Demo <ArrowRight size={19} /></>}
+                      ? <><LoaderCircle className="spin" size={18} /> Sending request...</>
+                      : <>Request a Free Demo <ArrowRight size={19} /></>}
                   </button>
                 </div>
-                <p className="advisor-demo-note">A quick, no-pressure conversation about your learning goals. Demo requests are stored in this browser only.</p>
-                <img className="advisor-form-logo" src={siteConfig.logo} alt={siteConfig.name} />
+                <p className="advisor-demo-note">Demo requests are subject to confirmation by the academy.</p>
+                <img className="advisor-form-logo" src={siteSettings.compactLogo} alt={siteSettings.name} />
               </div>
               <aside className="advisor-course-panel">
                 <div className="advisor-course-panel-header">
@@ -306,7 +339,7 @@ export default function AdvisorBookingModal({ onClose }) {
                     <h3>Our Courses</h3>
                     <p>Tap a course to select it</p>
                   </div>
-                  <button className="advisor-modal-close" type="button" onClick={onClose} aria-label="Close demo booking">
+                  <button className="advisor-modal-close" type="button" onClick={onClose} aria-label="Close advisor booking">
                     <X size={21} />
                   </button>
                 </div>
@@ -322,7 +355,9 @@ export default function AdvisorBookingModal({ onClose }) {
                         aria-pressed={selected}
                         onClick={() => {
                           setForm((current) => ({ ...current, course: course.title }))
-                          setError('')
+                          setFieldErrors((current) => ({ ...current, course: '' }))
+                          setSubmissionFailed(false)
+                          if (status === 'failure') setStatus('idle')
                           setCourseMenuOpen(false)
                         }}
                       >

@@ -75,13 +75,6 @@ const courseModuleTechnologies = {
     ['Programme topics agreed during discovery'],
     ['Programme topics agreed during discovery'],
   ],
-  'desk-to-dashboard': [
-    ['Excel'],
-    ['Excel'],
-    ['Power BI'],
-    ['SQL'],
-    ['Digital Marketing', 'Analytics'],
-  ],
   'python-django': [
     ['Python'],
     ['Python'],

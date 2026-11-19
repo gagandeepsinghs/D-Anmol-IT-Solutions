@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ArrowRight, BookOpenText, Bot, BriefcaseBusiness, Building2, ChartNoAxesCombined, ChevronDown, Code2, GraduationCap, Keyboard, Lightbulb, Menu, Sparkles, Workflow, X } from 'lucide-react'
-import { siteConfig } from '../config/siteConfig'
 import { Button } from './Button'
-import { useAppData } from '../context/AppDataContext'
+import { useAppData, useSiteSettings } from '../context/AppDataContext'
 
 const linksBeforeCourses = [{ to: '/', label: 'Home' }]
 const linksAfterCourses = [
@@ -15,11 +14,11 @@ const linksAfterCourses = [
 
 const courseIcons = [BookOpenText, Keyboard, Bot, Sparkles, ChartNoAxesCombined, Code2, Code2, Workflow, Lightbulb, BriefcaseBusiness]
 const trainingOptions = [
-  { title: 'Industrial Training', description: 'Practical technology training with guided exercises and project work.', icon: Building2 },
-  { title: '6 Weeks Summer Training', description: 'A short-term training option for students; schedule and topics are confirmed on enquiry.', icon: Building2 },
-  { title: 'Internship', description: 'Explore a project-based learning experience; availability and format are discussed with you.', icon: BriefcaseBusiness },
-  { title: 'Diploma Course', description: 'Build skills through a longer learning programme; curriculum and duration depend on the selected subject.', icon: GraduationCap },
-  { title: 'Career Course', description: 'Develop practical skills around your learning and career goals. Outcomes and opportunities are not guaranteed.', icon: BookOpenText },
+  { title: 'Online training', description: 'Online learning is available to students across India.', icon: Workflow },
+  { title: 'Offline training', description: 'Offline training targets Mohali, Chandigarh, and Panchkula.', icon: Building2 },
+  { title: 'Weekend batches', description: 'Weekend batches are available; ask us about the schedule for your course.', icon: BriefcaseBusiness },
+  { title: '45-day course options', description: 'A 45-day option is available for selected courses. Ask which courses currently offer it.', icon: GraduationCap },
+  { title: 'Corporate training', description: 'Businesses and corporate teams can enquire about practical training.', icon: BookOpenText },
 ]
 
 export default function Header() {
@@ -27,6 +26,7 @@ export default function Header() {
   const [coursesOpen, setCoursesOpen] = useState(false)
   const [trainingOpen, setTrainingOpen] = useState(false)
   const { courses } = useAppData()
+  const siteSettings = useSiteSettings()
   const location = useLocation()
   const menuRef = useRef(null)
   const trainingMenuRef = useRef(null)
@@ -51,6 +51,16 @@ export default function Header() {
       document.removeEventListener('keydown', closeOnEscape)
     }
   }, [])
+
+  useEffect(() => {
+    if (!open || !window.matchMedia('(max-width: 760px)').matches) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [open])
 
   const toggleCourses = () => {
     setTrainingOpen(false)
@@ -84,10 +94,10 @@ export default function Header() {
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${open ? 'mobile-nav-open' : ''}`}>
       <div className="header-inner">
-        <Link to="/" className="brand" aria-label="D-Anmol Enterprises home" onClick={closeNavigation}>
-          <img src={siteConfig.compactLogo} alt="D-Anmol Enterprises" />
+        <Link to="/" className="brand" aria-label="D-Anmol Academy home" onClick={closeNavigation}>
+          <img src={siteSettings.compactLogo} alt={siteSettings.name} />
         </Link>
         <button
           className="menu-toggle"

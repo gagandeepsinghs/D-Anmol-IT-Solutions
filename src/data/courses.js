@@ -1,26 +1,33 @@
-import computerBasicsImage from '../assets/images/courses/computer-basics.jpg'
-import typingPracticeImage from '../assets/images/courses/typing-practice.jpg'
-import aiImage from '../assets/images/courses/artificial-intelligence.jpg'
-import dataAnalyticsImage from '../assets/images/courses/data-analytics.jpg'
-import pythonImage from '../assets/images/courses/python-programming.jpg'
-import digitalMarketingWorkImage from '../assets/images/courses/digital-marketing-work.jpg'
-import technologyHardwareImage from '../assets/images/courses/technology-hardware.jpg'
-import classroomLearningImage from '../assets/images/modules/classroom-learning.jpg'
-import homeTeamLearningImage from '../assets/images/modules/home-team-learning.jpg'
-import teamPlanningImage from '../assets/images/modules/team-planning.jpg'
-import teamProjectImage from '../assets/images/modules/team-project.jpg'
-import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
-import artificialIntelligenceCourseImage from '../assets/images/courses/artificial-intelligence.png'
-import aiAutomationCourseImage from '../assets/images/courses/AI Automation.png'
-import fullStackCourseImage from '../assets/images/courses/Full Stack.png'
-import generativeAiCourseImage from '../assets/images/courses/Generative AI.png'
+import computerBasicsImage from '../assets/images/courses/covers/optimized/computer-basics.webp'
+import typingPracticeImage from '../assets/images/courses/covers/optimized/typing-practice.webp'
+import aiImage from '../assets/images/courses/covers/optimized/artificial-intelligence.webp'
+import dataAnalyticsImage from '../assets/images/courses/covers/optimized/data-analytics.webp'
+import digitalMarketingWorkImage from '../assets/images/courses/covers/optimized/digital-marketing-work.webp'
+import aiAutomationCourseImage from '../assets/images/courses/covers/optimized/AI Automation.webp'
+import fullStackCourseImage from '../assets/images/courses/covers/optimized/Full Stack.webp'
+import generativeAiCourseImage from '../assets/images/courses/covers/optimized/Generative AI.webp'
+import { createCourseIllustration } from '../lib/courseIllustration'
+import { aiPythonCourses } from './aiPythonCourses'
+
+const dataScienceDetails = aiPythonCourses.find((course) => course.id === 'data-science-python')
+
+export const retiredCourseIds = new Set(['desk-to-dashboard'])
+const coursesToAddToPersistedCatalog = new Set(['stenography-shorthand'])
+
+export function filterRetiredCourses(courseList) {
+  return courseList.filter((course) => !retiredCourseIds.has(course.id))
+}
+
+export function filterRetiredCourseSyllabi(courseSyllabi) {
+  return Object.fromEntries(Object.entries(courseSyllabi).filter(([courseId]) => !retiredCourseIds.has(courseId)))
+}
 
 export const courses = [
   {
     id: 'computer-basics-office-productivity',
     slug: 'computer-basics-ms-office',
     title: 'Computer Basics',
-    category: 'Computer Basics & Office Productivity',
+    category: 'Computer Basics',
     description: 'Build everyday computer confidence with Windows and internet basics, Word documents, Excel spreadsheets and PowerPoint presentations.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
@@ -55,7 +62,7 @@ export const courses = [
     id: 'computer-typing-government-exams',
     slug: 'computer-typing-government-exams',
     title: 'Computer Typing',
-    category: 'Computer Typing for Government Exams',
+    category: 'Computer Typing',
     description: 'Build typing accuracy and confidence through timed passages, exam-style practice and progress review.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
@@ -88,7 +95,7 @@ export const courses = [
   {
     id: 'ai-machine-learning',
     slug: 'artificial-intelligence-machine-learning',
-    title: 'Artificial Intelligence & Machine Learning',
+    title: 'Artificial Intelligence and Machine Learning',
     category: 'Artificial Intelligence and Machine Learning',
     description: 'Build a practical foundation in machine learning, data preparation and responsible AI workflows.',
     duration: '45 Days, 3 or 6 Months',
@@ -182,9 +189,9 @@ export const courses = [
   },
   {
     id: 'data-science-with-python',
-    slug: 'data-science-with-python-course-in-chandigarh',
-    title: 'Data Analytics Foundations',
-    category: 'Python Programming',
+    slug: 'data-analytics',
+    title: 'Data Analytics',
+    category: 'Data Analytics',
     description: 'Analyze data, build predictive models, and create visualizations with Python and machine learning.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
@@ -213,105 +220,22 @@ export const courses = [
     prerequisites: 'Basic computer knowledge. No prior programming experience required.',
   },
   {
-    id: 'artificial-intelligence',
-    slug: 'artificial-intelligence-course-in-chandigarh',
-    title: 'Artificial Intelligence',
-    category: 'Artificial Intelligence and Machine Learning',
-    description: 'Understand AI foundations, neural networks, and practical applications across industries.',
-    duration: '45 Days, 3 or 6 Months',
+    ...dataScienceDetails,
+    id: 'data-science',
+    slug: 'data-science',
+    title: 'Data Science',
+    category: 'Data Science',
+    image: createCourseIllustration('Data Science', 'analytics'),
     mode: 'Online or classroom',
-    image: artificialIntelligenceCourseImage,
-    overview: 'Comprehensive AI training covering machine learning, deep learning, neural networks, computer vision and natural language processing with hands-on projects.',
-    suitableFor: 'Aspiring AI Engineers, developers and professionals wanting to enter the AI field.',
-    level: 'Intermediate',
-    technologies: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenCV', 'Keras'],
-    modules: [
-      { title: 'AI Fundamentals & History', description: 'Introduction to AI, its evolution, types of AI, applications and future trends.' },
-      { title: 'Python & Math for AI', description: 'Python programming, linear algebra, calculus, statistics and probability for AI.' },
-      { title: 'Machine Learning Foundations', description: 'Supervised, unsupervised and reinforcement learning algorithms and their applications.' },
-      { title: 'Neural Networks & Deep Learning', description: 'ANN, CNN, RNN, backpropagation, optimization techniques using TensorFlow and PyTorch.' },
-      { title: 'Computer Vision & NLP', description: 'Image processing, object detection, text processing, sentiment analysis and language models.' },
-      { title: 'AI Projects & Deployment', description: 'End-to-end AI projects, model deployment, MLOps basics and career preparation.' },
-    ],
-    skills: ['AI Fundamentals', 'Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing'],
-    outcomes: [
-      'Understand core AI concepts and algorithms.',
-      'Build and train neural networks using TensorFlow/PyTorch.',
-      'Develop computer vision and NLP applications.',
-      'Deploy AI models to production.',
-      'Solve real-world problems using AI techniques.',
-    ],
-    projects: ['Image Classification System', 'Chatbot using NLP', 'Object Detection App'],
-    prerequisites: 'Basic Python knowledge recommended.',
-  },
-  {
-    id: 'machine-learning',
-    slug: 'machine-learning-course-in-chandigarh',
-    title: 'Machine Learning',
-    category: 'Artificial Intelligence and Machine Learning',
-    description: 'Build predictive models, recommendation systems, and ML pipelines with Python.',
-    duration: '45 Days, 3 or 6 Months',
-    mode: 'Online or classroom',
-    image: teamProjectImage,
-    overview: 'In-depth Machine Learning course covering algorithms, model building, evaluation, feature engineering and building scalable ML solutions.',
-    suitableFor: 'Developers and analysts looking to specialize in Machine Learning.',
-    level: 'Intermediate to Advanced',
-    technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'MLflow'],
-    modules: [
-      { title: 'ML Fundamentals & Linear Regression', description: 'Introduction to ML, supervised learning, linear and logistic regression.' },
-      { title: 'Classification Algorithms', description: 'Decision trees, random forests, SVM, Naive Bayes and ensemble techniques.' },
-      { title: 'Unsupervised Learning', description: 'Clustering, PCA, dimensionality reduction and anomaly detection.' },
-      { title: 'Feature Engineering & Model Optimization', description: 'Data preprocessing, feature selection, hyperparameter tuning and cross-validation.' },
-      { title: 'Recommendation Systems & Time Series', description: 'Collaborative filtering, content-based systems, forecasting and time series analysis.' },
-      { title: 'ML Pipeline & Deployment', description: 'Building ML pipelines, model deployment with Flask/Streamlit and MLOps basics.' },
-    ],
-    skills: ['ML Algorithms', 'Feature Engineering', 'Model Evaluation', 'Recommendation Systems', 'ML Deployment'],
-    outcomes: [
-      'Master all major ML algorithms.',
-      'Build end-to-end ML projects.',
-      'Optimize models for better performance.',
-      'Deploy ML models as web applications.',
-      'Work with real-world datasets effectively.',
-    ],
-    projects: ['House Price Prediction', 'Movie Recommendation System', 'Sales Forecasting Model'],
-    prerequisites: 'Python programming knowledge and basic statistics.',
-  },
-  {
-    id: 'python-programming',
-    slug: 'python-programming',
-    title: 'Python Programming',
-    category: 'Python Programming',
-    description: 'Learn to write readable Python programs and solve practical problems with code.',
-    duration: '45 Days, 3 or 6 Months',
-    mode: 'Online or classroom',
-    image: pythonImage,
-    overview: 'Start with programming fundamentals and build up to small, useful projects using Python’s core tools.',
-    suitableFor: 'Learners beginning their programming journey or looking to develop a foundation in Python.',
-    level: 'Beginner',
-    technologies: ['Python'],
-    modules: [
-      { title: 'Python Setup & Syntax', description: 'Set up a coding environment, learn how Python statements, indentation and comments work, and get comfortable with the notebook and terminal workflow.' },
-      { title: 'Variables, Data Types & OOP', description: 'Store and transform strings, numbers, booleans and collections. Understand Object-Oriented Programming — classes, objects, inheritance and encapsulation.' },
-      { title: 'Conditions, Loops & Functions', description: 'Control program flow with conditions, repeat tasks using loops, and break problems into clean reusable functions and organized modules.' },
-      { title: 'Files, APIs & Error Handling', description: 'Read and write files, call external APIs, handle JSON responses and manage common exceptions to make programs reliable and production-ready.' },
-      { title: 'Data Analysis with Python Libraries', description: 'Work with NumPy, pandas and matplotlib to load, clean, transform and visualize datasets — the foundation for analytics and AI work.' },
-      { title: 'Practical Project & Portfolio Work', description: 'Combine everything to plan, build and test a real Python application — a task tracker, data pipeline or automation script you can show in your portfolio.' },
-    ],
-    skills: ['Problem decomposition', 'Python syntax', 'Reusable functions', 'Debugging fundamentals'],
-    outcomes: [
-      'Use Python variables, data types, conditions and loops.',
-      'Break a problem into functions and reusable code.',
-      'Read and write files and handle common errors.',
-      'Plan, build and test a small Python project.',
-    ],
-    projects: ['Build a command-line task tracker', 'Write a data summary utility'],
-    prerequisites: 'No prior programming experience required.',
+    modules: dataScienceDetails.curriculum,
+    skills: dataScienceDetails.technologies,
+    projects: dataScienceDetails.projects.map((project) => project.title),
   },
   {
     id: 'full-stack-development',
     slug: 'full-stack-development-course-in-chandigarh',
-    title: 'Full Stack Web Development',
-    category: 'Full Stack Web Development',
+    title: 'Full Stack Development',
+    category: 'Full Stack Development',
     description: 'Learn to build complete web applications from database to deployment with modern JavaScript frameworks.',
     duration: '45 Days, 3 or 6 Months',
     mode: 'Online or classroom',
@@ -372,28 +296,46 @@ export const courses = [
     prerequisites: 'No prior marketing experience required.',
   },
   {
-    id: 'desk-to-dashboard',
-    slug: 'desk-to-dashboard',
-    title: 'Desktop to Dashboard',
-    category: 'Corporate Training',
-    description: 'Build practical Excel, Power BI, SQL, and digital marketing skills through guided projects.',
-    duration: '45 Days, 3 or 6 Months',
+    id: 'stenography-shorthand',
+    slug: 'shorthand-stenography',
+    title: 'Shorthand Stenography',
+    category: 'Stenography & Shorthand',
+    description: 'Learn Pitman shorthand alongside practical typing, dictation, reading and transcription over six months.',
+    duration: '6 Months',
     mode: 'Online or classroom',
-    image: teamPlanningImage,
-    overview: 'Five courses in twelve weeks. Weeks 1 to 6 build the foundations; weeks 7 to 12 turn them into dashboards, reports and a real campaign. Every course includes two lessons and one practical project.',
-    suitableFor: 'Beginners, office and admin professionals, small business owners, students and graduates who want practical Excel, Power BI and SQL skills.',
+    image: typingPracticeImage,
+    overview: 'A six-month guided course combining Pitman shorthand signs and rules with keyboard typing practice. Build skills progressively through outline writing and reading, phraseography, dictation, note-taking and transcription.',
+    suitableFor: 'Beginners interested in developing shorthand and practical typing skills through regular guided practice.',
     level: 'Beginner',
-    technologies: ['Excel', 'Power BI', 'SQL', 'Digital Marketing', 'Analytics'],
+    technologies: ['Pitman shorthand', 'Keyboarding practice', 'Dictation', 'Transcription'],
     modules: [
-      { title: 'Course 1: Computer Basics & the Modern Office (Weeks 1–3)', description: 'Computer basics, modern office workflows and a client-ready document pack.' },
-      { title: 'Course 2: Advanced Excel (Weeks 4–6)', description: 'Formulas, pivot tables, data cleaning and lookups, ending with a clean monthly report.' },
-      { title: 'Course 3: Power BI: Dashboards & Reports (Weeks 7–9)', description: 'Data modelling and visualisation to create a sales and operations dashboard.' },
-      { title: 'Course 4: Basic SQL for Reporting (Weeks 10–11)', description: 'SQL queries, joins and aggregations to answer five business questions.' },
-      { title: 'Course 5: Digital Marketing & Analytics (Week 12)', description: 'Campaign planning, analytics and reporting for a real campaign.' },
+      { title: 'Foundation and Basic Signs', description: 'Learn consonants, vowels, outline position, intervening vowels, grammalogues, alternative signs and diphthongs alongside keyboard familiarity and finger placement.' },
+      { title: 'Phraseography, Circles and Loops', description: 'Practise phrase formation, circles, strokes, loops and initial hooks, with typing exercises across the keyboard rows.' },
+      { title: 'Intermediate Shorthand', description: 'Develop alternative forms, vowel placement, hooks, aspirates and stroke direction, supported by reading, outline writing and typing accuracy practice.' },
+      { title: 'Advanced Shorthand Principles', description: 'Apply compound consonants, vowel indication, halving and doubling principles, semicircles and prefixes through guided outline practice.' },
+      { title: 'Advanced Writing and Phrases', description: 'Practise suffixes, contractions, figures, proper names, note-taking, transcription and advanced business and technical phrases.' },
+      { title: 'Practical Shorthand and Final Preparation', description: 'Review the course principles and practise special vocabulary, progressive dictation, timed note-taking, reading back, transcription and final typing assessment.' },
     ],
-    skills: ['Excel', 'Power BI', 'SQL', 'Digital Marketing', 'Analytics'],
-    outcomes: ['Build client-ready documents and monthly reports', 'Create a sales and operations dashboard in Power BI', 'Write SQL queries to answer business questions', 'Plan, run and report a digital campaign', 'Earn a certificate for every completed course'],
-    projects: ['Produce and Share a Client-Ready Document Pack', 'Turn a Raw Export into a Clean Monthly Report', 'Build a Sales and Operations Dashboard', 'Answer Five Business Questions with SQL', 'Plan, Run and Report a Real Campaign'],
-    prerequisites: 'No prior experience required. The path starts with computer basics and the modern office, so it suits beginners. Weekly time: approximately 8–10 hours.',
+    skills: ['Pitman shorthand signs and rules', 'Outline writing and reading', 'Phraseography', 'Dictation and transcription', 'Typing accuracy and speed'],
+    outcomes: [
+      'Recognise and write the principal Pitman shorthand signs covered in the course.',
+      'Form and read outlines using circles, loops, hooks, vowel indications, halving, doubling, prefixes and suffixes.',
+      'Practise note-taking, dictation, reading back and transcription.',
+      'Use correct keyboard posture and finger placement while typing words, paragraphs and basic documents.',
+    ],
+    projects: [
+      'Maintain a shorthand practice portfolio of outlines, phrases and reading exercises.',
+      'Complete progressive dictation and transcription exercises with an error-review log.',
+      'Build a typing practice record tracking accuracy and progress over time.',
+    ],
+    prerequisites: 'Contact the academy to confirm entry requirements and required practice materials.',
   },
 ]
+
+export function includeNewDefaultCourses(courseList) {
+  const existingCourseIds = new Set(courseList.map((course) => course.id))
+  const newCourses = courses.filter((course) => (
+    coursesToAddToPersistedCatalog.has(course.id) && !existingCourseIds.has(course.id)
+  ))
+  return [...courseList, ...newCourses]
+}

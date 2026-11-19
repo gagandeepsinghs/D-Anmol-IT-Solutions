@@ -11,29 +11,30 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button'
-import classroomImage from '../assets/images/modules/classroom-learning.jpg'
-import teamPlanningImage from '../assets/images/modules/team-planning.jpg'
+import { useSiteSettings } from '../context/AppDataContext'
+import classroomImage from '../assets/images/sections/optimized/classroom-learning.webp'
+import teamPlanningImage from '../assets/images/sections/optimized/team-planning.webp'
 
 const strengths = [
   {
     icon: Workflow,
-    title: 'Practice as you learn',
-    body: 'Build understanding through guided exercises and practical project work.',
+    title: 'Beginner-friendly teaching',
+    body: 'Learn step by step through an industry-relevant curriculum and guided explanations.',
   },
   {
     icon: BookOpen,
-    title: 'Clear learning paths',
-    body: 'Explore courses across AI, analytics, programming and everyday digital skills.',
+    title: 'Hands-on practical training',
+    body: 'Apply course topics through guided practice and practical projects.',
   },
   {
     icon: Handshake,
-    title: 'Support along the way',
-    body: 'Learn in a supportive environment where questions and steady progress matter.',
+    title: 'Small batches and personal attention',
+    body: 'Get space to ask questions, receive doubt-solving support, and learn with experienced trainers.',
   },
   {
     icon: UsersRound,
-    title: 'Learning for people and teams',
-    body: 'Find individual learning options or discuss training for your organisation.',
+    title: 'Career guidance and preparation',
+    body: 'Get guidance with resumes, interview preparation, internship assistance, and placement assistance.',
   },
 ]
 
@@ -84,12 +85,14 @@ const values = [
 ]
 
 export default function AboutPage() {
+  const siteSettings = useSiteSettings()
+
   return (
     <div className="about-page">
       <section className="page-hero about-hero">
         <div className="page-wrap about-hero-grid">
           <div className="about-hero-copy">
-            <span className="eyebrow eyebrow-light">About D-Anmol Enterprises</span>
+            <span className="eyebrow eyebrow-light">About D-Anmol Academy</span>
             <h1>Practical skills.<br />Ready to grow.</h1>
             <p>
               We help people and teams build useful digital skills through clear
@@ -104,9 +107,10 @@ export default function AboutPage() {
           </div>
           <figure className="about-hero-image">
             <img
-              src={teamPlanningImage}
+              src={siteSettings.aboutHeroImage || teamPlanningImage}
               alt="A team working together on ideas around a table"
               fetchpriority="high"
+              onError={(event) => { event.currentTarget.src = teamPlanningImage }}
             />
             <figcaption>
               <span><GraduationCap size={19} aria-hidden="true" /></span>
@@ -131,9 +135,10 @@ export default function AboutPage() {
         <div className="page-wrap about-story-grid">
           <figure className="about-story-image">
             <img
-              src={classroomImage}
+              src={siteSettings.aboutStoryImage || classroomImage}
               alt="Learners taking part in a collaborative classroom session"
               loading="lazy"
+              onError={(event) => { event.currentTarget.src = classroomImage }}
             />
             <figcaption>Learning grows through practice, questions and shared ideas.</figcaption>
           </figure>
@@ -146,14 +151,20 @@ export default function AboutPage() {
               learning as new ones emerge.
             </p>
             <p>
-              D-Anmol Enterprises brings together courses in artificial
-              intelligence, data analytics, programming, digital marketing and
-              everyday computer skills. Our focus is on clear foundations,
-              guided practice and useful projects—not just covering topics.
+              D-Anmol Academy offers AI Automation, Full Stack Development,
+              Computer Basics, Computer Typing, Data Analytics, Generative AI,
+              Artificial Intelligence and Machine Learning, Data Science, and
+              Digital Marketing. Our focus is on clear
+              foundations, guided practice, and useful projects.
             </p>
             <p>
               We also work with organisations to discuss training that reflects
               their team’s goals and learning needs.
+            </p>
+            <p>
+              Online training is available across India. Offline training
+              targets Mohali, Chandigarh, and Panchkula; D-Anmol Academy does
+              not publish a public walk-in address.
             </p>
             <Link to="/courses" className="text-link">
               Find a course to explore <ArrowRight size={16} aria-hidden="true" />
@@ -192,7 +203,8 @@ export default function AboutPage() {
             <h2>A thoughtful approach to building skills.</h2>
             <p>
               Good learning combines a clear direction with time to practise,
-              ask questions and connect ideas to real tasks.
+              ask questions and connect ideas to real tasks. Weekend batches
+              are available, and certificates are provided.
             </p>
           </div>
           <div className="about-strength-grid">
@@ -204,6 +216,17 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+          <p className="about-strengths-note">
+            Standard course durations are 3–6 months; 45-day options are
+            available for selected courses. Contact us to confirm the duration
+            and availability for a specific course. Fees are affordable; contact
+            us for current course fees.
+          </p>
+          <p className="about-strengths-note">
+            Career guidance, resume building, interview preparation, internship
+            assistance, and placement assistance are provided. Employment or
+            placement is not guaranteed.
+          </p>
         </div>
       </section>
 

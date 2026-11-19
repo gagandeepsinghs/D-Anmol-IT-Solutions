@@ -1,8 +1,8 @@
-# D-Anmol Enterprises Training Website
+# D-Anmol Academy Training Website
 
-A responsive, frontend-only training website for D-Anmol Enterprises. It presents technology and office-skills courses, explains course modules, supports demo enquiries, and includes a browser-only demo course manager.
+A responsive training website for D-Anmol Academy. Enquiry forms submit through a server API to a configured Google Apps Script web app and are copied into MongoDB for the admin inbox.
 
-> **Demo status:** This project does not have a backend, email delivery, WhatsApp API, or secure admin authentication. Public forms and admin changes are local browser demonstrations only.
+> **Enquiry setup:** Enquiries are saved to MongoDB for the admin inbox. To also forward them to Google Sheets, set `ENQUIRY_FORWARD_URL` in the server environment to the deployed Google Apps Script web app URL. A Sheets forwarding failure does not discard an enquiry saved in the admin inbox.
 
 ## Contents
 
@@ -12,7 +12,7 @@ A responsive, frontend-only training website for D-Anmol Enterprises. It present
 - [Website pages](#website-pages)
 - [Project structure](#project-structure)
 - [Editing website content](#editing-website-content)
-- [Demo forms and browser storage](#demo-forms-and-browser-storage)
+- [Google Sheets enquiry setup](#google-sheets-enquiry-setup)
 - [Contact and WhatsApp configuration](#contact-and-whatsapp-configuration)
 - [Responsive design and accessibility](#responsive-design-and-accessibility)
 - [Build and preview](#build-and-preview)
@@ -20,16 +20,16 @@ A responsive, frontend-only training website for D-Anmol Enterprises. It present
 
 ## Features
 
-- Responsive home, course catalogue, course detail, AI & Python, corporate training, About, Contact, and demo admin pages.
+- Responsive home, course catalogue, course detail, AI & Python, corporate training, About, Contact, and policy pages.
 - Searchable course listings and category filters.
 - A Courses dropdown that links to published course details.
 - Course pages with overviews, explained curriculum modules, skills, project ideas, prerequisites, duration, and learning mode.
 - Separate Computer Basics & MS Office and Computer Typing for Government Exams programmes.
-- Contact, course and corporate enquiry forms with required-field and email validation, loading feedback, and demo-only confirmation.
-- Demo course management for adding, editing, publishing/unpublishing, and deleting catalogue entries.
-- Configurable contact details and a WhatsApp-style contact panel. Until a real WhatsApp number is configured, the panel links to the Contact page.
+- Contact, course, corporate, AI/Python, and demo-request forms with validation and configurable enquiry submission.
+- Direct academy contact links for WhatsApp, phone, and email. Admissions are handled directly with the academy; the site has no checkout flow.
 - Responsive layouts, subtle hover and motion effects, reduced-motion support, and accessible labels.
-- Page titles and meta descriptions updated for the current route.
+- Route-specific page titles, descriptions, canonical URLs, crawl directives, and social metadata.
+- Dynamically generated sitemap and robots endpoints, plus proper 404 handling.
 
 ## Technology
 
@@ -38,9 +38,10 @@ A responsive, frontend-only training website for D-Anmol Enterprises. It present
 - Tailwind CSS
 - React Router DOM
 - Lucide React
-- Browser `localStorage` for demo course edits and enquiry records
+- Vercel serverless API functions and MongoDB for managed website content and enquiry records
+- Google Apps Script web app endpoint for forwarding enquiries to a Google Sheet
 
-There is no application server, external database, or third-party form backend in this project.
+The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site, course and module images, and the admin inbox. A deployed Google Apps Script web app also receives enquiry submissions and writes them to the configured Google Sheet.
 
 ## Run the project
 
@@ -64,20 +65,27 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Homepage with featured courses, categories, learning approach, sample testimonials, FAQs, and demo enquiry form |
+| `/` | Homepage with featured courses, categories, learning approach, course-planning steps, FAQs, and enquiry form |
 | `/courses` | Searchable and filterable course catalogue |
 | `/courses/:slug` | Course overview, modules, outcomes, projects, prerequisites, and enquiry options |
+| `/courses/data-analytics` | Data Analytics course; the previous `/courses/data-science-with-python-course-in-chandigarh` URL redirects here |
+| `/courses/data-science` | Data Science course and its curriculum-based learning pathway |
 | `/courses/computer-basics-ms-office` | Computer fundamentals and Microsoft Word, Excel, and PowerPoint |
 | `/courses/computer-typing-government-exams` | Separate typing practice programme for government-exam preparation |
 | `/courses/computer-basics-ms-office-typing` | Legacy URL; redirects to the updated Computer Basics & MS Office page |
 | `/ai-python` | AI & Python programme catalogue |
 | `/ai-python/:slug` | Individual AI & Python programme details |
-| `/corporate-training` | Corporate programme information and demo enquiry |
+| `/corporate-training` | Corporate programme information and enquiry |
 | `/about` | Editable company overview and practical-learning approach |
-| `/contact` | Contact placeholders and demo contact form |
-| `/admin` | Browser-only demo course manager and enquiry list |
+| `/contact` | Contact information and enquiry form |
+| `/privacy-policy` | How information submitted through enquiries is used |
+| `/terms-and-conditions` | Website information, demo requests, and admission process |
+| `/refund-cancellation-policy` | Direct contact information for refund and cancellation enquiries |
+| `/sitemap.xml` | XML sitemap of public routes |
+| `/robots.txt` | Public crawl rules and sitemap location |
+| unknown URL | Custom not-found page with HTTP 404 on Vercel and local preview |
 
-The Courses dropdown is populated from the locally loaded course list and omits courses marked unpublished.
+The Courses dropdown is populated from the source course list.
 
 ## Project structure
 
@@ -85,15 +93,20 @@ The Courses dropdown is populated from the locally loaded course list and omits 
 src/
   assets/
     images/
-      logos/                   Header and footer logo files
-      courses/                 Course card and fallback images
-      modules/                 Module, classroom, and learning photos
-      references/              Design references not used by the website
+      brand/                 Header and footer logos
+      courses/
+        covers/              Course card and detail images
+        modules/             Optional per-course module photos
+      sections/              Homepage and other page photos
+      references/            Design references not used by the website
   components/                  Shared header, footer, buttons, forms, cards, and floating contact panel
   config/
-    siteConfig.js              Brand and contact placeholders, logo imports, storage keys
+    siteConfig.js              Brand and contact details, logo imports
+  lib/
+    submitEnquiry.js           Sends enquiries to the same-origin API
+    enquiryValidation.js       Shared name, phone, and optional email validation
   context/
-    AppDataContext.jsx         Shared course and enquiry state
+    AppDataContext.jsx         Shared course data
   data/
     courses.js                 Main editable course catalogue and detailed modules
     aiPythonCourses.js         AI & Python catalogue and course details
@@ -101,12 +114,12 @@ src/
     faqs.js                    Homepage FAQ content
   pages/                       Route-level page components
   styles.css                   Global styles, responsive layouts, and motion effects
-  App.jsx                      Routes, metadata, and browser demo persistence
+  App.jsx                      Routes and page metadata
   main.jsx                     React and router entry point
 index.html                     HTML shell and basic metadata
 ```
 
-Replace website images in the matching folder under `src/assets/images/`. Keep the same filename and file type so existing imports continue to work. See [`src/assets/images/README.md`](./src/assets/images/README.md) for the image guide.
+Replace built-in defaults from the admin panel under **Site content → Site photos and logos**. Course and AI & Python cover photos are managed in their respective editors, and module photos are managed under **Module images**. Each upload accepts JPEG, PNG, or WebP files smaller than 20 MB; larger images are resized and optimized before upload. To change bundled fallback assets, use the matching folder under `src/assets/images/`; see [`src/assets/images/README.md`](./src/assets/images/README.md).
 
 ## Editing website content
 
@@ -152,40 +165,38 @@ Edit `src/data/aiPythonCourses.js`. These programmes include `suitableFor`, `lev
 
 ### Other page content
 
-- Homepage copy and sample testimonials: `src/pages/HomePage.jsx`
+- Homepage copy and learning steps: `src/pages/HomePage.jsx`
 - FAQ entries: `src/data/faqs.js`
 - Corporate training copy: `src/pages/CorporatePage.jsx`
 - About page copy: `src/pages/AboutPage.jsx`
 - Brand and contact values: `src/config/siteConfig.js`
 
-Testimonials are explicitly labelled as sample content. Review all course details and placeholders before publishing.
+Review all course details and placeholders before publishing.
 
-## Demo forms and browser storage
+## Google Sheets enquiry setup
 
-Forms validate required fields and email format, show a brief loading state, and then display a demo-only confirmation. They do **not** send submissions to D-Anmol Enterprises.
+Every enquiry form posts `formType`, `name`, `phone`, `email`, `course`, `message`, and `website`. Corporate enquiries also include `organization`; advisor bookings include `preferredDate`, `preferredTime`, and `referralSource`. The `website` field is a spam honeypot. The form only shows success when the endpoint returns JSON with `{"ok": true}`.
 
-Demo course edits and enquiry records are stored in the visitor's browser:
+1. Deploy a Google Apps Script web app connected to the spreadsheet. The Google Sheets edit URL is not the endpoint URL; use the Apps Script deployment URL.
+2. Set `ENQUIRY_FORWARD_URL` in your local `.env` and the deployment provider's server environment to the HTTPS Apps Script deployment URL. HTTP destinations are rejected. `VITE_ENQUIRY_URL` is still accepted as a compatibility fallback and must also use HTTPS. MongoDB must be configured for enquiries to be accepted into the admin inbox; Sheets forwarding is additional.
+3. Configure the script to accept the JSON payload, write each field to its own spreadsheet column, store phone numbers as text, and return JSON with an `ok` boolean. Validate fields and reject filled honeypots server-side.
+4. Restart the Vite server after changing `.env`, then test contact, corporate, AI/Python, course, and advisor submissions.
 
-- `danmol-demo-courses` — demo course catalogue edits and publish status
-- `danmol-demo-enquiries` — demo enquiries
-- `danmol-demo-course-catalog-version` — local catalogue migration marker
-
-This storage is specific to the browser and device, is not a secure production database, and does not provide synchronization or backups. The admin page has no authentication or production-grade access controls. Never store sensitive information there.
-
-To reset the demo data, remove the `danmol-demo-courses`, `danmol-demo-enquiries`, and `danmol-demo-course-catalog-version` keys from the browser's local storage for this site. Resetting course data restores the default catalogue on the next load.
+`.env.example` contains the required variable name. Do not commit `.env`; keep this value as a deployment configuration item. No email-sending service is used by these forms.
 
 ## Contact and WhatsApp configuration
 
-Update the placeholders in `src/config/siteConfig.js` before publishing:
+Review the confirmed business details in `src/config/siteConfig.js` before publishing:
 
+- `name`
 - `phone`
 - `email`
-- `address`
 - `whatsappNumber`
+- `trainingAreas`
 
-Set `whatsappNumber` to the business number in international digits-only format, without `+`, spaces, or punctuation. The WhatsApp panel opens a `wa.me` conversation only when a number is configured. Until then, it provides a link to `/contact`.
+Do not add a public walk-in address. `trainingAreas` describes online training across India and offline training in Mohali, Chandigarh, and Panchkula. The WhatsApp link strips formatting from `whatsappNumber` before opening a `wa.me` conversation.
 
-The contact form and WhatsApp shortcut do not automatically transmit or persist messages outside the user's browser; WhatsApp only opens after the visitor chooses to continue and a valid business number is configured.
+Enquiry forms post to the same-origin API, which stores the request in MongoDB and forwards it to the configured Apps Script URL. Verify both the admin inbox and spreadsheet with an owner-approved test enquiry. WhatsApp opens only after a visitor chooses to continue.
 
 ## Responsive design and accessibility
 
@@ -210,13 +221,38 @@ Serve the production build locally:
 npm run preview
 ```
 
+The build creates route-specific HTML shells with unique titles, descriptions, canonical paths, and social metadata. Vercel rewrites only known client-side routes; unmatched paths use `public/404.html` and return HTTP 404. Vite development and preview use the same route allowlist and custom 404 behavior.
+
+## SEO and Google Search Console
+
+- `src/data/publicSitePaths.js` is the public route allowlist used by the sitemap and local Vite 404 middleware. `src/data/seoMetadata.js` holds titles and descriptions; update both when adding routes.
+- Add each valid app route to `vercel.json` with a rewrite to its generated `/<route>/index.html`. Keep legacy URLs as permanent redirects. Do not add a catch-all SPA rewrite; it turns unknown URLs into HTTP 200 responses.
+- `/sitemap.xml` and `/robots.txt` are served by Vercel functions and use `VITE_SITE_URL` when configured, otherwise the request host. Set `VITE_SITE_URL` in the Vercel build environment to the chosen canonical origin (for example `https://www.example.com`) after the production domain is selected.
+- Verify the site in Google Search Console using DNS TXT verification after the domain is connected. Then submit `https://<chosen-host>/sitemap.xml`. Alternatively, add the Search Console HTML-tag token as `VITE_GOOGLE_SITE_VERIFICATION` in the Vercel build environment and redeploy.
+- Policies are included in the sitemap and indexable; have the academy owner approve their wording before production publication.
+
 ## Before production launch
 
 1. Confirm course names, syllabus, durations, modes, prerequisites, and project descriptions with the business.
-2. Replace placeholder phone, email, address, and WhatsApp values in `src/config/siteConfig.js`.
-3. Connect forms to an approved backend or email service and replace the demo-only success messages.
-4. Add authentication and server-side authorization before making admin operations available to real users.
-5. Replace browser-only demo storage with durable, access-controlled persistence if course editing or enquiry management is required in production.
-6. Review image rights and availability. The logo is local in `asset/`; course and page photos currently use remote Unsplash URLs.
-7. Ensure the required fonts and imagery are available in the intended deployment environment. Geist is loaded from Google Fonts with a system-font fallback.
+2. Keep the confirmed public phone and email in `src/config/siteConfig.js`; do not publish a walk-in address.
+3. Deploy and test the Google Apps Script endpoint and configure `ENQUIRY_FORWARD_URL` in the production server environment.
+4. Confirm the WhatsApp number and the content of `trainingAreas`.
+5. Review image rights and approvals in `src/assets/images/`; the active logo artwork has not been approved for replacement.
+6. Ensure the required fonts and imagery are available in the intended deployment environment. Geist is loaded from Google Fonts with a system-font fallback.
+7. Set `VITE_SITE_URL` to the chosen canonical origin in Vercel, verify Search Console ownership, and submit the sitemap.
 8. Run `npm run build` and test the deployed routes, forms, and layouts at common screen widths.
+
+## Admin panel
+
+The full-screen admin panel is available at `/admin`. Configure `MONGODB_URI`, `MONGODB_DB`, `ADMIN_PASSWORD` (at least 12 characters), and `ADMIN_SESSION_SECRET` (at least 32 random characters) in the server environment before signing in. There is no public registration: management APIs require a signed, HTTP-only admin session, and write requests must be same-origin. Sessions expire after eight hours. The same MongoDB database stores the admin enquiry copy. Keep these values server-side; do not use `VITE_` prefixes.
+
+Signed-in administrators can change the password from the **Password** section. A changed password is stored as a salted scrypt hash in MongoDB and takes precedence over `ADMIN_PASSWORD`; the environment password remains the initial setup fallback.
+
+The panel provides:
+
+- A section-based page builder for existing public routes and new `/pages/<slug>` pages. Add and reorder hero, text, image, course-list, FAQ, and call-to-action sections; save a draft or publish it. Unpublishing or deleting a managed version restores the original built-in page where one exists.
+- Guided forms for site settings, courses, course modules and detailed outlines, AI & Python programmes, and FAQs. Site photos and logos, course covers, and programme covers can be replaced with JPEG, PNG, or WebP files smaller than 20 MB and restored to their defaults.
+- The module image manager for JPEG, PNG, and WebP files smaller than 20 MB.
+- An enquiry inbox with delivery status, contact details, status tracking, and deletion. Enquiries are copied to MongoDB and still forwarded to Google Sheets.
+
+Saved page and content data uses the configured MongoDB database. Published custom pages are included in the deployed sitemap.

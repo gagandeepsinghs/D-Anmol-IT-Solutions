@@ -1,8 +1,12 @@
-import pythonImage from '../assets/images/courses/python-programming.jpg'
-import dataAnalyticsImage from '../assets/images/courses/data-analytics.jpg'
-import aiImage from '../assets/images/courses/artificial-intelligence.jpg'
-import technologyHardwareImage from '../assets/images/courses/technology-hardware.jpg'
-import technologyWorkshopImage from '../assets/images/modules/technology-workshop.jpg'
+import pythonImage from '../assets/images/courses/covers/python-programming.jpg'
+import { createCourseIllustration } from '../lib/courseIllustration'
+
+export const publicAiPythonCourseIds = {
+  'ai-agents-automation': 'ai-automation',
+  'generative-ai-llm': 'generative-ai',
+  'ai-machine-learning': 'ai-machine-learning',
+  'data-science-python': 'data-science',
+}
 
 export const aiPythonCourses = [
   {
@@ -48,7 +52,7 @@ export const aiPythonCourses = [
     prerequisites: 'Basic computer skills are expected. Prior Python experience is helpful; programming foundations can be discussed before enrolling.',
     duration: 'Contact us for details',
     level: 'Beginner to intermediate',
-    image: dataAnalyticsImage,
+    image: createCourseIllustration('Data Science with Python', 'analytics'),
     technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'],
     curriculum: [
       { title: 'Python tools for data work', description: 'Use notebooks and Python data structures to load, inspect and work with tabular information.' },
@@ -80,7 +84,7 @@ export const aiPythonCourses = [
     prerequisites: 'Comfort with basic computer use is expected. Python and basic statistics are useful foundations; the recommended starting point can be confirmed with the training team.',
     duration: 'Contact us for details',
     level: 'Beginner to intermediate',
-    image: aiImage,
+    image: createCourseIllustration('Artificial Intelligence & Machine Learning', 'ai'),
     technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'PyTorch'],
     curriculum: [
       { title: 'AI and machine-learning foundations', description: 'Distinguish common AI concepts and understand how machine learning uses examples to identify patterns.' },
@@ -112,7 +116,7 @@ export const aiPythonCourses = [
     prerequisites: 'No prior LLM development experience is required. Basic Python is recommended for the API and application-building portions.',
     duration: 'Contact us for details',
     level: 'Beginner to intermediate',
-    image: technologyWorkshopImage,
+    image: createCourseIllustration('Generative AI & LLM Development', 'ai'),
     technologies: ['Python', 'LangChain', 'LLM APIs', 'Prompt engineering'],
     curriculum: [
       { title: 'Generative AI and LLM essentials', description: 'Learn how language models generate responses and where their capabilities and limitations matter.' },
@@ -144,7 +148,7 @@ export const aiPythonCourses = [
     prerequisites: 'Python fundamentals are recommended. Familiarity with web APIs or automation concepts is useful but can be discussed before starting.',
     duration: 'Contact us for details',
     level: 'Intermediate; Python familiarity recommended',
-    image: technologyHardwareImage,
+    image: createCourseIllustration('AI Agents & Automation', 'workflow'),
     technologies: ['Python', 'APIs', 'Workflow automation', 'Human review'],
     curriculum: [
       { title: 'AI automation concepts', description: 'Compare AI-assisted steps with predictable, rule-based workflow automation.' },

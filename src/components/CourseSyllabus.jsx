@@ -1,15 +1,8 @@
 import { useState } from 'react'
-import { ArrowDownToLine, ArrowRight, BookOpenCheck, Check, Clock3 } from 'lucide-react'
+import { ArrowRight, BookOpenCheck, Check, Clock3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import syllabusData from '../data/courseSyllabi'
-import { getCourseModuleImage } from '../data/courseModuleImages'
 import './CourseSyllabus.css'
-
-const syllabusPdfUrls = import.meta.glob('../Courses/**/*.pdf', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-})
 
 const durationOptions = [
   { key: '45_Days', label: '45 Days', note: 'Fast-track foundation' },
@@ -24,65 +17,76 @@ export default function CourseSyllabus({
   heading = 'Choose a learning pathway',
   enquiryHref,
   corporate = false,
+  syllabusOverride,
+  embedded = false,
 }) {
-  const [selectedDuration, setSelectedDuration] = useState('3_Months')
   const durations = syllabusData[folder]
-  const syllabus = durations?.[selectedDuration]
-  const pdfUrl = syllabusPdfUrls[`../Courses/${folder}/${selectedDuration}_Detailed_Syllabus.pdf`]
+  const availableDurations = durationOptions.filter((option) => durations?.[option.key])
+  const [selectedDuration, setSelectedDuration] = useState('3_Months')
+  const activeDuration = availableDurations.some((option) => option.key === selectedDuration)
+    ? selectedDuration
+    : availableDurations.find((option) => option.key === '3_Months')?.key || availableDurations[0]?.key || '3_Months'
+  const syllabus = activeDuration === '3_Months'
+    ? syllabusOverride || durations?.[activeDuration]
+    : durations?.[activeDuration] || syllabusOverride
 
   if (!syllabus) return null
 
+  const hasDurationOptions = availableDurations.length > 1
   const workflow = syllabus.workflow.length
     ? syllabus.workflow
     : ['Learn concepts', 'Practise skills', 'Build projects', 'Show portfolio']
 
   return (
-    <section className="section course-pathway-section" aria-labelledby="course-pathway-heading">
+    <section
+      className={`section course-pathway-section${embedded ? ' course-pathway-section-embedded' : ''}`}
+      aria-labelledby={corporate ? 'course-pathway-heading' : `roadmap-${folder}-heading`}
+    >
       <div className="page-wrap">
-        <div className="course-pathway-intro">
-          <div className="course-pathway-copy">
-            <span className="eyebrow">{corporate ? 'Flexible team pathways' : 'Built from the course syllabus'}</span>
-            <h2 id="course-pathway-heading">{heading}</h2>
-            <p>
-              {corporate
-                ? 'Explore a starting-point roadmap for your team. We can adapt the topics, pace and projects together during planning.'
-                : `Compare three ways to study ${courseTitle}, with step-by-step topics and practical activities taken from the supplied course syllabus.`}
-            </p>
+        {corporate && (
+          <div className="course-pathway-intro">
+            <div className="course-pathway-copy">
+              <span className="eyebrow">Flexible team pathways</span>
+              <h2 id="course-pathway-heading">{heading}</h2>
+              <p>Explore a starting-point roadmap for your team. We can adapt the topics, pace and projects together during planning.</p>
+            </div>
+            <div className="course-pathway-visual">
+              <img src={image} alt={`${courseTitle} learning pathway`} loading="lazy" />
+              <span><BookOpenCheck size={17} /> Learn · practise · build</span>
+            </div>
           </div>
-          <div className="course-pathway-visual">
-            <img src={image} alt={`${courseTitle} learning pathway`} loading="lazy" />
-            <span><BookOpenCheck size={17} /> Learn · practise · build</span>
-          </div>
-        </div>
+        )}
 
-        <div className="course-duration-switcher" role="tablist" aria-label={`${courseTitle} course duration`}>
-          {durationOptions.map((option) => (
-            <button
-              type="button"
-              role="tab"
-              id={`duration-${folder}-${option.key}`}
-              aria-selected={selectedDuration === option.key}
-              aria-controls={`roadmap-${folder}`}
-              key={option.key}
-              onClick={() => setSelectedDuration(option.key)}
-            >
-              <span>{option.label}</span>
-              <small>{option.note}</small>
-            </button>
-          ))}
-        </div>
+        {hasDurationOptions && (
+          <div className="course-duration-switcher" role="tablist" aria-label={`${courseTitle} course duration`}>
+            {availableDurations.map((option) => (
+              <button
+                type="button"
+                role="tab"
+                id={`duration-${folder}-${option.key}`}
+                aria-selected={activeDuration === option.key}
+                aria-controls={`roadmap-${folder}`}
+                key={option.key}
+                onClick={() => setSelectedDuration(option.key)}
+              >
+                <span>{option.label}</span>
+                <small>{option.note}</small>
+              </button>
+            ))}
+          </div>
+        )}
 
         <div
           className="course-pathway-panel"
           id={`roadmap-${folder}`}
-          role="tabpanel"
-          aria-labelledby={`duration-${folder}-${selectedDuration}`}
-          tabIndex={0}
+          role={hasDurationOptions ? 'tabpanel' : undefined}
+          aria-labelledby={hasDurationOptions ? `duration-${folder}-${activeDuration}` : undefined}
+          tabIndex={hasDurationOptions ? 0 : undefined}
         >
           <div className="course-pathway-panel-heading">
             <div>
-              <span className="eyebrow">{syllabus.label} pathway</span>
-              <h3>{courseTitle}</h3>
+              <span className="eyebrow">{corporate ? 'Starting-point roadmap' : 'Illustrative course outline'}</span>
+              <h3 id={`roadmap-${folder}-heading`}>{courseTitle}</h3>
             </div>
             <span className="course-pathway-module-count"><Clock3 size={16} /> {syllabus.modules.length} learning steps</span>
           </div>
@@ -98,19 +102,10 @@ export default function CourseSyllabus({
           </ol>
 
           <ol className="course-roadmap-grid">
-            {syllabus.modules.map((module, index) => (
+            {syllabus.modules.map((module) => (
               <li className="course-roadmap-card" key={`${module.number}-${module.title}`}>
-                <div className="course-roadmap-image">
-                  <img
-                    src={getCourseModuleImage(folder, index)}
-                    alt={`${module.title} learning module`}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span className="course-roadmap-number">{String(module.number).padStart(2, '0')}</span>
-                </div>
                 <div className="course-roadmap-heading">
-                  <span className="course-roadmap-step">Step {String(index + 1).padStart(2, '0')}</span>
+                  <span className="course-roadmap-number">{String(module.number).padStart(2, '0')}</span>
                   <h4>{module.title}</h4>
                 </div>
                 {module.topics.length > 0 && (
@@ -132,25 +127,11 @@ export default function CourseSyllabus({
               </ul>
             </div>
             <div className="course-pathway-actions">
-              {pdfUrl
-                ? <a className="button button-outline" href={pdfUrl} download={`${folder}-${selectedDuration}-syllabus.pdf`}><ArrowDownToLine size={16} /> Download full syllabus</a>
-                : <p className="course-pdf-unavailable">The full syllabus PDF is not available in this build.</p>}
               <Link className="course-pathway-enquire" to={enquiryHref}>
                 {corporate ? 'Discuss this pathway' : 'Ask about this course'} <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-
-          {pdfUrl && (
-            <details className="course-pdf-preview">
-              <summary>Preview the complete {syllabus.label} syllabus</summary>
-              <iframe
-                src={`${pdfUrl}#view=FitH`}
-                title={`${courseTitle} ${syllabus.label} full syllabus`}
-                loading="lazy"
-              />
-            </details>
-          )}
         </div>
       </div>
     </section>

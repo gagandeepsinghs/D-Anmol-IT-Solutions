@@ -7,3 +7,7 @@ export function useAppData() {
   if (!value) throw new Error('useAppData must be used within AppDataContext.')
   return value
 }
+
+export function useSiteSettings() {
+  return useAppData().siteSettings
+}

@@ -1,0 +1,307 @@
+.course-pdf-banner {
+  width: 100%;
+  min-height: 330px;
+  display: grid;
+  grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr);
+  align-items: stretch;
+  gap: 48px;
+  overflow: hidden;
+  padding: 34px 38px 34px 34px;
+  border: 1px solid #173d7e;
+  border-radius: 12px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255, 105, 0, .16), transparent 25%),
+    linear-gradient(110deg, #071d4d 0%, #0b2d70 58%, #123d7d 100%);
+  box-shadow: 0 16px 36px rgba(6, 27, 55, .12);
+}
+
+.course-pdf-preview {
+  position: relative;
+  min-height: 262px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 8px 8px 34px 8px;
+  background: #10285a;
+  box-shadow: 0 16px 28px rgba(2, 13, 38, .28);
+  transform: rotate(-1deg);
+}
+
+.course-pdf-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .48;
+}
+
+.course-pdf-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 27, 55, .18), rgba(6, 27, 55, .86)),
+    linear-gradient(145deg, transparent 54%, rgba(255, 105, 0, .92) 54.5%, #ff6900 100%);
+}
+
+.course-pdf-label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  min-width: 58px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #0b2149;
+  background: #fff;
+  box-shadow: 0 7px 18px rgba(6, 27, 55, .18);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.course-pdf-preview-copy {
+  position: absolute;
+  right: 24px;
+  bottom: 19px;
+  left: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.course-pdf-preview-copy strong {
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+
+.course-pdf-preview-copy span {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.course-pdf-content {
+  position: relative;
+  align-self: center;
+  min-width: 0;
+  min-height: 260px;
+  perspective: 1100px;
+}
+
+.course-pdf-flipper {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.2, .75, .25, 1);
+}
+
+.course-pdf-content.is-open .course-pdf-flipper,
+.course-pdf-content:hover .course-pdf-flipper {
+  transform: rotateY(180deg);
+}
+
+.course-pdf-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.course-pdf-back {
+  transform: rotateY(180deg);
+}
+
+.course-pdf-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffad66;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+
+.course-pdf-content h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+.course-pdf-face > p {
+  max-width: 650px;
+  margin: 0 0 20px;
+  color: #d9e4f4;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.course-pdf-face > p strong {
+  color: #fff;
+}
+
+.course-pdf-email {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 0 20px;
+  border: 0;
+  cursor: pointer;
+  color: #071d4d;
+  background: #ff6900;
+  box-shadow: 0 8px 18px rgba(255, 105, 0, .22);
+  transition: transform .18s ease, background .18s ease;
+}
+
+.course-pdf-email:hover {
+  transform: translateY(-2px);
+  background: #ff7d1a;
+}
+
+.course-pdf-hover-hint,
+.course-pdf-email-note {
+  margin-top: 12px;
+  color: #c4d4ec;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.course-pdf-email-form {
+  width: 100%;
+}
+
+.course-pdf-email-form > label {
+  display: block;
+  margin-bottom: 7px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.course-pdf-email-input {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, .32);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.course-pdf-email-input:focus-within {
+  border-color: #ff8a36;
+  box-shadow: 0 0 0 3px rgba(255, 105, 0, .2);
+}
+
+.course-pdf-email-input svg {
+  flex: 0 0 auto;
+  color: #ffad66;
+}
+
+.course-pdf-email-input input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+}
+
+.course-pdf-email-input input::placeholder {
+  color: #bdcbe0;
+}
+
+.course-pdf-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 13px;
+}
+
+.course-pdf-back-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  border: 0;
+  color: #e2eaf5;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.course-pdf-back-button:hover {
+  color: #ffad66;
+}
+
+.detail-pdf-wrap,
+.ai-python-pdf-wrap {
+  margin-top: 48px;
+}
+
+@media (max-width: 760px) {
+  .detail-pdf-wrap,
+  .ai-python-pdf-wrap {
+    margin-top: 32px;
+  }
+
+  .course-pdf-banner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .course-pdf-preview {
+    min-height: 220px;
+  }
+
+  .course-pdf-preview-copy strong {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-pdf-banner {
+    padding: 16px;
+  }
+
+  .course-pdf-preview {
+    min-height: 190px;
+  }
+
+  .course-pdf-content h2 {
+    font-size: 27px;
+  }
+
+  .course-pdf-face > p {
+    font-size: 13px;
+  }
+
+  .course-pdf-content {
+    min-height: 235px;
+  }
+
+  .course-pdf-form-actions {
+    gap: 6px;
+  }
+
+  .course-pdf-form-actions .course-pdf-email {
+    width: 100%;
+  }
+}

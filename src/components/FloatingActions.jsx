@@ -1,25 +1,34 @@
 import { useState } from 'react'
 import { ArrowUpRight, MessageCircle, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { siteConfig } from '../config/siteConfig'
 import AdvisorBookingModal from './AdvisorBookingModal'
+import { useSiteSettings } from '../context/AppDataContext'
 
 export default function FloatingActions() {
   const [chatOpen, setChatOpen] = useState(false)
   const [advisorOpen, setAdvisorOpen] = useState(false)
-  const phone = siteConfig.whatsappNumber.replace(/\D/g, '')
+  const siteSettings = useSiteSettings()
+  const phone = siteSettings.whatsappNumber.replace(/\D/g, '')
   const whatsappUrl = phone
     ? `https://wa.me/${phone}?text=${encodeURIComponent('Hello, I would like to know more about your courses.')}`
     : null
 
+  const openAdvisor = () => {
+    setAdvisorOpen(true)
+  }
+
+  const closeAdvisor = () => {
+    setAdvisorOpen(false)
+  }
+
   return (
     <>
-      <button className="advisor-cta" type="button" onClick={() => setAdvisorOpen(true)} aria-label="Talk to an advisor about training">
+      <button className="advisor-cta" type="button" onClick={openAdvisor} aria-label="Talk to an advisor about training">
         <span className="advisor-cta-icon"><ArrowUpRight size={21} aria-hidden="true" /></span>
-        <span className="advisor-cta-label">Talk to an advisor</span>
+        <span className="advisor-cta-label">Book a Free Demo</span>
         <span className="advisor-cta-dot" aria-hidden="true" />
       </button>
-      {advisorOpen && <AdvisorBookingModal onClose={() => setAdvisorOpen(false)} />}
+      {advisorOpen && <AdvisorBookingModal onClose={closeAdvisor} />}
       <div className="floating-actions">
         {!whatsappUrl && chatOpen && (
           <section className="whatsapp-panel" aria-label="Course enquiry contact options">

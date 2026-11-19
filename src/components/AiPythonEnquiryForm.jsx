@@ -1,56 +1,60 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle2, LoaderCircle } from 'lucide-react'
+import EnquirySubmissionError from './EnquirySubmissionError'
 import { useAppData } from '../context/AppDataContext'
-import { aiPythonCourses } from '../data/aiPythonCourses'
+import { validateEnquiryFields } from '../lib/enquiryValidation'
+import { submitEnquiry } from '../lib/submitEnquiry'
 
 export default function AiPythonEnquiryForm({ initialCourse = '' }) {
-  const { addEnquiry } = useAppData()
+  const { courses } = useAppData()
   const [form, setForm] = useState({
     name: '',
     phone: '',
     email: '',
     course: initialCourse,
+    website: '',
   })
   const [status, setStatus] = useState('idle')
-  const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState({})
+  const [submissionFailed, setSubmissionFailed] = useState(false)
+  const [submissionError, setSubmissionError] = useState('')
 
-  const update = (event) => setForm({ ...form, [event.target.name]: event.target.value })
+  const update = (event) => {
+    const { name, value } = event.target
+    setForm((current) => ({ ...current, [name]: value }))
+    setFieldErrors((current) => ({ ...current, [name]: '' }))
+    setSubmissionFailed(false)
+    setSubmissionError('')
+    if (status === 'failure') setStatus('idle')
+  }
 
   const submit = async (event) => {
     event.preventDefault()
-    setError('')
-    if (!form.name.trim() || !form.phone.trim() || !form.email.trim() || !form.course) {
-      setError('Please complete all fields to request course information.')
-      setStatus('error')
-      return
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      setError('Please enter a valid email address.')
-      setStatus('error')
-      return
-    }
-    if (!/^[+\d\s().-]{7,20}$/.test(form.phone.trim())) {
-      setError('Please enter a valid phone number.')
-      setStatus('error')
+    setSubmissionFailed(false)
+    setSubmissionError('')
+    const errors = validateEnquiryFields(form)
+    if (!form.course) errors.course = 'Please select a course.'
+    setFieldErrors(errors)
+    if (Object.values(errors).some(Boolean)) {
       return
     }
 
     setStatus('loading')
     try {
-      await new Promise((resolve) => window.setTimeout(resolve, 450))
-      addEnquiry({
+      await submitEnquiry({
+        formType: 'ai-python',
         name: form.name.trim(),
         phone: form.phone.trim(),
         email: form.email.trim(),
-        interest: form.course,
-        message: `Request for course information: ${form.course}`,
-        kind: 'ai-python',
-        createdAt: new Date().toISOString(),
+        course: form.course,
+        message: '',
+        website: form.website,
       })
       setStatus('success')
-    } catch {
-      setError('This browser could not save the demo request. Please try again.')
-      setStatus('error')
+    } catch (error) {
+      setSubmissionFailed(true)
+      setStatus('failure')
+      setSubmissionError(error instanceof Error ? error.message : 'The enquiry could not be sent.')
     }
   }
 
@@ -60,8 +64,8 @@ export default function AiPythonEnquiryForm({ initialCourse = '' }) {
         <CheckCircle2 size={24} />
         <div>
           <strong>Thank you, {form.name.trim()}.</strong>
-          <p>Your course information request is saved as a demo in this browser only. It has not been sent to D-Anmol Enterprises.</p>
-          <button className="text-link" type="button" onClick={() => { setForm({ name: '', phone: '', email: '', course: initialCourse }); setStatus('idle') }}>Make another request</button>
+          <p>Your course information request has been received. We’ll be in touch.</p>
+          <button className="text-link" type="button" onClick={() => { setForm({ name: '', phone: '', email: '', course: initialCourse, website: '' }); setStatus('idle') }}>Make another request</button>
         </div>
       </div>
     )
@@ -69,32 +73,36 @@ export default function AiPythonEnquiryForm({ initialCourse = '' }) {
 
   return (
     <form className="enquiry-form ai-python-form" onSubmit={submit} noValidate>
+      <input className="honeypot-field" name="website" value={form.website} onChange={update} tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="form-grid">
         <label>
           <span>Your name <b>*</b></span>
-          <input name="name" autoComplete="name" value={form.name} onChange={update} required placeholder="Name" />
+          <input name="name" autoComplete="name" value={form.name} onChange={update} required placeholder="Name" aria-invalid={Boolean(fieldErrors.name)} aria-describedby={fieldErrors.name ? 'ai-python-name-error' : undefined} />
+          {fieldErrors.name && <small className="form-field-error" id="ai-python-name-error">{fieldErrors.name}</small>}
         </label>
         <label>
           <span>Phone number <b>*</b></span>
-          <input name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={update} required placeholder="Your phone number" />
+          <input name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={update} required placeholder="Your phone number" aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'ai-python-phone-error' : undefined} />
+          {fieldErrors.phone && <small className="form-field-error" id="ai-python-phone-error">{fieldErrors.phone}</small>}
         </label>
         <label className="form-full">
-          <span>Email address <b>*</b></span>
-          <input name="email" type="email" autoComplete="email" value={form.email} onChange={update} required placeholder="you@example.com" />
+          <span>Email address <small>Optional</small></span>
+          <input name="email" type="email" autoComplete="email" value={form.email} onChange={update} placeholder="you@example.com" aria-invalid={Boolean(fieldErrors.email)} aria-describedby={fieldErrors.email ? 'ai-python-email-error' : undefined} />
+          {fieldErrors.email && <small className="form-field-error" id="ai-python-email-error">{fieldErrors.email}</small>}
         </label>
         <label className="form-full">
           <span>Select a course <b>*</b></span>
-          <select name="course" value={form.course} onChange={update} required>
+          <select name="course" value={form.course} onChange={update} required aria-invalid={Boolean(fieldErrors.course)} aria-describedby={fieldErrors.course ? 'ai-python-course-error' : undefined}>
             <option value="">Choose a course</option>
-            {aiPythonCourses.map((course) => <option key={course.slug} value={course.title}>{course.title}</option>)}
+            {courses.map((course) => <option key={course.slug} value={course.title}>{course.title}</option>)}
           </select>
+          {fieldErrors.course && <small className="form-field-error" id="ai-python-course-error">{fieldErrors.course}</small>}
         </label>
       </div>
-      {error && <p className="form-error" role="alert">{error}</p>}
+      {submissionFailed && <EnquirySubmissionError message={submissionError} />}
       <button className="button button-primary form-submit" type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? <><LoaderCircle className="spin" size={18} /> Saving request...</> : <>Request course information <ArrowRight size={16} /></>}
+        {status === 'loading' ? <><LoaderCircle className="spin" size={18} /> Sending...</> : <>Request course information <ArrowRight size={16} /></>}
       </button>
-      <p className="demo-notice">Demo only: this request is stored in this browser and does not send email or notifications. Browser storage is not a secure production database.</p>
     </form>
   )
 }
