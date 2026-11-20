@@ -1,4 +1,4 @@
-import { AdminConfigurationError, isAdminAuthenticated, sendJson } from '../../api/lib/adminAuth.js'
+import { AdminConfigurationError, isAdminAuthenticated, sendJson } from '../../api-helpers/adminAuth.js'
 
 export default function handler(request, response) {
   if (request.method !== 'GET') {

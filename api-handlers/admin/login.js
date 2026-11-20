@@ -7,8 +7,8 @@ import {
   readJsonBody,
   sendJson,
   setAdminSession,
-} from '../../api/lib/adminAuth.js'
-import { getModuleImageCollection } from '../../api/lib/moduleImageStore.js'
+} from '../../api-helpers/adminAuth.js'
+import { getModuleImageCollection } from '../../api-helpers/moduleImageStore.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {

@@ -3,8 +3,8 @@ import {
   isSameOriginRequest,
   readJsonBody,
   sendJson,
-} from './lib/adminAuth.js'
-import { getModuleImageCollection } from './lib/moduleImageStore.js'
+} from '../api-helpers/adminAuth.js'
+import { getModuleImageCollection } from '../api-helpers/moduleImageStore.js'
 
 const allowedFormTypes = new Set(['contact', 'course', 'corporate', 'demo', 'ai-python'])
 const stringFields = [

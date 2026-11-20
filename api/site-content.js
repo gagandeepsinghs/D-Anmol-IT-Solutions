@@ -1,5 +1,5 @@
-import { sendJson } from './lib/adminAuth.js'
-import { getSiteContentCollection } from './lib/siteContent.js'
+import { sendJson } from '../api-helpers/adminAuth.js'
+import { getSiteContentCollection } from '../api-helpers/siteContent.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'GET') {

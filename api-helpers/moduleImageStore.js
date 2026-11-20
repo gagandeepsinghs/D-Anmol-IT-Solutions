@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb'
-import { corporateSyllabusFolder, courseSyllabusFolders } from '../../src/data/courseSyllabusFolders.js'
+import { corporateSyllabusFolder, courseSyllabusFolders } from '../src/data/courseSyllabusFolders.js'
 
 const databaseClients = new Map()
 const allowedFolders = new Set([...Object.values(courseSyllabusFolders), corporateSyllabusFolder])

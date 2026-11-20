@@ -4,8 +4,8 @@ import {
   isSameOriginRequest,
   readJsonBody,
   sendJson,
-} from '../../api/lib/adminAuth.js'
-import { getModuleImageCollection } from '../../api/lib/moduleImageStore.js'
+} from '../../api-helpers/adminAuth.js'
+import { getModuleImageCollection } from '../../api-helpers/moduleImageStore.js'
 
 const allowedStatuses = new Set(['new', 'contacted', 'closed'])
 

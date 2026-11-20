@@ -4,11 +4,11 @@ import {
   isSameOriginRequest,
   readJsonBody,
   sendJson,
-} from './lib/adminAuth.js'
+} from '../api-helpers/adminAuth.js'
 import {
   getModuleImageCollection,
   ModuleImageStorageUnavailableError,
-} from './lib/moduleImageStore.js'
+} from '../api-helpers/moduleImageStore.js'
 
 const maximumImageBytes = 3 * 1024 * 1024
 const maximumRequestBytes = 4.5 * 1024 * 1024

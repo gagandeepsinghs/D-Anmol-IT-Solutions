@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { createRobotsTxt, createSitemapXml } from './api/lib/seoResponses.js'
+import { createRobotsTxt, createSitemapXml } from './api-helpers/seoResponses.js'
 import { legacyRedirects, publicSitePaths } from './src/data/publicSitePaths.js'
 import { pageSeoByPath } from './src/data/seoMetadata.js'
 

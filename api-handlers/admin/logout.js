@@ -1,4 +1,4 @@
-import { clearAdminSession, isSameOriginRequest, sendJson } from '../../api/lib/adminAuth.js'
+import { clearAdminSession, isSameOriginRequest, sendJson } from '../../api-helpers/adminAuth.js'
 
 export default function handler(request, response) {
   if (request.method !== 'POST') {

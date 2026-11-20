@@ -1,4 +1,4 @@
-import { sendJson } from '../lib/adminAuth.js'
+import { sendJson } from '../../api-helpers/adminAuth.js'
 import login from '../../api-handlers/admin/login.js'
 import logout from '../../api-handlers/admin/logout.js'
 import session from '../../api-handlers/admin/session.js'

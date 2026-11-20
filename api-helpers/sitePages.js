@@ -1,5 +1,5 @@
 import { getModuleImageCollection } from './moduleImageStore.js'
-import { publicSitePaths } from '../../src/data/publicSitePaths.js'
+import { publicSitePaths } from '../src/data/publicSitePaths.js'
 
 const editablePaths = new Set(publicSitePaths)
 const allowedSectionTypes = new Set(['hero', 'text', 'image', 'courses', 'faq', 'cta'])

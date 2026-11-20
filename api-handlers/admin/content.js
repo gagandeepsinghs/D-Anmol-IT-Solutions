@@ -4,8 +4,8 @@ import {
   isSameOriginRequest,
   readJsonBody,
   sendJson,
-} from '../../api/lib/adminAuth.js'
-import { getSiteContentCollection, validateSiteContent } from '../../api/lib/siteContent.js'
+} from '../../api-helpers/adminAuth.js'
+import { getSiteContentCollection, validateSiteContent } from '../../api-helpers/siteContent.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'GET' && request.method !== 'PUT') {

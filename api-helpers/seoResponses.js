@@ -1,4 +1,4 @@
-import { publicSitePaths } from '../../src/data/publicSitePaths.js'
+import { publicSitePaths } from '../src/data/publicSitePaths.js'
 
 function getSiteOrigin(request) {
   const configuredUrl = process.env.VITE_SITE_URL

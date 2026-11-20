@@ -1,6 +1,6 @@
-import { sitemapHandler } from './lib/seoResponses.js'
-import { getSitePagesCollection } from './lib/sitePages.js'
-import { getSiteContentCollection } from './lib/siteContent.js'
+import { sitemapHandler } from '../api-helpers/seoResponses.js'
+import { getSitePagesCollection } from '../api-helpers/sitePages.js'
+import { getSiteContentCollection } from '../api-helpers/siteContent.js'
 
 export default async function sitemap(request, response) {
   try {
