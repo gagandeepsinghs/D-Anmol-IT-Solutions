@@ -14,7 +14,7 @@
             "conditions",
             "workflow diagrams and use-case selection"
           ],
-          "activity": "Document a repetitive task and define success criteria."
+          "activity": "Document a repetitive task and define success criteria. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -25,7 +25,7 @@
             "workflows",
             "executions and node navigation"
           ],
-          "activity": "Create a basic trigger-to-action workflow."
+          "activity": "Create a basic trigger-to-action workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -38,7 +38,7 @@
             "IF",
             "merge and loops"
           ],
-          "activity": "Build a conditional workflow with multiple branches."
+          "activity": "Build a conditional workflow with multiple branches. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -49,7 +49,7 @@
             "mapping",
             "date/text handling and validation"
           ],
-          "activity": "Transform incoming form data into a clean record."
+          "activity": "Transform incoming form data into a clean record. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -60,7 +60,7 @@
             "payloads",
             "testing and secure form handling"
           ],
-          "activity": "Receive a form submission and process its fields."
+          "activity": "Receive a form submission and process its fields. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -72,7 +72,7 @@
             "query parameters",
             "authentication and pagination basics"
           ],
-          "activity": "Connect a workflow to a sample API."
+          "activity": "Connect a workflow to a sample API. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -99,7 +99,7 @@
             "conditions",
             "workflow diagrams and use-case selection"
           ],
-          "activity": "Document a repetitive task and define success criteria."
+          "activity": "Document a repetitive task and define success criteria. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -110,7 +110,7 @@
             "workflows",
             "executions and node navigation"
           ],
-          "activity": "Create a basic trigger-to-action workflow."
+          "activity": "Create a basic trigger-to-action workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -123,7 +123,7 @@
             "IF",
             "merge and loops"
           ],
-          "activity": "Build a conditional workflow with multiple branches."
+          "activity": "Build a conditional workflow with multiple branches. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -134,7 +134,7 @@
             "mapping",
             "date/text handling and validation"
           ],
-          "activity": "Transform incoming form data into a clean record."
+          "activity": "Transform incoming form data into a clean record. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -145,7 +145,7 @@
             "payloads",
             "testing and secure form handling"
           ],
-          "activity": "Receive a form submission and process its fields."
+          "activity": "Receive a form submission and process its fields. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -157,7 +157,7 @@
             "query parameters",
             "authentication and pagination basics"
           ],
-          "activity": "Connect a workflow to a sample API."
+          "activity": "Connect a workflow to a sample API. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -168,7 +168,7 @@
             "templates",
             "attachments and status tracking"
           ],
-          "activity": "Send notifications and log every submission."
+          "activity": "Send notifications and log every submission. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -179,7 +179,7 @@
             "model calls",
             "token/cost awareness and output validation"
           ],
-          "activity": "Classify or summarise incoming text with AI."
+          "activity": "Classify or summarise incoming text with AI. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -190,7 +190,7 @@
             "parsing",
             "deduplication and routing"
           ],
-          "activity": "Prototype a document intake workflow."
+          "activity": "Prototype a document intake workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -202,7 +202,7 @@
             "idempotency",
             "rate limits and manual review"
           ],
-          "activity": "Add failure notifications and recovery steps."
+          "activity": "Add failure notifications and recovery steps. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -230,7 +230,7 @@
             "conditions",
             "workflow diagrams and use-case selection"
           ],
-          "activity": "Document a repetitive task and define success criteria."
+          "activity": "Document a repetitive task and define success criteria. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -241,7 +241,7 @@
             "workflows",
             "executions and node navigation"
           ],
-          "activity": "Create a basic trigger-to-action workflow."
+          "activity": "Create a basic trigger-to-action workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -254,7 +254,7 @@
             "IF",
             "merge and loops"
           ],
-          "activity": "Build a conditional workflow with multiple branches."
+          "activity": "Build a conditional workflow with multiple branches. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -265,7 +265,7 @@
             "mapping",
             "date/text handling and validation"
           ],
-          "activity": "Transform incoming form data into a clean record."
+          "activity": "Transform incoming form data into a clean record. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -276,7 +276,7 @@
             "payloads",
             "testing and secure form handling"
           ],
-          "activity": "Receive a form submission and process its fields."
+          "activity": "Receive a form submission and process its fields. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -288,7 +288,7 @@
             "query parameters",
             "authentication and pagination basics"
           ],
-          "activity": "Connect a workflow to a sample API."
+          "activity": "Connect a workflow to a sample API. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -299,7 +299,7 @@
             "templates",
             "attachments and status tracking"
           ],
-          "activity": "Send notifications and log every submission."
+          "activity": "Send notifications and log every submission. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -310,7 +310,7 @@
             "model calls",
             "token/cost awareness and output validation"
           ],
-          "activity": "Classify or summarise incoming text with AI."
+          "activity": "Classify or summarise incoming text with AI. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -321,7 +321,7 @@
             "parsing",
             "deduplication and routing"
           ],
-          "activity": "Prototype a document intake workflow."
+          "activity": "Prototype a document intake workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -333,7 +333,7 @@
             "idempotency",
             "rate limits and manual review"
           ],
-          "activity": "Add failure notifications and recovery steps."
+          "activity": "Add failure notifications and recovery steps. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -344,7 +344,7 @@
             "secrets",
             "backups and workflow documentation"
           ],
-          "activity": "Prepare a secure workflow handover checklist."
+          "activity": "Prepare a secure workflow handover checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -355,7 +355,7 @@
             "data storage",
             "AI and human approval in one solution"
           ],
-          "activity": "Demo an end-to-end business automation."
+          "activity": "Demo an end-to-end business automation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -387,7 +387,7 @@
             "use cases",
             "workflow and responsible AI"
           ],
-          "activity": "Map a real-world problem to a suitable AI approach."
+          "activity": "Map a real-world problem to a suitable AI approach. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -401,7 +401,7 @@
             "collections",
             "modules and file handling"
           ],
-          "activity": "Write reusable Python programs for data tasks."
+          "activity": "Write reusable Python programs for data tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -414,7 +414,7 @@
             "filtering",
             "missing values and transformations"
           ],
-          "activity": "Clean a raw dataset and produce an analysis-ready table."
+          "activity": "Clean a raw dataset and produce an analysis-ready table. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -426,7 +426,7 @@
             "vectors",
             "matrices and correlation"
           ],
-          "activity": "Summarise a dataset and interpret statistical relationships."
+          "activity": "Summarise a dataset and interpret statistical relationships. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -438,7 +438,7 @@
             "outliers",
             "relationships and exploratory analysis"
           ],
-          "activity": "Create an EDA notebook with visual findings."
+          "activity": "Create an EDA notebook with visual findings. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -451,7 +451,7 @@
             "encoding",
             "scaling and leakage prevention"
           ],
-          "activity": "Prepare a reusable model-ready dataset."
+          "activity": "Prepare a reusable model-ready dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -479,7 +479,7 @@
             "use cases",
             "workflow and responsible AI"
           ],
-          "activity": "Map a real-world problem to a suitable AI approach."
+          "activity": "Map a real-world problem to a suitable AI approach. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -493,7 +493,7 @@
             "collections",
             "modules and file handling"
           ],
-          "activity": "Write reusable Python programs for data tasks."
+          "activity": "Write reusable Python programs for data tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -506,7 +506,7 @@
             "filtering",
             "missing values and transformations"
           ],
-          "activity": "Clean a raw dataset and produce an analysis-ready table."
+          "activity": "Clean a raw dataset and produce an analysis-ready table. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -518,7 +518,7 @@
             "vectors",
             "matrices and correlation"
           ],
-          "activity": "Summarise a dataset and interpret statistical relationships."
+          "activity": "Summarise a dataset and interpret statistical relationships. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -530,7 +530,7 @@
             "outliers",
             "relationships and exploratory analysis"
           ],
-          "activity": "Create an EDA notebook with visual findings."
+          "activity": "Create an EDA notebook with visual findings. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -543,7 +543,7 @@
             "encoding",
             "scaling and leakage prevention"
           ],
-          "activity": "Prepare a reusable model-ready dataset."
+          "activity": "Prepare a reusable model-ready dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -554,7 +554,7 @@
             "assumptions",
             "residuals and regression metrics"
           ],
-          "activity": "Build a house-price or sales prediction model."
+          "activity": "Build a house-price or sales prediction model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -567,7 +567,7 @@
             "precision",
             "recall and F1"
           ],
-          "activity": "Build a spam or customer-churn classifier."
+          "activity": "Build a spam or customer-churn classifier. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -577,7 +577,7 @@
             "boosting concepts",
             "cross-validation and model comparison"
           ],
-          "activity": "Compare multiple models and justify the selected model."
+          "activity": "Compare multiple models and justify the selected model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -587,7 +587,7 @@
             "hierarchical clustering",
             "PCA concepts and segmentation use cases"
           ],
-          "activity": "Segment customers or products using clustering."
+          "activity": "Segment customers or products using clustering. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -616,7 +616,7 @@
             "use cases",
             "workflow and responsible AI"
           ],
-          "activity": "Map a real-world problem to a suitable AI approach."
+          "activity": "Map a real-world problem to a suitable AI approach. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -630,7 +630,7 @@
             "collections",
             "modules and file handling"
           ],
-          "activity": "Write reusable Python programs for data tasks."
+          "activity": "Write reusable Python programs for data tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -643,7 +643,7 @@
             "filtering",
             "missing values and transformations"
           ],
-          "activity": "Clean a raw dataset and produce an analysis-ready table."
+          "activity": "Clean a raw dataset and produce an analysis-ready table. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -655,7 +655,7 @@
             "vectors",
             "matrices and correlation"
           ],
-          "activity": "Summarise a dataset and interpret statistical relationships."
+          "activity": "Summarise a dataset and interpret statistical relationships. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -667,7 +667,7 @@
             "outliers",
             "relationships and exploratory analysis"
           ],
-          "activity": "Create an EDA notebook with visual findings."
+          "activity": "Create an EDA notebook with visual findings. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -680,7 +680,7 @@
             "encoding",
             "scaling and leakage prevention"
           ],
-          "activity": "Prepare a reusable model-ready dataset."
+          "activity": "Prepare a reusable model-ready dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -691,7 +691,7 @@
             "assumptions",
             "residuals and regression metrics"
           ],
-          "activity": "Build a house-price or sales prediction model."
+          "activity": "Build a house-price or sales prediction model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -704,7 +704,7 @@
             "precision",
             "recall and F1"
           ],
-          "activity": "Build a spam or customer-churn classifier."
+          "activity": "Build a spam or customer-churn classifier. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -714,7 +714,7 @@
             "boosting concepts",
             "cross-validation and model comparison"
           ],
-          "activity": "Compare multiple models and justify the selected model."
+          "activity": "Compare multiple models and justify the selected model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -724,7 +724,7 @@
             "hierarchical clustering",
             "PCA concepts and segmentation use cases"
           ],
-          "activity": "Segment customers or products using clustering."
+          "activity": "Segment customers or products using clustering. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -735,7 +735,7 @@
             "feature importance",
             "explainability basics and limitations"
           ],
-          "activity": "Tune a model and document its strengths and weaknesses."
+          "activity": "Tune a model and document its strengths and weaknesses. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -747,7 +747,7 @@
             "reproducibility",
             "documentation and presentation"
           ],
-          "activity": "Present a complete ML project with a report and demo."
+          "activity": "Present a complete ML project with a report and demo. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -780,7 +780,7 @@
             "desktop",
             "taskbar and settings"
           ],
-          "activity": "Identify system components and complete basic computer operations."
+          "activity": "Identify system components, configure basic settings and complete essential computer operations with confidence. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -795,7 +795,7 @@
             "shortcuts",
             "zip files and storage basics"
           ],
-          "activity": "Organise a structured folder system and archive files."
+          "activity": "Create a structured folder system, organise important files and practise archiving, searching and retrieving documents. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -810,7 +810,7 @@
             "passwords",
             "phishing and privacy"
           ],
-          "activity": "Compose a professional email with attachments and organise cloud files."
+          "activity": "Compose a professional email with attachments and organise cloud files. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -825,7 +825,7 @@
             "footers",
             "page numbers and printing"
           ],
-          "activity": "Create a polished resume, letter and multi-page report."
+          "activity": "Create a polished resume, letter and multi-page report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -839,7 +839,7 @@
             "sorting",
             "filtering and charts"
           ],
-          "activity": "Create an expense sheet, marksheet and monthly summary."
+          "activity": "Create an expense sheet, marksheet and monthly summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -853,7 +853,7 @@
             "data validation",
             "tables and PivotTables"
           ],
-          "activity": "Build a simple performance tracker with summary insights."
+          "activity": "Build a simple performance tracker with summary insights. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -882,7 +882,7 @@
             "desktop",
             "taskbar and settings"
           ],
-          "activity": "Identify system components and complete basic computer operations."
+          "activity": "Identify system components, configure basic settings and complete essential computer operations with confidence. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -897,7 +897,7 @@
             "shortcuts",
             "zip files and storage basics"
           ],
-          "activity": "Organise a structured folder system and archive files."
+          "activity": "Create a structured folder system, organise important files and practise archiving, searching and retrieving documents. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -912,7 +912,7 @@
             "passwords",
             "phishing and privacy"
           ],
-          "activity": "Compose a professional email with attachments and organise cloud files."
+          "activity": "Compose a professional email with attachments and organise cloud files. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -927,7 +927,7 @@
             "footers",
             "page numbers and printing"
           ],
-          "activity": "Create a polished resume, letter and multi-page report."
+          "activity": "Create a polished resume, letter and multi-page report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -941,7 +941,7 @@
             "sorting",
             "filtering and charts"
           ],
-          "activity": "Create an expense sheet, marksheet and monthly summary."
+          "activity": "Create an expense sheet, marksheet and monthly summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -955,7 +955,7 @@
             "data validation",
             "tables and PivotTables"
           ],
-          "activity": "Build a simple performance tracker with summary insights."
+          "activity": "Build a simple performance tracker with summary insights. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -970,7 +970,7 @@
             "transitions",
             "animations and presenter view"
           ],
-          "activity": "Design and deliver a structured presentation."
+          "activity": "Design and deliver a structured presentation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -982,7 +982,7 @@
             "shortcuts",
             "printing and practical assessment"
           ],
-          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint."
+          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1012,7 +1012,7 @@
             "desktop",
             "taskbar and settings"
           ],
-          "activity": "Identify system components and complete basic computer operations."
+          "activity": "Identify system components, configure basic settings and complete essential computer operations with confidence. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1027,7 +1027,7 @@
             "shortcuts",
             "zip files and storage basics"
           ],
-          "activity": "Organise a structured folder system and archive files."
+          "activity": "Create a structured folder system, organise important files and practise archiving, searching and retrieving documents. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1042,7 +1042,7 @@
             "passwords",
             "phishing and privacy"
           ],
-          "activity": "Compose a professional email with attachments and organise cloud files."
+          "activity": "Compose a professional email with attachments and organise cloud files. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1057,7 +1057,7 @@
             "footers",
             "page numbers and printing"
           ],
-          "activity": "Create a polished resume, letter and multi-page report."
+          "activity": "Create a polished resume, letter and multi-page report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1071,7 +1071,7 @@
             "sorting",
             "filtering and charts"
           ],
-          "activity": "Create an expense sheet, marksheet and monthly summary."
+          "activity": "Create an expense sheet, marksheet and monthly summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1085,7 +1085,7 @@
             "data validation",
             "tables and PivotTables"
           ],
-          "activity": "Build a simple performance tracker with summary insights."
+          "activity": "Build a simple performance tracker with summary insights. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1100,7 +1100,7 @@
             "transitions",
             "animations and presenter view"
           ],
-          "activity": "Design and deliver a structured presentation."
+          "activity": "Design and deliver a structured presentation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1112,7 +1112,7 @@
             "shortcuts",
             "printing and practical assessment"
           ],
-          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint."
+          "activity": "Complete an integrated office assignment using Word, Excel and PowerPoint. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1143,7 +1143,7 @@
             "number row",
             "punctuation and ergonomic posture"
           ],
-          "activity": "Label key groups and practise correct sitting posture."
+          "activity": "Label key groups and practise correct sitting posture. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1153,7 +1153,7 @@
             "home-row drills",
             "hand positioning and controlled keystrokes"
           ],
-          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+          "activity": "Complete home-row accuracy drills without looking at the keyboard. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1163,7 +1163,7 @@
             "shift key",
             "capitals and reach techniques"
           ],
-          "activity": "Practise progressive letter combinations and short words."
+          "activity": "Practise progressive letter combinations and short words. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1174,7 +1174,7 @@
             "letter combinations",
             "spacing and rhythm"
           ],
-          "activity": "Type word lists while tracking accuracy."
+          "activity": "Type word lists while tracking accuracy. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1185,7 +1185,7 @@
             "symbols",
             "numeric keypad and mixed text"
           ],
-          "activity": "Type formatted sentences, dates and numeric passages."
+          "activity": "Type formatted sentences, dates and numeric passages. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1196,7 +1196,7 @@
             "sustained typing",
             "timed passages and error correction"
           ],
-          "activity": "Complete timed paragraph tests and review errors."
+          "activity": "Complete timed paragraph tests and review errors. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1223,7 +1223,7 @@
             "number row",
             "punctuation and ergonomic posture"
           ],
-          "activity": "Label key groups and practise correct sitting posture."
+          "activity": "Label key groups and practise correct sitting posture. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1233,7 +1233,7 @@
             "home-row drills",
             "hand positioning and controlled keystrokes"
           ],
-          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+          "activity": "Complete home-row accuracy drills without looking at the keyboard. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1243,7 +1243,7 @@
             "shift key",
             "capitals and reach techniques"
           ],
-          "activity": "Practise progressive letter combinations and short words."
+          "activity": "Practise progressive letter combinations and short words. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1254,7 +1254,7 @@
             "letter combinations",
             "spacing and rhythm"
           ],
-          "activity": "Type word lists while tracking accuracy."
+          "activity": "Type word lists while tracking accuracy. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1265,7 +1265,7 @@
             "symbols",
             "numeric keypad and mixed text"
           ],
-          "activity": "Type formatted sentences, dates and numeric passages."
+          "activity": "Type formatted sentences, dates and numeric passages. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1276,7 +1276,7 @@
             "sustained typing",
             "timed passages and error correction"
           ],
-          "activity": "Complete timed paragraph tests and review errors."
+          "activity": "Complete timed paragraph tests and review errors. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1287,7 +1287,7 @@
             "backspace discipline",
             "test formats and personal targets"
           ],
-          "activity": "Complete exam-style tests under time limits."
+          "activity": "Complete exam-style tests under time limits. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1296,7 +1296,7 @@
             "Baseline versus final performance",
             "common error patterns and daily practice plan"
           ],
-          "activity": "Submit a final timed test and individual improvement report."
+          "activity": "Submit a final timed test and individual improvement report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1324,7 +1324,7 @@
             "number row",
             "punctuation and ergonomic posture"
           ],
-          "activity": "Label key groups and practise correct sitting posture."
+          "activity": "Label key groups and practise correct sitting posture. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1334,7 +1334,7 @@
             "home-row drills",
             "hand positioning and controlled keystrokes"
           ],
-          "activity": "Complete home-row accuracy drills without looking at the keyboard."
+          "activity": "Complete home-row accuracy drills without looking at the keyboard. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1344,7 +1344,7 @@
             "shift key",
             "capitals and reach techniques"
           ],
-          "activity": "Practise progressive letter combinations and short words."
+          "activity": "Practise progressive letter combinations and short words. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1355,7 +1355,7 @@
             "letter combinations",
             "spacing and rhythm"
           ],
-          "activity": "Type word lists while tracking accuracy."
+          "activity": "Type word lists while tracking accuracy. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1366,7 +1366,7 @@
             "symbols",
             "numeric keypad and mixed text"
           ],
-          "activity": "Type formatted sentences, dates and numeric passages."
+          "activity": "Type formatted sentences, dates and numeric passages. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1377,7 +1377,7 @@
             "sustained typing",
             "timed passages and error correction"
           ],
-          "activity": "Complete timed paragraph tests and review errors."
+          "activity": "Complete timed paragraph tests and review errors. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1388,7 +1388,7 @@
             "backspace discipline",
             "test formats and personal targets"
           ],
-          "activity": "Complete exam-style tests under time limits."
+          "activity": "Complete exam-style tests under time limits. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1397,7 +1397,7 @@
             "Baseline versus final performance",
             "common error patterns and daily practice plan"
           ],
-          "activity": "Submit a final timed test and individual improvement report."
+          "activity": "Submit a final timed test and individual improvement report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1427,7 +1427,7 @@
             "skill-gap review",
             "baseline assessment and success measures"
           ],
-          "activity": "Create a role-wise training needs summary."
+          "activity": "Create a role-wise training needs summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1438,7 +1438,7 @@
             "cloud workspaces",
             "security awareness and digital etiquette"
           ],
-          "activity": "Complete a workplace productivity checklist."
+          "activity": "Complete a workplace productivity checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1449,7 +1449,7 @@
             "presentations",
             "templates and collaborative review"
           ],
-          "activity": "Produce a standard team document pack."
+          "activity": "Produce a standard team document pack. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1460,7 +1460,7 @@
             "summaries",
             "charts and reporting standards"
           ],
-          "activity": "Create a department-level report."
+          "activity": "Create a department-level report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1470,7 +1470,7 @@
             "dashboard principles",
             "Power BI or equivalent reporting tools as selected"
           ],
-          "activity": "Build a team dashboard prototype."
+          "activity": "Build a team dashboard prototype. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1482,7 +1482,7 @@
             "privacy",
             "copyright and approved-use guidelines"
           ],
-          "activity": "Draft team-specific AI usage guidelines."
+          "activity": "Draft team-specific AI usage guidelines. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1508,7 +1508,7 @@
             "skill-gap review",
             "baseline assessment and success measures"
           ],
-          "activity": "Create a role-wise training needs summary."
+          "activity": "Create a role-wise training needs summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1519,7 +1519,7 @@
             "cloud workspaces",
             "security awareness and digital etiquette"
           ],
-          "activity": "Complete a workplace productivity checklist."
+          "activity": "Complete a workplace productivity checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1530,7 +1530,7 @@
             "presentations",
             "templates and collaborative review"
           ],
-          "activity": "Produce a standard team document pack."
+          "activity": "Produce a standard team document pack. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1541,7 +1541,7 @@
             "summaries",
             "charts and reporting standards"
           ],
-          "activity": "Create a department-level report."
+          "activity": "Create a department-level report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1551,7 +1551,7 @@
             "dashboard principles",
             "Power BI or equivalent reporting tools as selected"
           ],
-          "activity": "Build a team dashboard prototype."
+          "activity": "Build a team dashboard prototype. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1563,7 +1563,7 @@
             "privacy",
             "copyright and approved-use guidelines"
           ],
-          "activity": "Draft team-specific AI usage guidelines."
+          "activity": "Draft team-specific AI usage guidelines. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1573,7 +1573,7 @@
             "repetitive-task discovery",
             "low-code automation and human approval"
           ],
-          "activity": "Map and prototype one process improvement."
+          "activity": "Map and prototype one process improvement. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1584,7 +1584,7 @@
             "marketing",
             "analytics or office tools"
           ],
-          "activity": "Complete a practical role-based exercise."
+          "activity": "Complete a practical role-based exercise. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -1595,7 +1595,7 @@
             "versioning",
             "peer feedback and quality checks"
           ],
-          "activity": "Review and improve a shared team deliverable."
+          "activity": "Review and improve a shared team deliverable. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -1603,7 +1603,7 @@
           "topics": [
             "Use anonymised or approved business scenarios to solve a real work problem"
           ],
-          "activity": "Create a proof of concept for a department use case."
+          "activity": "Create a proof of concept for a department use case. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1630,7 +1630,7 @@
             "skill-gap review",
             "baseline assessment and success measures"
           ],
-          "activity": "Create a role-wise training needs summary."
+          "activity": "Create a role-wise training needs summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1641,7 +1641,7 @@
             "cloud workspaces",
             "security awareness and digital etiquette"
           ],
-          "activity": "Complete a workplace productivity checklist."
+          "activity": "Complete a workplace productivity checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1652,7 +1652,7 @@
             "presentations",
             "templates and collaborative review"
           ],
-          "activity": "Produce a standard team document pack."
+          "activity": "Produce a standard team document pack. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1663,7 +1663,7 @@
             "summaries",
             "charts and reporting standards"
           ],
-          "activity": "Create a department-level report."
+          "activity": "Create a department-level report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1673,7 +1673,7 @@
             "dashboard principles",
             "Power BI or equivalent reporting tools as selected"
           ],
-          "activity": "Build a team dashboard prototype."
+          "activity": "Build a team dashboard prototype. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1685,7 +1685,7 @@
             "privacy",
             "copyright and approved-use guidelines"
           ],
-          "activity": "Draft team-specific AI usage guidelines."
+          "activity": "Draft team-specific AI usage guidelines. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1695,7 +1695,7 @@
             "repetitive-task discovery",
             "low-code automation and human approval"
           ],
-          "activity": "Map and prototype one process improvement."
+          "activity": "Map and prototype one process improvement. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1706,7 +1706,7 @@
             "marketing",
             "analytics or office tools"
           ],
-          "activity": "Complete a practical role-based exercise."
+          "activity": "Complete a practical role-based exercise. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -1717,7 +1717,7 @@
             "versioning",
             "peer feedback and quality checks"
           ],
-          "activity": "Review and improve a shared team deliverable."
+          "activity": "Review and improve a shared team deliverable. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -1725,7 +1725,7 @@
           "topics": [
             "Use anonymised or approved business scenarios to solve a real work problem"
           ],
-          "activity": "Create a proof of concept for a department use case."
+          "activity": "Create a proof of concept for a department use case. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -1735,7 +1735,7 @@
             "practical evaluation",
             "trainer feedback and internal knowledge sharing"
           ],
-          "activity": "Complete a final practical assessment."
+          "activity": "Complete a final practical assessment. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -1746,7 +1746,7 @@
             "assessment summary",
             "recommendations and next steps"
           ],
-          "activity": "Deliver a training summary and 30-day action plan."
+          "activity": "Deliver a training summary and 30-day action plan. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1777,7 +1777,7 @@
             "KPIs",
             "analytical thinking and data lifecycle"
           ],
-          "activity": "Convert a business brief into measurable questions."
+          "activity": "Convert a business brief into measurable questions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1790,7 +1790,7 @@
             "sorting",
             "filtering and tables"
           ],
-          "activity": "Create a structured sales tracker."
+          "activity": "Create a structured sales tracker. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1802,7 +1802,7 @@
             "lookup functions",
             "text/date functions and PivotTables"
           ],
-          "activity": "Analyse sales by region, category and month."
+          "activity": "Analyse sales by region, category and month. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1813,7 +1813,7 @@
             "inconsistent formats",
             "split/merge and transformation steps"
           ],
-          "activity": "Clean a messy business dataset."
+          "activity": "Clean a messy business dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1826,7 +1826,7 @@
             "percent change",
             "distributions and correlation"
           ],
-          "activity": "Create a descriptive statistics summary."
+          "activity": "Create a descriptive statistics summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1837,7 +1837,7 @@
             "colour use",
             "comparisons and avoiding misleading charts"
           ],
-          "activity": "Build a concise chart-based insight report."
+          "activity": "Build a concise chart-based insight report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1864,7 +1864,7 @@
             "KPIs",
             "analytical thinking and data lifecycle"
           ],
-          "activity": "Convert a business brief into measurable questions."
+          "activity": "Convert a business brief into measurable questions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -1877,7 +1877,7 @@
             "sorting",
             "filtering and tables"
           ],
-          "activity": "Create a structured sales tracker."
+          "activity": "Create a structured sales tracker. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -1889,7 +1889,7 @@
             "lookup functions",
             "text/date functions and PivotTables"
           ],
-          "activity": "Analyse sales by region, category and month."
+          "activity": "Analyse sales by region, category and month. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -1900,7 +1900,7 @@
             "inconsistent formats",
             "split/merge and transformation steps"
           ],
-          "activity": "Clean a messy business dataset."
+          "activity": "Clean a messy business dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -1913,7 +1913,7 @@
             "percent change",
             "distributions and correlation"
           ],
-          "activity": "Create a descriptive statistics summary."
+          "activity": "Create a descriptive statistics summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -1924,7 +1924,7 @@
             "colour use",
             "comparisons and avoiding misleading charts"
           ],
-          "activity": "Build a concise chart-based insight report."
+          "activity": "Build a concise chart-based insight report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -1936,7 +1936,7 @@
             "GROUP BY",
             "aggregate functions and joins"
           ],
-          "activity": "Answer business questions from relational tables."
+          "activity": "Answer business questions from relational tables. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -1947,7 +1947,7 @@
             "CASE",
             "date functions and window-function introduction"
           ],
-          "activity": "Create ranked and period-over-period query outputs."
+          "activity": "Create ranked and period-over-period query outputs. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -1958,7 +1958,7 @@
             "relationships",
             "star schema and refresh concepts"
           ],
-          "activity": "Connect multiple tables and build a model."
+          "activity": "Connect multiple tables and build a model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -1969,7 +1969,7 @@
             "CALCULATE basics",
             "filter context and KPI cards"
           ],
-          "activity": "Build an interactive dashboard."
+          "activity": "Build an interactive dashboard. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -1997,7 +1997,7 @@
             "KPIs",
             "analytical thinking and data lifecycle"
           ],
-          "activity": "Convert a business brief into measurable questions."
+          "activity": "Convert a business brief into measurable questions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2010,7 +2010,7 @@
             "sorting",
             "filtering and tables"
           ],
-          "activity": "Create a structured sales tracker."
+          "activity": "Create a structured sales tracker. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2022,7 +2022,7 @@
             "lookup functions",
             "text/date functions and PivotTables"
           ],
-          "activity": "Analyse sales by region, category and month."
+          "activity": "Analyse sales by region, category and month. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2033,7 +2033,7 @@
             "inconsistent formats",
             "split/merge and transformation steps"
           ],
-          "activity": "Clean a messy business dataset."
+          "activity": "Clean a messy business dataset. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2046,7 +2046,7 @@
             "percent change",
             "distributions and correlation"
           ],
-          "activity": "Create a descriptive statistics summary."
+          "activity": "Create a descriptive statistics summary. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2057,7 +2057,7 @@
             "colour use",
             "comparisons and avoiding misleading charts"
           ],
-          "activity": "Build a concise chart-based insight report."
+          "activity": "Build a concise chart-based insight report. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -2069,7 +2069,7 @@
             "GROUP BY",
             "aggregate functions and joins"
           ],
-          "activity": "Answer business questions from relational tables."
+          "activity": "Answer business questions from relational tables. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -2080,7 +2080,7 @@
             "CASE",
             "date functions and window-function introduction"
           ],
-          "activity": "Create ranked and period-over-period query outputs."
+          "activity": "Create ranked and period-over-period query outputs. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -2091,7 +2091,7 @@
             "relationships",
             "star schema and refresh concepts"
           ],
-          "activity": "Connect multiple tables and build a model."
+          "activity": "Connect multiple tables and build a model. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -2102,7 +2102,7 @@
             "CALCULATE basics",
             "filter context and KPI cards"
           ],
-          "activity": "Build an interactive dashboard."
+          "activity": "Build an interactive dashboard. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -2112,7 +2112,7 @@
             "recommendations",
             "stakeholder communication and report design"
           ],
-          "activity": "Present a data-backed recommendation."
+          "activity": "Present a data-backed recommendation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -2123,7 +2123,7 @@
             "dashboard",
             "QA and documentation"
           ],
-          "activity": "Deliver a portfolio-ready business analytics project."
+          "activity": "Deliver a portfolio-ready business analytics project. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2154,7 +2154,7 @@
             "objectives",
             "personas and marketing terminology"
           ],
-          "activity": "Create a basic digital marketing strategy brief."
+          "activity": "Create a basic digital marketing strategy brief. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2165,7 +2165,7 @@
             "landing pages",
             "conversion paths and tracking readiness"
           ],
-          "activity": "Review a landing page and suggest improvements."
+          "activity": "Review a landing page and suggest improvements. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2178,7 +2178,7 @@
             "CTAs",
             "brand voice and creative briefs"
           ],
-          "activity": "Prepare a month-long content calendar."
+          "activity": "Prepare a month-long content calendar. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2191,7 +2191,7 @@
             "YouTube",
             "scheduling and community management"
           ],
-          "activity": "Plan and draft a multi-platform content campaign."
+          "activity": "Plan and draft a multi-platform content campaign. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2202,7 +2202,7 @@
             "typography",
             "brand consistency and social formats"
           ],
-          "activity": "Create a cohesive set of campaign creatives."
+          "activity": "Create a cohesive set of campaign creatives. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2214,7 +2214,7 @@
             "headings",
             "internal links and keyword mapping"
           ],
-          "activity": "Prepare keyword clusters and on-page recommendations."
+          "activity": "Prepare keyword clusters and on-page recommendations. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2241,7 +2241,7 @@
             "objectives",
             "personas and marketing terminology"
           ],
-          "activity": "Create a basic digital marketing strategy brief."
+          "activity": "Create a basic digital marketing strategy brief. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2252,7 +2252,7 @@
             "landing pages",
             "conversion paths and tracking readiness"
           ],
-          "activity": "Review a landing page and suggest improvements."
+          "activity": "Review a landing page and suggest improvements. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2265,7 +2265,7 @@
             "CTAs",
             "brand voice and creative briefs"
           ],
-          "activity": "Prepare a month-long content calendar."
+          "activity": "Prepare a month-long content calendar. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2278,7 +2278,7 @@
             "YouTube",
             "scheduling and community management"
           ],
-          "activity": "Plan and draft a multi-platform content campaign."
+          "activity": "Plan and draft a multi-platform content campaign. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2289,7 +2289,7 @@
             "typography",
             "brand consistency and social formats"
           ],
-          "activity": "Create a cohesive set of campaign creatives."
+          "activity": "Create a cohesive set of campaign creatives. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2301,7 +2301,7 @@
             "headings",
             "internal links and keyword mapping"
           ],
-          "activity": "Prepare keyword clusters and on-page recommendations."
+          "activity": "Prepare keyword clusters and on-page recommendations. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -2313,7 +2313,7 @@
             "page speed concepts",
             "local listings and citations"
           ],
-          "activity": "Complete a basic SEO health checklist."
+          "activity": "Complete a basic SEO health checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -2325,7 +2325,7 @@
             "ad groups",
             "copy and bidding concepts"
           ],
-          "activity": "Build a search campaign plan without launching spend."
+          "activity": "Build a search campaign plan without launching spend. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -2337,7 +2337,7 @@
             "creatives",
             "budget and testing concepts"
           ],
-          "activity": "Prepare a Meta campaign structure and creative variations."
+          "activity": "Prepare a Meta campaign structure and creative variations. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -2349,7 +2349,7 @@
             "UTM tags",
             "Search Console and reporting"
           ],
-          "activity": "Create a campaign measurement plan."
+          "activity": "Create a campaign measurement plan. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2377,7 +2377,7 @@
             "objectives",
             "personas and marketing terminology"
           ],
-          "activity": "Create a basic digital marketing strategy brief."
+          "activity": "Create a basic digital marketing strategy brief. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2388,7 +2388,7 @@
             "landing pages",
             "conversion paths and tracking readiness"
           ],
-          "activity": "Review a landing page and suggest improvements."
+          "activity": "Review a landing page and suggest improvements. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2401,7 +2401,7 @@
             "CTAs",
             "brand voice and creative briefs"
           ],
-          "activity": "Prepare a month-long content calendar."
+          "activity": "Prepare a month-long content calendar. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2414,7 +2414,7 @@
             "YouTube",
             "scheduling and community management"
           ],
-          "activity": "Plan and draft a multi-platform content campaign."
+          "activity": "Plan and draft a multi-platform content campaign. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2425,7 +2425,7 @@
             "typography",
             "brand consistency and social formats"
           ],
-          "activity": "Create a cohesive set of campaign creatives."
+          "activity": "Create a cohesive set of campaign creatives. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2437,7 +2437,7 @@
             "headings",
             "internal links and keyword mapping"
           ],
-          "activity": "Prepare keyword clusters and on-page recommendations."
+          "activity": "Prepare keyword clusters and on-page recommendations. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -2449,7 +2449,7 @@
             "page speed concepts",
             "local listings and citations"
           ],
-          "activity": "Complete a basic SEO health checklist."
+          "activity": "Complete a basic SEO health checklist. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -2461,7 +2461,7 @@
             "ad groups",
             "copy and bidding concepts"
           ],
-          "activity": "Build a search campaign plan without launching spend."
+          "activity": "Build a search campaign plan without launching spend. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -2473,7 +2473,7 @@
             "creatives",
             "budget and testing concepts"
           ],
-          "activity": "Prepare a Meta campaign structure and creative variations."
+          "activity": "Prepare a Meta campaign structure and creative variations. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -2485,7 +2485,7 @@
             "UTM tags",
             "Search Console and reporting"
           ],
-          "activity": "Create a campaign measurement plan."
+          "activity": "Create a campaign measurement plan. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -2498,7 +2498,7 @@
             "A/B testing",
             "budget pacing and insight reporting"
           ],
-          "activity": "Analyse a sample campaign dataset and recommend actions."
+          "activity": "Analyse a sample campaign dataset and recommend actions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -2509,7 +2509,7 @@
             "SEO plan",
             "paid media plan and presentation"
           ],
-          "activity": "Present a complete digital marketing campaign proposal."
+          "activity": "Present a complete digital marketing campaign proposal. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2541,7 +2541,7 @@
             "HTTP",
             "editor setup and developer tools"
           ],
-          "activity": "Inspect and create a simple web page."
+          "activity": "Inspect and create a simple web page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2554,7 +2554,7 @@
             "semantic tags",
             "accessibility and SEO basics"
           ],
-          "activity": "Build a multi-section website structure."
+          "activity": "Build a multi-section website structure. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2567,7 +2567,7 @@
             "positioning",
             "responsive units and media queries"
           ],
-          "activity": "Create a responsive landing page."
+          "activity": "Create a responsive landing page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2580,7 +2580,7 @@
             "loops",
             "functions and arrays/objects"
           ],
-          "activity": "Build interactive page behaviour."
+          "activity": "Build interactive page behaviour. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2591,7 +2591,7 @@
             "validation",
             "local storage and asynchronous basics"
           ],
-          "activity": "Create a form-driven browser application."
+          "activity": "Create a form-driven browser application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2602,7 +2602,7 @@
             "branches",
             "pull requests and collaboration basics"
           ],
-          "activity": "Publish and maintain a project repository."
+          "activity": "Publish and maintain a project repository. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2630,7 +2630,7 @@
             "HTTP",
             "editor setup and developer tools"
           ],
-          "activity": "Inspect and create a simple web page."
+          "activity": "Inspect and create a simple web page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2643,7 +2643,7 @@
             "semantic tags",
             "accessibility and SEO basics"
           ],
-          "activity": "Build a multi-section website structure."
+          "activity": "Build a multi-section website structure. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2656,7 +2656,7 @@
             "positioning",
             "responsive units and media queries"
           ],
-          "activity": "Create a responsive landing page."
+          "activity": "Create a responsive landing page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2669,7 +2669,7 @@
             "loops",
             "functions and arrays/objects"
           ],
-          "activity": "Build interactive page behaviour."
+          "activity": "Build interactive page behaviour. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2680,7 +2680,7 @@
             "validation",
             "local storage and asynchronous basics"
           ],
-          "activity": "Create a form-driven browser application."
+          "activity": "Create a form-driven browser application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2691,7 +2691,7 @@
             "branches",
             "pull requests and collaboration basics"
           ],
-          "activity": "Publish and maintain a project repository."
+          "activity": "Publish and maintain a project repository. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -2704,7 +2704,7 @@
             "events",
             "lists and conditional rendering"
           ],
-          "activity": "Build a reusable component-based interface."
+          "activity": "Build a reusable component-based interface. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -2716,7 +2716,7 @@
             "fetch",
             "loading/error states and reusable services"
           ],
-          "activity": "Create a multi-page frontend consuming an API."
+          "activity": "Create a multi-page frontend consuming an API. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -2728,7 +2728,7 @@
             "controllers",
             "validation and REST APIs"
           ],
-          "activity": "Develop a REST API for a sample application."
+          "activity": "Develop a REST API for a sample application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -2739,7 +2739,7 @@
             "relationships",
             "password hashing and auth concepts"
           ],
-          "activity": "Connect backend APIs to persistent data."
+          "activity": "Connect backend APIs to persistent data. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2768,7 +2768,7 @@
             "HTTP",
             "editor setup and developer tools"
           ],
-          "activity": "Inspect and create a simple web page."
+          "activity": "Inspect and create a simple web page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2781,7 +2781,7 @@
             "semantic tags",
             "accessibility and SEO basics"
           ],
-          "activity": "Build a multi-section website structure."
+          "activity": "Build a multi-section website structure. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2794,7 +2794,7 @@
             "positioning",
             "responsive units and media queries"
           ],
-          "activity": "Create a responsive landing page."
+          "activity": "Create a responsive landing page. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2807,7 +2807,7 @@
             "loops",
             "functions and arrays/objects"
           ],
-          "activity": "Build interactive page behaviour."
+          "activity": "Build interactive page behaviour. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2818,7 +2818,7 @@
             "validation",
             "local storage and asynchronous basics"
           ],
-          "activity": "Create a form-driven browser application."
+          "activity": "Create a form-driven browser application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2829,7 +2829,7 @@
             "branches",
             "pull requests and collaboration basics"
           ],
-          "activity": "Publish and maintain a project repository."
+          "activity": "Publish and maintain a project repository. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -2842,7 +2842,7 @@
             "events",
             "lists and conditional rendering"
           ],
-          "activity": "Build a reusable component-based interface."
+          "activity": "Build a reusable component-based interface. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -2854,7 +2854,7 @@
             "fetch",
             "loading/error states and reusable services"
           ],
-          "activity": "Create a multi-page frontend consuming an API."
+          "activity": "Create a multi-page frontend consuming an API. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -2866,7 +2866,7 @@
             "controllers",
             "validation and REST APIs"
           ],
-          "activity": "Develop a REST API for a sample application."
+          "activity": "Develop a REST API for a sample application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -2877,7 +2877,7 @@
             "relationships",
             "password hashing and auth concepts"
           ],
-          "activity": "Connect backend APIs to persistent data."
+          "activity": "Connect backend APIs to persistent data. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -2887,7 +2887,7 @@
             "environment variables",
             "testing basics and error handling"
           ],
-          "activity": "Complete a full-stack application workflow."
+          "activity": "Complete a full-stack application workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -2900,7 +2900,7 @@
             "input validation",
             "documentation and demo"
           ],
-          "activity": "Deploy a portfolio-ready full-stack project."
+          "activity": "Deploy a portfolio-ready full-stack project. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -2931,7 +2931,7 @@
             "tokens",
             "context windows and use cases"
           ],
-          "activity": "Identify suitable and unsuitable tasks for generative AI."
+          "activity": "Identify suitable and unsuitable tasks for generative AI. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -2944,7 +2944,7 @@
             "examples",
             "output formats and iterative prompting"
           ],
-          "activity": "Create reusable prompts for common work tasks."
+          "activity": "Create reusable prompts for common work tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -2955,7 +2955,7 @@
             "summarisation",
             "comparison and hallucination awareness"
           ],
-          "activity": "Prepare a source-checked research brief with AI assistance."
+          "activity": "Prepare a source-checked research brief with AI assistance. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -2967,7 +2967,7 @@
             "social captions",
             "tone control and editing workflows"
           ],
-          "activity": "Create a consistent multi-format content set."
+          "activity": "Create a consistent multi-format content set. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -2978,7 +2978,7 @@
             "design iteration",
             "slide outlines and asset review"
           ],
-          "activity": "Create a campaign visual concept and presentation."
+          "activity": "Create a campaign visual concept and presentation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -2988,7 +2988,7 @@
             "data explanation",
             "document extraction and meeting summaries"
           ],
-          "activity": "Build a repeatable productivity workflow."
+          "activity": "Build a repeatable productivity workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3015,7 +3015,7 @@
             "tokens",
             "context windows and use cases"
           ],
-          "activity": "Identify suitable and unsuitable tasks for generative AI."
+          "activity": "Identify suitable and unsuitable tasks for generative AI. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3028,7 +3028,7 @@
             "examples",
             "output formats and iterative prompting"
           ],
-          "activity": "Create reusable prompts for common work tasks."
+          "activity": "Create reusable prompts for common work tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3039,7 +3039,7 @@
             "summarisation",
             "comparison and hallucination awareness"
           ],
-          "activity": "Prepare a source-checked research brief with AI assistance."
+          "activity": "Prepare a source-checked research brief with AI assistance. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3051,7 +3051,7 @@
             "social captions",
             "tone control and editing workflows"
           ],
-          "activity": "Create a consistent multi-format content set."
+          "activity": "Create a consistent multi-format content set. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3062,7 +3062,7 @@
             "design iteration",
             "slide outlines and asset review"
           ],
-          "activity": "Create a campaign visual concept and presentation."
+          "activity": "Create a campaign visual concept and presentation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3072,7 +3072,7 @@
             "data explanation",
             "document extraction and meeting summaries"
           ],
-          "activity": "Build a repeatable productivity workflow."
+          "activity": "Build a repeatable productivity workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -3085,7 +3085,7 @@
             "tokens",
             "latency and cost awareness"
           ],
-          "activity": "Call an available LLM API from a simple test application."
+          "activity": "Call an available LLM API from a simple test application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -3096,7 +3096,7 @@
             "HTTP requests",
             "environment variables and error handling"
           ],
-          "activity": "Create a small command-line AI assistant."
+          "activity": "Create a small command-line AI assistant. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -3107,7 +3107,7 @@
             "chunking",
             "vector search and retrieval concepts"
           ],
-          "activity": "Build a small semantic search prototype."
+          "activity": "Build a small semantic search prototype. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -3119,7 +3119,7 @@
             "citations",
             "evaluation and failure cases"
           ],
-          "activity": "Create a document Q&A proof of concept."
+          "activity": "Create a document Q&A proof of concept. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3147,7 +3147,7 @@
             "tokens",
             "context windows and use cases"
           ],
-          "activity": "Identify suitable and unsuitable tasks for generative AI."
+          "activity": "Identify suitable and unsuitable tasks for generative AI. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3160,7 +3160,7 @@
             "examples",
             "output formats and iterative prompting"
           ],
-          "activity": "Create reusable prompts for common work tasks."
+          "activity": "Create reusable prompts for common work tasks. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3171,7 +3171,7 @@
             "summarisation",
             "comparison and hallucination awareness"
           ],
-          "activity": "Prepare a source-checked research brief with AI assistance."
+          "activity": "Prepare a source-checked research brief with AI assistance. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3183,7 +3183,7 @@
             "social captions",
             "tone control and editing workflows"
           ],
-          "activity": "Create a consistent multi-format content set."
+          "activity": "Create a consistent multi-format content set. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3194,7 +3194,7 @@
             "design iteration",
             "slide outlines and asset review"
           ],
-          "activity": "Create a campaign visual concept and presentation."
+          "activity": "Create a campaign visual concept and presentation. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3204,7 +3204,7 @@
             "data explanation",
             "document extraction and meeting summaries"
           ],
-          "activity": "Build a repeatable productivity workflow."
+          "activity": "Build a repeatable productivity workflow. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -3217,7 +3217,7 @@
             "tokens",
             "latency and cost awareness"
           ],
-          "activity": "Call an available LLM API from a simple test application."
+          "activity": "Call an available LLM API from a simple test application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -3228,7 +3228,7 @@
             "HTTP requests",
             "environment variables and error handling"
           ],
-          "activity": "Create a small command-line AI assistant."
+          "activity": "Create a small command-line AI assistant. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -3239,7 +3239,7 @@
             "chunking",
             "vector search and retrieval concepts"
           ],
-          "activity": "Build a small semantic search prototype."
+          "activity": "Build a small semantic search prototype. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -3251,7 +3251,7 @@
             "citations",
             "evaluation and failure cases"
           ],
-          "activity": "Create a document Q&A proof of concept."
+          "activity": "Create a document Q&A proof of concept. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -3262,7 +3262,7 @@
             "structured outputs",
             "image/audio use cases and human review"
           ],
-          "activity": "Prototype a controlled multi-step assistant."
+          "activity": "Prototype a controlled multi-step assistant. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -3274,7 +3274,7 @@
             "prompt injection awareness",
             "documentation and demo"
           ],
-          "activity": "Present a useful GenAI solution with limitations documented."
+          "activity": "Present a useful GenAI solution with limitations documented. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3306,7 +3306,7 @@
             "comments",
             "print and input"
           ],
-          "activity": "Create and run basic Python scripts."
+          "activity": "Create and run basic Python scripts. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3319,7 +3319,7 @@
             "arithmetic",
             "comparison and logical operators"
           ],
-          "activity": "Build a simple calculator."
+          "activity": "Build a simple calculator. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3332,7 +3332,7 @@
             "break",
             "continue and nested logic"
           ],
-          "activity": "Create menu-driven programs and pattern exercises."
+          "activity": "Create menu-driven programs and pattern exercises. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3345,7 +3345,7 @@
             "dictionaries",
             "indexing and iteration"
           ],
-          "activity": "Build a contact or inventory manager."
+          "activity": "Build a contact or inventory manager. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3357,7 +3357,7 @@
             "lambda basics",
             "imports and reusable code"
           ],
-          "activity": "Refactor a script into reusable functions."
+          "activity": "Refactor a script into reusable functions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3368,7 +3368,7 @@
             "JSON",
             "try/except and context managers"
           ],
-          "activity": "Create a file-based record management utility."
+          "activity": "Create a file-based record management utility. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3396,7 +3396,7 @@
             "comments",
             "print and input"
           ],
-          "activity": "Create and run basic Python scripts."
+          "activity": "Create and run basic Python scripts. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3409,7 +3409,7 @@
             "arithmetic",
             "comparison and logical operators"
           ],
-          "activity": "Build a simple calculator."
+          "activity": "Build a simple calculator. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3422,7 +3422,7 @@
             "break",
             "continue and nested logic"
           ],
-          "activity": "Create menu-driven programs and pattern exercises."
+          "activity": "Create menu-driven programs and pattern exercises. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3435,7 +3435,7 @@
             "dictionaries",
             "indexing and iteration"
           ],
-          "activity": "Build a contact or inventory manager."
+          "activity": "Build a contact or inventory manager. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3447,7 +3447,7 @@
             "lambda basics",
             "imports and reusable code"
           ],
-          "activity": "Refactor a script into reusable functions."
+          "activity": "Refactor a script into reusable functions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3458,7 +3458,7 @@
             "JSON",
             "try/except and context managers"
           ],
-          "activity": "Create a file-based record management utility."
+          "activity": "Create a file-based record management utility. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -3470,7 +3470,7 @@
             "inheritance",
             "encapsulation and polymorphism"
           ],
-          "activity": "Model a simple library or student system."
+          "activity": "Model a simple library or student system. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -3481,7 +3481,7 @@
             "requests",
             "HTTP basics and API response handling"
           ],
-          "activity": "Consume a public API and process JSON data."
+          "activity": "Consume a public API and process JSON data. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -3491,7 +3491,7 @@
             "SQLite/MySQL concepts",
             "CRUD operations and parameterised queries"
           ],
-          "activity": "Build a database-backed mini application."
+          "activity": "Build a database-backed mini application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -3502,7 +3502,7 @@
             "unit testing basics",
             "Git commits and project structure"
           ],
-          "activity": "Test and version-control a Python project."
+          "activity": "Test and version-control a Python project. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3531,7 +3531,7 @@
             "comments",
             "print and input"
           ],
-          "activity": "Create and run basic Python scripts."
+          "activity": "Create and run basic Python scripts. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3544,7 +3544,7 @@
             "arithmetic",
             "comparison and logical operators"
           ],
-          "activity": "Build a simple calculator."
+          "activity": "Build a simple calculator. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3557,7 +3557,7 @@
             "break",
             "continue and nested logic"
           ],
-          "activity": "Create menu-driven programs and pattern exercises."
+          "activity": "Create menu-driven programs and pattern exercises. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3570,7 +3570,7 @@
             "dictionaries",
             "indexing and iteration"
           ],
-          "activity": "Build a contact or inventory manager."
+          "activity": "Build a contact or inventory manager. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3582,7 +3582,7 @@
             "lambda basics",
             "imports and reusable code"
           ],
-          "activity": "Refactor a script into reusable functions."
+          "activity": "Refactor a script into reusable functions. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3593,7 +3593,7 @@
             "JSON",
             "try/except and context managers"
           ],
-          "activity": "Create a file-based record management utility."
+          "activity": "Create a file-based record management utility. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 7,
@@ -3605,7 +3605,7 @@
             "inheritance",
             "encapsulation and polymorphism"
           ],
-          "activity": "Model a simple library or student system."
+          "activity": "Model a simple library or student system. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 8,
@@ -3616,7 +3616,7 @@
             "requests",
             "HTTP basics and API response handling"
           ],
-          "activity": "Consume a public API and process JSON data."
+          "activity": "Consume a public API and process JSON data. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 9,
@@ -3626,7 +3626,7 @@
             "SQLite/MySQL concepts",
             "CRUD operations and parameterised queries"
           ],
-          "activity": "Build a database-backed mini application."
+          "activity": "Build a database-backed mini application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 10,
@@ -3637,7 +3637,7 @@
             "unit testing basics",
             "Git commits and project structure"
           ],
-          "activity": "Test and version-control a Python project."
+          "activity": "Test and version-control a Python project. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 11,
@@ -3648,7 +3648,7 @@
             "generators",
             "decorators overview and typing concepts"
           ],
-          "activity": "Improve code quality and performance."
+          "activity": "Improve code quality and performance. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 12,
@@ -3660,7 +3660,7 @@
             "testing",
             "README and demo presentation"
           ],
-          "activity": "Deliver a complete Python application."
+          "activity": "Deliver a complete Python application. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
@@ -3692,7 +3692,7 @@
             "Alternative signs for R and H",
             "Diphthongs and triphones"
           ],
-          "activity": "Write and read basic outlines, then practise keyboard layout, posture and finger placement."
+          "activity": "Write and read basic outlines, then practise keyboard layout, posture and finger placement. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 2,
@@ -3705,7 +3705,7 @@
             "Loops ST and STR",
             "Initial R and L hooks"
           ],
-          "activity": "Build and read phrase outlines, and practise all keyboard rows with common words and short sentences."
+          "activity": "Build and read phrase outlines, and practise all keyboard rows with common words and short sentences. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 3,
@@ -3718,7 +3718,7 @@
             "Aspirate",
             "Upward and downward R, F and V"
           ],
-          "activity": "Practise outline combinations and reading exercises alongside number, punctuation and paragraph typing."
+          "activity": "Practise outline combinations and reading exercises alongside number, punctuation and paragraph typing. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 4,
@@ -3731,7 +3731,7 @@
             "Medial semicircle",
             "Prefixes"
           ],
-          "activity": "Apply the advanced principles in outline exercises and use timed typing practice to review accuracy."
+          "activity": "Apply the advanced principles in outline exercises and use timed typing practice to review accuracy. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 5,
@@ -3744,7 +3744,7 @@
             "Advanced phraseography and intersections",
             "Business, political, banking and stockbroking phrases"
           ],
-          "activity": "Practise note-taking and transcription, and type passages and simple formatted documents."
+          "activity": "Practise note-taking and transcription, and type passages and simple formatted documents. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         },
         {
           "number": 6,
@@ -3757,7 +3757,7 @@
             "Reading back and transcription",
             "Error correction and final assessment"
           ],
-          "activity": "Complete progressive dictation, transcription and typing assessments, then review individual progress."
+          "activity": "Complete progressive dictation, transcription and typing assessments, then review individual progress. Apply the concepts through a practical exercise, review the final result for accuracy, and explain how the steps and tools support the stated learning goals."
         }
       ],
       "buildItems": [
