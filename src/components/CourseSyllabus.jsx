@@ -111,7 +111,7 @@ export default function CourseSyllabus({
                 {module.topics.length > 0 && (
                   <ul className="course-topic-chips" aria-label="Topics covered">
                     {module.topics.slice(0, 4).map((topic) => <li key={topic}>{topic}</li>)}
-                    {module.topics.length > 4 && <li>+{module.topics.length - 4} more</li>}
+                    {module.topics.length > 4 && <li key={`more-${module.number}`}>+{module.topics.length - 4} more</li>}
                   </ul>
                 )}
                 {module.activity && <p className="course-roadmap-activity"><Check size={15} />{module.activity}</p>}

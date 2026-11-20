@@ -17,7 +17,7 @@ The application is a browser-rendered React single-page application (SPA), built
 | Styling | Authored CSS, Tailwind CSS 3, PostCSS, Autoprefixer | Responsive design, stylesheets, and CSS processing |
 | Icons | Lucide React | Interface and content icons |
 | Typography | Inter from Google Fonts, with system font fallbacks | Site-wide typography |
-| Enquiry delivery | Google Apps Script web app | Receives form submissions and can write them to Google Sheets |
+| Enquiry storage | MongoDB | Stores submitted enquiries for the admin inbox |
 | Hosting configuration | Vercel configuration and serverless functions | Route rewrites, redirects, sitemap, and robots endpoints |
 
 Most of the visible design is implemented in `src/styles.css` and component CSS files. Tailwind is configured in `tailwind.config.js`, but the main page styling is authored CSS rather than a Tailwind-only UI.
@@ -34,7 +34,7 @@ Most of the visible design is implemented in `src/styles.css` and component CSS 
 - Route-specific titles, descriptions, canonical and social metadata
 - EducationalOrganization JSON-LD, sitemap, robots rules, legacy redirects, and not-found handling
 
-The form experience depends on an externally deployed endpoint. The repository does not include Google Apps Script source code or a database.
+Enquiry submission and the admin inbox require a configured MongoDB database.
 
 ## Routes
 
@@ -104,14 +104,13 @@ Course information is bundled with the frontend; it is not loaded from a CMS or 
 
 1. The browser validates the form fields.
 2. `src/lib/submitEnquiry.js` sends a JSON payload to the same-origin `/api/enquiry` endpoint.
-3. The endpoint saves the enquiry in MongoDB, where it appears in the admin inbox, then attempts to forward it to the configured Google Apps Script web app.
-4. The frontend treats the submission as successful after it is saved to MongoDB. Google Sheets forwarding status is shown separately in the admin inbox.
+3. The endpoint validates and stores the enquiry in MongoDB, where it appears in the admin inbox.
+4. The frontend shows success only after the enquiry has been stored.
 
-The hidden `website` field is a spam honeypot that must also be checked by the receiving script. The application does not send email directly. The endpoint must be configured and tested in the deployment environment before launch.
+The hidden `website` field is a spam honeypot validated by the server API. The application does not send email or forward enquiries to a spreadsheet. MongoDB must be configured and tested in the deployment environment before launch.
 
 Environment variable names are listed in `.env.example`:
 
-- `ENQUIRY_FORWARD_URL` — optional server-side Google Apps Script web app endpoint for forwarding enquiries to Sheets
 - `VITE_SITE_URL` — chosen canonical site origin, used by build/deployment SEO endpoints
 - `VITE_GOOGLE_SITE_VERIFICATION` — optional Google Search Console HTML verification token
 
@@ -138,14 +137,13 @@ Values with the `VITE_` prefix are included in browser-side build configuration;
 
 ## Hosting and external services
 
-The repository is currently configured for **Vercel**: `vercel.json` and the `api/` functions use Vercel deployment conventions. The built frontend is static, but the sitemap and robots endpoints are serverless functions. The enquiry receiver is a separate Google Apps Script deployment.
+The repository is currently configured for **Vercel**: `vercel.json` and the `api/` functions use Vercel deployment conventions. The built frontend is static, while the admin, enquiry, sitemap, and robots endpoints use serverless functions backed by MongoDB.
 
 Deploying to another provider (including Hostinger) requires checking or adapting:
 
 - SPA route rewrites, generated route HTML, and legacy redirects
 - Sitemap and robots endpoints, currently implemented as Vercel functions
 - Build-time environment variables and the canonical site origin
-- The Google Apps Script endpoint configuration and cross-origin behavior
 - Actual status codes for unknown routes
 
 No hosting provider account, production domain, production endpoint, or live enquiry flow is configured by this repository documentation.
@@ -165,8 +163,8 @@ The production build is written to `dist/`. `npm run preview` serves that output
 
 ## Current boundaries and launch checks
 
-- A MongoDB-backed admin CMS and login are included for site content and image management. Public registration and checkout are not included.
-- Enquiry delivery requires a deployed and verified Google Apps Script endpoint.
+- A MongoDB-backed admin CMS, login, and enquiry inbox are included. Public registration and checkout are not included.
+- Enquiry storage, admin content, and saved images require MongoDB Atlas configuration for deployment.
 - Domain purchase, hosting account setup, DNS, production environment variables, and Search Console verification are external launch tasks.
 - Owner approval is still needed for final course details, syllabus mappings, and legal policy text.
 - Validate live routes, 404 status, sitemap, robots, forms, mobile layouts, accessibility, and performance after deployment.

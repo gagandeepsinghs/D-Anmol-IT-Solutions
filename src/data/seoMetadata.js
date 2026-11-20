@@ -29,6 +29,18 @@ export const corePageSeo = {
     title: 'FAQs | D-Anmol Academy Courses & Training',
     description: 'Find answers about D-Anmol Academy courses, learning formats, demos, fees and enquiries.',
   },
+  '/privacy-policy': {
+    title: 'Privacy Policy | D-Anmol Academy',
+    description: 'Learn how D-Anmol Academy uses and stores information submitted through website enquiries.',
+  },
+  '/terms-and-conditions': {
+    title: 'Terms and Conditions | D-Anmol Academy',
+    description: 'Read the terms for using the D-Anmol Academy website and requesting course information or demos.',
+  },
+  '/refund-cancellation-policy': {
+    title: 'Refund and Cancellation Policy | D-Anmol Academy',
+    description: 'Find out how to contact D-Anmol Academy about enrolment cancellations and refund questions.',
+  },
 }
 
 const courseTitles = {

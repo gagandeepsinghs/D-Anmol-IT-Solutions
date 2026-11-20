@@ -80,7 +80,7 @@ export default function AdminEnquiriesPanel() {
     <div className="admin-enquiries-panel">
       {notice && <p className={`admin-notice ${notice.type === 'error' ? 'admin-notice-error' : 'admin-notice-success'}`} role="status">{notice.text}</p>}
       <div className="enquiries-toolbar">
-        <p>Showing the latest {enquiries.length} website enquiries. Requests are saved here and also forwarded to the configured Google Sheet.</p>
+        <p>Showing the latest {enquiries.length} website enquiries saved in this inbox.</p>
         <button type="button" className="page-builder-icon-button" onClick={loadEnquiries} disabled={loading}><RefreshCw size={16} /> Refresh</button>
       </div>
       {loading ? <p>Loading enquiries…</p> : enquiries.length === 0 ? <p className="page-builder-empty">No enquiries have been received yet.</p> : (
@@ -93,9 +93,7 @@ export default function AdminEnquiriesPanel() {
                   <h2>{enquiry.name}</h2>
                   <time>{formatDate(enquiry.receivedAt)}</time>
                 </div>
-                <span className={`enquiry-delivery enquiry-delivery-${enquiry.deliveryStatus || 'pending'}`}>
-                  {enquiry.deliveryStatus === 'sent' ? 'Sent to Sheets' : enquiry.deliveryStatus === 'failed' ? 'Sheets delivery failed' : 'Sheets delivery pending'}
-                </span>
+                <span className="enquiry-inbox-status">Saved to inbox</span>
               </div>
               <div className="enquiry-record-contact">
                 <a href={`tel:${String(enquiry.phone || '').replace(/[^\d+]/g, '')}`}>{enquiry.phone}</a>

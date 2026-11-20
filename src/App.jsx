@@ -191,6 +191,9 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
+          <Route path="/privacy-policy" element={<LegalPage kind="privacy" />} />
+          <Route path="/terms-and-conditions" element={<LegalPage kind="terms" />} />
+          <Route path="/refund-cancellation-policy" element={<LegalPage kind="refund" />} />
           <Route path="*" element={<NotFoundPage />} />
           </Routes>}
       </main>

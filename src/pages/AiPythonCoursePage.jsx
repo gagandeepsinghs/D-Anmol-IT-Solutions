@@ -30,7 +30,7 @@ export default function AiPythonCoursePage() {
           <div className="ai-python-detail-facts"><span><Clock3 size={16} />Contact us to confirm duration</span><span><GraduationCap size={17} />Starting level confirmed on enquiry</span></div>
           <a className="button button-light" href="#course-information">Request course information <ArrowRight size={16} /></a>
         </div>
-        <div className="ai-python-detail-image"><img src={course.image} alt={`${course.title} course illustration`} fetchPriority="high" /></div>
+        <div className="ai-python-detail-image"><img src={course.image} alt={`${course.title} course illustration`} fetchpriority="high" /></div>
       </div>
     </section>
 

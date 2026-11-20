@@ -112,6 +112,10 @@
       "destination": "/courses/digital-marketing-course-in-chandigarh/index.html"
     },
     {
+      "source": "/courses/shorthand-stenography",
+      "destination": "/courses/shorthand-stenography/index.html"
+    },
+    {
       "source": "/ai-python/data-science-python",
       "destination": "/ai-python/data-science-python/index.html"
     },

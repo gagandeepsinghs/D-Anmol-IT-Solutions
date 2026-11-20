@@ -6,6 +6,9 @@ export const corePublicPaths = [
   '/about',
   '/contact',
   '/faq',
+  '/privacy-policy',
+  '/terms-and-conditions',
+  '/refund-cancellation-policy',
 ]
 
 export const publicCourseSlugs = [

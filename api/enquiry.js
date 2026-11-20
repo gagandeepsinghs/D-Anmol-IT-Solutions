@@ -56,23 +56,6 @@ function normalizeEnquiry(body) {
   return enquiry
 }
 
-function getForwardUrl() {
-  const value = process.env.ENQUIRY_FORWARD_URL || process.env.VITE_ENQUIRY_URL
-  if (!value) {
-    throw Object.assign(new Error('Set ENQUIRY_FORWARD_URL to the deployed Google Apps Script web app URL.'), { statusCode: 503 })
-  }
-  let url
-  try {
-    url = new URL(value)
-  } catch {
-    throw Object.assign(new Error('ENQUIRY_FORWARD_URL must be a valid HTTPS URL.'), { statusCode: 503 })
-  }
-  if (url.protocol !== 'https:') {
-    throw Object.assign(new Error('ENQUIRY_FORWARD_URL must use HTTPS.'), { statusCode: 503 })
-  }
-  return url.href
-}
-
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
     response.setHeader('Allow', 'POST')
@@ -94,42 +77,19 @@ export default async function handler(request, response) {
 
   try {
     const collection = (await getMongoDatabase()).collection('enquiries')
-    const existing = await collection.findOne({ _id: id }, { projection: { deliveryStatus: 1, receivedAt: 1, status: 1 } })
-    if (existing?.deliveryStatus === 'sent') return sendJson(response, 200, { ok: true })
+    const existing = await collection.findOne({ _id: id }, { projection: { _id: 1 } })
+    if (existing) return sendJson(response, 200, { ok: true })
 
-    await collection.replaceOne({ _id: id }, {
+    await collection.insertOne({
       _id: id,
       ...enquiry,
-      status: existing?.status || 'new',
-      deliveryStatus: 'pending',
-      receivedAt: existing?.receivedAt || new Date(),
+      status: 'new',
+      receivedAt: new Date(),
       updatedAt: new Date(),
-    }, { upsert: true })
-
-    try {
-      const forwardUrl = getForwardUrl()
-      const forwardedResponse = await fetch(forwardUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(enquiry),
-        redirect: 'follow',
-      })
-      const result = await forwardedResponse.json().catch(() => ({}))
-      if (!forwardedResponse.ok || result.ok !== true) {
-        await collection.updateOne({ _id: id }, { $set: { deliveryStatus: 'failed', updatedAt: new Date() } })
-        return sendJson(response, 200, { ok: true, deliveryStatus: 'failed' })
-      }
-    } catch (error) {
-      await collection.updateOne({ _id: id }, { $set: { deliveryStatus: 'failed', updatedAt: new Date() } })
-      console.error('Enquiry forwarding failed:', error)
-      return sendJson(response, 200, { ok: true, deliveryStatus: 'failed' })
-    }
-
-    await collection.updateOne({ _id: id }, {
-      $set: { deliveryStatus: 'sent', deliveredAt: new Date(), updatedAt: new Date() },
     })
     return sendJson(response, 200, { ok: true })
   } catch (error) {
+    if (error.code === 11000) return sendJson(response, 200, { ok: true })
     console.error('Enquiry storage failed:', error)
     return sendJson(response, 503, { error: 'The enquiry could not be saved. Please try again or contact us directly.' })
   }

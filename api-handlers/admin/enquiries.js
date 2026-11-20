@@ -38,9 +38,7 @@ export default async function handler(request, response) {
           preferredTime: 1,
           referralSource: 1,
           status: 1,
-          deliveryStatus: 1,
           receivedAt: 1,
-          deliveredAt: 1,
         },
       }).sort({ receivedAt: -1 }).limit(250).toArray()
       return sendJson(response, 200, { enquiries })

@@ -1,8 +1,8 @@
 # D-Anmol Academy Training Website
 
-A responsive training website for D-Anmol Academy. Enquiry forms submit through a server API to a configured Google Apps Script web app and are copied into MongoDB for the admin inbox.
+A responsive training website for D-Anmol Academy. Enquiries are validated by a server API and saved to MongoDB for the admin inbox.
 
-> **Enquiry setup:** Enquiries are saved to MongoDB for the admin inbox. To also forward them to Google Sheets, set `ENQUIRY_FORWARD_URL` in the server environment to the deployed Google Apps Script web app URL. A Sheets forwarding failure does not discard an enquiry saved in the admin inbox.
+> **Enquiry setup:** Configure MongoDB in Vercel before launch. Enquiries are stored in the website admin inbox; no spreadsheet integration is used.
 
 ## Contents
 
@@ -12,7 +12,7 @@ A responsive training website for D-Anmol Academy. Enquiry forms submit through 
 - [Website pages](#website-pages)
 - [Project structure](#project-structure)
 - [Editing website content](#editing-website-content)
-- [Google Sheets enquiry setup](#google-sheets-enquiry-setup)
+- [Enquiry storage setup](#enquiry-storage-setup)
 - [Contact and WhatsApp configuration](#contact-and-whatsapp-configuration)
 - [Responsive design and accessibility](#responsive-design-and-accessibility)
 - [Build and preview](#build-and-preview)
@@ -39,9 +39,8 @@ A responsive training website for D-Anmol Academy. Enquiry forms submit through 
 - React Router DOM
 - Lucide React
 - Vercel serverless API functions and MongoDB for managed website content and enquiry records; admin routes share one function to stay within the Hobby plan's function limit
-- Google Apps Script web app endpoint for forwarding enquiries to a Google Sheet
 
-The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site and course images, and the admin inbox. A deployed Google Apps Script web app can also receive enquiry submissions and write them to the configured Google Sheet.
+The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site and course images, and the admin inbox.
 
 ## Run the project
 
@@ -172,16 +171,13 @@ Edit `src/data/aiPythonCourses.js`. These programmes include `suitableFor`, `lev
 
 Review all course details and placeholders before publishing.
 
-## Google Sheets enquiry setup
+## Enquiry storage setup
 
-Every enquiry form posts `formType`, `name`, `phone`, `email`, `course`, `message`, and `website`. Corporate enquiries also include `organization`; advisor bookings include `preferredDate`, `preferredTime`, and `referralSource`. The `website` field is a spam honeypot. The form only shows success when the endpoint returns JSON with `{"ok": true}`.
+Every enquiry form posts `formType`, `name`, `phone`, `email`, `course`, `message`, and `website` to the same-origin API. Corporate enquiries also include `organization`; advisor bookings include `preferredDate`, `preferredTime`, and `referralSource`. The `website` field is a spam honeypot. The form only shows success when the enquiry is saved to MongoDB and the endpoint returns JSON with `{"ok": true}`.
 
-1. Deploy a Google Apps Script web app connected to the spreadsheet. The Google Sheets edit URL is not the endpoint URL; use the Apps Script deployment URL.
-2. Set `ENQUIRY_FORWARD_URL` in your local `.env` and the deployment provider's server environment to the HTTPS Apps Script deployment URL. HTTP destinations are rejected. `VITE_ENQUIRY_URL` is still accepted as a compatibility fallback and must also use HTTPS. MongoDB must be configured for enquiries to be accepted into the admin inbox; Sheets forwarding is additional.
-3. Configure the script to accept the JSON payload, write each field to its own spreadsheet column, store phone numbers as text, and return JSON with an `ok` boolean. Validate fields and reject filled honeypots server-side.
-4. Restart the Vite server after changing `.env`, then test contact, corporate, AI/Python, course, and advisor submissions.
+Create a MongoDB Atlas database and set `MONGODB_URI` and `MONGODB_DB` in the Vercel server environment. A local MongoDB address such as `mongodb://127.0.0.1:27017` is only reachable on the same machine and cannot be used by a deployed Vercel function. Keep database credentials out of `VITE_` variables. Test contact, corporate, AI/Python, course, and advisor submissions after deployment; each accepted enquiry should appear in the admin inbox.
 
-`.env.example` contains the required variable name. Do not commit `.env`; keep this value as a deployment configuration item. No email-sending service is used by these forms.
+`.env.example` lists the local development settings. Do not commit `.env`; set production values in Vercel. No spreadsheet or email delivery service is used by these forms.
 
 ## Contact and WhatsApp configuration
 
@@ -195,7 +191,7 @@ Review the confirmed business details in `src/config/siteConfig.js` before publi
 
 Do not add a public walk-in address. `trainingAreas` describes online training across India and offline training in Mohali, Chandigarh, and Panchkula. The WhatsApp link strips formatting from `whatsappNumber` before opening a `wa.me` conversation.
 
-Enquiry forms post to the same-origin API, which stores the request in MongoDB and forwards it to the configured Apps Script URL. Verify both the admin inbox and spreadsheet with an owner-approved test enquiry. WhatsApp opens only after a visitor chooses to continue.
+Enquiry forms post to the same-origin API, which stores the request in MongoDB for the admin inbox. Verify the inbox with an owner-approved test enquiry. WhatsApp opens only after a visitor chooses to continue.
 
 ## Responsive design and accessibility
 
@@ -234,7 +230,7 @@ The build creates route-specific HTML shells with unique titles, descriptions, c
 
 1. Confirm course names, syllabus, durations, modes, prerequisites, and project descriptions with the business.
 2. Keep the confirmed public phone and email in `src/config/siteConfig.js`; do not publish a walk-in address.
-3. Deploy and test the Google Apps Script endpoint and configure `ENQUIRY_FORWARD_URL` in the production server environment.
+3. Configure MongoDB Atlas in Vercel and verify enquiry submissions appear in the admin inbox.
 4. Confirm the WhatsApp number and the content of `trainingAreas`.
 5. Review image rights and approvals in `src/assets/images/`; the active logo artwork has not been approved for replacement.
 6. Ensure the required fonts and imagery are available in the intended deployment environment. Geist is loaded from Google Fonts with a system-font fallback.
@@ -251,6 +247,6 @@ The panel provides:
 
 - A section-based page builder for existing public routes and new `/pages/<slug>` pages. Add and reorder hero, text, image, course-list, FAQ, and call-to-action sections; save a draft or publish it. Unpublishing or deleting a managed version restores the original built-in page where one exists.
 - Guided forms for site settings, courses, course modules and detailed outlines, AI & Python programmes, and FAQs. Site photos and logos, course covers, and programme covers can be replaced with JPEG, PNG, or WebP files smaller than 20 MB and restored to their defaults.
-- An enquiry inbox with delivery status, contact details, status tracking, and deletion. Enquiries are copied to MongoDB and still forwarded to Google Sheets.
+- An enquiry inbox with contact details, status tracking, and deletion. Enquiries are stored in MongoDB.
 
 Saved page and content data uses the configured MongoDB database. Published custom pages are included in the deployed sitemap.
