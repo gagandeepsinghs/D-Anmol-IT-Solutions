@@ -8,7 +8,7 @@ import {
   sendJson,
   setAdminSession,
 } from '../../api-helpers/adminAuth.js'
-import { getModuleImageCollection } from '../../api-helpers/moduleImageStore.js'
+import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -20,7 +20,7 @@ export default async function handler(request, response) {
   try {
     const { password: expectedPassword, secret } = getAdminConfiguration()
     const body = await readJsonBody(request)
-    const credentials = await (await getModuleImageCollection()).db
+    const credentials = await (await getMongoDatabase())
       .collection('adminCredentials')
       .findOne({ _id: 'admin' })
     const passwordIsValid = credentials

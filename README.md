@@ -41,7 +41,7 @@ A responsive training website for D-Anmol Academy. Enquiry forms submit through 
 - Vercel serverless API functions and MongoDB for managed website content and enquiry records; admin routes share one function to stay within the Hobby plan's function limit
 - Google Apps Script web app endpoint for forwarding enquiries to a Google Sheet
 
-The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site, course and module images, and the admin inbox. A deployed Google Apps Script web app also receives enquiry submissions and writes them to the configured Google Sheet.
+The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site and course images, and the admin inbox. A deployed Google Apps Script web app can also receive enquiry submissions and write them to the configured Google Sheet.
 
 ## Run the project
 
@@ -96,7 +96,6 @@ src/
       brand/                 Header and footer logos
       courses/
         covers/              Course card and detail images
-        modules/             Optional per-course module photos
       sections/              Homepage and other page photos
       references/            Design references not used by the website
   components/                  Shared header, footer, buttons, forms, cards, and floating contact panel
@@ -119,7 +118,7 @@ src/
 index.html                     HTML shell and basic metadata
 ```
 
-Replace built-in defaults from the admin panel under **Site content → Site photos and logos**. Course and AI & Python cover photos are managed in their respective editors, and module photos are managed under **Module images**. Each upload accepts JPEG, PNG, or WebP files smaller than 20 MB; larger images are resized and optimized before upload. To change bundled fallback assets, use the matching folder under `src/assets/images/`; see [`src/assets/images/README.md`](./src/assets/images/README.md).
+Replace built-in defaults from the admin panel under **Site content → Site photos and logos**. Course and AI & Python cover photos are managed in their respective editors. Each upload accepts JPEG, PNG, or WebP files smaller than 20 MB; larger images are resized and optimized before upload. To change bundled fallback assets, use the matching folder under `src/assets/images/`; see [`src/assets/images/README.md`](./src/assets/images/README.md).
 
 ## Editing website content
 
@@ -252,7 +251,6 @@ The panel provides:
 
 - A section-based page builder for existing public routes and new `/pages/<slug>` pages. Add and reorder hero, text, image, course-list, FAQ, and call-to-action sections; save a draft or publish it. Unpublishing or deleting a managed version restores the original built-in page where one exists.
 - Guided forms for site settings, courses, course modules and detailed outlines, AI & Python programmes, and FAQs. Site photos and logos, course covers, and programme covers can be replaced with JPEG, PNG, or WebP files smaller than 20 MB and restored to their defaults.
-- The module image manager for JPEG, PNG, and WebP files smaller than 20 MB.
 - An enquiry inbox with delivery status, contact details, status tracking, and deletion. Enquiries are copied to MongoDB and still forwarded to Google Sheets.
 
 Saved page and content data uses the configured MongoDB database. Published custom pages are included in the deployed sitemap.

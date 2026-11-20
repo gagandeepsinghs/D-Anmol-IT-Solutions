@@ -153,7 +153,6 @@ function localApiPlugin() {
     '/api/course-image': () => import('./api/course-image.js'),
     '/api/site-image': () => import('./api/site-image.js'),
     '/api/enquiry': () => import('./api/enquiry.js'),
-    '/api/module-image': () => import('./api/module-image.js'),
     '/api/site-pages': () => import('./api/site-pages.js'),
     '/api/site-content': () => import('./api/site-content.js'),
   }

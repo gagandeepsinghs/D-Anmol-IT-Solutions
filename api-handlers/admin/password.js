@@ -9,7 +9,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../../api-helpers/adminAuth.js'
-import { getModuleImageCollection } from '../../api-helpers/moduleImageStore.js'
+import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -34,7 +34,7 @@ export default async function handler(request, response) {
       return sendJson(response, 400, { error: 'The new passwords do not match.' })
     }
 
-    const credentialsCollection = (await getModuleImageCollection()).db.collection('adminCredentials')
+    const credentialsCollection = (await getMongoDatabase()).collection('adminCredentials')
     const credentials = await credentialsCollection.findOne({ _id: 'admin' })
     const currentPasswordIsValid = credentials
       ? isValidStoredAdminPassword(currentPassword, credentials)

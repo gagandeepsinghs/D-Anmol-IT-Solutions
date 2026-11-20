@@ -1,11 +1,11 @@
-import { getModuleImageCollection } from './moduleImageStore.js'
+import { getMongoDatabase } from './mongoDatabase.js'
 
 const maximumContentBytes = 1024 * 1024
 const maximumCourseImageLength = 25_000
 const contentKeys = new Set(['settings', 'courses', 'aiPythonCourses', 'faqs', 'courseSyllabi'])
 
 export async function getSiteContentCollection() {
-  return (await getModuleImageCollection()).db.collection('siteContent')
+  return (await getMongoDatabase()).collection('siteContent')
 }
 
 export function validateSiteContent(content) {

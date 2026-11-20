@@ -6,9 +6,9 @@ import {
   sendJson,
 } from '../api-helpers/adminAuth.js'
 import {
-  getModuleImageCollection,
-  ModuleImageStorageUnavailableError,
-} from '../api-helpers/moduleImageStore.js'
+  DatabaseUnavailableError,
+  getMongoDatabase,
+} from '../api-helpers/mongoDatabase.js'
 
 const maximumImageBytes = 3 * 1024 * 1024
 const maximumRequestBytes = 4.5 * 1024 * 1024
@@ -45,7 +45,7 @@ function isValidImageData(data, contentType) {
 
 async function handleError(error, response, action) {
   if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
-  if (error instanceof ModuleImageStorageUnavailableError) {
+  if (error instanceof DatabaseUnavailableError) {
     return sendJson(response, error.statusCode, { error: error.message })
   }
   if (error.statusCode === 413 || error instanceof SyntaxError) {
@@ -61,7 +61,7 @@ export default async function handler(request, response) {
 
   if (request.method === 'GET') {
     try {
-      const image = await (await getModuleImageCollection()).db
+      const image = await (await getMongoDatabase())
         .collection('siteImages')
         .findOne({ _id: key })
       if (!image) return sendJson(response, 404, { error: 'No uploaded site image was found.' })
@@ -90,7 +90,7 @@ export default async function handler(request, response) {
   try {
     if (!isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage site images.' })
     if (request.method === 'DELETE') {
-      await (await getModuleImageCollection()).db.collection('siteImages').deleteOne({ _id: key })
+      await (await getMongoDatabase()).collection('siteImages').deleteOne({ _id: key })
       return sendJson(response, 200, { deleted: true })
     }
 
@@ -110,7 +110,7 @@ export default async function handler(request, response) {
       return sendJson(response, 400, { error: 'The image file does not match its format.' })
     }
 
-    await (await getModuleImageCollection()).db.collection('siteImages').replaceOne({
+    await (await getMongoDatabase()).collection('siteImages').replaceOne({
       _id: key,
     }, {
       _id: key,

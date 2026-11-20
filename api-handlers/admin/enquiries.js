@@ -5,7 +5,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../../api-helpers/adminAuth.js'
-import { getModuleImageCollection } from '../../api-helpers/moduleImageStore.js'
+import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
 
 const allowedStatuses = new Set(['new', 'contacted', 'closed'])
 
@@ -20,7 +20,7 @@ export default async function handler(request, response) {
     }
     if (!isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage enquiries.' })
 
-    const collection = (await getModuleImageCollection()).db.collection('enquiries')
+    const collection = (await getMongoDatabase()).collection('enquiries')
     if (request.method === 'GET') {
       const enquiries = await collection.find({}, {
         projection: {

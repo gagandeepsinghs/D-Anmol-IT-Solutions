@@ -1,4 +1,4 @@
-import { getModuleImageCollection } from './moduleImageStore.js'
+import { getMongoDatabase } from './mongoDatabase.js'
 import { publicSitePaths } from '../src/data/publicSitePaths.js'
 
 const editablePaths = new Set(publicSitePaths)
@@ -6,7 +6,7 @@ const allowedSectionTypes = new Set(['hero', 'text', 'image', 'courses', 'faq', 
 const maximumPageBytes = 256 * 1024
 
 export async function getSitePagesCollection() {
-  return (await getModuleImageCollection()).db.collection('sitePages')
+  return (await getMongoDatabase()).collection('sitePages')
 }
 
 export function isEditablePagePath(path) {

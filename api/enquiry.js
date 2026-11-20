@@ -4,7 +4,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../api-helpers/adminAuth.js'
-import { getModuleImageCollection } from '../api-helpers/moduleImageStore.js'
+import { getMongoDatabase } from '../api-helpers/mongoDatabase.js'
 
 const allowedFormTypes = new Set(['contact', 'course', 'corporate', 'demo', 'ai-python'])
 const stringFields = [
@@ -93,7 +93,7 @@ export default async function handler(request, response) {
   }
 
   try {
-    const collection = (await getModuleImageCollection()).db.collection('enquiries')
+    const collection = (await getMongoDatabase()).collection('enquiries')
     const existing = await collection.findOne({ _id: id }, { projection: { deliveryStatus: 1, receivedAt: 1, status: 1 } })
     if (existing?.deliveryStatus === 'sent') return sendJson(response, 200, { ok: true })
 
