@@ -143,12 +143,13 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
 
 function localApiPlugin() {
   const handlers = {
-    '/api/admin/login': () => import('./api/admin/login.js'),
-    '/api/admin/session': () => import('./api/admin/session.js'),
-    '/api/admin/logout': () => import('./api/admin/logout.js'),
-    '/api/admin/pages': () => import('./api/admin/pages.js'),
-    '/api/admin/content': () => import('./api/admin/content.js'),
-    '/api/admin/enquiries': () => import('./api/admin/enquiries.js'),
+    '/api/admin/login': () => import('./api-handlers/admin/login.js'),
+    '/api/admin/session': () => import('./api-handlers/admin/session.js'),
+    '/api/admin/logout': () => import('./api-handlers/admin/logout.js'),
+    '/api/admin/pages': () => import('./api-handlers/admin/pages.js'),
+    '/api/admin/content': () => import('./api-handlers/admin/content.js'),
+    '/api/admin/enquiries': () => import('./api-handlers/admin/enquiries.js'),
+    '/api/admin/password': () => import('./api-handlers/admin/password.js'),
     '/api/course-image': () => import('./api/course-image.js'),
     '/api/site-image': () => import('./api/site-image.js'),
     '/api/enquiry': () => import('./api/enquiry.js'),

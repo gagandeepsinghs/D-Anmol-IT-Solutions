@@ -38,7 +38,7 @@ A responsive training website for D-Anmol Academy. Enquiry forms submit through 
 - Tailwind CSS
 - React Router DOM
 - Lucide React
-- Vercel serverless API functions and MongoDB for managed website content and enquiry records
+- Vercel serverless API functions and MongoDB for managed website content and enquiry records; admin routes share one function to stay within the Hobby plan's function limit
 - Google Apps Script web app endpoint for forwarding enquiries to a Google Sheet
 
 The React frontend uses serverless API functions for admin access, managed content, and enquiry delivery. MongoDB stores managed pages, site content, uploaded site, course and module images, and the admin inbox. A deployed Google Apps Script web app also receives enquiry submissions and writes them to the configured Google Sheet.

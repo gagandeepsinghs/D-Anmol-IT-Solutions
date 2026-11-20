@@ -8,8 +8,8 @@ import {
   isValidStoredAdminPassword,
   readJsonBody,
   sendJson,
-} from '../lib/adminAuth.js'
-import { getModuleImageCollection } from '../lib/moduleImageStore.js'
+} from '../../api/lib/adminAuth.js'
+import { getModuleImageCollection } from '../../api/lib/moduleImageStore.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {

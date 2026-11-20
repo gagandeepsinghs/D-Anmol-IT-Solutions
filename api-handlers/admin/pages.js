@@ -4,8 +4,8 @@ import {
   isSameOriginRequest,
   readJsonBody,
   sendJson,
-} from '../lib/adminAuth.js'
-import { getSitePagesCollection, isEditablePagePath, validatePageDocument } from '../lib/sitePages.js'
+} from '../../api/lib/adminAuth.js'
+import { getSitePagesCollection, isEditablePagePath, validatePageDocument } from '../../api/lib/sitePages.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'GET' && request.method !== 'PUT' && request.method !== 'DELETE') {
