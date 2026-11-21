@@ -6,8 +6,8 @@ import {
   sendJson,
 } from '../api-helpers/adminAuth.js'
 import {
-  DatabaseUnavailableError,
   getMongoDatabase,
+  isMongoUnavailableError,
 } from '../api-helpers/mongoDatabase.js'
 
 const maximumImageBytes = 3 * 1024 * 1024
@@ -23,7 +23,8 @@ export const config = {
 }
 
 function getImageKey(request) {
-  const key = new URL(request.url, 'http://localhost').searchParams.get('key')
+  const queryIndex = (request.url || '').indexOf('?')
+  const key = queryIndex < 0 ? null : new URLSearchParams(request.url.slice(queryIndex + 1)).get('key')
   return typeof key === 'string' && key.length <= 80 && /^[a-z][a-z0-9-]*$/.test(key)
     ? key
     : null
@@ -45,8 +46,8 @@ function isValidImageData(data, contentType) {
 
 async function handleError(error, response, action) {
   if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
-  if (error instanceof DatabaseUnavailableError) {
-    return sendJson(response, error.statusCode, { error: error.message })
+  if (isMongoUnavailableError(error)) {
+    return sendJson(response, 503, { error: 'MongoDB is temporarily unavailable.' })
   }
   if (error.statusCode === 413 || error instanceof SyntaxError) {
     return sendJson(response, error.statusCode || 400, { error: error.statusCode ? error.message : 'Invalid JSON request.' })

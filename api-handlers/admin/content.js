@@ -5,6 +5,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../../api-helpers/adminAuth.js'
+import { isMongoUnavailableError } from '../../api-helpers/mongoDatabase.js'
 import { getSiteContentCollection, validateSiteContent } from '../../api-helpers/siteContent.js'
 
 export default async function handler(request, response) {
@@ -34,6 +35,9 @@ export default async function handler(request, response) {
     return sendJson(response, 200, { saved: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
+    if (isMongoUnavailableError(error)) {
+      return sendJson(response, 503, { error: 'Website content storage is temporarily unavailable.' })
+    }
     if (error.statusCode === 413 || error.statusCode === 400 || error instanceof SyntaxError) {
       return sendJson(response, error.statusCode || 400, { error: error.statusCode ? error.message : 'Invalid JSON request.' })
     }

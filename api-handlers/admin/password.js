@@ -9,7 +9,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../../api-helpers/adminAuth.js'
-import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
+import { getMongoDatabase, isMongoUnavailableError } from '../../api-helpers/mongoDatabase.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -49,7 +49,13 @@ export default async function handler(request, response) {
     return sendJson(response, 200, { updated: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
+    if (isMongoUnavailableError(error)) {
+      return sendJson(response, 503, { error: 'Admin password storage is temporarily unavailable.' })
+    }
+    if (error.statusCode === 413 || error instanceof SyntaxError) {
+      return sendJson(response, error.statusCode || 400, { error: error.statusCode ? error.message : 'Invalid JSON request.' })
+    }
     console.error('Admin password change failed:', error)
-    return sendJson(response, error.statusCode || 500, { error: error.statusCode ? error.message : 'Unable to change the admin password.' })
+    return sendJson(response, 500, { error: 'Unable to change the admin password.' })
   }
 }

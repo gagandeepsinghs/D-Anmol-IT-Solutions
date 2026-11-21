@@ -18,7 +18,7 @@ const adminHandlers = new Map([
 ])
 
 export default async function handler(request, response) {
-  const pathname = new URL(request.url, 'http://localhost').pathname.replace(/\/+$/, '')
+  const pathname = (request.url || '').split('?')[0].replace(/\/+$/, '')
   const adminHandler = adminHandlers.get(pathname)
   if (!adminHandler) return sendJson(response, 404, { error: 'Admin endpoint not found.' })
   return adminHandler(request, response)

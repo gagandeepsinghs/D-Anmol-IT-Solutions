@@ -37,7 +37,13 @@ export function sendJson(response, statusCode, value) {
 export async function readJsonBody(request, maximumBytes = 64 * 1024) {
   if (request.body !== undefined) {
     const body = request.body
-    if (body && typeof body === 'object' && !Buffer.isBuffer(body)) return body
+    if (body && typeof body === 'object' && !Buffer.isBuffer(body)) {
+      const bodyText = JSON.stringify(body)
+      if (typeof bodyText !== 'string' || Buffer.byteLength(bodyText) > maximumBytes) {
+        throw Object.assign(new Error('Request body is too large.'), { statusCode: 413 })
+      }
+      return body
+    }
     const bodyText = Buffer.isBuffer(body) ? body.toString('utf8') : String(body)
     if (Buffer.byteLength(bodyText) > maximumBytes) throw Object.assign(new Error('Request body is too large.'), { statusCode: 413 })
     return JSON.parse(bodyText)

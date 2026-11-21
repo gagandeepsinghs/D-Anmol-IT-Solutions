@@ -8,7 +8,7 @@ import {
   sendJson,
   setAdminSession,
 } from '../../api-helpers/adminAuth.js'
-import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
+import { getMongoDatabase, isMongoUnavailableError } from '../../api-helpers/mongoDatabase.js'
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -34,7 +34,13 @@ export default async function handler(request, response) {
     return sendJson(response, 200, { authenticated: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
+    if (isMongoUnavailableError(error)) {
+      return sendJson(response, 503, { error: 'Admin sign-in is temporarily unavailable.' })
+    }
+    if (error.statusCode === 413 || error instanceof SyntaxError) {
+      return sendJson(response, error.statusCode || 400, { error: error.statusCode ? error.message : 'Invalid JSON request.' })
+    }
     console.error('Admin login failed:', error)
-    return sendJson(response, error.statusCode || 500, { error: error.statusCode ? error.message : 'Unable to sign in.' })
+    return sendJson(response, 500, { error: 'Unable to sign in.' })
   }
 }

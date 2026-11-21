@@ -5,7 +5,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../../api-helpers/adminAuth.js'
-import { getMongoDatabase } from '../../api-helpers/mongoDatabase.js'
+import { getMongoDatabase, isMongoUnavailableError } from '../../api-helpers/mongoDatabase.js'
 
 const allowedStatuses = new Set(['new', 'contacted', 'closed'])
 
@@ -60,9 +60,13 @@ export default async function handler(request, response) {
       { _id: body.id },
       { $set: { status: body.status, updatedAt: new Date() } },
     )
-    return sendJson(response, 200, { updated: result.modifiedCount > 0 })
+    if (result.matchedCount === 0) return sendJson(response, 404, { error: 'Enquiry not found.' })
+    return sendJson(response, 200, { updated: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })
+    if (isMongoUnavailableError(error)) {
+      return sendJson(response, 503, { error: 'The enquiry database is temporarily unavailable.' })
+    }
     console.error('Admin enquiry management failed:', error)
     return sendJson(response, 500, { error: 'Unable to manage enquiries.' })
   }

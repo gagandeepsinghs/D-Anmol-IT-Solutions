@@ -177,7 +177,7 @@ Every enquiry form posts `formType`, `name`, `phone`, `email`, `course`, `messag
 
 Create a MongoDB Atlas database and set `MONGODB_URI` and `MONGODB_DB` in the Vercel server environment. A local MongoDB address such as `mongodb://127.0.0.1:27017` is only reachable on the same machine and cannot be used by a deployed Vercel function. Keep database credentials out of `VITE_` variables. Test contact, corporate, AI/Python, course, and advisor submissions after deployment; each accepted enquiry should appear in the admin inbox.
 
-`.env.example` lists the local development settings. Do not commit `.env`; set production values in Vercel. No spreadsheet or email delivery service is used by these forms.
+`.env.example` is a placeholder for the Atlas connection and required server settings. Replace the URI username and password placeholders for local development; set production values in Vercel. Percent-encode special characters in the database password. Do not commit `.env`. No spreadsheet or email delivery service is used by these forms.
 
 ## Contact and WhatsApp configuration
 

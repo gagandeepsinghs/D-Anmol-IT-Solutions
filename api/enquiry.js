@@ -4,7 +4,7 @@ import {
   readJsonBody,
   sendJson,
 } from '../api-helpers/adminAuth.js'
-import { getMongoDatabase } from '../api-helpers/mongoDatabase.js'
+import { getMongoDatabase, isMongoUnavailableError } from '../api-helpers/mongoDatabase.js'
 
 const allowedFormTypes = new Set(['contact', 'course', 'corporate', 'demo', 'ai-python'])
 const stringFields = [
@@ -90,7 +90,10 @@ export default async function handler(request, response) {
     return sendJson(response, 200, { ok: true })
   } catch (error) {
     if (error.code === 11000) return sendJson(response, 200, { ok: true })
+    if (isMongoUnavailableError(error)) {
+      return sendJson(response, 503, { error: 'Enquiry storage is temporarily unavailable. Please try again later.' })
+    }
     console.error('Enquiry storage failed:', error)
-    return sendJson(response, 503, { error: 'The enquiry could not be saved. Please try again or contact us directly.' })
+    return sendJson(response, 500, { error: 'The enquiry could not be saved. Please try again or contact us directly.' })
   }
 }
