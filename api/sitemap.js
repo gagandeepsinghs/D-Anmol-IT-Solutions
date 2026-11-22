@@ -2,6 +2,7 @@ import { sitemapHandler } from '../api-helpers/seoResponses.js'
 import { isMongoUnavailableError } from '../api-helpers/mongoDatabase.js'
 import { getSitePagesCollection } from '../api-helpers/sitePages.js'
 import { getSiteContentCollection } from '../api-helpers/siteContent.js'
+import { publicAiPythonSlugs } from '../src/data/publicSitePaths.js'
 
 export default async function sitemap(request, response) {
   try {
@@ -24,7 +25,7 @@ export default async function sitemap(request, response) {
         .filter((course) => course.published !== false && validSlug(course.slug))
         .map((course) => `/courses/${course.slug}`)
       const programmePaths = (savedContent?.content?.aiPythonCourses || [])
-        .filter((course) => validSlug(course.slug))
+        .filter((course) => validSlug(course.slug) && publicAiPythonSlugs.includes(course.slug))
         .map((course) => `/ai-python/${course.slug}`)
       additionalPaths = [...pages.map((page) => page.path), ...coursePaths, ...programmePaths]
     }

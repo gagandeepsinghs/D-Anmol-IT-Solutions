@@ -20,12 +20,18 @@ function getSiteOrigin(request) {
 
 export function createSitemapXml(origin, additionalPaths = []) {
   const paths = [...new Set([...publicSitePaths, ...additionalPaths])]
-  const urls = paths.map((path) => `  <url><loc>${origin}${path}</loc></url>`).join('\n')
+  const escapeXml = (value) => value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+  const urls = paths.map((path) => `  <url><loc>${escapeXml(`${origin}${path}`)}</loc></url>`).join('\n')
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
 }
 
 export function createRobotsTxt(origin) {
-  return `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`
+  return `User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`
 }
 
 function sendText(request, response, contentType, content) {

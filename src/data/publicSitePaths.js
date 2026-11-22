@@ -25,6 +25,7 @@ export const publicCourseSlugs = [
 ]
 
 export const publicAiPythonSlugs = [
+  'python-django',
   'data-science-python',
   'ai-machine-learning',
   'generative-ai-llm-development',

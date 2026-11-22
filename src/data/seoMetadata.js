@@ -57,6 +57,7 @@ const courseTitles = {
 }
 
 const aiPythonTitles = {
+  'python-django': 'Python Programming and Django',
   'data-science-python': 'Data Science',
   'ai-machine-learning': 'Artificial Intelligence and Machine Learning',
   'generative-ai-llm-development': 'Generative AI',

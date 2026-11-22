@@ -102,15 +102,15 @@ export default function CourseSyllabus({
           </ol>
 
           <ol className="course-roadmap-grid">
-            {syllabus.modules.map((module) => (
-              <li className="course-roadmap-card" key={`${module.number}-${module.title}`}>
+            {syllabus.modules.map((module, index) => (
+              <li className="course-roadmap-card" key={`${index}-${module.number}-${module.title}`}>
                 <div className="course-roadmap-heading">
                   <span className="course-roadmap-number">{String(module.number).padStart(2, '0')}</span>
                   <h4>{module.title}</h4>
                 </div>
                 {module.topics.length > 0 && (
                   <ul className="course-topic-chips" aria-label="Topics covered">
-                    {module.topics.slice(0, 4).map((topic) => <li key={topic}>{topic}</li>)}
+                    {module.topics.slice(0, 4).map((topic, index) => <li key={`${index}-${topic}`}>{topic}</li>)}
                     {module.topics.length > 4 && <li key={`more-${module.number}`}>+{module.topics.length - 4} more</li>}
                   </ul>
                 )}
@@ -123,7 +123,7 @@ export default function CourseSyllabus({
             <div className="course-pathway-projects">
               <span className="eyebrow">{corporate ? 'Applied team exercises' : 'Project ideas in the syllabus'}</span>
               <ul>
-                {syllabus.buildItems.map((project) => <li key={project}>{project}</li>)}
+                {syllabus.buildItems.map((project, index) => <li key={`${index}-${project}`}>{project}</li>)}
               </ul>
             </div>
             <div className="course-pathway-actions">

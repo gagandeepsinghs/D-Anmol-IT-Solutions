@@ -66,10 +66,12 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
     }
 
     const isManagedPagePath = /^\/pages\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pathname)
-    if (isPreview && (publicSitePaths.includes(pathname) || isManagedPagePath)) {
-      const filePath = pathname === '/' || isManagedPagePath
+    if (isPreview && (pathname === '/admin' || publicSitePaths.includes(pathname) || isManagedPagePath)) {
+      const filePath = isManagedPagePath
+        ? resolve(outputDirectory, 'managed-page.html')
+        : pathname === '/'
         ? resolve(outputDirectory, 'index.html')
-        : resolve(outputDirectory, `.${pathname}`, 'index.html')
+        : resolve(outputDirectory, pathname.slice(1), 'index.html')
       response.statusCode = 200
       response.setHeader('Content-Type', 'text/html; charset=utf-8')
       return response.end(request.method === 'HEAD' ? undefined : readFileSync(filePath))
@@ -137,6 +139,23 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
         mkdirSync(pageDirectory, { recursive: true })
         writeFileSync(resolve(pageDirectory, 'index.html'), html)
       })
+
+      const adminHtml = createRouteHtml('/admin', {
+        title: 'Admin | D-Anmol Academy',
+        description: 'Manage website pages and content.',
+      })
+        .replace(/<meta name="robots" content="index,follow,max-image-preview:large"\s*\/?>/i, '<meta name="robots" content="noindex,nofollow" />')
+        .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/i, '')
+      const adminDirectory = resolve(outputDirectory, 'admin')
+      mkdirSync(adminDirectory, { recursive: true })
+      writeFileSync(resolve(adminDirectory, 'index.html'), adminHtml)
+
+      const managedPageHtml = baseHtml
+        .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta name="robots" content="[^"]*"\s*\/?>/i, '<meta name="robots" content="index,follow" />')
+      writeFileSync(resolve(outputDirectory, 'managed-page.html'), managedPageHtml)
     },
   }
 }

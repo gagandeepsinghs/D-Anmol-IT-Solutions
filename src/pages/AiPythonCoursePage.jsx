@@ -36,7 +36,7 @@ export default function AiPythonCoursePage() {
 
     <section className="section section-white">
       <div className="page-wrap ai-python-detail-layout">
-        <main className="ai-python-detail-content">
+        <div className="ai-python-detail-content">
           <section className="detail-block">
             <span className="eyebrow">Course overview</span>
             <h2>What is this course?</h2>
@@ -65,7 +65,7 @@ export default function AiPythonCoursePage() {
             <div className="ai-python-project-grid">{course.projects.map((project) => <article key={project.title}><span className="project-index"><Lightbulb size={15} /></span><div><h3>{project.title}</h3><p>{project.description}</p></div></article>)}</div>
             <p className="ai-python-project-note">These are sample educational project ideas, not claimed client work or guaranteed course deliverables.</p>
           </section>
-        </main>
+        </div>
         <aside className="ai-python-detail-aside">
           <div className="ai-python-summary">
             <span className="eyebrow">At a glance</span>
