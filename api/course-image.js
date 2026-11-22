@@ -89,7 +89,7 @@ export default async function handler(request, response) {
   if (!isSameOriginRequest(request)) return sendJson(response, 403, { error: 'Request origin was not accepted.' })
 
   try {
-    if (!isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage course images.' })
+    if (!await isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage course images.' })
     if (request.method === 'DELETE') {
       await (await getMongoDatabase()).collection('courseCoverImages').deleteOne({ _id: courseId })
       return sendJson(response, 200, { deleted: true })

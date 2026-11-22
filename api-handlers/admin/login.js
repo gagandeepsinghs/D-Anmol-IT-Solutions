@@ -30,7 +30,7 @@ export default async function handler(request, response) {
       return sendJson(response, 401, { error: 'Incorrect password.' })
     }
 
-    setAdminSession(response, secret)
+    setAdminSession(response, secret, credentials?.sessionVersion || 'initial')
     return sendJson(response, 200, { authenticated: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })

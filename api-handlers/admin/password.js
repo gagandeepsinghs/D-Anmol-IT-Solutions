@@ -20,7 +20,7 @@ export default async function handler(request, response) {
 
   try {
     const { password: initialPassword, secret } = getAdminConfiguration()
-    if (!isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to change the admin password.' })
+    if (!await isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to change the admin password.' })
 
     const body = await readJsonBody(request)
     const { currentPassword, newPassword, confirmPassword } = body || {}
@@ -41,11 +41,13 @@ export default async function handler(request, response) {
       : isValidAdminPassword(currentPassword, initialPassword, secret)
     if (!currentPasswordIsValid) return sendJson(response, 401, { error: 'Current password is incorrect.' })
 
+    const newCredentials = createAdminPasswordHash(newPassword)
     await credentialsCollection.replaceOne({ _id: 'admin' }, {
       _id: 'admin',
-      ...createAdminPasswordHash(newPassword),
+      ...newCredentials,
       updatedAt: new Date(),
     }, { upsert: true })
+    setAdminSession(response, secret, newCredentials.sessionVersion)
     return sendJson(response, 200, { updated: true })
   } catch (error) {
     if (error instanceof AdminConfigurationError) return sendJson(response, error.statusCode, { error: error.message })

@@ -17,7 +17,7 @@ export default async function handler(request, response) {
     if (request.method === 'PUT' && !isSameOriginRequest(request)) {
       return sendJson(response, 403, { error: 'Request origin was not accepted.' })
     }
-    if (!isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage website content.' })
+    if (!await isAdminAuthenticated(request)) return sendJson(response, 401, { error: 'Sign in to manage website content.' })
 
     const collection = await getSiteContentCollection()
     if (request.method === 'GET') {

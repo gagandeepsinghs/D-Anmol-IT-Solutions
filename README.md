@@ -241,7 +241,7 @@ The build creates route-specific HTML shells with unique titles, descriptions, c
 
 The full-screen admin panel is available at `/admin`. Configure `MONGODB_URI`, `MONGODB_DB`, `ADMIN_PASSWORD` (at least 12 characters), and `ADMIN_SESSION_SECRET` (at least 32 random characters) in the server environment before signing in. There is no public registration: management APIs require a signed, HTTP-only admin session, and write requests must be same-origin. Sessions expire after eight hours. The same MongoDB database stores the admin enquiry copy. Keep these values server-side; do not use `VITE_` prefixes.
 
-Signed-in administrators can change the password from the **Password** section. A changed password is stored as a salted scrypt hash in MongoDB and takes precedence over `ADMIN_PASSWORD`; the environment password remains the initial setup fallback.
+Signed-in administrators can change the password from the **Password** section. A changed password is stored as a salted scrypt hash in MongoDB and takes precedence over `ADMIN_PASSWORD`; the environment password remains the initial setup fallback. Password changes invalidate existing admin sessions and keep only the current session active.
 
 The panel provides:
 

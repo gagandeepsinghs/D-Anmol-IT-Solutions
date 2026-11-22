@@ -1,8 +1,10 @@
 import { createHmac, randomBytes, scryptSync, timingSafeEqual } from 'node:crypto'
+import { getMongoDatabase } from './mongoDatabase.js'
 
 const cookieName = 'anmol_admin_session'
 const sessionDurationSeconds = 8 * 60 * 60
 const passwordKeyLength = 32
+const initialSessionVersion = 'initial'
 let cachedPasswordHash
 
 export class AdminConfigurationError extends Error {
@@ -82,28 +84,34 @@ export function isSameOriginRequest(request) {
   }
 }
 
-function createSessionToken(secret) {
+function createSessionToken(secret, sessionVersion) {
   const payload = Buffer.from(JSON.stringify({
     expiresAt: Math.floor(Date.now() / 1000) + sessionDurationSeconds,
+    sessionVersion,
   })).toString('base64url')
   const signature = createHmac('sha256', secret).update(payload).digest('base64url')
   return `${payload}.${signature}`
 }
 
-function isValidSessionToken(token, secret) {
-  if (typeof token !== 'string') return false
+function readValidSession(token, secret) {
+  if (typeof token !== 'string') return null
   const [payload, signature, extra] = token.split('.')
-  if (!payload || !signature || extra) return false
+  if (!payload || !signature || extra) return null
 
   const expectedSignature = createHmac('sha256', secret).update(payload).digest()
   const actualSignature = Buffer.from(signature, 'base64url')
-  if (actualSignature.length !== expectedSignature.length || !timingSafeEqual(actualSignature, expectedSignature)) return false
+  if (actualSignature.length !== expectedSignature.length || !timingSafeEqual(actualSignature, expectedSignature)) return null
 
   try {
     const session = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'))
-    return Number.isInteger(session.expiresAt) && session.expiresAt > Math.floor(Date.now() / 1000)
+    if (!Number.isInteger(session.expiresAt)
+      || session.expiresAt <= Math.floor(Date.now() / 1000)
+      || typeof session.sessionVersion !== 'string') {
+      return null
+    }
+    return session
   } catch {
-    return false
+    return null
   }
 }
 
@@ -113,8 +121,8 @@ function readSessionCookie(request) {
   return cookie ? cookie.slice(cookieName.length + 1) : null
 }
 
-export function setAdminSession(response, secret) {
-  const token = createSessionToken(secret)
+export function setAdminSession(response, secret, sessionVersion) {
+  const token = createSessionToken(secret, sessionVersion)
   const attributes = [
     `${cookieName}=${encodeURIComponent(token)}`,
     'HttpOnly',
@@ -132,9 +140,16 @@ export function clearAdminSession(response) {
   response.setHeader('Set-Cookie', attributes.join('; '))
 }
 
-export function isAdminAuthenticated(request) {
+export async function isAdminAuthenticated(request) {
   const { secret } = getAdminConfiguration()
-  return isValidSessionToken(readSessionCookie(request), secret)
+  const session = readValidSession(readSessionCookie(request), secret)
+  if (!session) return false
+
+  const credentials = await (await getMongoDatabase())
+    .collection('adminCredentials')
+    .findOne({ _id: 'admin' }, { projection: { _id: 0, sessionVersion: 1 } })
+  const sessionVersion = credentials?.sessionVersion || initialSessionVersion
+  return session.sessionVersion === sessionVersion
 }
 
 export function isValidAdminPassword(password, expectedPassword, secret) {
@@ -154,6 +169,7 @@ export function createAdminPasswordHash(password) {
   return {
     passwordSalt: salt.toString('base64url'),
     passwordHash: hash.toString('base64url'),
+    sessionVersion: randomBytes(32).toString('base64url'),
   }
 }
 
