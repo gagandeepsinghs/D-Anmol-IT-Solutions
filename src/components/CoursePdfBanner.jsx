@@ -41,7 +41,7 @@ export default function CoursePdfBanner({ courseTitle, courseImage, email }) {
               className="course-pdf-email"
               type="button"
               aria-expanded={isOpen}
-              onClick={() => setIsOpen((open) => !open)}
+              onClick={() => setIsOpen(true)}
             >
               Request the syllabus <ArrowRight size={17} />
             </button>

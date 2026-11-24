@@ -7,7 +7,7 @@ export const corePageSeo = {
   },
   '/courses': {
     title: 'IT and Computer Courses in Chandigarh, Mohali & Panchkula',
-    description: 'Explore eight practical courses with online training across India and offline learning in Chandigarh, Mohali and Panchkula.',
+    description: 'Explore practical courses with online training across India and offline learning in Chandigarh, Mohali and Panchkula.',
   },
   '/ai-python': {
     title: 'AI, Data & Automation Courses Online in India',

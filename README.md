@@ -20,7 +20,7 @@ A responsive training website for D-Anmol Enterprises. Enquiries are validated b
 
 ## Features
 
-- Responsive home, course catalogue, course detail, AI & Python, corporate training, About, Contact, and policy pages.
+- Responsive home, course catalogue, course detail, AI & Python, corporate training, About, and Contact pages.
 - Searchable course listings and category filters.
 - A Courses dropdown that links to published course details.
 - Course pages with overviews, explained curriculum modules, skills, project ideas, prerequisites, duration, and learning mode.
@@ -215,7 +215,7 @@ Serve the production build locally:
 npm run preview
 ```
 
-The build creates route-specific HTML shells with unique titles, descriptions, canonical paths, and social metadata. Vercel rewrites only known client-side routes; unmatched paths use `public/404.html` and return HTTP 404. Vite development and preview use the same route allowlist and custom 404 behavior.
+The build prerenders route-specific page content with unique titles, descriptions, canonical paths, and social metadata. It resolves lazy-loaded routes and maps source image references to bundled production assets. Vercel rewrites only known routes; unmatched paths use `public/404.html` and return HTTP 404. Vite development and preview use the same route allowlist and custom 404 behavior.
 
 ## SEO and Google Search Console
 
@@ -223,7 +223,7 @@ The build creates route-specific HTML shells with unique titles, descriptions, c
 - Add each valid app route to `vercel.json` with a rewrite to its generated `/<route>/index.html`. Keep legacy URLs as permanent redirects. Do not add a catch-all SPA rewrite; it turns unknown URLs into HTTP 200 responses.
 - `/sitemap.xml` and `/robots.txt` are served by Vercel functions and use `VITE_SITE_URL` when configured, otherwise the request host. Set `VITE_SITE_URL` in the Vercel build environment to the chosen canonical origin (for example `https://www.example.com`) after the production domain is selected.
 - Verify the site in Google Search Console using DNS TXT verification after the domain is connected. Then submit `https://<chosen-host>/sitemap.xml`. Alternatively, add the Search Console HTML-tag token as `VITE_GOOGLE_SITE_VERIFICATION` in the Vercel build environment and redeploy.
-- Policies are included in the sitemap and indexable; have the academy owner approve their wording before production publication.
+- Privacy, terms, and refund policy pages are not implemented. Add them only after the academy owner supplies and approves their wording; do not publish placeholder legal copy.
 
 ## Before production launch
 

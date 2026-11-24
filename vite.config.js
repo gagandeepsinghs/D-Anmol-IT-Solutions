@@ -302,6 +302,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     appType: command === 'serve' && mode === 'production' ? 'custom' : 'spa',
+    build: { manifest: true },
     plugins: [localApiPlugin(), seoAndNotFoundPlugin(siteUrl, env.VITE_GOOGLE_SITE_VERIFICATION), react()],
   }
 })
