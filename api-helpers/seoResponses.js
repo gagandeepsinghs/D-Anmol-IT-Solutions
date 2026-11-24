@@ -8,7 +8,9 @@ function getSiteOrigin(request) {
   const hostValue = Array.isArray(host) ? host[0] : host
   const protocol = (Array.isArray(forwardedProtocol) ? forwardedProtocol[0] : forwardedProtocol)?.split(',')[0].trim()
     || (hostValue?.startsWith('localhost') || hostValue?.startsWith('127.0.0.1') ? 'http' : 'https')
-  const siteUrl = configuredUrl || `${protocol}://${hostValue}`
+  const preferredOrigin = 'https://www.danmolenterprises.com'
+  const isLocalRequest = hostValue?.startsWith('localhost') || hostValue?.startsWith('127.0.0.1')
+  const siteUrl = configuredUrl || (isLocalRequest ? `${protocol}://${hostValue}` : preferredOrigin)
 
   if (!hostValue && !configuredUrl) throw new Error('Unable to determine the public site URL')
 

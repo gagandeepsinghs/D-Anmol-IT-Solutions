@@ -100,7 +100,7 @@ export default function AdminPage() {
     return (
       <div className="admin-page">
         <section className="admin-panel admin-login-panel">
-          <span className="admin-eyebrow">D-Anmol Academy</span>
+          <span className="admin-eyebrow">D-Anmol Enterprises</span>
           <h1>Admin sign in</h1>
           <p>Sign in to manage pages, courses, site content and incoming enquiries.</p>
           {notice && <p className="admin-notice admin-notice-error" role="alert">{notice.text}</p>}

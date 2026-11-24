@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <path fill="#061b37" fill-rule="evenodd" d="M8 14h14c11 0 18 7 18 18S33 50 22 50H8V14zm9 8v20h5c6 0 9-4 9-10s-3-10-9-10h-5z"/>
-  <path fill="#061b37" fill-rule="evenodd" d="m29 50 13-36h8l13 36h-9l-3-8H40l-3 8h-8zm14-15h6l-3-9-3 9z"/>
-  <path d="M5 42C21 33 38 19 58 8" fill="none" stroke="#ff6a00" stroke-linecap="round" stroke-width="4"/>
+  <rect width="64" height="64" rx="14" fill="#061b37"/>
+  <text x="32" y="46" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="800" letter-spacing="-3" text-anchor="middle">
+    <tspan>D</tspan><tspan fill="#ff6a00">A</tspan>
+  </text>
 </svg>

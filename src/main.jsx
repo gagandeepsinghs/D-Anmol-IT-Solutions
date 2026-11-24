@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles.css'
 import './components/AdvisorBookingModal.css'
+import { initializeAnalytics } from './lib/analytics'
+
+initializeAnalytics()
 
 const rootElement = document.getElementById('root')
 if (!rootElement) throw new Error('The application root element is missing.')

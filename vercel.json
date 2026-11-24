@@ -75,18 +75,6 @@
       "destination": "/faq/index.html"
     },
     {
-      "source": "/privacy-policy",
-      "destination": "/privacy-policy/index.html"
-    },
-    {
-      "source": "/terms-and-conditions",
-      "destination": "/terms-and-conditions/index.html"
-    },
-    {
-      "source": "/refund-cancellation-policy",
-      "destination": "/refund-cancellation-policy/index.html"
-    },
-    {
       "source": "/courses/computer-basics-ms-office",
       "destination": "/courses/computer-basics-ms-office/index.html"
     },

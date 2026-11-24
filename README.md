@@ -1,6 +1,6 @@
-# D-Anmol Academy Training Website
+# D-Anmol Enterprises Training Website
 
-A responsive training website for D-Anmol Academy. Enquiries are validated by a server API and saved to MongoDB for the admin inbox.
+A responsive training website for D-Anmol Enterprises. Enquiries are validated by a server API and saved to MongoDB for the admin inbox.
 
 > **Enquiry setup:** Configure MongoDB in Vercel before launch. Enquiries are stored in the website admin inbox; no spreadsheet integration is used.
 
@@ -60,6 +60,8 @@ npm run dev
 
 Open the local URL printed by Vite, usually `http://localhost:5173`.
 
+If MongoDB SRV lookups fail with `ECONNREFUSED` on a restricted network, set `MONGODB_DNS_SERVER` in `.env.local` to a DNS server reachable from Node.js. Vite applies this override only during local development.
+
 ## Website pages
 
 | Route | Purpose |
@@ -77,9 +79,6 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 | `/corporate-training` | Corporate programme information and enquiry |
 | `/about` | Editable company overview and practical-learning approach |
 | `/contact` | Contact information and enquiry form |
-| `/privacy-policy` | How information submitted through enquiries is used |
-| `/terms-and-conditions` | Website information, demo requests, and admission process |
-| `/refund-cancellation-policy` | Direct contact information for refund and cancellation enquiries |
 | `/sitemap.xml` | XML sitemap of public routes |
 | `/robots.txt` | Public crawl rules and sitemap location |
 | unknown URL | Custom not-found page with HTTP 404 on Vercel and local preview |

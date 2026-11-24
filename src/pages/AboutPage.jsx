@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="page-hero about-hero">
         <div className="page-wrap about-hero-grid">
           <div className="about-hero-copy">
-            <span className="eyebrow eyebrow-light">About D-Anmol Academy</span>
+            <span className="eyebrow eyebrow-light">About D-Anmol Enterprises</span>
             <h1>Practical skills.<br />Ready to grow.</h1>
             <p>
               We help people and teams build useful digital skills through clear
@@ -151,7 +151,7 @@ export default function AboutPage() {
               learning as new ones emerge.
             </p>
             <p>
-              D-Anmol Academy offers AI Automation, Full Stack Development,
+              D-Anmol Enterprises offers AI Automation, Full Stack Development,
               Computer Basics, Computer Typing, Data Analytics, Generative AI,
               Artificial Intelligence and Machine Learning, Data Science, and
               Digital Marketing. Our focus is on clear
@@ -163,7 +163,7 @@ export default function AboutPage() {
             </p>
             <p>
               Online training is available across India. Offline training
-              targets Mohali, Chandigarh, and Panchkula; D-Anmol Academy does
+              targets Chandigarh, Mohali, and Panchkula; D-Anmol Enterprises does
               not publish a public walk-in address.
             </p>
             <Link to="/courses" className="text-link">
