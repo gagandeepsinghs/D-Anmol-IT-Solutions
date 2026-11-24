@@ -28,6 +28,7 @@ export default function Header() {
   const { courses } = useAppData()
   const siteSettings = useSiteSettings()
   const location = useLocation()
+  const menuToggleRef = useRef(null)
   const menuRef = useRef(null)
   const trainingMenuRef = useRef(null)
   const isCoursesActive = location.pathname === '/courses' || location.pathname.startsWith('/courses/')
@@ -42,6 +43,10 @@ export default function Header() {
       if (event.key === 'Escape') {
         setCoursesOpen(false)
         setTrainingOpen(false)
+        if (window.matchMedia('(max-width: 760px)').matches && menuToggleRef.current?.getAttribute('aria-expanded') === 'true') {
+          setOpen(false)
+          menuToggleRef.current.focus()
+        }
       }
     }
     document.addEventListener('pointerdown', closeOnOutsideClick)
@@ -100,6 +105,7 @@ export default function Header() {
           <img src={siteSettings.compactLogo} alt={siteSettings.name} />
         </Link>
         <button
+          ref={menuToggleRef}
           className="menu-toggle"
           type="button"
           aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}

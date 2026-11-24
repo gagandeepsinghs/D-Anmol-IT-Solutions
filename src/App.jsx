@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { lazy, startTransition, Suspense, useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -63,7 +63,7 @@ export default function App() {
         return result.pages || []
       })
       .then((pages) => {
-        if (active) setManagedPages(Object.fromEntries(pages.map((page) => [page.path, page])))
+        if (active) startTransition(() => setManagedPages(Object.fromEntries(pages.map((page) => [page.path, page]))))
       })
       .catch((error) => {
         if (active) console.error('Managed page loading failed:', error)
@@ -85,7 +85,7 @@ export default function App() {
         return result.content || {}
       })
       .then((content) => {
-        if (active) setSiteContent(content)
+        if (active) startTransition(() => setSiteContent(content))
       })
       .catch((error) => {
         if (active) console.error('Managed website content loading failed:', error)
