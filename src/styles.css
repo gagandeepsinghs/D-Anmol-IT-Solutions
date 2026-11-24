@@ -3254,8 +3254,8 @@ main h3 {
 
   .course-roadmap-card {
     gap: 10px;
-    height: auto;
-    align-self: start;
+    height: 100%;
+    align-self: stretch;
     padding: 20px;
   }
 
