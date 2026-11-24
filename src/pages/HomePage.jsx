@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, BookOpenText, BriefcaseBusiness, Bot, ChartNoAxesCombined, Code2, Lightbulb, MessageCircle, Phone, Sparkles, Workflow } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BookOpenText, BriefcaseBusiness, Bot, ChartNoAxesCombined, Code2, Compass, Lightbulb, MessageCircle, Phone, Sparkles, Target, Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button'
 import CourseCard from '../components/CourseCard'
@@ -6,7 +6,6 @@ import { useAppData } from '../context/AppDataContext'
 import TrainingMarquee from '../components/TrainingMarquee'
 import TechBadge from '../components/TechBadge'
 import homeTeamImage from '../assets/images/sections/optimized/home-team-learning.webp'
-import careerGuidanceImage from '../assets/images/sections/career-guidance-section.png'
 
 const technologyRows = [
   ['LangChain', 'LangGraph', 'GitHub Copilot', 'Notion AI', 'Canva AI', 'TensorFlow', 'PyTorch', 'OpenCV', 'n8n'],
@@ -21,6 +20,41 @@ const learningSteps = [
   { icon: BookOpenText, number: '01', title: 'Choose your learning path', body: 'Explore course outlines and ask about the available duration for your chosen course.' },
   { icon: Code2, number: '02', title: 'Learn through practice', body: 'Build your understanding with guided exercises and course projects.' },
   { icon: BriefcaseBusiness, number: '03', title: 'Plan your next step', body: 'Ask our team about course fit, learning format and upcoming schedules.' },
+]
+const careerGuidanceCards = [
+  {
+    icon: Lightbulb,
+    title: 'Non-technical background?',
+    body: 'Start with practical computer, data, or digital skills—no technical background needed.',
+    href: '/courses',
+    tone: 'orange',
+  },
+  {
+    icon: Code2,
+    title: 'Coding se shuruaat nahi karni?',
+    body: 'Explore automation and no-code tools, then build technical skills at your own pace.',
+    href: '/ai-python',
+    tone: 'blue',
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: 'Next step ko lekar confusion hai?',
+    body: 'Tell us about your goals and we’ll help you plan a practical learning path.',
+    href: '/contact?request=demo#enquiry-form',
+    tone: 'green',
+  },
+]
+const careerGuidanceSteps = [
+  { icon: Target, title: 'Understand your goal', href: '/contact?request=demo#enquiry-form' },
+  { icon: Compass, title: 'Choose a path', href: '/courses' },
+  { icon: BookOpenText, title: 'Learn with guidance', href: '/ai-python' },
+  { icon: BriefcaseBusiness, title: 'Plan your next step', href: '/contact' },
+]
+const careerDirections = [
+  { icon: ChartNoAxesCombined, title: 'Data Analytics', href: '/courses/data-analytics' },
+  { icon: Workflow, title: 'AI & Automation', href: '/courses/ai-automation' },
+  { icon: Code2, title: 'Full Stack Development', href: '/courses/full-stack-development-course-in-chandigarh' },
+  { icon: Lightbulb, title: 'Digital Marketing', href: '/courses/digital-marketing-course-in-chandigarh' },
 ]
 
 export default function HomePage() {
@@ -77,38 +111,58 @@ export default function HomePage() {
         </div>
       </div>
     </section>
-    <section className="section section-white home-about">
-      <div className="home-about-inner">
-        <div className="home-about-art">
-          <img
-            src={careerGuidanceImage}
-            alt="Career guidance: choose a learning path, learn with guidance, and plan your next step."
-          />
-          <a
-            className="career-guidance-hotspot career-guidance-hotspot-whatsapp"
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="WhatsApp par baat karein"
-          >
-            <MessageCircle size={16} aria-hidden="true" /> WhatsApp par baat karein
-          </a>
-          <a
-            className="career-guidance-hotspot career-guidance-hotspot-call"
-            href={phoneUrl}
-            aria-label="Call karein"
-          >
-            <Phone size={16} aria-hidden="true" /> Call karein
-          </a>
+    <section className="section home-career-guidance">
+      <div className="page-wrap career-guidance-layout">
+        <div className="career-guidance-main">
+          <span className="career-guidance-eyebrow"><span aria-hidden="true" /> Confused about your next step?</span>
+          <h2>Career ki shuruaat<br /><span>kahan se karein?</span></h2>
+          <p className="career-guidance-lede">Aapko abhi sab kuch decide karne ki zaroorat nahi. Apne interests aur goals par humse baat karein—hum aapko suitable learning path samjhayenge.</p>
+          <div className="career-guidance-cards">
+            {careerGuidanceCards.map(({ icon: Icon, title, body, href, tone }, index) => (
+              <Link className={`career-guidance-card career-guidance-card-${tone}`} to={href} key={title} style={{ '--card-index': index }}>
+                <span className="career-guidance-card-icon"><Icon size={22} aria-hidden="true" /></span>
+                <span className="career-guidance-card-copy"><strong>{title}</strong><span>{body}</span></span>
+                <ArrowUpRight className="career-guidance-card-arrow" size={18} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+          <ol className="career-guidance-steps" aria-label="Your learning journey">
+            {careerGuidanceSteps.map(({ icon: Icon, title, href }) => (
+              <li key={title}>
+                <Link to={href}>
+                  <span className="career-guidance-step-icon"><Icon size={24} aria-hidden="true" /></span>
+                  <strong>{title}</strong>
+                </Link>
+              </li>
+            ))}
+          </ol>
+          <div className="career-guidance-actions">
+            <a className="career-guidance-action career-guidance-action-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} aria-hidden="true" /> WhatsApp par baat karein
+            </a>
+            <a className="career-guidance-action career-guidance-action-call" href={phoneUrl}>
+              <Phone size={18} aria-hidden="true" /> Call karein
+            </a>
+          </div>
         </div>
-        <div className="home-about-mobile-actions">
-          <a className="button home-about-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
-            <MessageCircle size={17} aria-hidden="true" /> WhatsApp par baat karein
-          </a>
-          <a className="button button-primary" href={phoneUrl}>
-            <Phone size={17} aria-hidden="true" /> Call karein
-          </a>
-        </div>
+        <aside className="career-guidance-directions" aria-labelledby="career-guidance-directions-title">
+          <div className="career-guidance-directions-heading">
+            <span className="career-guidance-compass"><Compass size={25} aria-hidden="true" /></span>
+            <span><small>Find your direction</small><strong id="career-guidance-directions-title">Explore a path</strong></span>
+          </div>
+          <p>Start with the subject that interests you. We’ll help you take it one step at a time.</p>
+          <nav aria-label="Popular learning paths">
+            {careerDirections.map(({ icon: Icon, title, href }, index) => (
+              <Link className={`career-guidance-direction-link career-guidance-direction-${index + 1}`} to={href} key={title}>
+                <Icon size={19} aria-hidden="true" />
+                <span>{title}</span>
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            ))}
+            <Link className="career-guidance-all-paths" to="/courses">And more courses <ArrowRight size={16} aria-hidden="true" /></Link>
+          </nav>
+          <span className="career-guidance-directions-note">Not sure yet? That’s a good place to start.</span>
+        </aside>
       </div>
     </section>
     <section className="section home-reasons">

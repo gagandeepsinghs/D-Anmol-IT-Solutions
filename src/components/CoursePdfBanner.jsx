@@ -10,7 +10,7 @@ export default function CoursePdfBanner({ courseTitle, courseImage, email }) {
     event.preventDefault()
     const emailAddress = String(new FormData(event.currentTarget).get('email') || '').trim()
     const body = encodeURIComponent(
-      `Hello D-Anmol Academy,\n\nPlease send me the syllabus for ${courseTitle}.\n\nMy email address: ${emailAddress}`
+      `Hello D-Anmol Enterprises,\n\nPlease send me the syllabus for ${courseTitle}.\n\nMy email address: ${emailAddress}`
     )
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
   }

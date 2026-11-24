@@ -96,7 +96,7 @@ export default function Header() {
   return (
     <header className={`site-header ${open ? 'mobile-nav-open' : ''}`}>
       <div className="header-inner">
-        <Link to="/" className="brand" aria-label="D-Anmol Academy home" onClick={closeNavigation}>
+        <Link to="/" className="brand" aria-label="D-Anmol Enterprises home" onClick={closeNavigation}>
           <img src={siteSettings.compactLogo} alt={siteSettings.name} />
         </Link>
         <button

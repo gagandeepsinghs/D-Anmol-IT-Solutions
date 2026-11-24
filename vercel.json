@@ -2,34 +2,45 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "danmolenterprises.com"
+        }
+      ],
+      "destination": "https://www.danmolenterprises.com/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/courses/computer-basics-ms-office-typing",
       "destination": "/courses/computer-basics-ms-office",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/courses/data-science-with-python-course-in-chandigarh",
       "destination": "/courses/data-analytics",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/courses/artificial-intelligence-course-in-chandigarh",
       "destination": "/courses/artificial-intelligence-machine-learning",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/courses/machine-learning-course-in-chandigarh",
       "destination": "/courses/artificial-intelligence-machine-learning",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "rewrites": [
     {
       "source": "/pages/:slug",
-      "destination": "/index.html"
+      "destination": "/managed-page.html"
     },
     {
       "source": "/admin",
-      "destination": "/index.html"
+      "destination": "/admin/index.html"
     },
     {
       "source": "/sitemap.xml",
@@ -62,18 +73,6 @@
     {
       "source": "/faq",
       "destination": "/faq/index.html"
-    },
-    {
-      "source": "/privacy-policy",
-      "destination": "/privacy-policy/index.html"
-    },
-    {
-      "source": "/terms-and-conditions",
-      "destination": "/terms-and-conditions/index.html"
-    },
-    {
-      "source": "/refund-cancellation-policy",
-      "destination": "/refund-cancellation-policy/index.html"
     },
     {
       "source": "/courses/computer-basics-ms-office",
@@ -120,6 +119,10 @@
       "destination": "/ai-python/data-science-python/index.html"
     },
     {
+      "source": "/ai-python/python-django",
+      "destination": "/ai-python/python-django/index.html"
+    },
+    {
       "source": "/ai-python/ai-machine-learning",
       "destination": "/ai-python/ai-machine-learning/index.html"
     },
@@ -130,6 +133,33 @@
     {
       "source": "/ai-python/ai-agents-automation",
       "destination": "/ai-python/ai-agents-automation/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
     }
   ]
 }

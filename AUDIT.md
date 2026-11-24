@@ -1,4 +1,4 @@
-# D-Anmol Academy production audit
+# D-Anmol Enterprises production audit
 
 Audit date: 2026-11-02  
 Scope: repository inspection, production build, local production preview, raw HTML inspection, and rendered-page inspection. No application code was changed for this audit.

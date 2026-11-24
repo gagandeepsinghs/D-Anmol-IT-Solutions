@@ -6,9 +6,6 @@ export const corePublicPaths = [
   '/about',
   '/contact',
   '/faq',
-  '/privacy-policy',
-  '/terms-and-conditions',
-  '/refund-cancellation-policy',
 ]
 
 export const publicCourseSlugs = [
@@ -25,6 +22,7 @@ export const publicCourseSlugs = [
 ]
 
 export const publicAiPythonSlugs = [
+  'python-django',
   'data-science-python',
   'ai-machine-learning',
   'generative-ai-llm-development',

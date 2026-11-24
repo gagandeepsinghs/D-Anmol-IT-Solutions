@@ -1,8 +1,8 @@
-# D-Anmol Academy Website — Technology and Architecture
+# D-Anmol Enterprises Website — Technology and Architecture
 
 ## Project overview
 
-D-Anmol Academy’s website is a responsive course discovery and enquiry site. Visitors can browse the academy’s courses, read course outlines, learn about corporate training, and contact the academy. The site does not provide online checkout, student accounts, or a database-backed course editor.
+D-Anmol Enterprises’ website is a responsive course discovery and enquiry site. Visitors can browse the institute’s courses, read course outlines, learn about corporate training, and contact the team. The site does not provide online checkout, student accounts, or a database-backed course editor.
 
 The application is a browser-rendered React single-page application (SPA), built with Vite. Its public pages and route-specific HTML metadata are prepared during the production build. The page content itself is rendered by React in the browser; this is not server-side rendering (SSR).
 
@@ -51,9 +51,6 @@ Routes are declared in `src/App.jsx`; public routes are also listed in `src/data
 | `/about` | About the academy |
 | `/contact` | Contact and enquiry form |
 | `/faq` | Frequently asked questions |
-| `/privacy-policy` | Privacy information |
-| `/terms-and-conditions` | Terms |
-| `/refund-cancellation-policy` | Refund and cancellation information |
 | Any unmatched path | Not-found page |
 
 Legacy course URLs redirect to their current routes. Course and programme routes are generated from the public slug lists and mapped to local course data.

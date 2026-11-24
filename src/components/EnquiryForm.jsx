@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { ArrowRight, CheckCircle2, LoaderCircle } from 'lucide-react'
 import EnquirySubmissionError from './EnquirySubmissionError'
@@ -9,8 +10,9 @@ const initialForm = { name: '', email: '', phone: '', organization: '', interest
 
 export default function EnquiryForm({ kind = 'contact', compact = false, title, description, initialCourse = '', id }) {
   const { courses } = useAppData()
+  const { search } = useLocation()
   const courseOptions = courses.map((course) => course.title)
-  const enquiryParams = new URLSearchParams(window.location.search)
+  const enquiryParams = new URLSearchParams(search)
   const requestedCourse = initialCourse || enquiryParams.get('course') || enquiryParams.get('interest') || ''
   const [form, setForm] = useState({ ...initialForm, interest: courseOptions.includes(requestedCourse) ? requestedCourse : '' })
   const [status, setStatus] = useState('idle')

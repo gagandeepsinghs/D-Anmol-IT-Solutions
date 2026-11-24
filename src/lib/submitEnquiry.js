@@ -9,4 +9,9 @@ export async function submitEnquiry(data) {
   })
   const result = await res.json().catch(() => ({}))
   if (!res.ok || !result.ok) throw new Error(result.error || 'Enquiry failed.')
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('course-enquiry-submitted', {
+      detail: { formType: data.formType || data.kind || 'enquiry', course: data.course || '' },
+    }))
+  }
 }

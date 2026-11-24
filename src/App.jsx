@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -12,22 +12,22 @@ import {
 } from './data/courses'
 import { aiPythonCourses as defaultAiPythonCourses, publicAiPythonCourseIds } from './data/aiPythonCourses'
 import { siteConfig } from './config/siteConfig'
-import HomePage from './pages/HomePage'
-import CoursesPage from './pages/CoursesPage'
-import CourseDetailPage from './pages/CourseDetailPage'
-import CorporatePage from './pages/CorporatePage'
-import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
-import FaqPage from './pages/FaqPage'
-import AiPythonPage from './pages/AiPythonPage'
-import AiPythonCoursePage from './pages/AiPythonCoursePage'
+const HomePage = lazy(() => import('./pages/HomePage'))
+const CoursesPage = lazy(() => import('./pages/CoursesPage'))
+const CourseDetailPage = lazy(() => import('./pages/CourseDetailPage'))
+const CorporatePage = lazy(() => import('./pages/CorporatePage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const FaqPage = lazy(() => import('./pages/FaqPage'))
+const AiPythonPage = lazy(() => import('./pages/AiPythonPage'))
+const AiPythonCoursePage = lazy(() => import('./pages/AiPythonCoursePage'))
 import { pageSeoByPath } from './data/seoMetadata'
-import LegalPage from './pages/LegalPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AdminPage from './pages/AdminPage'
 import FloatingActions from './components/FloatingActions'
 import ScrollToTop from './components/ScrollToTop'
 import ManagedPage from './components/ManagedPage'
+import { getBreadcrumbSchema, getCourseFaqSchema, getCourseSchema, getOrganizationSchema, getWebsiteSchema, preferredOrigin, removeStructuredData, setStructuredData } from './lib/seo'
 
 function setMeta(attribute, key, content) {
   const selector = `meta[${attribute}="${key}"]`
@@ -113,15 +113,15 @@ export default function App() {
       : null
     const isPublicRoute = Boolean(routeSeo || managedPage || aiCourse || mainCourse)
     const title = isAdminRoute
-      ? 'Admin | D-Anmol Academy'
+      ? 'Admin | D-Anmol Enterprises'
       : managedPage
       ? managedPage.title
       : !isPublicRoute
-      ? 'Page not found | D-Anmol Academy'
+      ? 'Page not found | D-Anmol Enterprises'
       : aiCourse
-        ? `${aiCourse.title} | AI Training | D-Anmol Academy`
+        ? `${aiCourse.title} | AI Training | D-Anmol Enterprises`
       : mainCourse
-        ? `${mainCourse.title} | Courses | D-Anmol Academy`
+        ? `${mainCourse.title} | Courses | D-Anmol Enterprises`
         : routeSeo.title
     document.title = title
     const description = isAdminRoute
@@ -129,14 +129,14 @@ export default function App() {
       : managedPage
       ? managedPage.description
       : !isPublicRoute
-      ? 'This page could not be found. Explore D-Anmol Academy courses or contact the academy.'
+      ? 'This page could not be found. Explore D-Anmol Enterprises courses or contact the team.'
       : aiCourse
         ? aiCourse.description
         : mainCourse
           ? mainCourse.description
           : routeSeo.description
-    const siteOrigin = new URL(import.meta.env.VITE_SITE_URL || window.location.origin).origin
-    const canonicalUrl = isPublicRoute ? `${siteOrigin}${location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '')}` : null
+    const siteOrigin = preferredOrigin
+    const canonicalUrl = isPublicRoute ? `${preferredOrigin}${location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '')}` : null
     setMeta('name', 'description', description)
     setMeta('name', 'robots', isPublicRoute ? 'index,follow,max-image-preview:large' : 'noindex,follow')
     setMeta('property', 'og:title', title)
@@ -147,6 +147,28 @@ export default function App() {
     setMeta('name', 'twitter:title', title)
     setMeta('name', 'twitter:description', description)
     setMeta('name', 'twitter:image', new URL(currentSettings.logo, siteOrigin).href)
+    setMeta('name', 'twitter:card', 'summary_large_image')
+    setMeta('property', 'og:type', 'website')
+    setMeta('property', 'og:site_name', 'D-Anmol Enterprises')
+    setMeta('property', 'og:locale', 'en_IN')
+    setStructuredData('organization-schema', getOrganizationSchema())
+    setStructuredData('website-schema', getWebsiteSchema())
+    if (isPublicRoute) {
+      setStructuredData('breadcrumb-schema', getBreadcrumbSchema(location.pathname, mainCourse?.title || aiCourse?.title || title))
+    } else {
+      removeStructuredData('breadcrumb-schema')
+    }
+    if (mainCourse) {
+      setStructuredData('course-schema', getCourseSchema(mainCourse, location.pathname))
+      const faqSchema = getCourseFaqSchema(mainCourse, location.pathname)
+      if (faqSchema) setStructuredData('course-faq-schema', faqSchema)
+      else removeStructuredData('course-faq-schema')
+    } else if (aiCourse) {
+      setStructuredData('course-schema', getCourseSchema(aiCourse, location.pathname))
+    } else {
+      removeStructuredData('course-schema')
+      removeStructuredData('course-faq-schema')
+    }
     let canonical = document.querySelector('link[rel="canonical"]')
     if (canonicalUrl) {
       if (!canonical) {
@@ -176,7 +198,7 @@ export default function App() {
       <main>
         {managedPage
           ? <ManagedPage page={managedPage} />
-          : <Routes>
+          : <Suspense fallback={<div className="page-wrap" aria-live="polite">Loading…</div>}><Routes>
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/courses" element={<CoursesPage />} />
@@ -191,11 +213,8 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
-          <Route path="/privacy-policy" element={<LegalPage kind="privacy" />} />
-          <Route path="/terms-and-conditions" element={<LegalPage kind="terms" />} />
-          <Route path="/refund-cancellation-policy" element={<LegalPage kind="refund" />} />
           <Route path="*" element={<NotFoundPage />} />
-          </Routes>}
+          </Routes></Suspense>}
       </main>
       {location.pathname !== '/admin' && <FloatingActions />}
       {location.pathname !== '/admin' && <Footer />}

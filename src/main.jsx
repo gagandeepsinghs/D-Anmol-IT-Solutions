@@ -1,14 +1,26 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles.css'
 import './components/AdvisorBookingModal.css'
+import { initializeAnalytics } from './lib/analytics'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+initializeAnalytics()
+
+const rootElement = document.getElementById('root')
+if (!rootElement) throw new Error('The application root element is missing.')
+
+const app = (
   <React.StrictMode>
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+if (rootElement.hasChildNodes() && !(window.location.pathname === '/contact' && window.location.search)) {
+  hydrateRoot(rootElement, app)
+} else {
+  createRoot(rootElement).render(app)
+}

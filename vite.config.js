@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import { setServers } from 'node:dns'
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -21,6 +22,12 @@ function setHtmlMeta(html, attribute, key, content) {
   const tag = `<meta ${attribute}="${escapeAttribute(key)}" content="${escapeAttribute(content)}" />`
   if (metaPattern.test(html)) return html.replace(metaPattern, tag)
   return html.replace('</head>', `    ${tag}\n  </head>`)
+}
+
+function setStructuredDataScript(html, id, data) {
+  const pattern = new RegExp(`<script[^>]*id="${id}"[^>]*>.*?<\\/script>`, 'is')
+  const tag = `<script type="application/ld+json" id="${id}">${JSON.stringify(data)}</script>`
+  return pattern.test(html) ? html.replace(pattern, tag) : html.replace('</head>', `    ${tag}\n  </head>`)
 }
 
 function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
@@ -66,10 +73,12 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
     }
 
     const isManagedPagePath = /^\/pages\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pathname)
-    if (isPreview && (publicSitePaths.includes(pathname) || isManagedPagePath)) {
-      const filePath = pathname === '/' || isManagedPagePath
+    if (isPreview && (pathname === '/admin' || publicSitePaths.includes(pathname) || isManagedPagePath)) {
+      const filePath = isManagedPagePath
+        ? resolve(outputDirectory, 'managed-page.html')
+        : pathname === '/'
         ? resolve(outputDirectory, 'index.html')
-        : resolve(outputDirectory, `.${pathname}`, 'index.html')
+        : resolve(outputDirectory, pathname.slice(1), 'index.html')
       response.statusCode = 200
       response.setHeader('Content-Type', 'text/html; charset=utf-8')
       return response.end(request.method === 'HEAD' ? undefined : readFileSync(filePath))
@@ -103,7 +112,7 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
       let baseHtml = readFileSync(resolve(outputDirectory, 'index.html'), 'utf8')
       const assetsDirectory = resolve(outputDirectory, 'assets')
       const logoFile = readdirSync(assetsDirectory).find((file) => file.startsWith('D Anmol Enterprises Logo Light-') && file.endsWith('.webp'))
-      const siteOrigin = configuredSiteUrl ? new URL(configuredSiteUrl).origin : ''
+      const siteOrigin = 'https://www.danmolenterprises.com'
       const logoUrl = logoFile ? `${siteOrigin}/assets/${encodeURIComponent(logoFile)}` : null
 
       const createRouteHtml = (pathname, metadata) => {
@@ -118,6 +127,81 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
         html = setHtmlMeta(html, 'property', 'og:url', canonical)
         html = setHtmlMeta(html, 'name', 'twitter:title', metadata.title)
         html = setHtmlMeta(html, 'name', 'twitter:description', metadata.description)
+        html = setHtmlMeta(html, 'name', 'twitter:card', 'summary_large_image')
+        html = setHtmlMeta(html, 'property', 'og:type', 'website')
+        html = setHtmlMeta(html, 'property', 'og:site_name', 'D-Anmol Enterprises')
+        html = setHtmlMeta(html, 'property', 'og:locale', 'en_IN')
+        html = setStructuredDataScript(html, 'organization-schema', {
+          '@context': 'https://schema.org',
+          '@type': ['Organization', 'EducationalOrganization'],
+          '@id': `${siteOrigin}/#organization`,
+          name: 'D-Anmol Enterprises',
+          url: siteOrigin,
+          email: 'danmolenterprises6@gmail.com',
+          telephone: '+919289337268',
+          areaServed: [
+            { '@type': 'City', name: 'Chandigarh' },
+            { '@type': 'City', name: 'Mohali' },
+            { '@type': 'City', name: 'Panchkula' },
+            { '@type': 'Country', name: 'India' },
+          ],
+        })
+        html = setStructuredDataScript(html, 'website-schema', {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          '@id': `${siteOrigin}/#website`,
+          url: siteOrigin,
+          name: 'D-Anmol Enterprises',
+          publisher: { '@id': `${siteOrigin}/#organization` },
+        })
+        const breadcrumbItems = [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+        ]
+        if (pathname.startsWith('/courses')) {
+          breadcrumbItems.push({ '@type': 'ListItem', position: 2, name: 'Courses', item: `${siteOrigin}/courses` })
+        }
+        if (pathname.startsWith('/courses/')) {
+          breadcrumbItems.push({ '@type': 'ListItem', position: 3, name: metadata.title, item: canonical })
+        }
+        html = setStructuredDataScript(html, 'breadcrumb-schema', {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: breadcrumbItems,
+        })
+        if (pathname.startsWith('/courses/')) {
+          html = setStructuredDataScript(html, 'course-schema', {
+            '@context': 'https://schema.org',
+            '@type': 'Course',
+            name: metadata.title.split(' | ')[0],
+            description: metadata.description,
+            url: canonical,
+            provider: { '@id': `${siteOrigin}/#organization` },
+          })
+          const courseFaqMap = {
+            '/courses/ai-automation': [['Is AI automation suitable for beginners?', 'It starts with process mapping and workflow fundamentals. Basic computer familiarity is helpful; prior automation experience is not required.'], ['Can AI automation be studied online?', 'Yes, online training is available across India. Offline availability can be confirmed in Chandigarh, Mohali and Panchkula.']],
+            '/courses/full-stack-development-course-in-chandigarh': [['Is Full Stack Development suitable for beginners?', 'The course progresses from web fundamentals into React, server-side development and databases. Confirm the starting level before enrolment.'], ['Can Full Stack Development be studied online?', 'Yes, online training is available across India. Enquire about offline availability in Chandigarh, Mohali and Panchkula.']],
+            '/courses/data-analytics': [['What will I learn in Data Analytics?', 'A typical learning plan covers Python, data cleaning, exploration, visualization and introductory statistical analysis.'], ['Can I study Data Analytics online?', 'Yes, online training is available across India. Offline availability can be confirmed in Chandigarh, Mohali and Panchkula.']],
+            '/courses/data-science': [['Is prior programming experience needed for Data Science?', 'Basic computer familiarity is useful. Your existing Python knowledge can be assessed before choosing the starting point.'], ['Is Data Science available online in India?', 'Yes. Online training is available across India. Enquire about offline availability in Chandigarh, Mohali and Panchkula.']],
+            '/courses/computer-basics-ms-office': [['Is Computer Basics useful for government-exam preparation?', 'It teaches practical computer fundamentals, files, Word, Excel and PowerPoint. Follow the requirements published for the specific exam.'], ['Are Computer Basics classes available offline?', 'Enquire about availability in Chandigarh, Mohali or Panchkula. Online training is available across India.']],
+            '/courses/shorthand-stenography': [['What shorthand method is taught?', 'The course outline covers Pitman shorthand principles, reading, dictation, note-taking and transcription practice.'], ['Are shorthand classes available in Panchkula?', 'Enquire for current availability in Chandigarh, Mohali and Panchkula. Online training is available across India.']],
+            '/courses/computer-typing-government-exams': [['Does this course guarantee a government-exam result?', 'No. It provides guided practice and timed drills. Eligibility and speed requirements come from the specific published exam notification.'], ['Can I learn typing online?', 'Yes, online training is available across India. Offline availability can be confirmed in Chandigarh, Mohali and Panchkula.']],
+            '/courses/digital-marketing-course-in-chandigarh': [['Which skills are covered in Digital Marketing?', 'SEO, advertising, social media, analytics and reporting are taught through practical tasks.'], ['Is Digital Marketing available online?', 'Yes, online training is available across India. Enquire about offline availability in Chandigarh, Mohali and Panchkula.']],
+          }
+          const faqs = courseFaqMap[pathname]
+          if (faqs) {
+            html = setStructuredDataScript(html, 'course-faq-schema', {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map(([name, acceptedAnswer]) => ({
+                '@type': 'Question',
+                name,
+                acceptedAnswer: { '@type': 'Answer', text: acceptedAnswer },
+              })),
+            })
+          }
+        } else {
+          html = html.replace(/<script[^>]*id="course-schema"[^>]*>.*?<\/script>\s*/is, '')
+        }
         if (logoUrl) {
           html = setHtmlMeta(html, 'property', 'og:image', logoUrl)
           html = setHtmlMeta(html, 'name', 'twitter:image', logoUrl)
@@ -137,6 +221,23 @@ function seoAndNotFoundPlugin(configuredSiteUrl, googleVerificationToken) {
         mkdirSync(pageDirectory, { recursive: true })
         writeFileSync(resolve(pageDirectory, 'index.html'), html)
       })
+
+      const adminHtml = createRouteHtml('/admin', {
+        title: 'Admin | D-Anmol Enterprises',
+        description: 'Manage website pages and content.',
+      })
+        .replace(/<meta name="robots" content="index,follow,max-image-preview:large"\s*\/?>/i, '<meta name="robots" content="noindex,nofollow" />')
+        .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/i, '')
+      const adminDirectory = resolve(outputDirectory, 'admin')
+      mkdirSync(adminDirectory, { recursive: true })
+      writeFileSync(resolve(adminDirectory, 'index.html'), adminHtml)
+
+      const managedPageHtml = baseHtml
+        .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/i, '')
+        .replace(/<meta name="robots" content="[^"]*"\s*\/?>/i, '<meta name="robots" content="index,follow" />')
+      writeFileSync(resolve(outputDirectory, 'managed-page.html'), managedPageHtml)
     },
   }
 }
@@ -195,6 +296,7 @@ export default defineConfig(({ command, mode }) => {
     Object.entries(env).forEach(([key, value]) => {
       if (process.env[key] === undefined) process.env[key] = value
     })
+    if (env.MONGODB_DNS_SERVER) setServers([env.MONGODB_DNS_SERVER])
   }
   const siteUrl = env.VITE_SITE_URL ? new URL(env.VITE_SITE_URL).origin : null
 

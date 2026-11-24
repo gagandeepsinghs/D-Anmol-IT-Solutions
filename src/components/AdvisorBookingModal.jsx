@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, BookOpenText, Bot, BriefcaseBusiness, ChartNoAxesCombined, CheckCircle2, ChevronDown, Code2, Layers, LayoutDashboard, LoaderCircle, Sparkles, Workflow, X } from 'lucide-react'
 import { useAppData } from '../context/AppDataContext'
 import EnquirySubmissionError from './EnquirySubmissionError'
-import { useSiteSettings } from '../context/AppDataContext'
 import { validateEnquiryFields } from '../lib/enquiryValidation'
 import { submitEnquiry } from '../lib/submitEnquiry'
 
@@ -24,7 +23,6 @@ function getToday() {
 
 export default function AdvisorBookingModal({ onClose }) {
   const { courses } = useAppData()
-  const siteSettings = useSiteSettings()
   const dialogRef = useRef(null)
   const openerRef = useRef(null)
   const courseTriggerRef = useRef(null)
@@ -37,6 +35,7 @@ export default function AdvisorBookingModal({ onClose }) {
     course: '',
     preferredDemoMode: '',
     preferredContactMethod: '',
+    referralSource: '',
     date: '',
     time: '',
     website: '',
@@ -154,6 +153,7 @@ export default function AdvisorBookingModal({ onClose }) {
         preferredContactMethod: form.preferredContactMethod,
         preferredDate: form.date,
         preferredTime: form.time,
+        referralSource: form.referralSource,
         website: form.website,
       })
       setSubmittedName(form.name.trim())
@@ -178,7 +178,7 @@ export default function AdvisorBookingModal({ onClose }) {
               <header className="advisor-modal-header">
                 <div className="advisor-modal-mark" aria-hidden="true"><Bot size={23} /></div>
                 <div>
-                  <span className="advisor-modal-kicker">D-Anmol Academy</span>
+                  <span className="advisor-modal-kicker">D-Anmol Enterprises</span>
                   <h2 id="advisor-modal-title">Demo request received</h2>
                 </div>
                 <button className="advisor-modal-close" type="button" onClick={onClose} aria-label="Close advisor booking">
@@ -200,9 +200,7 @@ export default function AdvisorBookingModal({ onClose }) {
                   <button className="advisor-mobile-close" type="button" onClick={onClose} aria-label="Close advisor booking">
                     <X size={19} />
                   </button>
-                  <span className="advisor-modal-kicker">D-Anmol Academy</span>
-                  <h2 id="advisor-modal-title">Book a <span>Free Demo</span></h2>
-                  <p>Choose a course and share your preferred demo details. The academy will confirm your request.</p>
+                  <h2 id="advisor-modal-title">Book Your <span>Free Demo Now</span></h2>
                 </div>
                 <div className="advisor-details-grid">
                   <label>
@@ -304,6 +302,18 @@ export default function AdvisorBookingModal({ onClose }) {
                     {fieldErrors.preferredContactMethod && <small className="form-field-error" id="advisor-contact-method-error">{fieldErrors.preferredContactMethod}</small>}
                   </label>
                   <label>
+                    <span>How did you hear about us?</span>
+                    <select name="referralSource" value={form.referralSource} onChange={update}>
+                      <option value="">Select (optional)</option>
+                      <option value="Google Search">Google Search</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="WhatsApp">WhatsApp</option>
+                      <option value="Friend or Family">Friend or Family</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </label>
+                  <label>
                     <span>Preferred date <b>*</b></span>
                     <input name="date" type="date" min={getToday()} value={form.date} onChange={update} required aria-invalid={Boolean(fieldErrors.date)} aria-describedby={fieldErrors.date ? 'advisor-date-error' : undefined} />
                     {fieldErrors.date && <small className="form-field-error" id="advisor-date-error">{fieldErrors.date}</small>}
@@ -318,7 +328,9 @@ export default function AdvisorBookingModal({ onClose }) {
                   </label>
                   <div className="advisor-timezone-field">
                     <span>Times shown in</span>
-                    <div>Asia/Kolkata · GMT+5:30</div>
+                    <select aria-label="Times shown in" value="Asia/Kolkata · GMT+5:30" disabled>
+                      <option>Asia/Kolkata · GMT+5:30</option>
+                    </select>
                   </div>
                 </div>
                 <p className="advisor-timezone-note">Times shown in India Standard Time (IST).</p>
@@ -327,11 +339,10 @@ export default function AdvisorBookingModal({ onClose }) {
                   <button className="advisor-submit" type="submit" disabled={status === 'loading'}>
                     {status === 'loading'
                       ? <><LoaderCircle className="spin" size={18} /> Sending request...</>
-                      : <>Request a Free Demo <ArrowRight size={19} /></>}
+                      : <>Book Free Demo <ArrowRight size={19} /></>}
                   </button>
                 </div>
                 <p className="advisor-demo-note">Demo requests are subject to confirmation by the academy.</p>
-                <img className="advisor-form-logo" src={siteSettings.compactLogo} alt={siteSettings.name} />
               </div>
               <aside className="advisor-course-panel">
                 <div className="advisor-course-panel-header">

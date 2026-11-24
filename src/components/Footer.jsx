@@ -38,11 +38,6 @@ export default function Footer() {
       </div>
       <div className="footer-bottom page-wrap">
         <span>© 2025 D Anmol Enterprises</span>
-        <div className="footer-legal-links">
-          <Link to="/privacy-policy">Privacy</Link>
-          <Link to="/terms-and-conditions">Terms</Link>
-          <Link to="/refund-cancellation-policy">Refunds</Link>
-        </div>
         <span>Built around practical learning.</span>
       </div>
     </footer>
